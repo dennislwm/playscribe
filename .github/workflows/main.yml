@@ -26,7 +26,7 @@ jobs:
         git config --global user.email "playscribebot@telegram.org"
         git config --global user.name "Telegram Bot"
         git clone https://github.com/danielmiessler/fabric.git fabric
-        cd fabric && pipx install fabric
+        cd fabric && pipx install .
     - name: Check fabric
       run: |
         export PATH="${PATH}:~/.local/bin"
