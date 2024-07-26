@@ -39,17 +39,22 @@ jobs:
         OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
       run: |
         export PATH="${PATH}:/opt/pipx_bin"
-        echo $PATH
         which fabric
-        fabric --version
     - name: Check for changes in input.txt
       id: checkfile
       run: |
         echo "::set-output name=changed::$(git diff --name-only HEAD^ HEAD | grep '^examples/input.txt$' || echo 'false')"
     - name: Run application
       # if: steps.checkfile.outputs.changed != 'false'
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
       run: |
         export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
-        if [ -f examples/result.txt ]; then
+        if [ -f transcript.txt ]; then
+          cat transcript.txt |fabric --model ${OPENAI_MODEL} --pattern extract_article_wisdom > examples/result.txt
+          cat transcript.txt && rm transcript.txt
+        fi
+        if [ -f examples/result.txt]; then
           cat examples/result.txt
         fi
