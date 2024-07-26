@@ -27,9 +27,9 @@ jobs:
         git config --global user.name "Telegram Bot"
         git clone https://github.com/danielmiessler/fabric.git fabric
         cd fabric && pipx install fabric
-        export PATH="${PATH}:.local/bin"
     - name: Check fabric
       run: |
+        export PATH="${PATH}:~/.local/bin"
         echo $PATH
         which fabric
         fabric --setup
