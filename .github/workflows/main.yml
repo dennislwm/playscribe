@@ -41,8 +41,8 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
-        if [ $? > 0 ]; then
+        export ERR=0 && export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub || export ERR=2
+        if [ ${ERR} > 0 ]; then
           echo Could not extract wisdom > examples/result.txt
         elif [ -f examples/transcript.txt ]; then
           cat examples/transcript.txt | docker run --rm --env OPENAI_API_KEY=$OPENAI_API_KEY -i dennislwm/playscribe:latest --pattern extract_article_wisdom > examples/result.txt
