@@ -1,1 +1,2 @@
-Please run --setup to set up your API key and download patterns.
+Error: Connection error.
+Connection error.
