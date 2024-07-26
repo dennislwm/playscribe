@@ -1,61 +1,59 @@
 # SUMMARY
-Yelena's presentation explores coping strategies and personal growth in extreme environments like space and the Arctic, based on her research at UBC.
+A video discusses the controversial history and recommendations of vitamin D, highlighting its health benefits and questioning the established RDA figures.
 
 # IDEAS:
-- Space missions require teamwork and coping strategies to manage stress.
-- Communication with Earth is instantaneous on the ISS, but delayed on Mars.
-- Coping strategies can be emotional or problem-focused.
-- Retired cosmonauts report lower stress levels than the general population.
-- Values shift towards benevolence and universalism with longer space missions.
-- Experiencing space leads to a greater appreciation for life on Earth.
-- Analog environments like the Arctic provide insights into coping in space.
-- Search and rescue volunteers experience moderate stress but use acceptance as a coping strategy.
-- Relationships formed in extreme environments are highly valued.
-- Coping strategies are similar across different challenging environments.
-- Personal growth can occur through challenging experiences.
-- The importance of seeking social support in stressful situations.
-- Humor and positive reframing are effective coping mechanisms.
-- Individuals often realize their capabilities after facing challenges.
-- The finite nature of life becomes clearer in extreme conditions.
-- Coping strategies can lead to resilience and growth in future challenges.
+- The RDA for vitamin D is set at 600 IUs, an arbitrary number decided by a committee.
+- Vitamin D has been controversial for over a century due to its health benefits.
+- Historically, heliotherapy was used to treat various ailments before modern medicine.
+- The recommended 600 IUs is equivalent to just 1.8 minutes of summer sun exposure.
+- A study found no toxicity in high doses of vitamin D (200,000 to 1 million IUs).
+- Vitamin D3 acts as an immune-modulator, crucial for overall health.
+- Reevaluations suggest the RDA should be closer to 8,895 IUs.
+- Researchers faced backlash for presenting new data on vitamin D's benefits.
+- Latitude correlates with disease risk; lower risks are found near the equator.
+- Rickets was common in the early 1900s, leading to the discovery of vitamin D.
+- The recommended intake of vitamin D has changed slowly over decades.
+- Medications often prescribe high doses of vitamin D (50,000 IUs) while general recommendations remain low.
+- A campaign in the 80s promoted sun avoidance, linking it to skin cancer fears.
+- Vitamin D deficiency may contribute to melanoma development.
+- Factors like skin color and age affect vitamin D absorption.
+- Modern medicine may prefer low vitamin D doses to maintain control over health.
 
 # QUOTES:
-- "Could you leave your sandbox and come out better?"
-- "Coping is a response to an environmental or psychological challenge."
-- "Research suggests we need a little bit of bucket A and a little bit of bucket B."
-- "Those who focus more on problem-oriented strategies are more likely to experience growth."
-- "Being in space longer changes you for the better."
-- "They realize how meaningful their one life is."
-- "I want to make sure those relationships stay with me when I come back home."
-- "They too experienced new opportunities because they took to work up at Eureka."
-- "You have to do as much as you can with the life that you do have."
-- "I know you are hearty, I know you are resilient."
+- "600 IUS is basically standing out in the sun in the summer 1.8 minutes."
+- "The government wasted a whole lot of money here for you to conduct these worthless studies."
+- "Vitamin D3 is very special in that it's an immune-modulator."
+- "The darker the skin, the less absorption of vitamin D you get."
+- "You can take it if it's prescribed through medication but everyone else... take 400."
+- "Melanoma develops in areas where you're not exposed to Sun."
+- "Vitamin D is needed in 2700 different genes."
+- "There are so many barriers for absorbing vitamin D3."
+- "The more you weigh, the less vitamin D you're going to absorb."
+- "This is just scratching the surface if you want the complete data on this history."
 
 # FACTS:
-- There have been 64 missions to the International Space Station.
-- The delay in communication with Earth during a Mars mission can be 6 to 44 minutes.
-- Research shows that retired cosmonauts report low levels of stress.
-- There are about 10 universal values that drive human behavior.
-- The iHom Space project is conducted at the International Space Station in real time.
-- The Eureka weather station is located on Ellesmere Island in Canada.
-- BC Search and Rescue consists of about 3,000 trained volunteers across British Columbia.
-- Participants in extreme environments often report similar stress levels to the general population.
-- Coping strategies used by individuals in extreme environments include active coping and acceptance.
+- Heliotherapy was used to treat tuberculosis and asthma before antibiotics.
+- The initial recommendation for vitamin D was 400 IUs in 1946.
+- In 2010, the recommendation increased to 600 IUs for adults under 70.
+- Vitamin D deficiency was linked to rickets in the early 1900s.
+- The Institute of Medicine updated RDAs multiple times over decades.
+- Vitamin D resistance can occur genetically, affecting absorption rates.
+- Skin cancer rates are higher in areas with less sun exposure.
+- Vitamin D is involved in numerous genetic functions within the body.
+- The recommended intake for older adults is higher than for younger adults.
+- Studies have shown that high doses of vitamin D do not lead to toxicity.
 
 # REFERENCES:
-- Dr. Peter Sui and Phyllis Johnson at UBC for research collaboration.
-- Archival documents from astronauts, including books, diaries, and blogs.
-- The iHom Space project led by Dr. Phyllis Johnson at UBC.
-- BC Search and Rescue Association.
-
+- Book discussing the history and benefits of vitamin D (link provided in video).
+  
 # RECOMMENDATIONS:
-- Challenge yourself to step out of your comfort zone.
-- Utilize both emotional and problem-focused coping strategies.
-- Seek social support when facing stressful situations.
-- Reflect on personal values and how they may change over time.
-- Engage in activities that promote resilience and personal growth.
-- Foster relationships formed in challenging environments.
-- Embrace humor and positive reframing during stressful times.
-- Recognize the finite nature of life to motivate action. 
-- Participate in team-building exercises to enhance coping skills. 
-- Consider analog environments for research or personal development.
+- Consider reevaluating personal vitamin D intake based on new research.
+- Explore sun exposure as a natural source of vitamin D.
+- Investigate potential genetic factors affecting vitamin D absorption.
+- Consult healthcare providers about appropriate vitamin D supplementation.
+- Stay informed about ongoing research regarding vitamin D and health.
+- Look into historical uses of heliotherapy for various health conditions.
+- Challenge conventional wisdom regarding sun exposure and skin cancer risks.
+- Review dietary sources of vitamin D and their effectiveness.
+- Monitor personal health markers related to vitamin D levels.
+- Engage with communities or forums discussing alternative health perspectives.
