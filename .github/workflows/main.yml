@@ -51,8 +51,11 @@ jobs:
         export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
         if [ -f transcript.txt ]; then
           cat transcript.txt |fabric --pattern extract_article_wisdom > examples/result.txt
-          cat transcript.txt && rm transcript.txt
         fi
-        if [ -f examples/result.txt]; then
-          cat examples/result.txt
+        if [[ -n `git status --porcelain examples/result.txt` ]]; then
+          git config --global user.email "playscribebot@telegram.org"
+          git config --global user.name "Telegram Bot"
+          git add examples/result.txt
+          git commit -m "Update result.txt"
+          git push
         fi
