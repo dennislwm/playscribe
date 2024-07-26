@@ -19,21 +19,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.11'
-    - name: Install pipx
-      uses: CfirTsabari/actions-pipx@v1
-    - name: Set up FFMpeg
-      uses: FedericoCarboni/setup-ffmpeg@v3
-    - name: Clone and configure fabric
+    - name: Build docker image
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        git config --global user.email "playscribebot@telegram.org"
-        git config --global user.name "Telegram Bot"
-        git clone https://github.com/danielmiessler/fabric.git fabric
-        cd fabric && pipx install .
-    - name: Check fabric
-      run: |
-        export PATH="${PATH}:/opt/pipx_bin"
-        yes "" |fabric --setup
-        fabric --model gpt-4o-mini
+        DOCKER_BUILDKIT=1 docker build -t playscribe .
+        docker run --rm --env OPENAI_API_KEY=${OPENAI_API_KEY} -i playscribe --listmodels
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -47,10 +38,9 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        echo OPENAI_API_KEY=$OPENAI_API_KEY >> /home/runner/.config/fabric/.env
         export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
         if [ -f examples/transcript.txt ]; then
-          cat examples/transcript.txt |fabric --pattern extract_article_wisdom > examples/result.txt
+          cat examples/transcript.txt | docker run --rm --env OPENAI_API_KEY=${OPENAI_API_KEY} -i playscribe --pattern extract_article_wisdom > examples/result.txt
         fi
         if [[ -n `git status --porcelain examples/transcript.txt` ]]; then
           git config --global user.email "playscribebot@telegram.org"
