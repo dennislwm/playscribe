@@ -34,5 +34,5 @@ jobs:
       run: |
         export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
         if [ -f examples/result.txt ]; then
-          echo examples/result.txt
+          cat examples/result.txt
         fi
