@@ -1,343 +1,343 @@
-hey everybody and welcome back to Jim's Garage in this
-video we're going to be-deploying kubernetes using tals OS
-what's Talos OS let's have a quick-primer well Talis OS is
-an operating system specifically designed to
-host-kubernetes it's super lightweight because it's
-purpose-built and it has a-really interesting UI out of the
-box I'll show you that later in the video-why am I
-considering using this well for those reasons custom built
-OS super-lightweight and a really simple setup process
-which in this video I'm going to-show you how to do that
-using my answerable script now it's not perfect-and I'm new
-to tals but this will get you up and running with a minimal
-ha-cluster as you can see from the website prominent
-features of this include-security immutability and
-minimalism it's based all around API access so-that's all
-authenticated as I'll show you later in the video so
-there's no-remote connections through things like SSH
-obviously which can be brute forced-there's predictability
-in terms of it eliminates configuration drift and-unknown
-factors and you receive Atomic updates so specific
-components that are-updated in isolation also there's the
-evolvability I'm not going to benefit-too much from that in
-a home lab setup but really important for an
-Enterprise-setup so some of the features as we said minimal
-hardened immutable ephemeral and-current interestingly as
-well you'll see that it's certified by the cloud
-native-Computing Foundation a little bit like with Rancher
-and some of its other-competitors which is reassuring to
-see now there's a load more to Ts that I'm-not going to
-cover on this documentation side but do go and check out
-all of the-how-tos and all the guides and it will explain
-what some of the use cases are-for Talos so you probably
-wondering what does this look like so over on my-proxmox
-cluster you'll see here that I've got Talos P that's
-control plane or-Master like we used to or server in
-Rancher language and you'll see that-I've got cp1 on this
-node cp2 on this node and CP3 on this node so that's
-a-triple control plane a triple Master node setup for high
-availability you'll-also notice that I've got worker 2 here
-and I've got worker one here now I've-not turned this one
-on because I want to show you what that looks like when
-it-boots up but when it does boot up you'll see like this
-here if I jump into the-console you'll see that the
-operating system is running in live mode so for-example
-when we boot this one up I'm just going to start this
-machine you'll-see how quickly this boots up I've only
-given it four cores and 4 GB of RAM but-it's super fast the
-way this works is it boots into this live mode and
-it-basically just sits there waiting for you to configure
-the cluster now we're-going to jump into anable in a moment
-once this is ready and we'll get this-kicked off you'll
-notice that when you invoke the cluster and set it up for
-the-first time it actually then does a reboot and installs
-this to the drive so-at the moment this is just running
-live in memory and you can see here that it's-generated
-some certificates and everything here and it's just now
-sat-there it's waiting so now over in VSS code I've remote
-connected to what I use-as my answerable box which I've
-used in other videos you can go and check out my-other
-deployments of things like Docker and paina and other
-kubernetes-deployment specifically rk2 and this is going to
-follow a similar albeit-different and much simpler process
-and that Simplicity again is thanks to how-easy this is to
-set up within tals now if we go over to their website and
-if-you don't want to use answerable like I'm going to do in
-this video you can-obviously check out that quick start
-guide where you can actually get TS up-and running within
-Docker really quickly and that will give you all you need
-to-do to sort of play with it and learn it and decide
-whether it's for you and-there's also instructions of how
-to get this up and running just through the-command line
-and that's basically what I've used to create this anable
-Playbook-you'll see that they even have a specific guide
-for doing this on proxmox-and some handy videos as well and
-it's really simple in terms of you just need-to install
-tals CTL that's the command line tool a bit like Cube CTL
-which-we'll also use later we download the iso images
-importantly there's a version as-well down here that comes
-with the quemu support So in proxmox you'll actually-see
-things like the IP address of your node um and it will give
-it things like-graceful shutdown Etc after that really it's
-just a case of creating some VMS-which you can see I've
-done in my proxmox now you can obviously um create-these
-like I did using a cloud template and then assigning the
-iso to this-machine so here you can see a standard proxmox
-template and then for the CD-drive I've just specified here
-the ISO file which it recommends on their-website now once
-you've got that set up you simply need to basically create
-and-connect to your first node you can see that down here
-where you generate the-configuration file you then need to
-create that and apply it so create the-config first then
-apply it here and then you add a worker node in the same
-way-just changing the control plane to a worker plane-and
-then you're ready to use the cluster so you bootstrap it
-that basically means-to start it with all those
-configurations in place and then you can-copy basically the
-cube config file and you could administer your cluster
-just-using something like Cube CTL so don't worry if that's
-a lot we're going to go-through that individually in gym
-garage style now in anable so play my get out-of jail free
-card this is far from perfect but this should get you up
-and-running with a Bare Bones cluster that is three master
-or control plane nodes-and two workers there are some other
-awesome GitHub scripts out there for-answerable that I'll
-link in the description below so do go and check-those out
-those are more advanced they have things like git support
-where you-can deploy this through flocks and also changing
-things like the cni for the-network layer this is just
-basically taking those instructions we've seen and-running
-them through an answerable playbook in what I would call
-the-vanilla default setup now as always if you want to
-submit some PRS I'll try to-do my best to look at those no
-promises and this script might also change over-time but
-the key components I.E what it needs to do to get it set up
-those-overarching processes should remain the same so the
-first thing as always is we-want to Define our hosts so
-these are all the machines that we're basically-going to be
-using to connect to now this is a little bit different to
-my rk2-video whereby we would Connect into each node and
-then run commands to join the-cluster doesn't work like
-that on this this is actually using the anable-machine I.E
-this one here 3100 that I'm remoted into and it's using
-Local Host-so this Playbook is actually going to be
-executed on the answerable machine-itself and it's then
-going to configure the cluster just using these
-IP-addresses so this answerable machine will connect to
-this node only and-configure the rest of it via Talis CTL
-calls so once we've got the host set up-we can have a quick
-look ahead at some of the variables now some of
-these-variables we're not quite using yet so things like
-metal lb and Cube VIP and-that's hopefully a Prelude of me
-expanding that in the future but the key-things really here
-we've got the TS version which you can change the
-CTL-version so that's that command line tool and then the
-IP addresses of your three-Master nodes 61 is the one I'm
-going to connect to first so think of that as-server or
-Master node one and then the two worker nodes and also
-the-directories that we're going to save those config files
-which we'll have a-look at later the video as you can see
-on the left I've got the roles and if-you're wondering in
-which order those are executed you'll find that here in-the
-site. yaml so the first thing we're going to do is download
-and install the-CTL the command line tool which we'll need
-for basically all of this so it-checks to make sure that
-you've got that then it's going to create the
-cluster-configuration so first it generates basically a
-config file once you've-generated that config file it then
-applies that config file and that's-where it's going to
-connect to that first node then it's going to configure-the
-tals CTL that's actually doing a little bit more so it's
-downloading the-configuration file after it's applied the
-configuration file it basically-creates new ones that will
-give you everything you need to basically connect-other
-nodes to it and workers plus it will generate things like
-the cube-config file then we're going to add the actual
-worker nodes to it so let's go-through those in order we'll
-start off with install TS CTL so over in TS CTL-quite
-straightforward um we're going to-download Talos CTL and
-you get to specify the version if you want to it's-going to
-pull that down and then it's basically going to copy it to
-the user-local binaries and that means that all users on
-there can actually use that-which is great after this we
-don't have to use um root privileges to to run-talor CTL
-once we've done that we get on to configure the cluster so
-once we've-checked that a config file doesn't already exist
-we then want to generate-the config file this isn't
-necessarily needed for the first time you run it-because
-there won't be one but I put this in here for some
-debugging so it-basically generates the config when this is
-true so it doesn't exist and it uses-the answerable
-builting command so it uses Talos CTL which is what we
-just-downloaded it specifies that it's going to gen for
-Generate it's going to-generate a config I've just called
-this Talos proxmox cluster cuz that's what's-in the
-documentation but you can change that to obviously whatever
-you want and-then if we have a look what it's actually
-doing it's going to connect via-https to that control plane
-IP which if you remember in your variables so this-group V
-here you can see the control IP here is 61 which is
-basically my first-node now when it connects to that it's
-going to then create that config file so-it's going to ask
-for an output directory and I've just given the
-config-directory as a variable which you can specify now as
-we're using proxmox or I-am in this instance or anything
-that's basically KVM kernel virtual machine you-can
-actually use this image factory here this image which will
-allow the quemu-agent to be deployed and be available so
-you'll need to make sure in-proxmox that over on the
-options for one of these virtual-machines you'll have um
-the quemu agent here enabled so now we've generated
-ated-the configuration files we're going to go now into the
-applying the-configuration so the first thing we want to do
-is to apply that config we just-created to that first node
-remember that's that 61 in my case so again we go-into the
-command line we use the Talos CTL tool and we apply the
-config this-time we're doing it insecure because we haven't
-validated the certificates but-you could obviously do that
-in an Enterprise setup and we specify the node-as the
-control plane IP that's that 6 1 you can actually do this
-to any of the-nodes and we specify the file so this is
-basically the directory so whatever you-put in your
-variables and what we want is this control plane. yaml so
-that's-the configuration file for setting up a node as a
-control plane it's going to go-through that and then do it
-and I've just done it for each node I was lazy-and didn't
-put in a loop but I'll tidy that up at a later point but
-it's-basically doing exactly the same thing it's applying
-that configuration to each-of these nodes and that will set
-it up so you've got now three nodes that are-all talking to
-one another the cluster isn't yet up and running because
-we-haven't bootstrapped it and that's what we'll get on to
-now so now we go into-the Talos CTL tasks and it's a little
-bit more than that actually the first-thing we do is when
-you create the configuration files in the last step-they're
-actually blank so this command here is using that config
-file and it's-specifying an endpoint I'll show you that
-later but basically it's a big text-file a bit like a cube
-config where the um endpoint is blank so what we're
-doing-is saying we want the endpoint to be the control IP
-of the first node then we-want to do the configuration of
-the node and that will also then specify the IP-address as
-one of the nodes in there and that should also get updated
-when we add-all three into that file so that basically we
-have all of those nodes-listed in there next what do we
-need to do well when you've applied those-configurations
-and I'll show this on screen is because it's a live image
-that-you saw in proxmox when you apply those configurations
-it then automatically-reboots installs it to the dis and
-then boots up using those configuration file-so it's no
-longer live that's why we have this wait for a bootstrap so
-all-this is doing is basically trying to assign by using
-the bootstrap that will-bootstrap and then start up the
-cluster and it'll all start talking to one-another it
-actually starts up the etcd now what this tries to do and
-this-isn't an elegant way of doing it it simply tries to
-bootstrap it over and-over until it succeeds it'll do that
-for what 300 seconds now in my experience it-takes about 15
-to 30 seconds for this to boot up obviously that's going to
-depend-on your hardware and how much you've given it but
-this should work I'll look-to improve this in the future
-the final step of this is to-basically then create or grab
-the cube control config so that means that then-we can
-start to control our cluster using Cube CTL which if you
-followed any-of my previous videos you'll be more than
-familiar with this will be useful-if you want to deploy
-anything onto your cluster using the command line
-interface-or even if you want to install something like um
-rencher to put on here and-manage it or any other guey
-you'd be you'd be doing that first most likely-with Cube
-CTL or perhaps Helm and that's basically it if you watched
-and survived-my rk2 tutorial you'll know that this is much
-shorter and simpler good job-tals so let's get this up and
-running so I'm already in the tals directory which-is where
-I need to be over on left for this Playbook now with the
-way I have-this set up I need to use answerable Playbook I
-need to point it to the site-over here I need to specify
-the inventory host file which is here and I-need to specify
-a key file to connect some of those nodes don't actually
-think-that's necessary cuz I'm connecting to a local host
-but I've left it in anyway-anyway so if we maximize this
-here I'll then put proxmox over on the left so now-with
-proxmox up on the left let me click on the console and
-you'll see that there-let me try and make that a bit larger
-so I appreciate that's really small but it-doesn't matter
-too much about being able to see that all I want you to see
-is the-fact that this is going to reboot like I said and
-then we can take a look at-what's actually happening you
-can see on the left here that it's ready and it's-getting
-ready it's true but nothing else on here is running no
-kubernetes no-cubet none of that so let's start the script
-now on the right you'll see it's-going to install Talos
-gathered the facts it's now configuring the
-cluster-applying the cluster and now it's waiting down here
-and retrying to apply-the bootstrap if we look on the left
-this should now get the sign to reboot-which is doing so
-it's applied that configuration file it's now going
-ahead-and rebooting that's installing onto that drive I can
-hear my server spinning-up over there and in a few seconds
-this should be back up and running and it-should now be
-waiting and trying to bootstrap now you can see on here
-we've-got some different things come up API servers
-controller manager schedulers-kubernetes version 1.3.1 it's
-now healthy on the left and-you can see that I've got three
-machines over here on the left and in a couple of-seconds
-or maybe a few ah I've got four now and hopefully I should
-that should-go go to five so now we have five machines up
-and running the cluster-isn't actually ready yet if you
-remember things like my rk2 video it's
-obviously-downloading and pulling containers in the
-background so that will take a-little bit of time depending
-on things like your internet connection the amount-of
-resources each node has but in my experience it was usually
-a minute two-minutes to get this all up and running and to
-get a ready true in this area-here so if we have a quick
-look at what that actually did-you can see here that I've
-got this tals folder and now within the tals folder-we've
-got a cube configuration file that's what we need for cube
-CTL and we-also have this tals folder which it created
-again the cube the tals CTL-expects its configuration files
-to be in here but you can manually override that-as well
-and you can see with the control plane this has got all the
-good stuff-for the encryption Keys certificates etc for
-setting up control plane here you-can see what it generated
-for setting up and configuring the workers and here's-that
-Talis configuration file where you can see we injected the
-end points into-here and it's also got those certificates
-so when we were running-those answerable commands to
-connect using Talos CTL it was actually using-these
-endpoints so it knew where to send the command to and it
-had these-certificates to authenticate and do that
-connection securely so now whilst we've-been talking you
-can see that that's now true everything's healthy and
-basically-the cluster is up and running now I'm going to
-come back to this in future-videos but most of what I've
-already covered in previous videos most of the-things like
-installing traffic and pie hole and all of those sorts of
-things-this just behaves like kubernetes this isn't k3s
-this is full fat kubernetes-but most of the things should
-work without a hitch famous last words I-haven't actually
-tried that I'm going to be doing more of that in future
-videos-and also practicing but so far absolutely loving
-what Talos has done-here super clean minimal ephemeral
-secure ticks all the boxes in my mind-and so if we hop back
-into the terminal let's just clear some of this stuff
-we-can now use the tals CTL and the cube admin so I've
-already installed Cube CTL-the instructions for that are
-pretty straightforward just like you download-and install
-any binary and now that I have done that I can run things
-like-Cube CTL get nodes and specify that config and there
-you go you can see that-I've got all of those nodes there
-so we can do things like that or get all of-the name spaces
-and then we could run something against that so all of
-the-pods in the cube system you'll see that they're all up
-and running so now you-have all the basics to set up a
-super Bare Bones cluster and basically do-whatever you want
-with it obviously you can refer to some of my existing
-videos-and see if those work they should do this is just
-kubernetes into the hood-but I will be going further down
-the rabbit hole with tals in the future-anyway if you've
-liked this video let me know how you're going to use this
-if-it's something you're considering and as always hit the
-like hit the Subscribe-and I'll see you on the next one
+hey everybody and welcome back to Jim's Garage in this 
+video we're going to be-deploying kubernetes using tals OS 
+what's Talos OS let's have a quick-primer well Talis OS is 
+an operating system specifically designed to 
+host-kubernetes it's super lightweight because it's 
+purpose-built and it has a-really interesting UI out of the 
+box I'll show you that later in the video-why am I 
+considering using this well for those reasons custom built 
+OS super-lightweight and a really simple setup process 
+which in this video I'm going to-show you how to do that 
+using my answerable script now it's not perfect-and I'm new 
+to tals but this will get you up and running with a minimal 
+ha-cluster as you can see from the website prominent 
+features of this include-security immutability and 
+minimalism it's based all around API access so-that's all 
+authenticated as I'll show you later in the video so 
+there's no-remote connections through things like SSH 
+obviously which can be brute forced-there's predictability 
+in terms of it eliminates configuration drift and-unknown 
+factors and you receive Atomic updates so specific 
+components that are-updated in isolation also there's the 
+evolvability I'm not going to benefit-too much from that in 
+a home lab setup but really important for an 
+Enterprise-setup so some of the features as we said minimal 
+hardened immutable ephemeral and-current interestingly as 
+well you'll see that it's certified by the cloud 
+native-Computing Foundation a little bit like with Rancher 
+and some of its other-competitors which is reassuring to 
+see now there's a load more to Ts that I'm-not going to 
+cover on this documentation side but do go and check out 
+all of the-how-tos and all the guides and it will explain 
+what some of the use cases are-for Talos so you probably 
+wondering what does this look like so over on my-proxmox 
+cluster you'll see here that I've got Talos P that's 
+control plane or-Master like we used to or server in 
+Rancher language and you'll see that-I've got cp1 on this 
+node cp2 on this node and CP3 on this node so that's 
+a-triple control plane a triple Master node setup for high 
+availability you'll-also notice that I've got worker 2 here 
+and I've got worker one here now I've-not turned this one 
+on because I want to show you what that looks like when 
+it-boots up but when it does boot up you'll see like this 
+here if I jump into the-console you'll see that the 
+operating system is running in live mode so for-example 
+when we boot this one up I'm just going to start this 
+machine you'll-see how quickly this boots up I've only 
+given it four cores and 4 GB of RAM but-it's super fast the 
+way this works is it boots into this live mode and 
+it-basically just sits there waiting for you to configure 
+the cluster now we're-going to jump into anable in a moment 
+once this is ready and we'll get this-kicked off you'll 
+notice that when you invoke the cluster and set it up for 
+the-first time it actually then does a reboot and installs 
+this to the drive so-at the moment this is just running 
+live in memory and you can see here that it's-generated 
+some certificates and everything here and it's just now 
+sat-there it's waiting so now over in VSS code I've remote 
+connected to what I use-as my answerable box which I've 
+used in other videos you can go and check out my-other 
+deployments of things like Docker and paina and other 
+kubernetes-deployment specifically rk2 and this is going to 
+follow a similar albeit-different and much simpler process 
+and that Simplicity again is thanks to how-easy this is to 
+set up within tals now if we go over to their website and 
+if-you don't want to use answerable like I'm going to do in 
+this video you can-obviously check out that quick start 
+guide where you can actually get TS up-and running within 
+Docker really quickly and that will give you all you need 
+to-do to sort of play with it and learn it and decide 
+whether it's for you and-there's also instructions of how 
+to get this up and running just through the-command line 
+and that's basically what I've used to create this anable 
+Playbook-you'll see that they even have a specific guide 
+for doing this on proxmox-and some handy videos as well and 
+it's really simple in terms of you just need-to install 
+tals CTL that's the command line tool a bit like Cube CTL 
+which-we'll also use later we download the iso images 
+importantly there's a version as-well down here that comes 
+with the quemu support So in proxmox you'll actually-see 
+things like the IP address of your node um and it will give 
+it things like-graceful shutdown Etc after that really it's 
+just a case of creating some VMS-which you can see I've 
+done in my proxmox now you can obviously um create-these 
+like I did using a cloud template and then assigning the 
+iso to this-machine so here you can see a standard proxmox 
+template and then for the CD-drive I've just specified here 
+the ISO file which it recommends on their-website now once 
+you've got that set up you simply need to basically create 
+and-connect to your first node you can see that down here 
+where you generate the-configuration file you then need to 
+create that and apply it so create the-config first then 
+apply it here and then you add a worker node in the same 
+way-just changing the control plane to a worker plane-and 
+then you're ready to use the cluster so you bootstrap it 
+that basically means-to start it with all those 
+configurations in place and then you can-copy basically the 
+cube config file and you could administer your cluster 
+just-using something like Cube CTL so don't worry if that's 
+a lot we're going to go-through that individually in gym 
+garage style now in anable so play my get out-of jail free 
+card this is far from perfect but this should get you up 
+and-running with a Bare Bones cluster that is three master 
+or control plane nodes-and two workers there are some other 
+awesome GitHub scripts out there for-answerable that I'll 
+link in the description below so do go and check-those out 
+those are more advanced they have things like git support 
+where you-can deploy this through flocks and also changing 
+things like the cni for the-network layer this is just 
+basically taking those instructions we've seen and-running 
+them through an answerable playbook in what I would call 
+the-vanilla default setup now as always if you want to 
+submit some PRS I'll try to-do my best to look at those no 
+promises and this script might also change over-time but 
+the key components I.E what it needs to do to get it set up 
+those-overarching processes should remain the same so the 
+first thing as always is we-want to Define our hosts so 
+these are all the machines that we're basically-going to be 
+using to connect to now this is a little bit different to 
+my rk2-video whereby we would Connect into each node and 
+then run commands to join the-cluster doesn't work like 
+that on this this is actually using the anable-machine I.E 
+this one here 3100 that I'm remoted into and it's using 
+Local Host-so this Playbook is actually going to be 
+executed on the answerable machine-itself and it's then 
+going to configure the cluster just using these 
+IP-addresses so this answerable machine will connect to 
+this node only and-configure the rest of it via Talis CTL 
+calls so once we've got the host set up-we can have a quick 
+look ahead at some of the variables now some of 
+these-variables we're not quite using yet so things like 
+metal lb and Cube VIP and-that's hopefully a Prelude of me 
+expanding that in the future but the key-things really here 
+we've got the TS version which you can change the 
+CTL-version so that's that command line tool and then the 
+IP addresses of your three-Master nodes 61 is the one I'm 
+going to connect to first so think of that as-server or 
+Master node one and then the two worker nodes and also 
+the-directories that we're going to save those config files 
+which we'll have a-look at later the video as you can see 
+on the left I've got the roles and if-you're wondering in 
+which order those are executed you'll find that here in-the 
+site. yaml so the first thing we're going to do is download 
+and install the-CTL the command line tool which we'll need 
+for basically all of this so it-checks to make sure that 
+you've got that then it's going to create the 
+cluster-configuration so first it generates basically a 
+config file once you've-generated that config file it then 
+applies that config file and that's-where it's going to 
+connect to that first node then it's going to configure-the 
+tals CTL that's actually doing a little bit more so it's 
+downloading the-configuration file after it's applied the 
+configuration file it basically-creates new ones that will 
+give you everything you need to basically connect-other 
+nodes to it and workers plus it will generate things like 
+the cube-config file then we're going to add the actual 
+worker nodes to it so let's go-through those in order we'll 
+start off with install TS CTL so over in TS CTL-quite 
+straightforward um we're going to-download Talos CTL and 
+you get to specify the version if you want to it's-going to 
+pull that down and then it's basically going to copy it to 
+the user-local binaries and that means that all users on 
+there can actually use that-which is great after this we 
+don't have to use um root privileges to to run-talor CTL 
+once we've done that we get on to configure the cluster so 
+once we've-checked that a config file doesn't already exist 
+we then want to generate-the config file this isn't 
+necessarily needed for the first time you run it-because 
+there won't be one but I put this in here for some 
+debugging so it-basically generates the config when this is 
+true so it doesn't exist and it uses-the answerable 
+builting command so it uses Talos CTL which is what we 
+just-downloaded it specifies that it's going to gen for 
+Generate it's going to-generate a config I've just called 
+this Talos proxmox cluster cuz that's what's-in the 
+documentation but you can change that to obviously whatever 
+you want and-then if we have a look what it's actually 
+doing it's going to connect via-https to that control plane 
+IP which if you remember in your variables so this-group V 
+here you can see the control IP here is 61 which is 
+basically my first-node now when it connects to that it's 
+going to then create that config file so-it's going to ask 
+for an output directory and I've just given the 
+config-directory as a variable which you can specify now as 
+we're using proxmox or I-am in this instance or anything 
+that's basically KVM kernel virtual machine you-can 
+actually use this image factory here this image which will 
+allow the quemu-agent to be deployed and be available so 
+you'll need to make sure in-proxmox that over on the 
+options for one of these virtual-machines you'll have um 
+the quemu agent here enabled so now we've generated 
+ated-the configuration files we're going to go now into the 
+applying the-configuration so the first thing we want to do 
+is to apply that config we just-created to that first node 
+remember that's that 61 in my case so again we go-into the 
+command line we use the Talos CTL tool and we apply the 
+config this-time we're doing it insecure because we haven't 
+validated the certificates but-you could obviously do that 
+in an Enterprise setup and we specify the node-as the 
+control plane IP that's that 6 1 you can actually do this 
+to any of the-nodes and we specify the file so this is 
+basically the directory so whatever you-put in your 
+variables and what we want is this control plane. yaml so 
+that's-the configuration file for setting up a node as a 
+control plane it's going to go-through that and then do it 
+and I've just done it for each node I was lazy-and didn't 
+put in a loop but I'll tidy that up at a later point but 
+it's-basically doing exactly the same thing it's applying 
+that configuration to each-of these nodes and that will set 
+it up so you've got now three nodes that are-all talking to 
+one another the cluster isn't yet up and running because 
+we-haven't bootstrapped it and that's what we'll get on to 
+now so now we go into-the Talos CTL tasks and it's a little 
+bit more than that actually the first-thing we do is when 
+you create the configuration files in the last step-they're 
+actually blank so this command here is using that config 
+file and it's-specifying an endpoint I'll show you that 
+later but basically it's a big text-file a bit like a cube 
+config where the um endpoint is blank so what we're 
+doing-is saying we want the endpoint to be the control IP 
+of the first node then we-want to do the configuration of 
+the node and that will also then specify the IP-address as 
+one of the nodes in there and that should also get updated 
+when we add-all three into that file so that basically we 
+have all of those nodes-listed in there next what do we 
+need to do well when you've applied those-configurations 
+and I'll show this on screen is because it's a live image 
+that-you saw in proxmox when you apply those configurations 
+it then automatically-reboots installs it to the dis and 
+then boots up using those configuration file-so it's no 
+longer live that's why we have this wait for a bootstrap so 
+all-this is doing is basically trying to assign by using 
+the bootstrap that will-bootstrap and then start up the 
+cluster and it'll all start talking to one-another it 
+actually starts up the etcd now what this tries to do and 
+this-isn't an elegant way of doing it it simply tries to 
+bootstrap it over and-over until it succeeds it'll do that 
+for what 300 seconds now in my experience it-takes about 15 
+to 30 seconds for this to boot up obviously that's going to 
+depend-on your hardware and how much you've given it but 
+this should work I'll look-to improve this in the future 
+the final step of this is to-basically then create or grab 
+the cube control config so that means that then-we can 
+start to control our cluster using Cube CTL which if you 
+followed any-of my previous videos you'll be more than 
+familiar with this will be useful-if you want to deploy 
+anything onto your cluster using the command line 
+interface-or even if you want to install something like um 
+rencher to put on here and-manage it or any other guey 
+you'd be you'd be doing that first most likely-with Cube 
+CTL or perhaps Helm and that's basically it if you watched 
+and survived-my rk2 tutorial you'll know that this is much 
+shorter and simpler good job-tals so let's get this up and 
+running so I'm already in the tals directory which-is where 
+I need to be over on left for this Playbook now with the 
+way I have-this set up I need to use answerable Playbook I 
+need to point it to the site-over here I need to specify 
+the inventory host file which is here and I-need to specify 
+a key file to connect some of those nodes don't actually 
+think-that's necessary cuz I'm connecting to a local host 
+but I've left it in anyway-anyway so if we maximize this 
+here I'll then put proxmox over on the left so now-with 
+proxmox up on the left let me click on the console and 
+you'll see that there-let me try and make that a bit larger 
+so I appreciate that's really small but it-doesn't matter 
+too much about being able to see that all I want you to see 
+is the-fact that this is going to reboot like I said and 
+then we can take a look at-what's actually happening you 
+can see on the left here that it's ready and it's-getting 
+ready it's true but nothing else on here is running no 
+kubernetes no-cubet none of that so let's start the script 
+now on the right you'll see it's-going to install Talos 
+gathered the facts it's now configuring the 
+cluster-applying the cluster and now it's waiting down here 
+and retrying to apply-the bootstrap if we look on the left 
+this should now get the sign to reboot-which is doing so 
+it's applied that configuration file it's now going 
+ahead-and rebooting that's installing onto that drive I can 
+hear my server spinning-up over there and in a few seconds 
+this should be back up and running and it-should now be 
+waiting and trying to bootstrap now you can see on here 
+we've-got some different things come up API servers 
+controller manager schedulers-kubernetes version 1.3.1 it's 
+now healthy on the left and-you can see that I've got three 
+machines over here on the left and in a couple of-seconds 
+or maybe a few ah I've got four now and hopefully I should 
+that should-go go to five so now we have five machines up 
+and running the cluster-isn't actually ready yet if you 
+remember things like my rk2 video it's 
+obviously-downloading and pulling containers in the 
+background so that will take a-little bit of time depending 
+on things like your internet connection the amount-of 
+resources each node has but in my experience it was usually 
+a minute two-minutes to get this all up and running and to 
+get a ready true in this area-here so if we have a quick 
+look at what that actually did-you can see here that I've 
+got this tals folder and now within the tals folder-we've 
+got a cube configuration file that's what we need for cube 
+CTL and we-also have this tals folder which it created 
+again the cube the tals CTL-expects its configuration files 
+to be in here but you can manually override that-as well 
+and you can see with the control plane this has got all the 
+good stuff-for the encryption Keys certificates etc for 
+setting up control plane here you-can see what it generated 
+for setting up and configuring the workers and here's-that 
+Talis configuration file where you can see we injected the 
+end points into-here and it's also got those certificates 
+so when we were running-those answerable commands to 
+connect using Talos CTL it was actually using-these 
+endpoints so it knew where to send the command to and it 
+had these-certificates to authenticate and do that 
+connection securely so now whilst we've-been talking you 
+can see that that's now true everything's healthy and 
+basically-the cluster is up and running now I'm going to 
+come back to this in future-videos but most of what I've 
+already covered in previous videos most of the-things like 
+installing traffic and pie hole and all of those sorts of 
+things-this just behaves like kubernetes this isn't k3s 
+this is full fat kubernetes-but most of the things should 
+work without a hitch famous last words I-haven't actually 
+tried that I'm going to be doing more of that in future 
+videos-and also practicing but so far absolutely loving 
+what Talos has done-here super clean minimal ephemeral 
+secure ticks all the boxes in my mind-and so if we hop back 
+into the terminal let's just clear some of this stuff 
+we-can now use the tals CTL and the cube admin so I've 
+already installed Cube CTL-the instructions for that are 
+pretty straightforward just like you download-and install 
+any binary and now that I have done that I can run things 
+like-Cube CTL get nodes and specify that config and there 
+you go you can see that-I've got all of those nodes there 
+so we can do things like that or get all of-the name spaces 
+and then we could run something against that so all of 
+the-pods in the cube system you'll see that they're all up 
+and running so now you-have all the basics to set up a 
+super Bare Bones cluster and basically do-whatever you want 
+with it obviously you can refer to some of my existing 
+videos-and see if those work they should do this is just 
+kubernetes into the hood-but I will be going further down 
+the rabbit hole with tals in the future-anyway if you've 
+liked this video let me know how you're going to use this 
+if-it's something you're considering and as always hit the 
+like hit the Subscribe-and I'll see you on the next one 
 take care everybody-[Music]
