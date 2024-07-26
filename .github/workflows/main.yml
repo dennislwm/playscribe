@@ -21,6 +21,12 @@ jobs:
         python-version: '3.11'
     - name: Install pipx
       uses: CfirTsabari/actions-pipx@v1
+    - name: Set up FFMpeg
+      uses: FedericoCarboni/setup-ffmpeg@v3
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
     - name: Clone and configure fabric
       run: |
         git config --global user.email "playscribebot@telegram.org"
@@ -28,17 +34,14 @@ jobs:
         git clone https://github.com/danielmiessler/fabric.git fabric
         cd fabric && pipx install .
     - name: Check fabric
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
       run: |
-        export PATH="${PATH}:~/.local/bin"
+        export PATH="${PATH}:/opt/pipx_bin"
         echo $PATH
         which fabric
-        fabric --setup
-    - name: Set up FFMpeg
-      uses: FedericoCarboni/setup-ffmpeg@v3
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        fabric --version
     - name: Check for changes in input.txt
       id: checkfile
       run: |
