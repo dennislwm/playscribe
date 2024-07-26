@@ -3,7 +3,7 @@ name: Publish Docker
 on:
   push:
     branches: [ main ]
-    paths: [ Dockerfile, .github/workflow/dockerhub.yml ]
+    paths: [ Dockerfile, .github/workflows/dockerhub.yml ]
 
 jobs:
   build:
