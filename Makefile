@@ -10,11 +10,6 @@ docker_clean:
 docker_interactive: ci_build docker_clean
 	docker run --rm --env-file .env -it --entrypoint bash playscribe
 
-docker_push: ci_build docker_clean
-	echo $(DOCKERHUB_PASS) | docker login -u $(DOCKERHUB_USER) --password-stdin
-	docker tag playscribe:latest $(DOCKERHUB_USER)/playscribe:latest
-	docker push $(DOCKERHUB_USER)/playscribe:latest
-
 docker_verify: ci_build docker_clean
 	docker run --rm --env-file .env -i playscribe --listmodels
 
