@@ -34,6 +34,7 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         export PATH="${PATH}:/opt/pipx_bin"
+        yes "" |fabric --setup
         fabric --model gpt-4o-mini
     - name: Install dependencies
       run: |
