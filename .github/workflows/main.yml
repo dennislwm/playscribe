@@ -19,12 +19,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.11'
-    - name: Build docker image
+    - name: Validate Docker image
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        DOCKER_BUILDKIT=1 docker build -t playscribe .
-        docker run --rm --env OPENAI_API_KEY=${OPENAI_API_KEY} -i playscribe --listmodels
+        docker run --rm --env OPENAI_API_KEY=$OPENAI_API_KEY -i dennislwm/playscribe:latest --listmodels
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -40,7 +39,7 @@ jobs:
       run: |
         export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
         if [ -f examples/transcript.txt ]; then
-          cat examples/transcript.txt | docker run --rm --env OPENAI_API_KEY=${OPENAI_API_KEY} -i playscribe --pattern extract_article_wisdom > examples/result.txt
+          cat examples/transcript.txt | docker run --rm --env OPENAI_API_KEY=$OPENAI_API_KEY -i dennislwm/playscribe:latest --pattern extract_article_wisdom > examples/result.txt
         fi
         if [[ -n `git status --porcelain examples/transcript.txt` ]]; then
           git config --global user.email "playscribebot@telegram.org"

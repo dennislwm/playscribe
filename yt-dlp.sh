@@ -9,6 +9,6 @@ function get_sub {
   FILE=$( yt-dlp -e "${url}" )
   echo $FILE.txt
   yt-dlp --skip-download --write-auto-sub --quiet --output "${FILE}" --sub-format json3 ${URL}
-  jq -r '.events[]|select(.segs and.segs[0].utf8!="\n")|[.segs[].utf8]|join("")' "${FILE}.en.json3" | paste -sd\ -|fold -sw60 >> "examples/transcript.txt"
+  jq -r '.events[]|select(.segs and.segs[0].utf8!="\n")|[.segs[].utf8]|join("")' "${FILE}.en.json3" | paste -sd\ -|fold -sw60 > "examples/transcript.txt"
   rm "${FILE}.en.json3"
 }
