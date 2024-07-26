@@ -33,9 +33,9 @@ jobs:
         git config --global user.name "Telegram Bot"
         git clone https://github.com/danielmiessler/fabric.git fabric
         pipx install fabric
-        fabric --setup
         export PATH="${PATH}:.local/bin"
         which fabric
+        fabric --setup
     - name: Check for changes in input.txt
       id: checkfile
       run: |
