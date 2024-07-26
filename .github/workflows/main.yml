@@ -32,10 +32,9 @@ jobs:
     - name: Check fabric
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
       run: |
         export PATH="${PATH}:/opt/pipx_bin"
-        fabric --model $OPENAI_MODEL
+        fabric --model gpt-4o-mini
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -48,7 +47,6 @@ jobs:
       # if: steps.checkfile.outputs.changed != 'false'
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
       run: |
         export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
         if [ -f transcript.txt ]; then
