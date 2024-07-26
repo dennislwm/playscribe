@@ -37,7 +37,7 @@ jobs:
         yes "" |fabric --setup
         fabric --model gpt-4o-mini
         ls -lart ~/.config/fabric/.env
-        echo OPENAI_API_KEY=$OPENAI_API_KEY >> .config/fabric/.env
+        echo OPENAI_API_KEY=$OPENAI_API_KEY >> /home/runner/.config/fabric/.env
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -48,8 +48,8 @@ jobs:
         echo "::set-output name=changed::$(git diff --name-only HEAD^ HEAD | grep '^examples/input.txt$' || echo 'false')"
     - name: Run application
       # if: steps.checkfile.outputs.changed != 'false'
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      # env:
+      #   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         export URL=$( cat examples/input.txt ) && echo ${URL} && URL=${URL} make sub
         if [ -f transcript.txt ]; then
