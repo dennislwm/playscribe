@@ -1,278 +1,205 @@
-So Meta have finally released their highly anticipated 
-llama 3.1-45 billion parameters large language model 
-there's so much to discuss and so-much that they actually 
-spoke about in their research paper so first of all-what 
-you're going to watch is their announcement video and then 
-I'm going to-dive into so many of the details they 
-seemingly left out and including the-stunning bench today 
-we're excited to deliver on the long awaited llama 3.1-405 
-billion parer model that we previewed back in April we're 
-also-updating the 870 billion models with new improved 
-performance and capabilities-the 405 is hands down the 
-largest and most capable open source model that's-ever been 
-released it lands improvements in reasoning tool use 
-multilinguality a-larger context window and much more and 
-the latest Benchmark numbers that we're-releasing today 
-exceed what we previewed back in April so I encourage you 
-to read-up on the details that we've shared in our newly 
-published research paper-alongside the 405b model we're 
-releasing an updated collection of pre-trained 
-and-instruction tuned 8B and 70b models to support use 
-cases ranging from-enthusiasts and startups to Enterprises 
-and research Labs like the 405b these-new 8 and 70b models 
-offer impressive performance for their size along 
-with-notable new capabilities following feedback we heard 
-loud and clear from-the community we've expanded the 
-context window of all of these models to 1208-tokens this 
-enabled ables the model to work with larger code bases or 
-more-detailed reference materials these models have been 
-trained to generate-tool calls for a few specific functions 
-like search code execution and-mathematical reasoning 
-additionally they support zero sha tool usage 
-improved-reasoning enables better decision-making and 
-problem solving updates to our-system level approach make 
-it easier for developers to balance helpfulness with-the 
-need for safety we've been working closely with Partners on 
-this release-and we're excited to share that in addition to 
-running the model locally-the now be able to deploy llama 
-3.1 across Partners like AWS datab bricks-Nvidia and grock 
-and it's all going live today at meta we believe in the 
-power of-Open Source and with today's release we're 
-furthering our commitment to the-community our new models 
-are being shared under an updated license that-allows 
-developers to use the outputs from llama to improve other 
-models this-includes outputs from 405b we expect synthetic 
-data generation and-distillation to be a popular use case 
-that enables new possibilities for-creating highly capable 
-smaller models and helping to advance AI research-starting 
-today we're rolling out llama 3.1 to meta AI users and 
-we're excited-to bring many of the new capabilities that 
-Angela outlined to users across-Facebook Messenger WhatsApp 
-and Instagram with the release of 3.1 we're-also taking the 
-next steps towards open- Source AI becoming the industry 
-standard-continuing in our commitment to a future where 
-greater access to AI models can-can help ecosystems Thrive 
-and solve some of the world's most pressing-challenges we 
-look forward to hearing your feedback and seeing what 
-the-developer Community will build with llama so that was 
-the announcement video-from meta but like I said there's 
-actually so much to dive into here and I-think genuinely 
-that this release is going to change the entire ecosystem 
-so-one of the things that most people did want to know was 
-of course the-benchmarks for L 3 405b so when we actually 
-take a look at-some of these benchmarks when one of the 
-things that we can see here is that this-is actually on par 
-with state-of-the-art models and something funny that I 
-did-actually find here was that Gemini 1.5 Pro isn't even 
-here so I'm guessing that-maybe that model is far superior 
-in those areas but what we can see here-across the board 
-and if you want just a quick glance essentially the 
-categories-the Llama bests the other models in are the 
-categories where it has the Box-around um and I think it's 
-crazy that currently what we're looking at here is-a model 
-that actually bests GPT 40 and clae 3.5 Sonet in many 
-different-category one of those being tool use and 
-multilingual and of course the GSM 8K-which is pretty crazy 
-and arguably you can see that the reasoning of this 
-model-is up to 96.9 which means that potentially 
-the-reasoning of this model is better than clae 3.5 Sonic 
-now of course this is all-well and good you know having 
-benchmarks that showcase that your model model is-doing 
-amazing things but one of the things we do have to always 
-look at is-of course the human evaluation as after all 
-these models will be used natively-by humans and that is by 
-far the most effective Benchmark to seeing how-effective 
-these models truly are but just on the surface level taking 
-a look-at what we do have here from a completely open model 
-and considering-the fact that these other models are much 
-larger in size as you do know GPT 4-allegedly was 1.8 
-trillion parameters meaning that if we compare that size 
-to-llama 3.1 being a 405 billion parameter model that means 
-that it is as good or-if not better than GPT 4 with a 4.5 
-times reduction in size which is just-completely remarkable 
-meaning that potentially people can have GPT 4-running 
-offline locally although yes it's going to be pretty 
-computer-intensive but this is something that is truly 
-shocking because it shows us the-trajectory that we're on 
-in terms of the size versus efficiency so I do think-that 
-this is genuinely the start of a new paradigm where we 
-start to get-Frontier capabilities available for free now 
-what we also did get from llama 3-was this right here so 
-you can see that they also did updated versions of 
-their-llama 38 billion parameter model and the 70 billion 
-parameter model which means-that they made even further 
-improvements now what this basically just means here-is 
-that in their respective sizes llama 3 is by far the best 
-model that you can-use you can see that Gemma 2 by Google 
-here is falling short in nearly every-single category other 
-than the arc challenge reasoning and we've got mixol-here 
-that also is falling short and of course you can see that 
-llama 3.1 the 70-billion parameter model actually does far 
-better than Mixr which is 8 * 22-billion parameters mixture 
-of experts and GPT 3.5 turbo and to be honest what-I'm 
-seeing here is that this llama 3.1 model it isn't just 
-marginally better-than the other models at the respective 
-sizes we can see that not only does it-surpass them in all 
-of the categories it manages to surpass them in a 
-clear-margin which is incredible like genuinely incredible 
-so overall if you-are someone that is using these small 
-models for whatever tools that you might-want to use them 
-for you can see that llama 3.1 a 70 billion parent model 
-is-super effective now like I said before if we look at the 
-human evaluations for-this model what we can see here that 
-it does hold up respectively against-state-of-the-art 
-models what we can see here is that around 70% of the time 
-to-60% of the time or 70% to 75% of the time it either wins 
-or ties the state of-the-art models that is really 
-impressive considering the size difference and the-cost to 
-use these models I mean imagine having an unlimited version 
-of Claude-3.5 Sonic I know so many people that are building 
-with those models that-unfortunately run into issues 
-because the model is just very expensive to use-so this 
-shows us here that versus gp4 it wins a lot more and vers 
-versus GPT 40-it does win a little bit less but it's still 
-very respective considering how-small the model is now I 
-know it's still pretty big but compared to the other-model 
-sizes this is just something that we never thought we'd see 
-now something-interesting that they also managed to talk 
-about was they managed to talk-about how this model was a 
-bit different in terms of the architecture so we can-see 
-here that they said we've made design choices that focus on 
-keeping the-model development process scalable and 
-straightforward we've opted for a-standard decoder only 
-transform model architecture with minor adapt-rather than 
-using a mixture of experts model to maximize training 
-stability so-I'm guessing that for whatever reason here and 
-of course the reason is that-they stated that they wanted 
-to keep everything super simple they decided-against using 
-a mixture of experts model and we can see here that that 
-this made-the model a lot more effective and I'm wondering 
-if this is going to be a-continued Trend as we move towards 
-a space because I did see a recent paper-in which they 
-actually did talk about and this was Google not meta but 
-they-actually did talk about a million experts so I'm 
-wondering if this is just-for open source models but it 
-will be interesting to see what continues on so-this is 
-where we get into the research part of this and you can see 
-here that-they talk about the Llama 3 her of models so it 
-says here that the paper-also presents the results of 
-experiments in which we integrate image video and-speech 
-capabilities into llama 3 via compositional approach now 
-that is-absolutely insane because what they're trying to do 
-here is to make this model-multimodal and what you can see 
-here is that they say we observe this approach-performs 
-competitively with state-ofthe-art on image video 
-and-speech recognition tasks the resulting models are not 
-yet being broadly-released as they are still underdeveloped 
-so essentially what they-have is they have image video and 
-speech recognition task which they can use but-these are 
-still under development and some of the stuff that I'm 
-seeing in-this research paper shows me that they're 
-actually pretty good so what we-can see here is that they 
-said as part of the three L 3 development process-we've 
-also developed multimodal extensions to the model enabling 
-image-recognition video recognition and speech 
-understanding capabilities they're still-under active 
-development and not yet ready for release in addition to 
-our-language modeling results the paper presents our 
-initial experiments with-those multimod model so what you 
-can see here is llama 3 vision and we can see-that this 
-model actually does really well at Vision tasks and some of 
-them it-even manages to surpass state-of-the-art models so 
-it says image understanding-and performance of our Vision 
-module attached to llama 3 so this looks rather-effective 
-because there aren't too many differences in terms of how 
-it performs-we can see that it performs a lot better than 
-GPT 4 Vision if you take a look-actually at GPT 4 Vision 
-you can see that in these categories even at the 
-ai2-diagram you can see that this is 94.1 and this is 78.2 
-so taking a look here-you can see that this actually does 
-better than the previous GPT 4 vision-and the reason that 
-it's crazy is because if you remember reading the-initial 
-GPT 4 Vision paper that paper was actually talking about 
-how crazy GPT-4 Vision was so I can't imagine all of the 
-use cases that are going to happen-when we actually do get 
-llama 3 as a vision assistant so that's going to be-really 
-amazing and what's even crazier is that there were only 
-marginal-improvements from llama 370 billion parameters to 
-llama 345 billion paramet-so we can see here that using 
-these different models like there's not that-much 
-discrepancy between how much the vision models are between 
-the 70 billion-and the 45 billion PR but overall this is 
-really good because image recognition-is relatively 
-expensive now we've also got video understanding and 
-what's-impressive here is that if we actually look at llama 
-370 billion parameter-model the video understanding model 
-that video understanding model actually-performs better 
-than Gemini 1.0 Ultra Gemini 1.0 Pro Gemini 1.5 Pro gp4 V 
-and-gbt 40 so that's pretty incredible that they managed to 
-supply deia in ter terms-of the video understanding model 
-and I got to be honest whilst yes you could-argue that 
-Gemini 1.5 Pro the video understanding is long context so 
-it's-kind of different in the sense that it can understand 
-what's going on over 2-million tokens I still find it 
-incredible that such a small model is-able to compete and 
-be on par with these giant multimodal model now 
-additionally-what we can see here is one of the features 
-that they actually spoke about-which is essentially the 
-audio conversations so you can see right here-this is a 
-screenshot from where someone is having a conversation out 
-loud I-guess that you could say this is quite similar to 
-GPT 40 you know the version-of chat gbt that you can 
-actually talk to like it's a person but you can see-here 
-that it's pretty crazy in the sense that it's able to 
-understand many-different languages and it's able to 
-understand that through natural speech-and not just text 
-which is a little bit different because understanding 
-the-pronunciations of certain words and of course the under 
-and of course how those-words are spoken is a really big 
-thing in terms of using AI now another thing-that they also 
-showed was this tool use and we can see right here that if 
-we-actually take a look at what's going on it says you know 
-can you describe what's-in this CSV then the model is able 
-to identify exactly what's going on in this-CSV which is 
-really nice because a feature that I didn't mention 
-was-actually that llama 3 is actually 128 tokens long so 
-it's a longer token-context length model and then you can 
-see right here it says can you PL it on-a Time series so 
-what it's also able to do is it's also able to use tools 
-to-execute different things so you can see right here that 
-the model is able to-essentially bring up this graph which 
-is really nice and then it's able to say-you know can you 
-plot the S&P 500 over the time in the same graph and then 
-it's-able to do that rather effectively now I think you 
-guys might underestimate-what's going on here because to 
-use is truly the next stage of these AI systems-and I think 
-this is truly how we get to systems that are you know 
-generally-intelligent because they're able to execute a 
-wider range of things you-utilizing all of the tools the 
-last thing that I'm going to leave you guys-with which is 
-pretty crazy is that they state that our experience in 
-developing-llama 3 suggest that substantial further 
-improvements of these models are on the-horizon which means 
-that they're basically saying that look llama 3 is-not the 
-best that we've going to give you there are so many 
-improvements that-we can make to AI models and we are just 
-scratching the surface of what's going-on now if you 
-enjoyed this video and you want to use LL 3 of course in 
-you're in-America you can just head on over to meta but if 
-you're in the UK the only-place that I know currently that 
-you can use this and I've even tried with a VPN-and it 
-doesn't work cuz you need an account to sign in and of 
-course by the-time this video is released that might have 
-changed but currently if you want-to use it right now is 
-after the video is released and you're in the UK 
-you're-going to have to use Gro which is a influence 
-platform where they basically-have super fast inference 
-then just head on over to this right here you can see-llama 
-3 45 billion parameters then of course you can use the 
-model right here-so that's the only way you can use it in 
-the UK I'm not sure if it's banned in-other regions but I 
-do know that you know currently uh meta AI is just 
-not-available right now in the UK but of course they're 
-going to roll it out on-many different platforms that you 
-know you're going to be able to serve it so-within 24 hours 
-that's not going to be a problem there's a billion 
-different-sites that are going to start hosting this but of 
-course if you did enjoy the-video hopefully this was of 
-some use to you and I'll see you guys in the next-one
+[Music] dear friends pray be Jesus and Mary as-usual as 
+every month I'm going to read for you the report of maor 
+July 18th-2024 on June 25th 2024 the Visionary Maria 
+received the-following monthly message dear children I 
+Rejoice with you and thank God for-permitting me to be with 
+you to lead you and love you little children peace is 
+in-danger and the family is under attack I'm calling you 
+little children-return to prayer in the family put Sacred 
+scripture in a visible place and-read it every day love God 
+above all that it may be good for you on Earth-thank you 
+for having responded to my call-[Music] a priest's heart in 
+danger father Rock-an American Parish priest with 15 years 
+of service was able to overcome an-obstacle that he thought 
+would be impossible to survive from the very-beginning of 
+his ministry he suffered great injustices certain people 
+spread-all sorts of negative and false things about him 
+destroying his reputation his-superiors believed these 
+Slanders prolonging this dark shroud over him for-a long 
+time father Rock suffered terribly and couldn't bring 
+himself to-forgive these slanderers one day he went to 
+confession-to a very experienced older priest who listened 
+to the story of Father Rock's-misfortunes and his 
+persistent inability to-forgive however rather than showing 
+him compassion and understanding the-Confessor unexpectedly 
+began to show father Rock his pride and-self-importance 
+telling him that he was leading his own life instead of 
+letting-it be led by God and His word he invited father 
+Rock not only to forgive his-enemies but also to wish them 
+well following this confession father-Rock felt completely 
+discouraged but in the nights that followed Jesus 
+worked-hard on his heart and he received the great grace to 
+forgive all those who-wanted to harm him moreover in this 
+unexpected outpouring of Mercy he-received the inner 
+certainty that if he forgave all this evil the Lord 
+himself-will protect and defend him in everything and that 
+is what happened the-bad mouthing stopped from then on his 
+Priestly heart was solidly mended today-he is a happy 
+priest he sees this blessing from God as the great light 
+of-his life as a priest the burst of a Divine joy that 
+freed him from fear and-sadness once again the Living Word 
+of Christ unlocked this heart that had been-trapped in 
+bitterness for Years love your enemies Jesus tells us do 
+good to-those who hate you bless those who curse you pray 
+for those who defame you what-you want men to do for you do 
+for them likewise Luke 6-27-31 enriched by this experience 
+father Rock now helps those who allow their-hearts to be 
+undermined and their lives to be ruined through bitterness 
+and the-desire for Revenge he told me this story a young 
+woman Anna generously lent-her house to her cousin without 
+charging her rent so that she could look after-her 
+grandmother the grandmother died 3 years later and Anna 
+wanted her house-back she needed to sell it to pay for 
+another house she had bought but the-cousin hired a lawyer 
+her own nephew to take the house from her they both-managed 
+to work around the LW of the land to fight Anna and she was 
+forced-out we can imagine how revolted Anna was father Rock 
+offered her a path if you-want the Lord to Reign Over your 
+property he said give him permission to-defend you himself 
+in order to do that I am asking you to go against your gut 
+and-ask God to forgive within you all the evil that your 
+your cousin and her-nephew have done against you and all 
+the evil that they have spread on you also-ask him to 
+ensure that they cannot keep this Otten property shortly 
+thereafter-Anna returned to the priest who questioned her 
+did you ask God for all-this or have you spoken badly about 
+your cousin to your loved ones yes I spoke-badly about her 
+I'm so angry then you haven't forgiven make a commitment 
+not-to say a single negative word about your cousin on the 
+contrary ask the Lord to-Grant her great blessings and to 
+save her soul a radical no to hate Anna felt-terrible she 
+knew that this was impossible for her her whole being 
+was-filled with revolt and hatred however she decided to 
+keep this commitment-through thick and thin and Faithfully 
+adhere to Father Rock's proposal because-she saw that the 
+light of God Shone through him 3 months later she 
+was-contacted by a real estate agent who had found a buyer 
+for the house and offered-to handle everything because the 
+buyer himself was a lawyer in the end-everything went 
+smoothly without acrimony the cousin understood that 
+she-was wasting her time trying to fight this honest lawyer 
+and it was a-beautiful victory for the kingdom of God Anna 
+got her house back she was able to-sell it and pay for the 
+new house she saw that God had acted powerfully for-she had 
+left him in control of the whole situation and had said a 
+radical no to-hatred let us never forget this it is God who 
+forgives within us forgiveness-is not natural to us but God 
+is the creator he alone can produce within us-the 
+Forgiveness that our wounded human nature rejects it is 
+like a new creation-it means bringing into existence 
+something that did not exist before he-forgave us sinners 
+the unforgivable for allowing him to die on the cross he 
+the-author of life he died forgiving out of pure love for 
+every one of us it is now-up to us to follow in the 
+footsteps of our master and believe that if he asks-us to 
+forgive it is because he has a plan of Peace for his 
+children a hidden-plan that will later on appear to us as a 
+wonderful-[Music] gift the Novena of night prayer on 
+the-podo was a unique and extraordinary event that took 
+place in June during The-Apparition on June 15th to Maria's 
+surprise our lady invited us all to pray-the rosary for 
+peace in the world before the 43rd anniversary of the 
+apparitions-between 10: p.m. and 11:30 p.m. during these N9 
+days the Blessed Mother-appeared to Maria at 11:30 p.m. and 
+prayer often continued with the Luminous-Mysteries there 
+was a huge response the hill was covered with people and no 
+one-wanted to miss this invitation outside of magigoria 
+thanks to internet-broadcasts millions of people 
+accompanied this prayer as if they were-actually there my 
+little personal testimony because I-am becoming frail in my 
+old age it was impossible for me to climb this 
+hill-especially nine nights in a row but that made me so 
+sad so I said to the Blessed-Mother at least let me take 
+the first steps with the crowd a generous brother-supported 
+my arm but from the first black cobblestones of the P BAU I 
+was-desperate saying to myself if I get as far as the first 
+joyful mystery that-would already be a miracle so we took a 
+break at that mystery and then we-continued the more we 
+went forwards the more I-felt strength coming to me it was 
+tangible so I was able to follow this-Naina to the top with 
+all these wonderful people of God of all Races-peoples and 
+languages which was an unspeakable joy we didn't want to 
+leave-the top of the hill what a great lesson when Mary 
+calls we must go and it is by-going that we receive from 
+her everything we need to fulfill her desire-for us if I 
+had waited until I felt the strength to climb I would have 
+stayed at-the bottom of the hill of course this shouldn't 
+be turned into an absolute-Rule now a question that 
+everyone asks themselves why did the theotokos ask us-for 
+this exceptional noena in the middle of the night among the 
+rocks many-responses have been published as far as I 
+concerned it is enough to note that-the Queen of Heaven and 
+Earth divinely sees the whole world and its inhabitants-she 
+knows the plans of God and also those of our enemy 
+Satan-knowing all this she asked for our help to promote 
+good to destroy an evil plan-and probably avoid the worst 
+out of love for her children she clearly sees 
+and-understands and tells us that the family is under 
+attack and that peace is in-danger so as a mother how could 
+she not count on the help of our prayer to-eradicate a good 
+dose of the evils that threaten us let us not forget 
+that-profound word she said on July 2nd 2014 dear children 
+I want all of you-with me in Eternity for you are part of 
+Me Without You Dear children I cannot-help the world I need 
+you to collaborate with me in every moment of your-[Music] 
+life a child screamed the scene takes-place at The 
+Magnificat Retreat Center in the small Chapel adjoining the 
+large-basement room a local family was invited to 
+The-Apparition with the Visionary Maria but when they 
+arrived the room was full they-decided to try the little 
+Gallery but that was too crowded so they went to sit-on the 
+steps leading to the gallery their 2-year-old little boy 
+Franjo was-there with his mother seated halfway up the 
+stairs they had a bird's eyee view-of what was going on 
+below the little boy had often heard about Jesus and 
+Mary-at home because he participated in family prayer every 
+day and there he was-on that busy day at Maria's Chapel to 
+make sure he wouldn't disturb others-during the prayer his 
+mother pregnant with her second put a pacifier in his-mouth 
+he was calm although uncomfortably Seated on those 
+small-steps below everyone got down on their knees at 
+Maria's-request as she did every day before The Apparition 
+Maria prayed the Joyful-Mysteries with the pilgrims and 
+then the sorrowful mysteries when her voice stops-sharply 
+it means that the Blessed Mother has arrived and Maria has 
+entered into-ecstasy her lips move but the sound of her 
+voice is cut off at this moment-there is a very collected 
+silence but no sooner had Maria's voice died down that-the 
+2-year-old baby threw out his pacifier with his left hand 
+and-immediately extended his right hand to the place where 
+Maria was standing a-short distance in front of him with 
+his right hand he sent kisses-and greetings and pointed to 
+the place where the Apparition was taking place in-front of 
+Maria his mother wondered what was happening then the child 
+broke the-silence and shouted gopper gopper his mother and 
+loved ones turned to him in-amazement throughout the whole 
+Apparition he never stopped sending-kisses while keeping 
+his face fixed in the direction of Maria in ecstasy he-kept 
+his eyes wide open fully absorbed in what was mysteriously 
+happening in-front of him he stared at that spot without 
+batching an-eye then after four or 5 minutes Maria lowered 
+her head a sign that our lady-had returned to heaven we 
+started praying the magnet of her cat the little-boy then 
+stopped sending kisses it was over he said nothing and went 
+back to-being the normal child he had been just a few 
+minutes earlier after that he-never saw the Blessed Mother 
+of God again what experts have analyzed and-sought to 
+understand for years what great Saints and Prophets have 
+dreamed-of seeing a 2-year-old who does not yet know how to 
+speak has seen with his own-eyes thank you Lord Jesus for 
+the children you have placed Among Us at 2-years of age 
+they are so so pure their innocence moves us the kingdom of 
+God-belongs to them and to all who are like them Jesus 
+tells us oh Lord please-protect the innocence of the 
+children of today May evil crash to the ground-before the 
+innocence of children evil has already been defeated by 
+the-innocence of a woman the one whose heart is 
+immaculate-[Music] dearest gospa more than ever in 
+these-times of trial we want to stop complaining and 
+instead contemplate what-is beautiful what your maternal 
+heart reveals to us and all the treasures of-love it 
+contains please help us lift our eyes to your son Jesus for 
+from his open-heart has sprung our salvation and the true 
+peace for which we long for so-anxiously may God bless you 
+all my dear friends in the name of the father and-the son 
+and the holy spirit amen [Music]-oh [Music]
