@@ -1,60 +1,58 @@
 # SUMMARY
-A video tutorial on building multimodal retrieval-augmented generation (RAG) systems, focusing on integrating text and images using various approaches.
+Father Gregory Pine discusses the importance of relationships and their development through common courtesy, common interests, and a common goal in his talk.
 
 # IDEAS:
-- Most existing rack systems focus solely on text.
-- Multimodal systems can enhance information retrieval by including images and tables.
-- The first approach involves embedding different modalities into a unified vector space.
-- Using models like CLIP can help create embeddings for both text and images.
-- The second approach grounds all modalities into a primary text modality.
-- Converting images to text descriptions can unify the data for retrieval.
-- Separate vector stores for different modalities can improve retrieval accuracy.
-- A multimodal ranker is necessary to determine the relevance of retrieved chunks.
-- CLIP stands for Contrastive Language-Image Pre-training, released by OpenAI in 2021.
-- OpenCLIP is an open-source implementation of the original CLIP model.
-- The tutorial will use Wikipedia articles as a data source for extraction.
-- The process can also be applied to PDFs and Word documents.
-- The video will demonstrate code implementation using Lama Index and Quadrant Vector Store.
-- Quantized embeddings can optimize vector store size and performance.
-- The tutorial will cover how to set up API keys for OpenAI models.
-- Users can run queries on the multimodal vector store to retrieve relevant information.
-- The results may vary based on the specificity of user queries.
-- Future videos will explore more complex multimodal RAG solutions.
+- Relationships are fundamental to human existence and fulfillment.
+- Many people desire meaningful relationships, even if they initially deny it.
+- Common courtesy is the most basic form of relationship interaction.
+- Tolerance allows for low-grade closeness but does not foster deeper connections.
+- Common interests facilitate richer conversations and shared experiences.
+- Friendliness is essential for engaging with others beyond mere tolerance.
+- A common goal creates a deeper bond and shared purpose in relationships.
+- Pursuing God as a common goal enhances relationships beyond human pursuits.
+- The mystical body of Christ fosters unity and diminishes jealousy among believers.
+- Sacrificing for a common goal can strengthen familial bonds in religious contexts.
+- Relationships thrive when both parties are drawn towards a higher purpose.
+- True closeness in relationships is achieved through shared pursuits and goals.
+- Emotional struggles in relationships can arise from conflicting desires for closeness and independence.
+- The pursuit of God offers an unexhausted source of fulfillment in relationships.
+- Relationships can be enriched by recognizing the divine in each other.
+- The concept of love is central to achieving meaningful relationships.
 
 # QUOTES:
-- "Having the ability to not only be able to ask questions related to the text... but also retrieve the corresponding multimedia documents is extremely helpful."
-- "This is going to be the first iteration and later on we're going to build a very powerful system."
-- "The first approach is to embed all different modalities into a single Vector space."
-- "We will need to have this extra multimodal ranker that needs to be a capable model."
-- "CLIP stands for contrastive language image pre-training."
-- "OpenCLIP is an open-source implementation of the original CLIP model."
-- "The process took a little bit of time and the resultant Vector store has a size of almost 300 MB."
-- "You can do the same process with PDFs as well."
-- "If you're looking for very specific information you could provide much more customized queries."
-- "I hope you found this video useful."
+- "We are made to live in relationships and we only come to our perfection in relationships."
+- "I want somebody closer to me than my sadness and anger."
+- "Tolerance doesn’t really seek to change oneself or the other."
+- "Common interests go beyond mere tolerance."
+- "When you take for your end God himself, it outpaces all of our human pursuits."
+- "In the Christian sense, the virtue at work here would be love."
+- "You can only have each other wholly and fully if you proceed towards the same goal."
+- "God is the only good that cannot be exhausted by our pursuits."
+- "When you give God your son or daughter, you can have them on those terms."
+- "The efficacy of this common goal paradigm allows for deeper connections."
 
 # FACTS:
-- Most rack systems are primarily focused on text only.
-- CLIP was released by OpenAI in 2021.
-- OpenCLIP is trained on more data than the original CLIP model.
-- The tutorial uses Wikipedia articles for data extraction.
-- The process can be applied to various document types, including PDFs and Word files.
-- Quantized embeddings can balance performance and speed increase.
-- The video discusses using Lama Index and Quadrant Vector Store for implementation.
-- The resultant vector store from the tutorial is approximately 300 MB in size.
+- Aristotle described man as a political animal, emphasizing social nature.
+- St. Thomas Aquinas stated that humans are made for relationships.
+- The concept of the mystical body of Christ is central to Christian unity.
+- Sacrifices made in religious life can lead to deeper familial connections.
+- Emotional struggles often stem from conflicting desires for closeness and independence.
 
 # REFERENCES:
-- Wikipedia articles (RoboCop, Labor Party, SpaceX, OpenAI).
-- CLIP model by OpenAI.
-- OpenCLIP (open-source implementation).
-- Lama Index for code implementation.
-- Quadrant Vector Store for managing embeddings.
+- Dominican House of Studies
+- Theistic Institute
+- Aristotle's philosophy on human nature
+- St. Thomas Aquinas' teachings on relationships
+- The concept of the mystical body in Christianity
 
 # RECOMMENDATIONS:
-- Explore multimodal RAG systems for enhanced information retrieval.
-- Use CLIP or similar models for creating unified embeddings of text and images.
-- Consider grounding different modalities into a primary text modality for simplicity.
-- Implement separate vector stores for improved retrieval accuracy across modalities.
-- Utilize quantized embeddings to optimize vector store performance.
-- Experiment with customized queries for more specific information retrieval.
-- Follow future videos for advanced solutions in multimodal RAG systems.
+- Engage in common courtesy to foster basic relationships.
+- Invest time in discovering common interests with others.
+- Pursue shared goals to deepen connections with loved ones.
+- Embrace the idea of love as a guiding principle in relationships.
+- Recognize the divine presence in each other to enrich interactions.
+- Encourage open discussions about emotional struggles in relationships.
+- Support family members' spiritual journeys as a means of connection.
+- Reflect on how shared pursuits can enhance relational dynamics.
+- Foster environments where meaningful conversations can occur. 
+- Prioritize the pursuit of God as a central theme in relationships.
