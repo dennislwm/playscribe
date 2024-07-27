@@ -1,9 +1,21 @@
 name: Publish Docker
-
+#+-----------------------------------------------------------------------------------------+
+#|                            E X T E R N A L   T R I G G E R S                            |
+#+-----------------------------------------------------------------------------------------+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+# * * * * *  UTC (Convert to Singapore: +0800)
+# ┬ ┬ ┬ ┬ ┬
+# │ │ │ │ └───── day of week (0 - 7) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+# │ │ │ └────────── month (1 - 12)
+# │ │ └─────────────── day of month (1 - 31)
+# │ └──────────────────── hour (0 - 23)
+# └───────────────────────── min (0 - 59)
 on:
   push:
     branches: [ main ]
     paths: [ Dockerfile, .github/workflows/dockerhub.yml ]
+  schedule: [ cron:  '1 0 * * *' ]
 
 jobs:
   build:
@@ -17,6 +29,13 @@ jobs:
     - name: Build Docker image
       run: |
         DOCKER_BUILDKIT=1 docker build -t playscribe .
+    - uses: trstringer/manual-approval@v1
+      with:
+        secret: ${{ github.TOKEN }}
+        approvers: dennislwm
+        minimum-approvals: 1
+        issue-title: "Publish docker image to DockerHub"
+        issue-body: "Please approve or deny the deployment."
     - name: Publish Docker image
       env:
         DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
