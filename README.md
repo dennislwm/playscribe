@@ -102,7 +102,7 @@ flowchart TD
   end
 
   subgraph GitHub CD Actions
-    cd01["Build Docker image"]-->cd02["Publish Docker image"]-->cd03["Validate Docker image"]
+    cd01["Build Docker image"]-->cd02["Publish Docker image"]-->cd03["Manual Approval"]-->cd04["Validate Docker image"]
   end
 ```
 
@@ -214,7 +214,7 @@ on:
   push:
     branches: [ main ]
     paths: [ Dockerfile, .github/workflows/dockerhub.yml ]
-+ schedule: [ cron:  '1 0 * * *' ]
++ schedule: [ cron:  '1 0 * * 5' ]  # At 01:00 on Friday
 ```
 
 2. Run the `git` add, commit and push to update the file in GitHub repository.
