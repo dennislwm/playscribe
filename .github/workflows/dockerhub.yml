@@ -30,6 +30,7 @@ jobs:
       run: |
         DOCKER_BUILDKIT=1 docker build -t playscribe .
     - uses: trstringer/manual-approval@v1
+      timeout-minutes: 5
       with:
         secret: ${{ github.TOKEN }}
         approvers: dennislwm
