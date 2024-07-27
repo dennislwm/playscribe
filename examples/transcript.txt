@@ -1,1 +1,288 @@
-
+welcome to this video on building multimodal rack systems 
+most of the rack-systems that we have seen so far are 
+primarily focused on text only however-if you look at this 
+entry on Wikipedia related to SpaceX you can see that 
+there-are a lot of different images which can be extremely 
+helpful when you're trying-to retrieve some information 
+from this web page similarly there are tables as-well which 
+contain a lot of useful information so having the ability 
+to not-only be able to ask questions related to the text 
+that is present in a web page-or document but also retrieve 
+the corresponding uh multimedia documents so-for example 
+images or tables is extremely helpful uh when it comes 
+to-building rag systems in this video I'm going to show you 
+an approach in which-we are going to be able to retrieve um 
+images along with the text related to a-query this is going 
+to be the first iteration and later on we're going to 
+to-build a very powerful system which will also contain 
+information extracted from-tables to start off we're going 
+to just look at uh information contain in-Wikipedia pages 
+but the same approach can be applied to any other sorts 
+of-documents including PDFs or Word documents we are going 
+to look at three-different approaches that you can use for 
+multimodal rag the focus of this-video is going to be on 
+the first system the first approach is to embed 
+all-different modalities into a single Vector space-so 
+let's assume we have the input data which is a document we 
+extract text and-images separately from those and then we 
+create which are which can work across-both images and text 
+so for example one option would be to use something like 
+a-clip model which we're going to go into a lot more 
+details later in the video-and you create that unified 
+Vector space and put this in our Vector store so when-a 
+user query comes in we create embeddings for our query then 
+do-retrieval on this unified Vector space and then use the 
+retrieved document as-our context we can pass this through 
+a multimodel llm if there are images-retrieved as a part of 
+the context to generate final responses this is one of-the 
+simplest approach but it will require a very capable 
+multimodal-embedding model now the second approach is to 
+ground all the different-modalities that we have into a 
+primary modality which is text in this case so-let me 
+explain how this process works we have our input data we 
+extract text and-images for text we create text embedding 
+embeddings like uh using open text-embeddings but for 
+images we are going to pass this through a multi model 
+model-something like gp4 or Gemini Pro or even the cloud 
+models to generate text-descriptions of the images that we 
+are passing on and then we take those test-text description 
+along with the image data uh to create text embeddings 
+of-this image description and then we put them into a 
+unified Vector store so when-a user query comes in now the 
+retrieval is happening on this unified text uh-Vector space 
+because we converted everything into a single modality we 
+get-the retrieved context but within the context then we 
+see that in the content-that was retrieved whether it's 
+text or images so if it's text we directly pass-the through 
+the llm to generate responses however if it contains 
+images-based on the description or chunks that we have 
+created then we pass those-through a multimodel model to 
+generate final responses now this is a great-approach uh 
+because we are just unifying everything into a single uh 
+modality-however uh since the focus is going to be on text 
+it can potentially lose some-nuances from the original 
+images the third approach is to use separate Vector-stores 
+for different modalities let me explain this with the help 
+of this-flowchart so for the text data we create text 
+embeddings and put them in a text-Vector store for the 
+images we use a specialized model that is going to-create 
+embeddings from images so we basically encode those and 
+have a-completely separate Vector store for images now when 
+the user query comes in-we're going to do retrial 
+separately based on the text embeddings as well as-we'll 
+convert that query into the corresponding image embeddings 
+such as-using a clip model and then do retrieval on top of 
+this image retrieval uh or-image Vector store as well now 
+from both of them we will get separate chunks-depending on 
+how many chunks we want so let's say we want top three 
+chunks from-the text and top top three chunks from the 
+image uh chunks now we need to-actually use a multimodal 
+ranker because we want to rank these chunks that we get-and 
+figure out which chunks are the most relevant chunks then 
+we get the most-relevant chunks pass this through the 
+multimodel model to get a final response-now in this case 
+we will need to have this extra multimodel ranker that 
+needs-to be a capable model which can understand whether 
+the images or the-text chunks are more important for a 
+specific query in this video our focus-is going to be on 
+the first approach where we're going to be using a 
+clip-model to generate a unified Vector space but in the 
+later videos we're going to-be looking at these a lot more 
+complex solutions to do multimodal rag if you're-not 
+familiar with clip it is a model that was released back in 
+2021 by open-AI there has been a couple of open source 
+iterations of this model and clip-stands for contrastive 
+language image pre-training so it's a neural 
+network-accepts both images as well as text as Pairs and it 
+can create embeddings which-are basically cross-sectional 
+between the image and text embeddings that can-describe 
+different Concepts that are present in images so apart from 
+the-original clip model there is a new initiative called 
+open clip this is an-open source implementation of the 
+original clip model uh and I think this-is trained on a lot 
+more data than that was done on the original clip so 
+I'll-put a link to the original clip paper let me know if 
+you want a tutorial on-the technical details I can do that 
+if there is interest all right so now with-this technical 
+background let's look at an actual code-implementation a 
+quick correction here's the flow that we are going to 
+be-actually implementing so it's going to be a little bit 
+different than the-option one that we saw so our data is 
+going to be in the form of uh Wikipedia-web pages same flow 
+will apply to PDF files as well so we'll extract images-and 
+text chunks separately we will use clip embeddings for the 
+images and text-embeddings for our text Trunks and we're 
+going to create two Vector stores that-are going to be Bine 
+into a multimodel vector store and for that we're going 
+to-be using uh the quadrant Vector store then when the new 
+user query comes in we-will do retrieval on top of the 
+multimodel vector store that we created-and the result is 
+going to be uh we're going to get three chunks or up to 
+top-three chunks from the text chunks and up to five images 
+that the clip model-things are most similar to the provided 
+user crate and we'll just display the-text chunks and the 
+corresponding images this is going to be just limited to 
+the-retrieval part we are going to do the generation part 
+in a later video okay so-with this cor quick correction 
+back to the rest of the video let's look at a-code example 
+this is based on a notebook provided by Lama index and in 
+this-tutorial we going to be using Lama index uh later on 
+I'll show you how to use-Lang chain as well in a subsequent 
+video so as a source of information we will be-using some 
+Wikipedia articles and the way this is going to work is 
+that we are-going to take the text separately and then 
+extract those images present in-these different articles 
+those separately we use we will use the clip-model to 
+generate embeddings for those images and GPT embeddings 
+which is-basically the small embeddings from openi for the 
+text chunks that we are-going to be extracting now the clip 
+is trained to understand and connect images-and text in 
+shared embedding space so we can use that shared embedding 
+space to-ask questions when we are doing retrieval so first 
+we need to download-text and raw images from Wikipedia 
+article articles and we're going to use-several different 
+Wikipedia articles to show you what kind of extraction 
+that-you can expect so let's first set up different 
+packages that we will need so-we're going to install Lama 
+index and quadrant quadrant is going to be our-Vector store 
+in this specific case we will also install the 
+clip-implementation from openai so once we do the 
+installation the next step is to-basically download the 
+data from Wikipedia so we're going to be looking-at four 
+different articles one is RoboCop the other one is labor 
+party-from UK SpaceX and open AI so this script will get a 
+list of different-topics and then download the 
+corresponding Wikipedia art articles for-you so this 
+basically extracts the text portion from those articles and 
+we can-have a look here so for example this is the open AI 
+related article in Wikipedia-this one is Robo and this one 
+is related to SpaceX and here are the actual-articles on 
+Wikipedia the next step is going to be to download and 
+extract and-download images from those articles now if you 
+can do the same process with PDFs-as well so for example 
+you can use something like unstructured to extract-images 
+tables and text and then partition them into a separate 
+different-files so that process is going to work for PDF 
+files or even Word files as well-so in the second istion 
+what we are doing is we are um getting images uh-from each 
+of the Wikipedia articles so this Loop basically goes 
+through each-Wikipedia article and downloads images from 
+there now um there are cases in-which you will not be able 
+to download some of the images because the way I-think the 
+Wikipedia pages are set up and sometimes you have trouble 
+downloading-specific images so if you run that process if 
+you run this code and there-are certain images that you are 
+not going to be able to download here it-will just show you 
+that no imag is found on a given Wikipedia page this one is 
+I-think related to the labor party article there are some 
+other images as well and-I think these are probably related 
+to RoboCop Wikipedia in now we're going to-be using using 
+the open AI embedding model so we need to set up the open 
+AI-API key in my case everything is set up in the secrets 
+of Google collab if you-want to run this locally you will 
+need to set the API key as environment-variable okay next 
+we need to set up our Vector stores so this is going to be 
+a-little different than in the flow chart I showed you 
+we're going to compute-embeddings separately both for text 
+and images and then put them in a multimodal-vector store 
+now in this example example we're going to be using 
+quadrant because-quadrant supports multimodalities so it 
+can process both image and text-embeddings some of the 
+other clients like f doesn't have that ability so-that's 
+why we chose quadron in this specific case so first we need 
+to create-a base embeding client and then we need to create 
+different collections so-collections is basically a subset 
+of embedding vectors the first one is going-to be the text 
+embedding store so we provide our client and the name is 
+text-collection 01 the second one is going to be 
+specifically for images where we want-to use the uh clip 
+model to generate uh vector or vector ellings for the 
+images-and then we will start storage context so this is 
+the way you set up Vector-stores in Lama index so we are 
+going to create a single Vector store both for-image as 
+well as for text and we wrap this around inside the 
+multimodel vector-store index that is a vector store 
+specifically designed for storing-multimodel embeddings and 
+the way this is setup is that we read everything that-is in 
+that folder which we downloaded so it will read both images 
+as well as text-and it will chunk the text by default I 
+think it's about 800 tokens per chunk-right you can set 
+those values and change those if need be and we will 
+also-create embeddings for those images as well the process 
+took a little bit of-time and the resultant Vector store 
+has a size of almost 300 mbes so it is-pretty big embedding 
+size now you can actually reduce the size of your 
+vector-store uh by using quantized embeddings which gives 
+you pretty good balance-between performance and a speed 
+increase I'm going to be creating a video on that-because I 
+think it's a very important topic if you're trying to Pro 
+put these-rag systems in production with support for a 
+large Corpus of data-okay after that we just are using a 
+simple function called plot images to-randomly sample some 
+of the images that are present in the Corpus and you 
+can-see there are a number of different images of different 
+individuals here is-an image of initial version of Robocop 
+and I think there is an image of Sam-Alman that is probably 
+coming from the openi article here's an image of Elon-Musk 
+that is probably coming from the Tesla article or SpaceX 
+SpaceX article-in this case now you can just run queries on 
+top of the vector store that-you created so for example 
+here's a query what is the label party now the-way we do it 
+is we take that multimodal Vector store that we created we 
+say that-okay give me a top similar image similarity of 
+five with uh text-similarity of three so we want to have 
+three most similar retrieved chunks from-the text and up to 
+five images based on this specific query right now you 
+will-see that the query results in some cases are not great 
+because it will need a lot-more context uh and we probably 
+want to run these images through a vision model-to uh 
+generate a text description but uh here are the results uh 
+if you look at-it we get the initial text chunks so here's 
+the first chunk the second chunk-then here's the third 
+chunk and then at the end we have information 
+regarding-specific images that uh the embedding model 
+things are closely related to the-query that we are 
+providing so just to kind of give you a much better 
+overview-uh here are the text trunks so it says the labor 
+party is a Social Democratic-po political party in the UK 
+that has been described as being an alliance of-social 
+Democrats Democratic socialists and trade unions right so 
+this is-basically goes on and show us the different chunks 
+that we have and then-the corresponding images that the 
+embedding model was able to-retrieve based on that query 
+now you will see that the queries are not really-specific 
+so it will just pick some images that it thinks are 
+closely-related but if you're looking for very specific 
+information you could provide-much more customized queries 
+in that case so here is another one who created-RoboCop so 
+again it talks about that RoboCop is-1987 American Science 
+Fiction action film created by Paul right written by-Edward 
+so I'm not even going to try to pronounce their last names 
+so it-returned three different text chunks and then it also 
+return five different-images that it thinks are closely 
+related to the query that we have-provided so pretty 
+interesting stuff now similarly when it comes to open AI 
+again-we get three different chunks of text and five 
+different images now in this-case somehow it also confused 
+the labor party because I think there are not-probably 
+enough images for it to retrieve related to openi from 
+the-article so it also added some images from the labor 
+party article as well-when I said which company makes Tesla 
+so there is not a specific article article-related to Tesla 
+but I think in the article related to SpaceX it has 
+some-information related to Tesla so it talks about SpaceX 
+business and I think there-is probably an image of Elon 
+Musk in that article so it actually retrieved-that image as 
+well for us okay so in this case we only did the retrieval 
+part-but in order to build the whole end to endend Rack 
+system then uh we will need-to have another step on top of 
+this which we look at the chunks that are-being retrieved 
+by the image model or the image embedding model as well as 
+the-text embedding model and so somehow combine them 
+together to generate a-final response so if you are 
+interested in the end to end system I will be-creating 
+subsequent videos on this topic and we're going to look at 
+more more-advanced Solutions so make sure to subscribe to 
+the channel so you don't-miss that video I hope you found 
+this video useful uh thanks for watching and-as always see 
+you in the next one
