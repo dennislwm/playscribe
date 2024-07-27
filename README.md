@@ -4,38 +4,100 @@
 # 1. Introduction
 ## 1.1. Purpose
 
-This document describes the `playscribe` automation and manual services that is provided for DevSecOps Engineer, Mac and Mobile Users.
+This document describes the `playscribe` automation and manual services that is provided for DevSecOps Engineer and User.
 
 ## 1.2. Audience
 
 The audience for this document includes:
 
-* Mobile User who will add URLs, via Bookmark or Email, and consume RSS feeds on their iPhone device.
+* User who will send a command with YouTube URL via a Telegram Bot, and receive a text with summarization of its transcript.
 
-* Mac User who will add URLs, via Bookmark or Email, consume RSS feeds, and query text from an archive on their workstation.
-
-* DevSecOps Engineer who will design system workflows, configure any SaaS or selfhosted services, and plan for disaster recovery.
+* DevSecOps Engineer who will design system workflows, configure and manage any SaaS or selfhosted services, and plan for disaster recovery.
 
 ---
 # 2. System Overview
 ## 2.1. Benefits and Values
 
-1. This system leverages on and applies a similar design from the [playboard](https://github.com/dennislwm/playboard) automation to its workflow.
+1. This transcription-as-a-service leverages on and applies a similar design from the [SudokuCliBot](https://dennislwm.netlify.app/posts/look-mum-no-servers/) automation to its workflow.
 
-2. The Mobile or Mac User will add a YouTube URL with tag `youtube` that is analogous to sending a message to a queue.
+2. This service uses resources in both a free tier and a pay-per-usage tier by cloud SaaS providers:
 
-3. The messages are sent to an SaaS application (**Pinboard.in**), which manages the URLs and provides separate RSS feeds for different tags that can be consumed.
+  |   Free    | Pay-per-usage |
+  |:---------:|:-------------:|
+  | Pipedream |    ChatGPT    |
+  |  GitHub   |               |
+  | Telegram  |               |
 
-4. Currently there isn't an automated process to consume the RSS feed, process a URL and publish the result.
+3. This service is inexpensive, easy to implement, and can be duplicated for other services.
+
+4. This service does not require implementing a custom frontend as the User will interact with a Telegram Bot.
+
+5. This service does not require a backend server as the processing will be performed using ephemeral resources.
 
 ## 2.2. Workflow
 
 This project uses several methods and products to optimize your workflow.
-- Uses a SaaS application (**Pinboard.in**) to produce Bookmarks using a Bookmarklet or by sending an Email.
-- Uses a SaaS application (**Pinboard.in**) to manage Bookmarks and share them as separate RSS feeds using Tags.
-- Uses a MacOS/iOS application (**NetNewsWire**) to consume individual RSS feeds and save them to a cloud storage.
-- Uses a Cloud Storage (**OneDrive.com**) to read, write and synchronise the RSS feeds.
-- Uses a Continuous Integration pipeline (**GitHub Actions**) to consume an RSS feed, process a Bookmark and publish the result.
+- Uses a version control system (**GitHub**) to track your changes and collaborate with others.
+- Uses a diagram as code tool (**Mermaid**) to draw any system design or diagram.
+- Uses a Python LLM-enabled CLI (**[fabric](https://github.com/danielmiessler/fabric)**) to automate summarization of a transcript.
+- Uses a cloud LLM (**ChatGPT**) to provide an LLM API function.
+- Uses a build tool (**Makefile**) to automate your build tasks.
+- Uses a containerization platform (**Docker**) to run your application in any environment.
+- Uses a continuous delivery pipeline (**GitHub Actions**) to download and summarize a YouTube transcript.
+- Uses a continuous integration pipeline (**GitHub Actions**) to automate your Docker image build and deployment.
+- Uses an artifactory (**Docker Hub**) to store and pull your image.
+- Uses a cloud workflow automation and integration tool (**Pipedream**) to integrate the differnent services.
+- Uses a cloud message application (**Telegram**) as a chat messaging service.
+- Uses a cloud messaging bot (**Telegram Bot**) for a transcription as a service.
+
+## 2.3. Limitation
+
+This project has several limitations:
+- The Telegram Bot has a content limit for messages sent to the User.
+- The pipeline job may exceed the time of the fixed delayed step in the workflow.
+- The message is truncated after `40` lines and will include a link to the file `examples/result.txt`. However, the content of this file may be overridden by another pipeline.
+
+## 2.4. High Level Overview of System
+
+This is a high level overview of the system design and resources:
+
+1. The User sends a command with YouTube URL, i.e. `/<command> <URL>`, to a Telegram Bot that will trigger an automation workflow.
+
+2. The workflow updates the file content of this GitHub project, which will trigger a CI pipeline.
+
+3. The CI pipeline runs the application and saves the transcript in a file `examples/result.txt`.
+
+4. After a delayed step, the workflow automatically reads, and truncates the file content of the transcript.
+
+5. The workflow then replies the User with a message containing the truncated transcript and a link.
+
+```mermaid
+%%{ init: { 'theme': 'dark' } }%%
+flowchart TD
+  user01["Sends a command with YouTube URL"]
+  user02["Receives a message with truncated transcript and link"]
+  subgraph User
+    start("Start Telegram Bot")-->user01-->user02-->finish("End Telegram Bot")
+  end
+
+  flow_step01["Telegram Bot Command Received"]
+  flow_step02["GitHub Update File Content"]
+  flow_step04["GitHub Get File Content"]
+  flow_step06["Telegram Bot Reply Message"]
+  subgraph Pipedream Workflow
+    user01-->flow_step01
+    flow_step01-->flow_step02-->step03("Workflow Delay")-->flow_step04-->step05("Python Truncate Transcript")-->flow_step06
+    flow_step06-->user02
+  end
+
+  subgraph GitHub CI Actions
+    flow_step02-->job01["Setup Python on Ubuntu"]-->job02["Install Python dependencies"]-->job03["Pull custom Docker image"]-->job04["Run application and save transcript"]-->flow_step04
+  end
+
+  subgraph GitHub CD Actions
+    cd01["Build Docker image"]-->cd02["Publish Docker image"]-->cd03["Validate Docker image"]
+  end
+```
 
 ---
 # 3. User Personas
@@ -141,7 +203,10 @@ college I was never taught the right technique and so I
 
 The following resources were used as a single-use reference.
 
-|                                                                                  Title                                                                                  |    Author     |
-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------:|
-| [How to extract closed caption transcript from YouTube video?](https://stackoverflow.com/questions/9611397/how-to-extract-closed-caption-transcript-from-youtube-video) | StackOverflow |
+|                                         Title                                         |    Author     |
+|:-------------------------------------------------------------------------------------:|:-------------:|
+| [Look Mum, No Servers! Create a Telegram Bot to communicate with GitHub Actions][r01] |  Dennis Lee   |
+|          [How to extract closed caption transcript from YouTube video?][r02]          | StackOverflow |
 
+[r01]: https://dennislwm.netlify.app/posts/look-mum-no-servers
+[r02]: https://stackoverflow.com/questions/9611397/how-to-extract-closed-caption-transcript-from-youtube-video

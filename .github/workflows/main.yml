@@ -3,10 +3,10 @@ name: Python application
 on:
   pull_request:
     branches: [ main ]
-    paths-ignore: [ Dockerfile, .github/workflows/dockerhub.yml ]
+    paths-ignore: [ Dockerfile, .github/workflows/dockerhub.yml, README.md, examples/result.txt, examples/transcript.txt ]
   push:
     branches: [ main ]
-    paths-ignore: [ Dockerfile, .github/workflows/dockerhub.yml ]
+    paths-ignore: [ Dockerfile, .github/workflows/dockerhub.yml, README.md, examples/result.txt, examples/transcript.txt ]
 
 jobs:
   build:
