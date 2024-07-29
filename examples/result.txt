@@ -1,53 +1,60 @@
 # SUMMARY
-Peter Attia discusses the importance of health and longevity, emphasizing that improving health can significantly extend lifespan.
+Eduardo discusses the third chapter of "AI Engineering" by Chipan, focusing on evaluation methodologies for AI applications and how to measure their effectiveness.
 
 # IDEAS:
-- Three-quarters of lifespan benefits come from pursuing better health.
-- Focusing on strength, endurance, and emotional health can optimize lifespan.
-- Longevity is defined as a combination of lifespan and health span.
-- Health span includes physical, cognitive, and emotional components.
-- Emotional health can improve with age, contrary to physical and cognitive decline.
-- Medicine 1.0 was largely ineffective, focusing on symptoms rather than prevention.
-- Medicine 2.0 improved lifespan through scientific advancements but has limitations.
-- Medicine 3.0 emphasizes prevention and equal focus on health span and lifespan.
-- The "Four Horsemen" of death include cardiovascular disease, cancer, neurodegenerative diseases, and metabolic diseases.
-- Exercise is the most impactful intervention for both lifespan and health span.
-- The Centenarian Decathlon is a framework for training to maintain functionality in later life.
-- Nutrition's primary determinant is energy balance, with protein being crucial for health.
-- Sleep deprivation negatively impacts cognition and physical health.
-- Emotional health is essential for overall well-being and longevity.
-- Starting with one area of improvement can lead to better overall health.
+- Evaluation methodologies are crucial for measuring AI application effectiveness.
+- AI applications should serve a clear purpose for users.
+- Non-deterministic responses from AI complicate performance measurement.
+- Techniques like A/B testing and multi-arm bandits can assess user outcomes.
+- Functional correctness checks if generated outputs meet predefined tests.
+- Comparison tests evaluate outputs against a dataset of golden answers.
+- Human evaluators provide better correlation to perceived correctness than automated methods.
+- AI can serve as a judge, but its reliability depends on transparency.
+- Perplexity measures how well a model captures underlying data.
+- Higher perplexity indicates greater uncertainty in predictions.
+- Context length affects perplexity; more context leads to lower perplexity.
+- Structured data reduces decision-making complexity for models.
+- The importance of understanding the evaluation process for developers.
+- Subtle changes in AI performance can be hard to detect.
+- User feedback is essential for evaluating AI effectiveness.
+- Consistency in evaluation methods is critical for accurate assessments.
 
 # QUOTES:
-- "If you only focused on those things... I still believe you would capture three-quarters of the way towards optimizing your lifespan."
-- "Longevity is a function made up of two vectors: lifespan and health span."
-- "The physical component of health span... very predictably declines with age."
-- "You can think of this kind of at the level of just a thought experiment."
-- "The single most important input from nutrition to a person's overall health is energy balance."
-- "Exercise really is the king of interventions."
-- "The Centenarian Decathlon... is a mental model to say what are the most important activities."
-- "Without emotional health, the other ones don’t matter."
-- "It’s not a race... finding something that you think you’re going to be successful in would be the best first place to start."
+- "Every AI app needs to serve a purpose and we need to measure if it is achieving that purpose."
+- "Due to the nature of non-deterministic responses, it's hard to pinpoint if it's actually improving or not."
+- "Functional correctness... does it pass the test some test that I set up for that code?"
+- "Human in the loop can help on this."
+- "AI as a judge... has high agreement with human evaluators."
+- "You need to have control over the evaluation for your use case."
+- "The more uncertainty the model has in predicting what comes next, the higher the perplexity."
+- "The higher the context length, the lower the perplexity."
+- "If you give structured data... the model needs to make less decisions on what to do next."
+- "It's hard to make a judgment on what you should do as a developer based on AI as a judge."
 
 # FACTS:
-- Lifespan has doubled in the last century due to medical advancements.
-- The average life expectancy was in the late 30s or early 40s before modern medicine.
-- Cardiovascular disease is the leading cause of death globally.
-- Approximately 70% of the population is overnourished or obese.
-- Emotional health tends to improve statistically after the late 40s.
-- The Centenarian Decathlon focuses on maintaining functionality in later life.
-- Most chronic diseases are preventable through lifestyle changes.
+- A/B testing and multi-arm bandits are techniques used for evaluating AI applications.
+- Functional correctness is a method to ensure generated outputs meet specific criteria.
+- Perplexity is a common metric used to evaluate language models.
+- The complexity of vocabulary can increase perplexity in models.
+- Human evaluators often provide better insights than automated evaluations.
+- AI judges can be costly and inconsistent in their assessments.
+- The evaluation of AI applications involves multiple decision points.
+- Non-deterministic responses from AI can lead to challenges in performance measurement.
+- The evaluation process can be influenced by changes in model behavior or evaluator standards.
 
 # REFERENCES:
-- Peter Attia's podcast episodes discussing longevity and health span.
-- The concept of Medicine 1.0, 2.0, and 3.0.
-- The Centenarian Decathlon framework for training.
-- Research studies on sleep deprivation and its effects on health.
+- "AI Engineering" by Chipan
+- Techniques like A/B testing and multi-arm bandits
+- Functional correctness tests
+- Comparison tests against datasets of golden answers
+- Perplexity as a metric for language models
 
 # RECOMMENDATIONS:
-- Focus on improving strength, endurance, and emotional well-being for longevity.
-- Prioritize sleep hygiene by maintaining a consistent sleep schedule and creating a conducive sleep environment.
-- Start with one area of health improvement to avoid feeling overwhelmed.
-- Incorporate regular exercise as a key component of a healthy lifestyle.
-- Monitor energy balance and ensure adequate protein intake in your diet.
-- Engage in activities that promote emotional health and well-being.
+- Implement A/B testing to measure user outcomes effectively.
+- Use functional correctness checks during development phases.
+- Incorporate human evaluators in the assessment process for better accuracy.
+- Maintain transparency when using AI as a judge for evaluations.
+- Regularly review and adjust evaluation methodologies based on user feedback.
+- Understand the implications of perplexity in model performance assessments.
+- Provide ample context to models to reduce perplexity and improve predictions.
+- Explore structured data formats to simplify model decision-making processes.
