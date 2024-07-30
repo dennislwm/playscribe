@@ -1,70 +1,61 @@
 # SUMMARY
-Andrea and Beus discuss Pope Francis's life and papacy with Father Ignacius, focusing on his themes of poverty, peace, and preparation for his visit to Singapore.
+Kei from Investment Modes discusses the Safe Withdrawal Rate (SWR) framework for income planning, particularly for Singaporeans, and its adaptability for different financial needs.
 
 # IDEAS:
-- Pope Francis is the 266th Bishop of Rome and was elected on March 13, 2013.
-- His papacy emphasizes themes of poverty, mercy, and joy.
-- The name "Francis" signifies a significant change in his life and mission.
-- He was born in Buenos Aires, Argentina, to Italian immigrants.
-- Pope Francis has advanced degrees in chemistry, philosophy, and theology.
-- Before seminary, he worked various jobs including janitor and bouncer.
-- He joined the Society of Jesus (Jesuits) in 1958 and took vows in 1960.
-- He became a cardinal in 2001 and held administrative roles in the Roman Curia.
-- Pope Francis is known as a champion for the poor, advocating for action over mere words.
-- He emphasizes environmental stewardship and wrote "Laudato Si" on climate change.
-- The term "pontiff" means bridge builder, reflecting his role in fostering connections.
-- He promotes peace and calls for compassion in a world filled with conflict.
-- His visit to Singapore is seen as an opportunity for spiritual preparation.
-- The importance of internal conversion before external action is emphasized.
-- The upcoming Jubilee year is a significant event for the Catholic community.
-- Spiritual preparation is as crucial as logistical arrangements for the Pope's visit.
-- The podcast serves as a resource for understanding Pope Francis's mission.
-- The Holy Father's visit is not just a ceremonial event but a spiritual opportunity.
-- The discussion highlights the need for humility in fostering peace.
+- The Safe Withdrawal Rate (SWR) is a framework for income planning.
+- It helps determine how much one can spend from their portfolio.
+- The 4% rule is a commonly cited SWR guideline.
+- Different asset allocations can affect the SWR's effectiveness.
+- Financial independence may require longer income needs.
+- The SWR framework is adaptable to various financial situations.
+- Historical data can inform safe withdrawal strategies.
+- A 50% equity and 50% fixed-income allocation is often recommended.
+- The success rate of a withdrawal strategy can vary based on market conditions.
+- Inflation-adjusted income is crucial for long-term planning.
+- A lower withdrawal rate increases the likelihood of portfolio longevity.
+- Generational wealth planning requires careful consideration of withdrawal rates.
+- The framework can accommodate different time horizons for income needs.
+- A 3% to 3.5% withdrawal rate is considered safer for long-term planning.
+- Portfolio costs should be factored into withdrawal calculations.
+- Capital preservation strategies can be integrated into the SWR framework.
 
 # QUOTES:
-- "You pray for the poor then you feed them; that is how prayer works." - Pope Francis
-- "The Holy Father comes to proclaim the good news of the Gospel to everyone." - Cardinal William Goh
-- "In order to be proponents of Peace we must have peace ourselves." - Father Ignacius
-- "Humility is precisely the way and the path to Salvation." - Pope Francis
-- "Climate change and its human causes cannot be denied." - Pope Francis
-- "Pope Francis is the champion for the poor." - Father Ignacius
-- "We are called to make the earth a beautiful garden for Humanity." - Father Ignacius
-- "The pope is known as the pontifex maximus meaning the great bridge builder." - Father Ignacius
-- "Conversion must first and foremost be internally in our own lives." - Father Ignacius
-- "We should then intensify our prayer and seek conversion in our own personal lives." - Father Ignacius
-- "This is not just someone who's coming by; it's going to be a significant event." - Father Ignacius
-- "We are truly blessed that he's coming just before the jubilee." - Father Ignacius
-- "The presence of the Holy Father will encourage us to work together as Christ's missionaries." - Cardinal William Goh
-- "Pope Francis wants to imbue in the hearts of all that he meets." - Father Ignacius
-- "It's not going to be another hello and goodbye swiftly." - Father Ignacius
+- "The short answer is yes it can be adaptable."
+- "This is a good model how it looks like visually."
+- "This income will last for about 25 years."
+- "If you require the income to last long, then the safe withdrawal rate is lower."
+- "You can work backwards to determine how much capital you should have."
+- "If your allocation is 100% stocks, there are a lot of unique 30-year periods."
+- "If you're unlucky, there are certain scenarios where it won't work."
+- "If you want a plan that leans more towards a robust one, you're probably looking at somewhere close to 3%."
+- "You should go lower from 3% minus your portfolio cost."
+- "It's not like a strategy that sells units; it preserves capital value."
 
 # FACTS:
-- Pope Francis was born on December 17, 1936.
-- He is the first pope ordained after Vatican II.
-- He was elected pope two weeks after Pope Benedict XVI resigned.
-- The papacy of Pope Francis has been characterized by a focus on social justice.
-- He has written significant documents addressing climate change and environmental issues.
-- The term "pontifex" originates from Latin, meaning bridge builder.
-- Pope Francis's papacy has included calls for humility in addressing global conflicts.
-- His visit to Singapore is part of his outreach to different nations.
-- The Great Jubilee will occur in 2025, marking a significant event for Catholics.
-- The podcast is available on various platforms including Spotify and Apple Podcasts.
+- The SWR framework has been built upon by various researchers since its inception.
+- Historical data from the US from 1871 to 2021 informs withdrawal strategies.
+- A 4% withdrawal rate is often cited as a standard guideline.
+- The success rate of a withdrawal strategy can be significantly affected by market conditions.
+- A portfolio with 100% equity has shown high success rates in historical analyses.
+- Different withdrawal rates yield varying success rates for portfolio longevity.
+- Inflation rates impact the real value of withdrawals over time.
+- The average lifespan can influence financial planning for retirement.
+- The concept of generational wealth requires careful financial strategy.
+- Portfolio allocation affects both risk and potential returns.
 
 # REFERENCES:
-- "Laudato Si" - Document by Pope Francis on environmental issues.
-- St. Francis of Assisi - Inspiration behind Pope Francis's name and mission.
-- St. Anthony of Padua - Parish where Father Ignacius serves as priest.
-- St. Francis Xavier Seminary - Institution where Father Ignacius teaches liturgy.
+- Investmentmod.com
+- Early Retirement Now blog by Karsten Jeske
+- Research papers by William Bengen on safe withdrawal rates.
 
 # RECOMMENDATIONS:
-- Listen to the podcast multiple times to deepen understanding of Pope Francis.
-- Engage in personal prayer and reflection in preparation for the Pope's visit.
-- Participate in the sacrament of confession to seek internal conversion.
-- Embrace actions that support the poor as part of Christian mission.
-- Educate oneself on environmental stewardship as advocated by Pope Francis.
-- Foster humility in personal interactions to promote peace within communities.
-- Prepare spiritually for the Great Jubilee by participating in church activities.
-- Share insights from the podcast with friends and family to spread awareness.
-- Reflect on personal actions that align with the teachings of Pope Francis. 
-- Attend local church events leading up to the Pope's visit for community engagement.
+- Consider a diversified portfolio with both equities and fixed income.
+- Use historical data to inform your withdrawal strategy.
+- Adjust your withdrawal rate based on your specific income needs and time horizon.
+- Plan for inflation by adjusting withdrawals annually.
+- Aim for a conservative withdrawal rate to enhance portfolio longevity.
+- Factor in portfolio management costs when calculating safe withdrawal rates.
+- Explore different asset allocations to find what works best for your situation.
+- Regularly review and adjust your financial plan as needed.
+- Engage with financial advisors for personalized advice on income planning.
+- Utilize tools and calculators to simulate different withdrawal scenarios.
