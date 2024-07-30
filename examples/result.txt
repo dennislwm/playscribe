@@ -1,60 +1,71 @@
 # SUMMARY
-Eduardo discusses the third chapter of "AI Engineering" by Chipan, focusing on evaluation methodologies for AI applications and how to measure their effectiveness.
+An insurance broker discusses various types of insurance, their importance, and how to choose the right coverage in Singapore.
 
 # IDEAS:
-- Evaluation methodologies are crucial for measuring AI application effectiveness.
-- AI applications should serve a clear purpose for users.
-- Non-deterministic responses from AI complicate performance measurement.
-- Techniques like A/B testing and multi-arm bandits can assess user outcomes.
-- Functional correctness checks if generated outputs meet predefined tests.
-- Comparison tests evaluate outputs against a dataset of golden answers.
-- Human evaluators provide better correlation to perceived correctness than automated methods.
-- AI can serve as a judge, but its reliability depends on transparency.
-- Perplexity measures how well a model captures underlying data.
-- Higher perplexity indicates greater uncertainty in predictions.
-- Context length affects perplexity; more context leads to lower perplexity.
-- Structured data reduces decision-making complexity for models.
-- The importance of understanding the evaluation process for developers.
-- Subtle changes in AI performance can be hard to detect.
-- User feedback is essential for evaluating AI effectiveness.
-- Consistency in evaluation methods is critical for accurate assessments.
+- Health insurance should be purchased as soon as possible, ideally when a child is 14 days old.
+- Life insurance is crucial for individuals with dependents or financial obligations like mortgages.
+- Health insurance can cover up to 95% of hospital bills, but only for hospital stays or surgeries.
+- Term insurance is more affordable but only covers a specific period, while whole life insurance covers for a lifetime.
+- Mixing term and whole life insurance can provide tailored coverage based on individual needs.
+- Accident insurance is necessary for minor treatments not covered by health insurance.
+- Insurance premiums can vary significantly between companies for the same coverage.
+- It's essential to review insurance policies regularly, especially after major life changes.
+- Over-insurance can lead to unnecessary costs; clients should assess their actual needs.
+- Wealth accumulation and protection are two distinct types of insurance needs.
+- Pre-existing conditions can complicate insurance applications, but appeals may be possible if conditions improve.
+- Comparing different insurance products from various companies can lead to better coverage at lower costs.
+- The ratio of protection to investment in insurance plans affects long-term value.
+- Clients should understand the difference between guaranteed and projected returns in investment plans.
+- Insurance agents often focus on selling their company's products, which may not always be the best option for clients.
+- Regularly reviewing financial needs can help determine appropriate insurance coverage levels.
 
 # QUOTES:
-- "Every AI app needs to serve a purpose and we need to measure if it is achieving that purpose."
-- "Due to the nature of non-deterministic responses, it's hard to pinpoint if it's actually improving or not."
-- "Functional correctness... does it pass the test some test that I set up for that code?"
-- "Human in the loop can help on this."
-- "AI as a judge... has high agreement with human evaluators."
-- "You need to have control over the evaluation for your use case."
-- "The more uncertainty the model has in predicting what comes next, the higher the perplexity."
-- "The higher the context length, the lower the perplexity."
-- "If you give structured data... the model needs to make less decisions on what to do next."
-- "It's hard to make a judgment on what you should do as a developer based on AI as a judge."
+- "Health insurance should be purchased as soon as possible."
+- "Life insurance is crucial for individuals with dependents."
+- "Health insurance can cover up to 95% of hospital bills."
+- "Term insurance is more affordable but only covers a specific period."
+- "Mixing term and whole life insurance can provide tailored coverage."
+- "Accident insurance is necessary for minor treatments not covered by health insurance."
+- "Insurance premiums can vary significantly between companies."
+- "It's essential to review insurance policies regularly."
+- "Over-insurance can lead to unnecessary costs."
+- "Wealth accumulation and protection are two distinct types of insurance needs."
+- "Pre-existing conditions can complicate insurance applications."
+- "Comparing different insurance products can lead to better coverage."
+- "The ratio of protection to investment affects long-term value."
+- "Clients should understand the difference between guaranteed and projected returns."
+- "Insurance agents often focus on selling their company's products."
+- "Regularly reviewing financial needs can help determine appropriate coverage levels."
 
 # FACTS:
-- A/B testing and multi-arm bandits are techniques used for evaluating AI applications.
-- Functional correctness is a method to ensure generated outputs meet specific criteria.
-- Perplexity is a common metric used to evaluate language models.
-- The complexity of vocabulary can increase perplexity in models.
-- Human evaluators often provide better insights than automated evaluations.
-- AI judges can be costly and inconsistent in their assessments.
-- The evaluation of AI applications involves multiple decision points.
-- Non-deterministic responses from AI can lead to challenges in performance measurement.
-- The evaluation process can be influenced by changes in model behavior or evaluator standards.
+- In Singapore, health insurance is typically bought for children when they are 14 days old.
+- Health insurance covers pre and post-hospitalization expenses.
+- Term plans do not accumulate cash value, while whole life plans do.
+- The average recommendation for life insurance coverage is about ten times annual income.
+- Private hospital premiums are generally two to three times higher than government hospital premiums.
+- Accident plans cover medical reimbursements for minor injuries not requiring hospitalization.
+- Many clients may have multiple accident plans but can only claim from one.
+- The cost of health insurance can vary based on whether one chooses private or government hospital coverage.
+- Insurance brokers have access to multiple companies, allowing for better comparisons.
+- The market for investment-linked plans (ILPs) has shifted due to client feedback on losses.
 
 # REFERENCES:
-- "AI Engineering" by Chipan
-- Techniques like A/B testing and multi-arm bandits
-- Functional correctness tests
-- Comparison tests against datasets of golden answers
-- Perplexity as a metric for language models
+- Health Insurance
+- Life Insurance
+- Term Insurance
+- Whole Life Insurance
+- Accident Insurance
+- Investment Plans
+- Insurance Brokers
 
 # RECOMMENDATIONS:
-- Implement A/B testing to measure user outcomes effectively.
-- Use functional correctness checks during development phases.
-- Incorporate human evaluators in the assessment process for better accuracy.
-- Maintain transparency when using AI as a judge for evaluations.
-- Regularly review and adjust evaluation methodologies based on user feedback.
-- Understand the implications of perplexity in model performance assessments.
-- Provide ample context to models to reduce perplexity and improve predictions.
-- Explore structured data formats to simplify model decision-making processes.
+- Purchase health insurance as soon as possible after a child's birth.
+- Consider life insurance if you have dependents or significant financial obligations.
+- Regularly review your insurance policies after major life events like marriage or home purchase.
+- Assess your actual coverage needs to avoid over-insurance.
+- Compare different companies' offerings to find the best premium rates for similar coverage.
+- Understand the terms of your policy, especially regarding guaranteed vs. projected returns.
+- Consult an insurance broker for a comprehensive view of available options.
+- Mix term and whole life plans to meet specific financial needs over time.
+- Evaluate the necessity of accident insurance based on lifestyle and risk factors.
+- Keep track of changes in your financial situation to adjust your coverage accordingly.

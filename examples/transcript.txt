@@ -1,150 +1,385 @@
-hey everyone uh my name is Eduardo and this is a recording 
-of our reading-club uh at gitlab uh the AI uh Reading Club 
-where we are reading through the-book AI engineering and 
-today by uh chipan and today we're talking about the-third 
-chapter just as a note this Reading Club already took place 
-uh last-week but I forgot to hit record it was a great 
-session uh lots of-uh questions lot of lots of discussion 
-uh-but since I cannot upload the recording because there's 
-no recording I might as-well uh go through the the the some 
-of the the the summary of what was-discussed so the third 
-chapter uh is called evaluation methodology which is-about 
-how will you measure your llm uh or rather how you measure 
-your AI app-how do you know that if it's working or not um 
-this is a more theoretical uh uh-chapter which is quite 
-good uh but overall you have three decision points-on on 
-evaluation uh just at a high level and-what you're trying 
-to do in the end is deploy an app that helps users or 
-your-internal uh processes achieve some goal right this is 
-this this is why we're-doing this kind of thing we have to 
-help uh our final consumer to uh achieve uh-something so 
-and for this we choose a stock llm so a foundational 
-model-whether it's a y or um I don't know open AI models or 
-whatever and then we-augment this llm with our prompt with 
-the system prompt or with uh-retrieval uh context or with 
-additional context Tex uh so at each of these-points we can 
-measure whether we are doing a good job or not and maybe 
-make-better decisions stream better uh help the user 
-achieve their goals so how do-we go about this what kind of 
-techniques we can use about uh for for evaluating-at these 
-levels so I'll start by the end so how do we evaluate the 
-final app and-then the augmentation llm and then llm um 
-measuring first of all how do we-measure if the deploy if I 
-the the the user is achieving the like the F how do-do you 
-measure the final goal um like I said every AI app needs-to 
-serve a purpose and we need to measure if it is achieving 
-that purpose-and due to the nature of non-deterministic 
-responses we have-from AI apps uh in the case in this case 
-either-because like temperature was high generate a lot of 
-responses or rral uh-returns different responses it's hard 
-toing point deterministic if it's-actually improving or not 
-um so you need to do this by-measuring the outcome either 
-by comparing multiple versions with AB-tests uh either by 
-using multi arm Bandits or direct your ux research-get in 
-contact with the users and see if it's improving or not 
-sometimes this is-hard because the changes might be very 
-subtle uh and a user cannot really Pino-which one is better 
-if we actually improve their response or not uh any Tas-can 
-help in that scenario uh but it's always there's no super 
-bullet for this-problem uh and this is a larger uh 
-discussion that measuring the impact of-of a policy in 
-itself can can Le can have its own uh entire set of 
-reading-clubs but this is how that that's some of the 
-techniques that could be used the-next step on the Chain 
-would be uh on the Chain backwards I mean it's-like the 
-first uh is augmenting uh the llm how do we measure if 
-the-modifications that we did to the llm are good to the 
-use case this already the-final one measures the outcome 
-but this one-is before we put this in production how do we 
-measure if the changes that we are-making like the guidance 
-that we're adding to the llm is actually doing its-job so 
-the author puts on a few techniques uh which are 
-quite-interesting so the first one is functional 
-correctness which I think-it's quite awesome like really is 
-okay if I-generate a um a code uh response for example code 
-completion does it pass the-test some test that I set up 
-for that code so as I am coding as I am doing the-task I 
-have a test that actually tests if that generation is 
-correct or-not uh another technique is comparison so you 
-generate multiple comparisons-either from the stock llm 
-without adding-augmentation or a previous version um or and 
-then test uh how do-you how does this new response 
-generated compared to the other ones the downside-is that 
-these require data sets to be built uh no wait comparison 
-test is uh-you have a data set and then you compare compare 
-the outputs of the llm against-that that data set of golden 
-answers uh so for example uh you can check how-close they 
-are to each other lexically or-semantically um and measure 
-the impact but this it's good-that it's automated but at 
-the same time it's it doesn't always correlate to 
-any-improv in human perception of correctness so you can 
-use like a-semantical uh approach to check if two answers 
-are similar but that doesn't-always work so that's why 
-human in the loop uh can can help on this so you have-you 
-ask actual people to evaluate two answers and see if they 
-rank one higher-than the other um compare different model 
-and so on so forth uh and that-correlates better to what we 
-want to aim in the-end um and the last one the last 
-technique-is AI as a judge where you ask an AI model to 
-test whether that answer that-was given by your your 
-modifications your augmented llm actually solve the-problem 
-or actually achieve uh what you're trying to achieve-the 
-plus side is that is it has high agreement with human 
-evaluators so some-papers have analyzed this this AI as a 
-judge methodology-and if in general if AI judge say it's 
-good a human will all say it's good but-it can also be 
-costly so you have to make a request to a Ani human the 
-loop-is also costly because you need to ask ask a human to 
-do the-to do the evaluation but again it can be costly it 
-can be inconsistent so if-something changes on the model 
-it's a little bit complicated to-identify uh where does 
-that change happen like if something changes in 
-the-valuation and it can also be hard to reproduce it's 
-non-deterministic uh so for example if you see a drop 
-in-score is it because in the valuations is it because the 
-model-that you changed is actually doing worse or is this 
-just that the judge is being-more um I don't know uh more 
-tough on its evaluations so-it's it's it's hard to make a 
-judgment on what you should do as developer based-on AI as 
-a judge sometimes and the author also puts uh a very 
-important-warning is to not trust any AI judge if you can't 
-see the model-and the prompt used for the judge because you 
-need to have control over-the evaluation for your use case 
-otherwise it's you cannot know what will-be your actions so 
-like I said if some if the score drops or improves you 
-don't-know if it's because the model actually improved or 
-if it's because the judge-has changed his behavior so 
-that's pretty it's pretty important to to be-consistent 
-with that and finally the first step of the-of the chain 
-and I think this is the most uh now you're getting from the 
-end-to the beginning you get more and more theoretical so 
-the end is a lot user-related and here is a lot more 
-academical and I won't try to explain-here uh each one of 
-this this uh this uh terms because there are a lot of 
-uh-there are a lot of videos on the internet that that 
-explain them quite-well so the first three terms they they 
-they try to-measure how well the model uh the llm captures 
-the underlying data it was-trained on um so the 
-probabilities of of the text that that were fed into it-uh 
-but perplexity is a metric that's been used quite often uh 
-for for the for-different models-and Bruno uh another 
-colleague a Bruno put it very well that is basically-how 
-perplex the model is to the input is being given so what's 
-the likely so it-sees some some production and how How 
-likely is the next next input to be next-output to be given 
-um so I like how the author also-give some interpretations 
-or understandings-int intuitions you can drive from 
-perplexity so the more uncertainty the-model has in 
-predicting what comes next the higher the perplexity 
-that-means the higher the context length the lower the 
-perplexity-because you are given a lot of context uh the 
-same way that if you give-structure data like for example 
-HTML or a coding language you can expect some-structure so 
-the the the the model needs to make less decisions on on 
-what to do-next but also how the the vocabulary increases 
-the complexity because there-are more things to be the for 
-the motel to choose-from um so that was it that was my 
-review of this chapter uh again I'm-sorry for not actually 
-recording the discussion there were a lot of different-uh 
-points that was very interesting uh I'll be sure to record 
-next one but-thank you for watching
+maybe you think the pr maybe is too high for me uh then we 
+can adjust a little-bit maybe we reduce our coverage maybe 
+we shorter of term maybe we put longer-premium terms do you 
+know which insurance you should get are you paying-too much 
+for your insurance should you cut your ILP meet the who 
+helps to-manage me and my family's Insurance the special 
+thing about him is that he is an-insurance broker where 
+he's not tied out to just one insurance company instead 
+he-has access to different insurance companies here in 
+Singapore so he gets-to always pick the best insurance 
+among different companies and in this video-he'll be 
+answering all your burning questions about insurance so to 
+when is-the best time to start buying Insurance okay here 
+is some general guidelines-depend on different type of 
+insurance the firstly we talk about health-insurance 
+normally for locals or PR us they buy health insurance for 
+their-child when the child is 14 days old okay why 14 days 
+old this one is a minimum-entry age for health insurance so 
+we can tell that we need to get a health-insurance as soon 
+as possible for foreigners normally they will get 
+their-health insurance once they decide to stay in 
+Singapore for a long term okay-secondly we talk about life 
+insurance for life insurance is uh more important-when you 
+have your dependents who relies on your income or any 
+Financial-applications like mortgage loan or any other 
+debits like if I have a family-then I get life insurance uh 
+yes because like life insurance normally is replace-our 
+incomes okay so if you have dependence relies on your 
+income you-should get the life insurance rather than later 
+but what if like I don't have-enough money like if I 
+graduated from University I don't have a lot of pay 
+uh-which insurance should I get first I would say health 
+insurance because the-health insurance protect us from high 
+medical cost okay without a health-insurance uh it can be 
+uh Financial burdensome if you suffer any hospital-stays or 
+surgeries the health insurance cover up to 95% of your 
+hospital bill-okay but there's some limitations that you 
+need to be Hospital state or surgery-if like just uh like 
+uh you go Clinic uh you do not have any treatment 
+or-surgeries then cannot uh claim must fulfill one of 
+either Hospital stay or-surgery okay but what if I have 
+like cancer they go for Hospital checkup does-it cover for 
+health insurance because the health insurance is cover uh 
+pre and-post for the hospital stat as well so let's say we 
+do a checkup for the-cancers then after that I have been 
+advised to be water in the hospital so-the pre check also 
+can be covered okay and also the followup and can be 
+covered-as well okay but there's a time limit okay so the 
+health insurance is most-important uh yes correct okay okay 
+so moving on to like life insurance should-I get term 
+insurance insance or whole life because some people say 
+that you-invest ter by the rest then what is the whole life 
+for okay it's a very common-question I always been asked 
+from my client a term or whole life firstly we-talk about 
+term plan okay term plan is just cover a specific term okay 
+maybe-like 10 years 20 years or 30 years you can choose by 
+yourself but after that-specific term no more coverage for 
+for you and the premium is more affordable-compared to 
+Whole Life why because temp plan don't have any cash value 
+so the-money you pay you can't even get $1 back from 
+insurance company then we talk-about the whole life plan of 
+course as the name shows whole life plan is a-whole life 
+plan can cover you for your entire life but the premium 
+just just-now at top it's much higher than 10 plan because 
+uh part of the premiums goes to-accumulate the cash value 
+uh So eventually if you don't want this plan-you want to 
+surrender at least you can get some money back that's the 
+main part-and of course if you want to High coverage the 
+premium will be very high-but how do I choose between the 
+two term or H not a fixed answer to choose a term-of whole 
+life if let's say I want a whole life coverage but for a 
+specific-time because I have a children right now for past 
+20 years or 30 years I need a-higher coverage so we can mix 
+a match so let's see we can mix a match for the-whole life 
+plan and turn plan M if let's say I buy a less coverage for 
+a whole-life plan and the boost for or higher coverage in 
+next 30 years it's a way to-solve our problems so there's 
+not uh must buy one of them uh we can do mix-and match to 
+fulfill our needs okay so for term plan right you mentioned 
+it's-only for like 10 to 30 years then for people who buy 
+ter right after that 30-years right there's no more 
+coverage like is that a bad thing yes it's real-it's a bad 
+thing but normally it depends just how we talk about 
+financial needs-if you need a financial coverage for your 
+dependent Maybe your mortgage I-think both of them time 
+range maybe my case will be grow up in next 20 or 30-years 
+my mortgage will be paid off by next uh 25 or 30 years so 
+after that I-do not have so much Financial applications so 
+I I do not need that-higher coverage I can shorter them so 
+I can buy a less coverage of the whole-life plan so it's to 
+replace the loss of income during that period oh yes so 
+like-let's say if you have retired your house all paid off 
+your k have all grown up-then you don't need that High 
+coverage okay quick pause if you are looking to-trade 
+options you can check out weo weu charges a low fee of just 
+55 cents per-contract and zero platform fees which is 
+cheaper than many of the other Brokers-out there besides 
+that we also lets you streamline the options trading 
+process-by having a whole corner of app dedicated to 
+options for example there's-option statistics and 
+probability analysis tools where you'll be able to-view 
+data such as volume distribution volume analysis to help 
+you better-analyze your probability of success even before 
+making a trade there's also the-Sero DTE option Center 
+where you'll be able to easily track net premium trends-of 
+long and short option contracts to quickly locate 
+investment opportunities-right now weu is running an 
+options trading promo where both new and-existing users 
+will get to enjoy us options free commission whenever 
+you-trade a minimum of 100 option contracts monthly in we 
+Boo's latest welcome promo-if you use my exclusive link to 
+sign up fund and trade and fulfill the-respective criteria 
+you'll be eligible to get up to 400 cash vouchers you 
+can-also get up to 7% per anom year for USD money boo when 
+you find a cap of-$100,000 for up to 90 days where you can 
+potentially untap a u of-$1,750 this promotion is eligible 
+for new users only otherwise if you are an-existing user 
+who has not transferred any shares into Wii before you can 
+take-part in the transfer in promo where you can get 
+anywhere between $50 to-$1,500 trading Watchers when you 
+fulfill the requirements so if you are-interested in taking 
+your investing to the next level do sign out to weo 
+using-my link down below all right let's get back to the 
+video how much should I-spend on insurance like like what's 
+the percentage of salary or do you look by-coverage instead 
+normally we calculate this based on coverage just I 
+mentioned-if you have dependence you have morgage L and 
+maybe you have older parents to-take care to support their 
+daily life so we calculate all these of your 
+financial-needs and we do a calculation about the whole 
+coverage you need and based on the-coverage you need how 
+long the term you need we come out a premium then 
+maybe-using the premium maybe is too high for me uh then we 
+can adjust a little bit-maybe we reduce our coverage maybe 
+we shorter our term maybe we put longer-premium terms we 
+can adjust it based on our budget so for like plan right 
+is-there a formula to know what is the correct coverage 
+normally is about 10-times our annual income but also 
+depends how much that be you have but maybe your-mortgage R 
+is left a lot you need to make sure you are cover for that 
+as well-so it's a plus minus things for health insurance is 
+no uh such range to choose-it's just to choose what type of 
+plan you need or to cover up to Private-Hospital or 
+government hospital is enough what normally people choose 
+if-youing the premium you can't afford Lear recommend you 
+to go with a private-Hospital coverage the time efficiency 
+for a appointment or whatever surgery-need to be arranged I 
+think Private Hospital is much faster than government-and 
+of course the hospital bill is much higher I think at least 
+two to three-times higher than government hospital that's 
+why the premium is two to three-times of your government 
+Hospital premium as well so because you want to-see the 
+doctor faster you're more willing to pay more for the 
+comfort also-and maybe some of them they like the 
+environment of the hospital as well-right like you can stay 
+in a single B room or like sh room kind yes correct-what 
+about like accident Insurance uh what's the courage do I 
+need the-accident insurance is about medical reimbursement 
+of your accident cause uh-maybe you cut your finger you do 
+a simple treatment in the clinics that one-can cover by 
+accident plan but not covered by Hospital plan because 
+the-health insurance is only covered as the hospital days 
+or surgeries so the normal-treatment cannot be covered by 
+Hospital plan that's why we need a accient plan-for those 
+type of treatment just now I mention you cut your fingers 
+your fall-down uh anything related to this we can claim as 
+a accident plan what cage do we-need for the accident plan 
+normally I just mention to my clients I think the-first 
+tier should be okay basically you just want the cage that 
+yes the-reimbursement part is about 2,000 of the your 
+medical reimbursement the one is I-think it's more than 
+enough for accident let's say if I like fall down go into 
+a-car accident will this pay out for the accident depends 
+whether you have been-wed in the hospital or not if big 
+injury you need to be wed in the hospital or-you need do 
+some surgeries it will be covered by your health insurance 
+if like-minor injury I just need to go to clinic uh do a 
+simple treatment then it be-covered by accident plan canot 
+claim both at the same time yes definitely-canot okay 
+that's that so other than Health accident and life 
+insurance What-other insurance should you get normally we 
+talk about insurance there are two-type of insurance I will 
+talk to my client one is protection the other one-is wealth 
+accumulation uh I separate is two separately okay so for 
+protection-wise only the three Insurance Health accident 
+and life life uh includes death-tpd and critical ESS and 
+the other part weth accumulation is about 
+savings-investment so if we talk about protection this Tre 
+is enough for okay-so the next question is that normal 
+people can buy insurance but what if I-have a pre-existing 
+condition and I'm excluded from buying Insurance what can-I 
+do for protection okay I got some of these cases as well my 
+clients got-reject by insurance companies due to some 
+conditions firstly we need to know-what conditions you have 
+and that one can be fully recovered or maybe get-better or 
+not so if let's see currently you are suffering a existing 
+condition-but it can be fully recovered by some treatment 
+maybe next year then we can do-a appeal of these 
+applications based on medical report and like doctor memos 
+to-show that you are fully recovered with uh these 
+conditions all get better so we-can fight with insurance 
+companies to buy in Insurance okay uh and for the-worst 
+case the situation is really bad we can't buy insurance to 
+cover our like-death benefits or critical un benefit or 
+even health insurance then we should-looking for other risk 
+management tools because insurance is just a 
+risk-management tools if something happen it can covers me 
+so if we can't buy a-insurance to cover us maybe we need to 
+do some savings do some investment to-accumulation our 
+wealth just in case something happen we can afford it 
+so-it's the other part of the insurance like the wealth 
+accumulation part yes-the part of insurance you do not need 
+underwriting because it's a wealth-accumulation so you 
+either buy insurance to cover that part or you do your 
+own-investment to to cover that part that's correct okay 10 
+so the other thing is-insurance is expensive now is there 
+any way that I can save on insurance okay I-think there's 
+two points for saving your insurance cost the first point 
+is we-need to check whether we are over covered because 
+just now we mention-about accident plan uh I got some cases 
+like once I review my client's policy-hey I noted that they 
+have two or three action plan in one time I as them why 
+oh-they say okay uh my friends is doing insurance I suppor 
+my buy one ex plan-from him by one accident from others 
+then I asked them do you know that for-the medical 
+reimburse part no matter how many accident plan you have 
+you can just-claim one oh not from different companies yes 
+you can just claim one so-even you have two or three it's 
+with your money when is enough this one is-the first point 
+whether you are over covered okay the second point is 
+once-you buying a insurance let's say health insurance or 
+accident insurance or life-insurance whether you have 
+compare different companies for the same cover-maybe you'll 
+buy a life insurance for maybe 500k coverage you'll pay 
+$1,000-but I pay $800 maybe the other guy they pay $700 for 
+same coverage for same Poli-term why because we're choosing 
+the lowest one from different companies okay-uh so that is 
+one part is to do comparisons how come different 
+companies-have different premium for different coverage 
+okay because there's a lot-insurance companies in Singapore 
+okay there's not one company have all best-products in one 
+time if that things happen the other insurer cannot 
+survive-as well so they have different Focus areas uh maybe 
+company a they focus on-life insurance so the the life 
+insurance do very well uh the premium thejust is-Affordable 
+and the coverage is high but for other insurers they may 
+focus on-health insurance they may focus on investment they 
+may focus on life-insurance so normally we choose the best 
+product from each companies uh we can-mix and match we 
+don't need to buy one insurance from one company 
+that's-interesting because like when we buy insurance most 
+of the time we buy from-friends or we buy from agents at 
+Road shows which are from just one company so-it's hard to 
+know that you have the best plan yes that's why normally we 
+looking-for different companies with uh insurance broker 
+they can present most-of the insurance at one time so they 
+can do a compare for them and choose one of-the best but 
+the coverage part like everything is exactly the same or is 
+it-that there are some Parts they are not inside like a 
+insurance has this B-insurance doesn't have this part have 
+this case as well so we need to go-through the fully 
+comparisons not only press also the coverage as well 
+but-let's say for temp plan for death or tpd coverage it's 
+almost same death is death-dbd is dbd if let's see talk 
+about critical unit maybe a little bit-difference maybe 
+company a have more type of un they cover Company B 
+have-less then we need to know that the extra part whether 
+we need to pay extra money-for that part or no need to pay 
+it's by you but the most common unites are all-covered uh 
+yes correct yeah it's just the more rarer part yes and also 
+some-maybe some special terms okay uh special benefits so 
+we need to decide that-whether we okay for pay extra money 
+for that part okay uh if we okay then cannot-okay so this 
+is a common question that I always see online the friend 
+has so him-and IP then after reading online I see that IP 
+is expensive like what should I-do should I just cut for 
+plans is very popular in past I think five or 10 
+years-before part of your premium goes to production part 
+of your premium goes to-a investment account and if you ask 
+me whether you need to cut or hold it-depends on the timing 
+you buying depend on the ratios that protection how 
+many-percent uh investment how many percent also depend on 
+the market okay okay so-normally I need to read through the 
+full policy details you have then we decide-whether we hold 
+or cut or hold sometime then cut what are you looking for 
+if you-are playing The Hole uh the factors we need to look 
+into is just now I mention-the ratio of the protections or 
+investment let's say if you pay $100 for-this plan okay how 
+much premium goes to prodection side if let's say your $90 
+go-to prodection side only $10 goes to investment plan 
+definitely the plan-finally will lost oh yeah because the 
+premium will go up over it will go up-year by year okay and 
+finally the prodection set will over $100 which you-pay and 
+then the money will be withdraw from your investment 
+account and your-money will be less and less so we need to 
+focus on timing as well the ratio as-well and also your 
+investment return as well if your investment return is 
+really-high to cover your prodection then also good so 
+variable factors currently for-this Market okay this type 
+of ips is uh out of Market as well but I think most-of the 
+agency do not sell this type of insurance because the 
+client feedback-they losing money that feedbacks currently 
+we s investment plan is pure-investment plan protection is 
+like ter a whole life like pure production T so-it's sep so 
+long story short whether to hold or cut you should see a 
+few more-factors like so it's not just cut straight away 
+you can see like the ratio-what's the market doing right 
+now and how much you paying for the plan yes-because the 
+younger you buy the lp the lower cost of insurance you pay 
+so most-of your money goes to investment part if you're too 
+old to buy a then most of-your premium goes to production 
+site okay yeah no more investment you just-buy the the 
+coverage part yes correct if an insurance agent comes up to 
+me on the-street then what should I do so I think for you 
+if you really don't have a-financial agent with you or 
+you're really looking for some insurance I-think you can 
+listen to them they can give you some useful informations 
+as-well and uh if let's say if you really know time you 
+have your insurance uh-already or you have your insurance 
+agent as well then you just tell them nicely-because as a 
+financial agent I know that the road show is a really tough 
+job for-them as well they need to stand outside for a whole 
+day pach everybody who-working through and I think 90 or 
+80% of them they'll be reject but let's say if-I want to 
+meet an insurance agent whether it's my friend whether it's 
+from-Road show uh how do I better prepare myself before I 
+meet them firstly you-need to clear that what type of 
+insurance you need you need a health-insurance or you need 
+a life insurance or you need a accident Insurance okay-and 
+secondly is whether you need a savings or investment and 
+during the-midu you need to ask for proof that what the 
+ageny normally they say oh this a-production plan oh no 
+cash values or have cash values say oh it's a free 
+plan-because maybe five or 10 years later you can get your 
+money back or whatever so-you need to ask for brand at 
+White the contract was to see that and once you-are buying 
+a like see savings plan or investment plan they say oh the 
+return-is very high 4% or 8% you need to ask is a guarantee 
+or Project Return uh you-need to know because once you buy 
+a first 4% is really high I okay I buy-after year by year 
+you see the the return is not that 4% it's maybe 2% or-or 
+3% why because the 4% may be a project return uh so you 
+need to know-the what is guaranteed or Not Guaranteed is a 
+risk free one or you have RIS one-okay it's like savings or 
+investment because some of my client they say I-have a 
+saving plan after I go R through their policies I it's not 
+a receiving-plan investment so they may lost money so no 
+matter the agency just see black-white going through the 
+whole process they need to show you the contract Wass-is 
+there any way I can calculate my own coverage to know what 
+I really need-rather than listen to the agent to tell me 
+what I need okay firstly just now I-is about your 
+dependence okay your debits and maybe uh your old parents 
+who-relies on you so you plus all this and also depends on 
+your annual income-annual expense as well if your expense 
+is high then you need more coverage your-expense is low 
+then you need lower coverage for example if your income 
+is-100k but your annual expense is only 50k or your annual 
+expense is 80k your-annual experience is 30k it's also 
+different so normally we calculate is-based on annual 
+expense income is there like a guideline that say 
+Insurance-expense should not exceed how much of my annual 
+income okay normally it is my own-calculation normally I 
+will ask my clients not exist 20% but 20% is really-a very 
+high ra yeah but normally for protection only I think 10% 
+will be-enough as well 10% can buy enough coverage for for 
+you uh maybe the other-10% is doing like saving R 
+accumulation should I review my insurance are every-year is 
+is is there a need to okay basically I recommend that you 
+review-your policy once your life state is change because 
+when you fresh graduate I-believe that you buy some of your 
+insurance but once you get married you-get dependence I 
+think the more coverage you need uh and once you buy a 
+house you-got a housing loan I think the more cover you 
+need as well after your-retirement or you're going to 
+retirement you need to plan for your retirement-well so 
+different life stage you have different needs so we need to 
+go through-to re R the policy once your life stage is 
+changed I think that's all for this-interview if you guys 
+need a second opinion on your insurance coverage or-your 
+existing Insurance you can uh contact him I will leave his 
+link down-below I think the good thing about him is that 
+he's an insurance broker so he-can help you to compare many 
+different plans not just one insurance so I think-that's 
+all bye
