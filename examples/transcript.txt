@@ -1,260 +1,367 @@
-it's difficult to become a good software designer usually 
-we just-wait around and practice and hope that we become 
-better over time-there's an old saying if wishes were 
-horses beggars would ride-and as a software developer who's 
-trying to grow-it can be very frustrating to hear from 
-other people-that we should just make our designs simple 
-because if i knew how to do that-i would already be a good 
-software designer-right so what i'm going to talk about 
-here-today is that by using contracts it's not a full 
-answer for how to be a-good software developer be a good 
-designer but it is-putting us on the right path and it 
-makes certain things that-are only really visible to 
-experts once they become good software-developers it makes 
-those kinds of things more visible to-everyone and allows 
-you to get better faster in particular we're going to 
-see-how contracts reveal the messiness in your-design if 
-it's there how they can help the separation of-concerns and 
-help how they can help communicate the design-from out of 
-your head into your colleagues heads and vice versa-so 
-let's take an example to start with and i'm going to say 
-right off the bat-that i've made this example as crazy as 
-possible and you wouldn't do this-literally but let's 
-imagine that a customer calls up and reports a bug-and 
-their invoice was calculated wrong it's-off by five dollars 
-and here's where the crazy part starts-let's imagine your 
-co-worker suggests let's go change the ad routine okay 
-so-nobody would really change the ad routine it would ever 
-suggest that-but the point is there's a lot of times when 
-there is a-wrong place to add some bit of logic and this is 
-one that we can all agree on-is probably not the right 
-place for us to fix-but your co-worker says look for this 
-exact invoice there's an addition-happening of 10 and 15 
-and it really needs to return five-dollars less so we can 
-just put the if statement in there-now what i want you to 
-imagine is putting being in the situation where-you're 
-arguing against this person there's no question that this 
-patch to-the code is going to work right now it might 
-at-some point cause a different problem right because-now 
-the addition code is more complicated and it's got 
-this-funny little special case in it that's going to give 
-weird answers-and so probably you're expecting a bug to pop 
-up somewhere else but at this-moment your colleague has a 
-proposed patch it's-probably like a one-line fix and you 
-need to argue against it okay-and this is the situation i 
-want you to consider yourself in-so here's what would 
-happen if we had contracts right if we were thinking-about 
-this starting with contracts so here's a plausible contract 
-for the-ad routine it returns x plus y within some 
-degree-of precision okay and if we took your 
-colleague-suggestion you might have something like 
-this-when x plus y is you're adding 10 and 15 it returned 
-20 which clearly is a crazy-thing to do but it's in the 
-contract now otherwise it-returns x plus y now the thing 
-about this is as soon as-we write that contract down your 
-design sent starts tingling just-like it did previously 
-when you just had a subjective feel for it-but what you can 
-do is you can point to that contract right and you say-that 
-contract looks wrong to me and you and your co-worker 
-can-have a discussion about it and so you can say there's 
-no question that-contract is now more complicated than it 
-was before-right and you can even argue about whether that 
-contract is surprising-whether it's going to cause bugs and 
-so forth okay-so again i would like you to take this 
-example not exactly about editing-ad routines but instead 
-of generalizing and imagine-there's some code somewhere 
-someone's suggesting sticking an if statement in-it and 
-you're trying to say look but it's-going to complicate the 
-contract and cause trouble-so way the way i think about 
-this is that contracts are like an invisible-hand that is 
-guiding your design and they-don't tell you what to do i 
-mean clearly the contracts are just a statement of-what 
-your design is but by writing down the contracts and-making 
-them visible they can open your eyes and make 
-visible-something that you did that like might be a small 
-amount of code but-it's actually conceptually a very big 
-deal a conceptually a big-problem so what the contracts do 
-is they draw-your attention and allow you to seek the 
-simplicity-yourself okay so in that previous example-we 
-were not seeking simplicity we actually created 
-complexity-and here's the thing in the end you are the 
-force of simplicity even though i-phrase it as contracts or 
-the invisible hand that-guides design what they're really 
-doing is they're allowing-your natural desires for 
-simplicity and for elegance-and for good design to come out 
-and it gives them-gives that something that you can 
-tangibly look at-in terms of like well if i'm overall in 
-the system making my contract simpler-i'm probably on the 
-right path for making a good design-so i've thought about 
-this and i think there's several different ways that 
-the-contracts influence us and cause us to want to change 
-our designs-so for example uh we hate typing long contracts 
-and we-seek short ones right we don't want our-contracts to 
-feel like a convoluted legal uh document that we-all hate 
-instead we want them short and sweet-okay so just the act 
-of trying to find that short sweet contract-is going to 
-cause us to do a couple things first-that we would operate 
-uniformly because every time we have to add an if-statement 
-we're going to see that in the contract-and then second 
-we're going to minimize the number of edge cases we have 
-so-if we can find a way to say for any kinds of values you 
-pass in-we consistently do the same thing it's a whole lot 
-easier than saying-well unless there's zero or unless 
-there's 10 or unless in this case there-was 10 and 15. so 
-another way-is that that contracts influence us to towards 
-good designs is that they-encourage us to decompose one 
-complicated method into two simpler-ones okay and also if 
-you think about this from-the testing angle it's the same 
-kind of force-it can be much easier to say what this one 
-simple thing does for example add-than it is to jam 
-together add plus the bug fix-okay so you end up uh 
-separating out a few things-and having greater confidence 
-that the small things work in isolation-uh very simply 
-another way that contracts influence-us is that they 
-encourage us to operate on an entire domain-now you may if 
-you've been studying functional programming know that 
-what-i'm hinting at here is a total function okay so for 
-example um imagine you had a-method like uh is pretty and 
-it was operating on a-string which was uh representing a 
-color so you-can say is pretty red and you'd say well but 
-for some strings-that's not well defined so if i said is 
-pretty-hovercraft man well i don't know what i don't know 
-how to answer that question-because it's not a color so 
-instead if we had an enumeration of-colors for example red 
-green and blue i could operate on all of those-consistently 
-and be be confident that uh you know for anything you pass 
-in in-that enumeration i i know how to act on it uh one 
-more way-that contracts influence this is they encourage us 
-to minimize side effects-again going back to uh some of the 
-ideas from functional programming-this is talking about 
-pure functions it's easier to reason about things 
-that-don't have side effects okay if they only depend on 
-the inputs-and the only result that you see is coming from 
-the outputs-and then finally related to the hating long 
-contracts-if we find the same sort of thing being stated 
-over and over again-for example in the post condition and 
-my linked list does not have a loop at the-end i can factor 
-that out and to say really-that's just me factoring out a 
-common statement no matter what happens my-linked list will 
-never have a loop-so the result of all this all these like 
-the golden uh-the invisible hand that's that's nudging us 
-in the right direction-is that you're going to have 
-complications in your program-but it tries to guide those 
-it has the effect of guiding those-into more appropriate 
-phrases places so going back to that customer 
-invoice-example the customer invoice was wrong look 
-you-have to fix it but there are better or worse places 
-that you can tuck away-uh that logic or that uh the code to 
-fix it-so when we're programming with contracts and we're 
-trying to keep our contract-simple it we love this idea 
-that we compose-simpler parts into more complicated ones so 
-we're going to have to find somewhere-to fix that customer 
-invoice but it probably is not going to be the-ad routine 
-because it had this terrible effect on the contract i've 
-got-so what i've noticed is when you start thinking in 
-contracts-you start trying to find ways i can say well this 
-is a big problem to solve-but this smaller part of this big 
-problem i can like write a simple-contract and solve that 
-completely and then i can chip away-until eventually you've 
-got a lot of things which are so simple and 
-really-obviously work that you can compose them in-and 
-solve the bigger problem and finally even if you can't find 
-a really good-place to put the complication that you're 
-dealing with-even when it goes into the wrong place the 
-contract is at least telling you-and warning other people 
-about what's going on here and i want to contrast-that with 
-you've got a module out there it's got-some if statements 
-in there you didn't ever-you haven't read about and those 
-things are just going to cause you a surprise-at some point 
-at least by putting in the-contract you know you're 
-highlighting the fact that there's something-surprising 
-that's going to go on here so what happens to teams when 
-they use-contracts the first thing i've noticed is they 
-end-up using logic as a tool for simplifying their thinking 
-not just procedural-thinking they use procedural reasoning 
-and-procedural thinking of course but what they use that 
-for is reasoning-to make sure that the contract is being 
-satisfied so they'll read through the-steps of an 
-implementation and go yep i think i'm pretty sure that 
-what-the contract that we're talking about this code will 
-actually-uh satisfy that and then finally two particular 
-kinds of things are top-of mind for these teams the first 
-is predicates and the second-is in variance okay that uh 
-when a team is using contracts-they talk in terms of what 
-must always be true or what must-never be true in certain 
-modules or certain methods and-they start building up a 
-vocabulary of predicates-so for example is a premium 
-customer right and they build those up and they-talk about 
-them a lot because that's the language that they're using 
-the language-of logic that they see in the contracts-so i'm 
-just going to give an example now this is a pretty standard 
-design-for the way that you can build a server and you can 
-build it with-three modules the first one is dealing with 
-the http handling or whatever-protocol you're using for 
-talking to the outside world the second module-is the 
-business logic and that is the logic of what you do so for 
-example-maybe you're calculating invoices like we talked 
-about the early example-and then the third module is 
-persistence which is uh-okay i've got this invoice i need 
-to put it down on disk for permanent storage-or i know i 
-have a customer who's just coming here i need to pull their 
-invoice-off the disk okay so pretty standard design to 
-have-those three different modules but what i want you to 
-think about is-the the contracts uh the precondition are 
-the uh-predicates and the invariants that we would have 
-here-so if i had one module that was only doing the packing 
-and-unpacking from say http and json and moving that into 
-the-business logic of dealing with invoices that module 
-would be allowed to depend-upon the interchange libraries 
-let's say a json library-it would be allowed to depend on 
-the http libraries for parsing the http-message that comes 
-in and it would depend upon our logic for-the business 
-logic or our module for the-business logic but what it 
-would not depend upon-is the persistence or the libraries 
-for the database-okay that's categorically off the table so 
-there's an invariant there-similarly with the business 
-logic it would not depend on http or json or-exchange data 
-types it would also not depend on the database-or remote 
-procedure calls or any of that kind of stuff-it would be 
-allowed to depend upon our persistence module so in 
-this-business logic it has like everything about invoices 
-it knows how to deal with-invoices but what you've done is 
-you've factored-out and made the problem simpler by 
-removing-all those uh those other problems and then finally 
-in the persistence-module again it would have no dependency 
-on the http-json the the data types that are there or the 
-business logic-but it would know about the database or 
-maybe rpcs that you use-remove procedure calls for for for 
-chatting with other stuff-and of course it would depend on 
-the data types as they exist on disk-so again the point of 
-all this is that uh-using contracts or thinking in 
-contracts and thinking about-predicates and invariants has 
-this invisible force on your design-and what you'll see is 
-when teams are thinking about contracts top of mind-that 
-they start having designs that look like this so instead of 
-like-one big server right module that does all of these 
-things it's been factored-out into three things okay three 
-different modules-each of which has clearer contracts that 
-are easier to test-and easier to understand so here's a 
-concrete suggestion-when you're writing your code and let's 
-say you're using a version control-repository like github 
-or something go ahead and drop a-readme.md or design.md or 
-architecture.md file-right next to your code and write out 
-the the-the rules of the road here this is a description of 
-your design-and it is great at communicating the the design 
-that you've got with the rest of-the co-workers so in 
-summary it's difficult to become a-good software designer i 
-if i could wave a magic wand and say-you know being here 
-let me help you get there-immediately i would do that what 
-i'm talking about here with-contracts i'm saying because i 
-believe it will-help accelerate you towards becoming a 
-better software designer i believe-that thinking about 
-contracts is a mindset that helps us make our-design simple 
-the contracts reveal the messy parts-they help us separate 
-out two different concerns to the extent that we can-and 
-they help a team talk about the design and communicate it 
-so everyone-understands how the design is supposed to work 
-now-the contracts aren't foolproof but they can help you 
-guide you can-guide you towards simpler designs and help 
-your desire to make things-simple uh they they let you 
-operate on that and-achieve that better
+by now tail scale is no secret I've been using it for a 
+year or two and it's been-a total game changer for how I 
+interact with my networks gone are the days of-generating 
+my own wire guard Keys finding a good way to keep them in 
+sync-across all my devices and whilst they do fully 
+acknowledge that there are some-downsides in having someone 
+else host my wire guard keys for me it's a trade-off-in 
+terms of convenience that I'm willing to make the biggest 
+compliment I can-give to tailscale is that it just works 
+our self-hosters we've been trying to-find ways to solve 
+the problem of accessing our services from anywhere in-the 
+world without opening up ports in our firewalls since 
+basically the-beginning of time that is the promise of 
+tailscale in today's video we're going-to take a deep dive 
+into the world of DNS specifically looking at 
+tailscale's-Magic DNS feature this allows us to do neat 
+things like refer to our tailnet-devices by name or 
+configure split DNS to query remote DNS service I'll 
+explain-what all of that means in a minute and show you how 
+to get it set up-[Music] in order to visualize this let's 
+imagine-that we have a remote Network and in that Network 
+we want to host some-Services perhaps this is at a parent's 
+house or a friend's house or something-like that now we 
+don't want to expose these services to the internet but we 
+do-want to be able to access them via a fully qualified 
+domain name in our-browser so something like my 
+service.mumshouse.domain.com we also-want our parent to be 
+able to access this service in their local network even-if 
+they're not using tailscale at all we're going to do all 
+this using split-DNS and in order for this whole split DNS 
+thing to actually be properly useful-we're going to need a 
+local DNS server in the remote Network and ideally 
+some-level of control over the DHCP in the remote networks 
+firewall or router and-that's to ensure that clients there 
+get leases configured with our DNS server-and not some ISP 
+automatically generated garbage we're also going to need a 
+way-to run a subnet router in the remote Network in my case 
+if it's at all-possible I will run this on the open sense 
+firewall now if that isn't an-option I'll try and carve out 
+a VM somewhere and if that's not an option-I'll find 
+something like a Raspberry Pi or a really small low power 
+device I can-just throw in the corner and install tailscale 
+on that now we could throw all-this in a public DNS 
+provider but that feels unnecessarily inefficient 
+given-that tailscales local DNS implementation with magic 
+DNS caches all of these-responses locally if the request is 
+a name found in your tailnet that request-never leaves your 
+device that's because tailscale runs a local DNS server 
+on-every single tailscale client yes that includes your 
+phone-I think that's pretty cool one final thing before we 
+get into a real example-is it's really really really 
+important for your own sanity that the subnet-ranges of all 
+of these different networks in question do not overlap 
+pick-something unique for each site and it's going to make 
+your life a whole lot-easier I find postal codes or house 
+numbers or phone numbers or whatever-helpful in IP ranges 
+as a unique ish identifier in either the second or 
+third-octet I hope you're still visualizing that remote 
+Network because now I've-decided that I want to deploy next 
+Cloud both here at home and also at my parents-house to 
+keep things simple for all of us-let's come up with a 
+standardized naming scheme so that it's obvious what's 
+going-to be running where I typically like to lay out my 
+DNS-something like this service dot host Dot site Dot 
+domain.com and so a real world-example of this might be 
+nexcloud.dell3060.ncusa dot-badgesbits.io or 
+nextcloud.synology.lancashire UK Dot-badgesbits.io and so 
+on using this method we're able to tell what service-is 
+running on which box and then which physical site that box 
+is located in now-when we make these requests tailscale 
+knows thanks to the configuration we've-done in our admin 
+panel to forward any requests for lanks UK to that local 
+DNS-server in the remote Network note that the matching is 
+done at the site level-and not at the service or host level 
+we could get into doing that but it would-get quite messy 
+quite quickly as having one entry per service in our DNS 
+server-that's a lot to manage wildcards make this really 
+easy for us and it's why I-recommend a five layer deep 
+domain name system now this whole process is split-DNS in 
+action the process of sending requests to different places 
+based on-matching the contents of a portion of a URL-so 
+let's jump over to my workstation take a quick look at my 
+tailscale-dashboard to see how we can figure this so this 
+is a brand new tail net that-I've created just for the 
+purposes of this video I'm logged into my tailscale-admin 
+dashboard right here what I wanted to show you is 
+that-currently there's only one device connected and that's 
+this laptop that-we're using to do this recording I've 
+built a remote demo site I've built-this in a VLAN on my 
+local network using proxmox so I've got three systems 
+I've-got open sense running as a fake virtual firewall I've 
+got pie hole running as a-fake virtual DNS system and then 
+I've got Ubuntu running as a fake application-server and 
+those three nodes are going to be the three that we're 
+going to use-throughout this demo the fact that they're in 
+a VLAN isn't important and-it's not relevant to tailscale 
+whatsoever but I thought I'd just-explain it so that you 
+knew what was going on now what we're going to want to-do 
+is just take a quick look at what we can do first of all so 
+if we go and try-and connect to one of these nodes this is 
+from my local laptop-I'm trying to connect to uh 
+192.168.150.1 anything with that 150 in-the subnet octet 
+the third octet we can just pretend for sake of argument is 
+in-a different building in a different continent somewhere 
+that we don't-actually have physical access to right now so 
+the first thing that we want to-do is find a way to install 
+tailscale in that remote subnet so that we can at-least 
+connect to one of these hosts I'm going to bring in the 
+Ubuntu VM that I-talked about at the beginning of this 
+video this is going to act as a way for-me to Trojan into 
+the network the remote Network temporarily now you could 
+use-TeamViewer onto a family member's laptop or actually go 
+and visit them if you-want to and go and connect physically 
+to the the command line of open sense-itself one thing I 
+wanted to show you before we install tailscale is that 
+this-network is actually running a bunch of other 
+applications just fine so you know-it's got DNS running in 
+pie hole we've got-um Libre speed running and applications 
+as well so if if tailscale isn't even-involved in the 
+equation everything's still working just fine and 
+that's-really important because the last thing we want is 
+you know a support call from-a family member saying hey 
+things are broken can you come fix it-for me when it's some 
+some complicated thing that you've configured that's got-a 
+Upstream dependency that you can't figure out remotely now 
+the easiest way-to show you how to install um tailscale is 
+to actually drop to the-command line you can't install 
+tailscale through the GUI so we need to SSH into-tailscale 
+or hook up a keyboard or Monitor and a mouse if you're 
+physically-visiting family select option 8 to go to a shell 
+now the-next thing we're going to want to do is this option 
+here of fetch a-memugmail.com file there'll be a link to 
+this in the description down below by-the way in fact I'm 
+going to be writing a blog post about this entire process 
+so-check out that blog post link for all of this kind of 
+documentation we've-installed the meme of mail repo 
+configuration file you're probably-familiar with this kind 
+of stuff if you've used Linux it's like um-installing an 
+app to repo or something like that package update is 
+analogous to-running apt update in Ubuntu for example and 
+the next thing we're going to want-to do is a package 
+install tail scale once we've done the package update 
+PKG-is just bsd's equivalent of Apt for example now we are 
+going to want to-install that 25 megabyte package yes 
+please-once that's done we're going to want to do a couple 
+of things with the tailscale-D surface the tail scale 
+Daemon we're going to want firstly to enable it so-that 
+this demon starts when tailscale Boots and secondly we're 
+going to start-it manually so that we can actually use it 
+right away-now uh what we can do next let's just check the 
+status of it make sure that uh-that all worked fine yes 
+running as PID 61 for 22. now it's time to actually-start 
+using tail scale so the First Command that we always want 
+to run when-adding a new node to our tail net is tail scale 
+up now I'm going to add one-more option to this of 
+advertise advertise roots and what this is going-to do if I 
+do 192.168.150.0 24.-is it's going to allow any device 
+connected to our tail net access to any-device in this 
+150.0 24 subnet so all of the 254-devices that get IP 
+addresses from this particular DHCP server those are 
+going-to get access from the tail net now when I hit enter 
+it's going to ask me to log-in at the tailscale web 
+interface so I'm going to go back over to a browser-log in 
+to my tailscale interface using whatever authentication 
+method you've-picked and under here it's going to give me 
+a-bunch of information about the specific node that we're 
+trying to add-we can see do we want to connect the device 
+open sense to your tailnet yes-please let's click connect 
+and you say you approved opensense-excellent give it a 
+second and it will refresh-and we can see right away that 
+we've now added open sense into our tail net it's-got its 
+own private IP address but there's an option here subnets 
+with an-exclamation mark next to it and this is because by 
+default tailscale we've-advertised the root 150.0 but by 
+default it's a fairly insecure-thing to you know some if 
+someone got malicious access to your physical-hardware and 
+they wanted to enable subnet routing but they didn't have 
+for-some reason access to your tailnet dashboard your admin 
+console they-couldn't get Island topping going in that 
+way-without also having access to your tailscale dashboard 
+so if I select this-checkbox here and turn it on that now 
+means I can connect any device-through my tailnet Subnet 
+router which is running on open sense in this subnet-now I 
+know I only just turned it on but I'm going to turn it off 
+again just very-briefly just to show you that I can't 
+actually connect to anything right now-on this 150. subnet 
+so if I just do ping 192.168 150.1 we can see that 
+currently-I have no root to host if I check this box here 
+and go back to my terminal-window we can see in real time 
+that's now-updated underneath and also I can actually 
+access open sense from my local-laptop which isn't in that 
+remote location remember-from a browser so that's great 
+we've enabled a tail scale subnet router and-we have now 
+connected to it from our remote laptop the next thing to do 
+is to-start work on DNS so if we go to 
+opensense.demosite1dns.demosite speed-none of this stuff is 
+working and let's take a quick look at what happens so 
+if-we try to go to open sense dot demosite one dot 
+badgesbit.io-we get some interesting information so I'm 
+using a tool here called dig this is-a DNS querying tool 
+and we can see it we've got we're going through 
+the-tailscale DNS server at quad 100 but we're not getting 
+any reply whatsoever-we'd normally expect to see let me 
+just show you something here yeah google.com-we'd normally 
+expect to see the answer section full of IP addresses that 
+have-translated google.com into a bunch of different IP 
+addresses but with open-sense right now we're not getting 
+anything at all and that's a problem in-order to solve that 
+problem we're going to need to head over to the 
+tailscale-admin dashboard and configure some DNS settings 
+so if we take a quick look over-here we are familiar with 
+this page we just added our open sense node to it-London 
+machines Services users access control and logs there's 
+another option-here called DNS now under this page we've 
+got a bunch of-information so we've got our unique tailnet 
+name-70b8b.ts.net uh we want to leave magic DNS enabled but 
+you can see by default-the quad 100 magic DNS IP address 
+that's here is kind of it's kind of a reserved-one as part 
+of the carrier grade Nat IP block so this-um IP address 
+doesn't actually get rooted to the public internet now if 
+we-want to add something that's going to enable demo site 
+one to actually resolve-we're going to need to do a couple 
+of things first of all we're going to need-to enable 
+cloudflare public DNS this is so that we-can force our 
+clients to have their local DNS overridden I like to do 
+this-because it means that when I connect to a specific 
+tail net-it means I'm switching context mentally but also 
+switching context with DNS as-well by enabling cloudflare 
+as my public DNS I guarantee that all of the 
+clients-connected to my tailnet are all using cloudflare 
+for their public DNS that's-useful for me because that's 
+where I host all of myself hosted kind of DNS-entries for 
+all of my records so propagation is going to be the 
+fastest-for me through cloudflare now the next thing that 
+we need to do is-click on ADD name server and then go to 
+custom and this is where the entire-premise of this video 
+will become hopefully a bit more clear to you so-what we're 
+going to do is add in a 192.168.150.2 and Dot 2 is my pie 
+hole-instance which is running in the remote Network-but 
+we're going to want to check this box here that says split 
+DNS restricted-domain split DNS and we're going to want to 
+enable that for every DNS query which-matches 
+badgersbits.io or demosite1.-badgesbits.io when I click 
+save this is going to take-a second to update on all of the 
+clients but what we should see-when we go back to my 
+terminal window is it should update now and give us an 
+IP-address back there we go in real time that worked 
+perfectly-now what this is actually doing under the hood is 
+it's rooting everything that-matches demo site one dot 
+badges bits.io as a wild card to my caddy reverse 
+proxy-which is running in the remote uh remote subnet so if 
+I go back to this tab over-here we can see that now I can 
+access opensense with a proper TLS certificate-running in 
+the remote Lan all locally this is not available to the 
+public-internet none of this is exposed publicly this is 
+all happening over-tailscale same is true of my DNS server 
+so this is running at-dns.demosite1. badges bits and the 
+same is true of the Libre speed instance as-well I mean the 
+speed is going to be horrible because it's going over 
+a-tethered 5G connection but that's not what we're testing 
+today-if you want to see speed tests that was my last 
+video-um what we're proving here is I can now access these 
+websites as if I was in-that physical Lan even though I'm 
+not and the reason we're able to do that is-because of wild 
+cards I'm going to show you how you can figure a wild card 
+in-pie hole this is a pie hole specific thing but it's 
+actually using DNS mask-under the hood and so if we look at 
+this file here zero three slash custom-uh this is in slash 
+Etsy slash dnsmask.d and I'm connected as root to my 
+lxc-container that's hosting pie hole for me we can see 
+here that I have this line-which is address equals slash 
+demo site one dot badgesbits dot IO slash-192.168.150.10 
+and the reason that's important is-because if I wanted to 
+query the DNS for a specific domain I know there's a lot-of 
+windows so just hang on hang on we'll make it work-uh we 
+can see here the open sense isn't actually configured as a 
+specific host-in any any DNS entries anywhere and I can 
+change I can prove that to you-but I can do literally just 
+type in a random string of utter nonsense 15-levels deep 
+and I'll still get the same IP address back that's the 
+power of wild-card DNS matching now if I wanted to add 
+another one-let's say for example I wanted to add a new 
+host to my network-um of Batman for whatever reason and I 
+wanted to give that an IP address of-150.99 I go in and I'd 
+modify my custom conf file in pie hole under under the-hood 
+add this wildcard domain in here and then restart the pie 
+hole DNS engine-what I then need to do is ask dig and say 
+hey if I wanted to go to um-I don't know robin.batman dot 
+uh demo site one dot-badgersbits.io where can I find that 
+particular service-and you can see it's returned based on 
+the wild card template matching it's-returned 150.99 for 
+that particular DNS entry now-on occasion you might find a 
+situation where you want to completely ignore your-reverse 
+proxy and and completely ignore all of the wild cards that 
+are in here-and override specific things we can do that 
+really easily if we go to pie hole-remember this is the DNS 
+for the entire network so we can go to local DNS and-then 
+DNS records in here and you see I've actually got one for 
+pie hole-itself so it's not dependent on any third-party 
+service-maybe you'd find that useful for open sense as well 
+so we could do I don't-know router dot demo site one well 
+let's do firewall let's do firewall it's-technically a 
+firewall so let's do that firewall dot demosite1. 
+badgesbits.io we-go to 192.168 150.1 and if we click add 
+and then go-back to the terminal and we type in 
+firewall-we'll see that we get our 150.1 come back now I do 
+have a full blog post on a-fully automated DNS setup using 
+ansible and pie hole in this exact Manner and-I'll be doing 
+a video on that in the future as well but it's a lot of 
+work so-I'll get to it but just not yet but the biggest 
+caveat really about wild cards-is you can't set them 
+through the UI which is the entire reason that I had 
+to-drop to the pie hole terminal in order to make that 
+happen now if we wanted to-add more remote sites I'm not 
+going to do it for the video today I think we're-quite long 
+enough already but it'd be easy enough just to come in here 
+and add-you know a non-overlapping subnet remember it's 
+really important that your-subnets don't overlap let's just 
+do another DNS server at 140.2 and we'll-set that to demo 
+site2. badgesbits.io and I think you start to get the idea 
+of-how you can add specific websites or specifics physical 
+sites and have-multiple sites and access them from a single 
+client as if that's just all one-big flat Network now the 
+other thing to think about too-are what happens if you have 
+non-conformist URLs so something may be-like a specific 
+service that you don't want to put in a local pie hole in 
+a-specific uh remote site for some reason this could be a 
+really old service that-is just doesn't match your current 
+naming conventions and so let's just-let's just make one up 
+let's just do you know-192.168.1.99 let's just say for 
+whatever reason you want your home-assistant URL to be a 
+really short one so you could just do h a DOT-badgesbits.io 
+that doesn't tell you anything about where it physically is 
+or-what host it's running on but sometimes that's what you 
+want we-can restrict it to that specific domain and then 
+any request you make to ha dot-badges bids will go to that 
+specific host and in that way you can get kind 
+of-complicated with how you configure and override these 
+various different things-if you want to now recently 
+tailscale made some changes to their pricing-structures 
+they reduced the limits on the free tier for the numbers of 
+subnet-routers they increase the number of nodes in a free 
+tail net to 100 and they-maintain that their business model 
+is based around getting more technical-users excited and 
+interested in tailscale who then take it into work 
+and-monetize the product that way I love this approach and 
+applaud tailscale for-doing it but not only doing it but 
+doubling down on that business model as-they mature and add 
+new features as well from an overall solution point of 
+view-it's worth remembering that all of these rules-I I 
+made them up and they work for me but you're totally at 
+Liberty to make up-your own naming conventions your own 
+rules and break them whenever you like-whatever works for 
+you it's your infrastructure after all there are-thousands 
+of different possible permutations to make a solution 
+like-this work and I couldn't possibly cover all of them 
+today's video was designed-to give you an understanding for 
+you to go away and design your own Solutions-based around 
+tailscale and split DNS let me know down in the comments 
+what you-end up building I'd love to hear it also down in 
+the description will be a link-to a blog post where all of 
+the diagrams from today's video can be found and-that's 
+tailscale's magic DNS in a nutshell really it's a super 
+simple but-very powerful way to root DNS requests around 
+different endpoints with no-client-side configuration or 
+complex routing table Foo required I've been-Alex from ktz 
+systems and as always thank you so much for watching
