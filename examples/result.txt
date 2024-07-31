@@ -1,59 +1,73 @@
 # SUMMARY
-George discusses the importance of intellectual control in programming, contrasting it with statistical control, and emphasizes the need for reasoning alongside testing.
+George Fairbanks discusses software architecture, its evolution, and practical insights from his book "Just Enough Software Architecture" during a talk.
 
 # IDEAS:
-- Edsger Dijkstra emphasized the need for intellectual control in programming.
-- Programming practices have remained surprisingly similar over the past 25 years.
-- Smalltalk included features like lambdas and data flow operators long before Java.
-- Regular code delivery every two weeks was practiced 25 years ago.
-- Regression test suites are now common, providing confidence in code changes.
-- Manual testing was used as a double-check rather than the primary method of assurance.
-- Intellectual control involves understanding code before running it.
-- Statistical control relies on running code to gain confidence in its functionality.
-- Over-reliance on testing may lead to diminished reasoning about code.
-- Complexity in projects tends to build up over time, making it harder to maintain control.
-- Refactoring is not a solution for lost intellectual control; it only preserves behavior.
-- Projects often drift towards statistical control without conscious decision-making.
-- Maintaining intellectual control can help manage complexity effectively.
-- The balance between intellectual and statistical control is crucial for project success.
-- Property-based and model-based testing can help maintain intellectual control.
-- Cultural factors within teams can influence the level of intellectual control maintained.
+- Software architecture techniques are often derived from large military projects, which may not apply to smaller software systems.
+- The balance between detailed software design and risk assessment is crucial.
+- Good teams internalize architectural ideas, making them common knowledge.
+- Job roles and processes in software development can distract from core engineering ideas.
+- Understanding the characteristics of different vehicle types can parallel understanding software architectures.
+- There is a schism in software architecture literature between traditional and agile approaches.
+- Software architecture is an abstraction of system structure and relationships.
+- The complexity of software systems is increasing, necessitating better architectural understanding.
+- Rackspace's case study illustrates how different architectures can solve the same problem with varying trade-offs.
+- Architectural decisions should be transparent to all stakeholders to avoid mismatched requirements.
+- Incremental changes in software development can lead to architectural drift if not managed properly.
+- The importance of multiple views in software architecture helps in understanding complex systems.
+- Patterns in architecture can facilitate certain qualities while complicating others.
+- The evolution of software architecture insights has been gradual, with many "aha" moments over decades.
+- The choice of architecture impacts the ease of implementing new features or requirements.
+- Prototyping and modeling should be balanced in software development practices.
+- Architectural decisions should be documented for clarity and future reference.
+- The right architecture can simplify problem-solving in software development.
+- Understanding trade-offs in architecture is essential for effective system design.
+- The historical context of software architecture reveals persistent challenges that remain relevant today.
 
 # QUOTES:
-- "We should be paying attention to intellectual control."
-- "Surprisingly it was pretty similar to what you're doing today."
-- "We were doing delivery every two weeks."
-- "Almost everybody would say we all have regression test suites today."
-- "I feel worried that actually everything is okay because by definition we can't test everything."
-- "Intellectual control as Dijkstra was talking about is before you run the code do you have good confidence it's gonna do what you expect."
-- "Statistical control you run the code once or many times and because you've run it in representative cases you give yourself confidence."
-- "Our reliance on testing has numbed us to the fact that we're doing less reasoning than we used to."
-- "Once a project loses its intellectual control, very few teams have either the money or the time to recover."
-- "Complexity builds up over time on projects."
-- "Refactoring can't change those requirements."
-- "If you look at your project and you suspect that you actually have low amounts of intellectual control..."
-- "What we're really shooting for is something like a nice balance of reasoning and testing."
+- "The only thing that's reckless is if you knowingly don't look at the techniques."
+- "Software architecture is a competitive advantage."
+- "Software complexity has always been the number one enemy of software developers."
+- "There’s no perfect architecture; it’s always about trade-offs."
+- "If I see a Prius drive by, I go, 'That’s a hybrid car.'"
+- "The change of perspective didn’t change the solar system but made it easier to understand."
+- "You want to choose an architecture that’s tied to the qualities that you’re looking for."
+- "The architectural perspective makes certain problems easier to solve."
+- "You need to go beyond the code; you need to be talking with your colleagues about abstractions."
+- "If your intention is to actually make something fast, you may need to choose the right architecture."
+- "Why is it that so many of our problems are the same as 1975?"
+- "The complexity of the code is already there, but the models give us the right perspective."
+- "You can see that system is pipe and filter; that system is repository based."
+- "The decision records themselves take six months or so of mentoring."
+- "Some people think that XP is being able to do whatever you want—and that is not the case."
 
 # FACTS:
-- Dijkstra's structured programming eliminated the use of go-to statements.
-- Many programming languages have had features like lambdas for decades.
-- Testing practices have evolved significantly over the last 25 years.
-- The complexity of software projects increases super-linearly as more modules are added.
-- Intellectual control can help manage complexity effectively in software development.
-- The state space of an entire program is larger than that of individual modules.
-- Property-based testing encourages maintaining abstractions in tests.
-- Cultural biases can influence how teams approach complexity and reasoning.
+- Software architecture literature has roots in military-funded projects from the 1990s.
+- The first version of Rackspace's system used email servers to hold log files directly.
+- MySQL databases can become bottlenecks as systems scale up.
+- Hadoop allows for distributed processing but introduces data staleness issues.
+- Architectural patterns have evolved from runtime relationships to include deployment patterns.
+- The concept of separating interfaces from implementations dates back to the 1940s.
+- The halting problem illustrates challenges in reconciling static and dynamic views in programming.
+- Architectural decision records (ADRs) help document important architectural choices.
+- The idea of using multiple views in engineering has been around since at least the 1960s.
+- The term "big ball of mud" describes a chaotic architectural style lacking structure.
 
 # REFERENCES:
-- Edsger Dijkstra's Turing Award lecture on intellectual control.
-- Smalltalk programming language features.
-- Papers written by George on his website discussing these topics.
+- "Just Enough Software Architecture" by George Fairbanks
+- Rackspace case study on system design
+- "Documenting Software Architectures" book (2010)
+- "Introduction to Software Architecture" paper by David Garlan and Mary Shaw
+- "Big Ball of Mud" paper
+- YouTube lecture on software architecture by George Fairbanks
 
 # RECOMMENDATIONS:
-- Foster a culture that values intellectual control in programming practices.
-- Encourage discussions around structured programming and its benefits.
-- Implement property-based and model-based testing to maintain intellectual control.
-- Regularly assess processes to ensure they promote intellectual control.
-- Avoid over-reliance on testing as a substitute for understanding code.
-- Stay proactive in managing complexity through consistent refactoring and simplification efforts. 
-- Recognize the signs of losing intellectual control early to prevent project stagnation.
+- Consider the risks your project faces when choosing architectural techniques.
+- Encourage team-wide understanding of design rather than relying on a single architect.
+- Document architectural decisions for clarity and future reference.
+- Use multiple views to understand complex systems better.
+- Balance prototyping with modeling to enhance design processes.
+- Reflect on your team's architectural insights regularly to improve practices.
+- Choose architectures that align with desired system qualities like speed or reliability.
+- Foster open communication about architectural decisions among all stakeholders.
+- Be aware of how incremental changes can affect overall system architecture.
+- Explore historical insights into software architecture for better understanding.

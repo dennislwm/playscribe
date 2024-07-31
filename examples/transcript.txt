@@ -1,337 +1,910 @@
-hi there everybody ah about 50 years ago Edsger Dijkstra in 
-his Turing Award-lecture told us that we should be paying 
-attention to intellectual control-because it's really hard 
-to understand what your program is gonna do when you-run it 
-you'd like to be able to look at it and have some 
-confidence that it's-gonna do what you expect now I don't 
-have any code from 50 years ago that I-can easily show you 
-and if I did it probably would be on punch cards but-what I 
-can do is talk to you about 25 years ago when I started 
-programming-surprisingly it was pretty similar to what 
-you're doing today I happen to be-working in small talk you 
-may not remember this but small talk has lambdas-in it and 
-it has data flow operators so while Java just got the 
-ability to do-map and reduce and filtering on collections a 
-couple years ago this has-been in lots of programming 
-languages for a long time if you were to look at-me at my 
-desk I'd be sitting there in front of a Solaris workstation 
-with-Windows and the only thing that would look different 
-is that the title bars-are a little old-fashioned but 
-otherwise completely familiar to you we also 
-did-object-oriented alysus design and programming which is 
-what a lot of you-are also doing today maybe less analysis 
-and design but certainly the programming-and something that 
-we're a bit ahead of the curve on is we were doing 
-delivery-every two weeks okay pretty good we were getting 
-code in production no big-disasters the thing that's a bit 
-interesting is that 25 years ago very-few people were doing 
-testing ubiquitously if I had to have you guys-raise your 
-hands I think that almost everybody would say we all 
-have-regression test Suites today and that's why we feel 
-safe to push our code in a-production because the tests all 
-went green so this should be surprising to us-like how is 
-it possible this team was able to regularly get code 
-into-production and not pull their hair out and worry about 
-it all the time what was-going on is we were following some 
-of the advice of Edsger Dijkstra and not-just us but 
-everybody else we structured our code in such a way-that it 
-was more amenable to thinking through it and having 
-confidence in what-it was doing now we definitely would run 
-the program and we would click on the UI-and make sure it's 
-doing what it's supposed to do but that kind of 
-testing-that manual testing was a double check to make sure 
-that our reasoning was-right rather than the primary kind 
-of confidence that we got if I think about-what I do today 
-I have a big wide snuggly blanket of tests covering my-code 
-and I get an enormous amount of confidence from the fact 
-that those-things are there and they make sure that the 
-code that was working yesterday also-works tomorrow as I 
-add new code it hasn't broken anything okay now the idea-of 
-still doing reasoning along with that testing is a hundred 
-percent compatible-but I find that not as many people do it 
-especially teams that are that we're not-exposed to these 
-ideas 25 years ago say and there's something that's a 
-bit-worrying to me and I've done this and I've seen other 
-people do it I call it-whack-a-mole development maybe 
-you've done it too it goes something like this-you write 
-some code but you don't really fully understand everything 
-but you're-trying to get everything done so you write this 
-code and a test breaks you're-like oh okay well let me go 
-over to fix that and understand a little bit more-you fix 
-that test well something else broke okay another test broke 
-it fixed-that great everything's looking pretty good oh the 
-end-to-end tests are broken-okay you go fix that and you're 
-off to the races at that point the tests are-green but I 
-feel worried that actually everything is okay because by 
-definition-we can't test everything the tests are a 
-representative sample of the things that-are going on right 
-so when I engage in that kind of whack-a-mole behavior 
-where-I realize I don't have full understanding and what's 
-going on-maybe I'm leaning on the wrong thing and I was 
-really neat on tests when I should-have been leading 
-leaning on reasoning so I need to introduce that 
-vocabulary-of intellectual control here the idea with 
-intellectual control as Dykstra was-talking about it is 
-before you run the code do you have-good confidence is 
-gonna do what you expect now Dykstra with the mat was 
-a-mathematician by training and so he held the standard to 
-say we should be proving-our code to be correct very few of 
-us do that today although if you are in your-IDE and it 
-says this variable might be null and it looks like 
-your-dereferencing it believe it or not that's actually the 
-same proof-infrastructure that's demonstrating that that's 
-going on but he introduced this-idea of structured 
-programming probably most famous for the fact that you 
-no-longer have go-to statements in your code but the idea 
-was far bigger than-this it was that we can structure our 
-code in such a way that makes it easy or-harder to reason 
-through it and have confidence in what it does so 
-really-beyond the proofs there's all kinds of things that 
-we do today or don't do-today that can give us more or less 
-confidence I would include things like-having a really 
-strong type system instead of being string Li typed 
-if-you're familiar with that structuring your code so it 
-has consistency using-abstract data types designed by 
-contract and so forth so let-me contrast intellectual 
-control with statistical control now with 
-statistical-control you run the code once or many times and 
-because you've run it in-representative cases you give 
-yourself confidence yeah I ran it it does what I-expect it 
-to do okay so with these two things I think you can see 
-these are two-different ways of getting to the same answer 
-which is you know I'm building-code that does what I expect 
-and because you guys have been kind enough to all-come here 
-I feel like I should say something a bit radical and a bit 
-edgy-that disturbs you so so here it is I worry that our 
-reliance on testing has-numbed us to the fact that we're 
-doing less reasoning than we used to and that-there's some 
-danger in this I'm gonna spend the rest of the talk 
-building up-to this so that you don't think it's quite as 
-radical and crazy as you as it-might first seem projects 
-don't start out out of control they start out in-control we 
-have intellectual control and-statistical control in these 
-slides I'm using IC and SC-because it otherwise is big and 
-noisy so what I'm showing here with one box let's-say that 
-that's one chunk of code one module and that's at the 
-beginning of-the project and I've got both intellectual and 
-statistical control now-things never start are things never 
-stays so simple so here's an example-where we've got two 
-modules okay and the first module is working with the 
-second-module again everything is small I've got it all 
-under control and notice that-there's a containing box and 
-what I mean by that is that's the system as as a-whole okay 
-and with that system again I have both-intellectual and 
-statistical control again nothing stays so simple so on 
-this-slide I'm gonna show four modules but it could be 40 
-or 400 or 4,000 okay the-point is you have a bunch of code 
-and things are interacting with each other-what I'm showing 
-here is the first thing that you usually lose 
-intellectual-control of is the big assembly just because 
-the state space is so large it's-hard to have confidence 
-that everything's working okay so while-things were small 
-you could think through it as things get really big you-end 
-up leaning on your end-to-end test to make sure that things 
-are really-working but it gets worse invariably schedule 
-pressure or some Engineer that-didn't quite understand 
-what's going on gets in there and starts hacking 
-some-module and you sort of lose your clear understanding 
-of what's going on inside-there and so it reverts so it's 
-only got statistical control the tests make sure-it 
-continues to work but if you had to describe it you'd have 
-a really hard-time the problem I've noticed is that it's 
-kind of infectious and once one-module you can't have a 
-clear description of what's going on the-modules around it 
-tend to lose their clear descriptions right it's it's 
-just-doing it because it's supposed to do it that way and 
-it did it that way-yesterday we can make sure it does it 
-tomorrow so in this way you can see that-we on our projects 
-we drift towards using statistical control more than we-use 
-the intellectual control I would imagine many of you 
-are-wondering at this point gee George what about 
-refactoring-refactoring solve all known problems the answer 
-is I love refactoring I do-refactoring all the time okay 
-but we must remember what the definition of-refactoring is 
-the definition of refactoring is that it's a 
-behavior-preserving transformation of the code right okay 
-so if something if somebody's-come into some module that 
-was coherent and made sense and adds a bunch of 
-if-statements that no longer make sense refactoring can't 
-change those-requirements right refactoring can just 
-restructure the-code so that it is clearer to understand if 
-we need to go in and say simplify the-requirements or 
-renegotiate interfaces between modules-that's not 
-refactoring that's redesign and the problem with redesign 
-if you've-ever gone into existing code you can understand 
-all the code but you may not-understand why it does it so 
-you're forced into this problem of having to-rediscover the 
-program requirements which have become murky and lost 
-over-time before you can redesign it but I think the most 
-compelling argument here-is for about 20 years there's been 
-a rallying cry that says go forth don't-really work no one 
-says don't worry about intellectual control but in 
-many-ways projects have gone forth without leaning on 
-intellectual control and they-were hoping that refactoring 
-would save them I would say we would see lots of-success 
-stories if that were true but I think we instead see lots 
-of teams-grappling with technical debt so the problem with 
-this shift towards-statistical control which usually 
-happens without anybody saying I think-that's a good idea 
-it just sort of happens on projects is that once you 
-go-down that path it's very difficult to reverse course and 
-come back if you ask-any gardener how much weeding you 
-should do and when you should do it their-answer is always 
-the same it's like stay on top of the weeding because once 
-the-weeds take over it's really tough okay but remember if 
-you've got two weeds or-one weed it's only twice as hard to 
-do two weeds as one weed okay it's linear-when complexity 
-takes over your project it's a super linear problem right 
-you-know two modules of complexity is way worse 10 mod-way 
-more than 10 times as hard okay because everything is a big 
-nest of-trouble so what I've noticed is once a project 
-loses its intellectual control-very few teams have either 
-the money or the time or the you know opportunity in-the 
-market to come back and recover the control over the 
-software they have to-just keep it running and they 
-continue to use the testing so what was it that-we were 
-able to do 25 years ago I mean what was magic about 
-keeping-intellectual control then what I found is that 
-simply wrestling with the-program and trying to keep 
-intellectual control has the effect of pushing down-on 
-complexity I don't have time to like do a rigorous 
-demonstration to you guys-this is true and I'm not sure I 
-could do one but but here's sort of my intuition-that leads 
-me to this conclusion the first thing is that complexity 
-builds up-over time on projects we get new requirements in 
-the bureaucracy you know-regulations and so forth nothing 
-really makes any sense we just have to-accommodate it the 
-second thing is our minds are limited like we're 
-pretty-smart like our profession attracts people that are 
-pretty good its-problem-solving but we all recognize we 
-have limits there's only so much we can-keep in there the 
-third thing is that for any given problem you've got a 
-bunch-of different ways you could solve it okay and some of 
-those things are more-complicated than others it may take 
-you longer to find the simpler ones or to-cast your problem 
-in terms of the simpler solutions but they're out there-a 
-lot of times so what I find is that doing this daily search 
-for simpler-solutions because you're trying to keep the 
-code inside of your head overall has-the effect of keeping 
-complexity down so let's go back to that big 
-seemingly-contentious statement before which is that our 
-reliance are leaning heavily on-testing in the last 25 
-years which has been undeniably a good thing again 
-is-perhaps blinding us or numbing us to the alarm bells 
-that would otherwise be-ringing that say that we're not 
-keeping the cuff of software under as much-intellectual 
-control as we did said another way-statistical control that 
-we've been using is numbing as to our loss of-intellectual 
-control here's a notional diagram of what I see happening 
-in-projects so a friend of mine recently he's in a startup 
-and he tells me about-how this thing is going on for 
-several years and then like all of a sudden the-software 
-team is making no progress and when he goes in there and 
-starts-chatting with the folks he finds out the complexity 
-is built up to the point-where these guys are not making 
-any forward progress right that's that's-been the problem 
-and so if you were to graph the amount of control this 
-team-had over time I think it might look something like 
-this early on everything-fit in their heads they were 
-following practices that were not necessarily what-you 
-would consider best practice but they were good enough and 
-they were-making progress and they're out there making 
-money at some point they shifted-and they shifted into the 
-point where they really lost intellectual control-and 
-that's why I call this zombies in the sense that their 
-control only seemed-to go down a little bit but 
-realistically they were now in a dead-end of a project that 
-they couldn't easily back out of okay and so in some-ways 
-you might believe there's going to be that collapse of 
-productivity once-once people get to the their brains get 
-full it just hasn't happened yet so-we're here at a 
-software architecture conference so let's chat about 
-how-specifically this type this works with software 
-architecture to start with-let's consider just a single 
-module like a class file or another kind of unit of-code I 
-think that both statistical control and intellectual 
-control work-great in this particular case you can blanket 
-it with tests and you know it's-small enough that that 
-works pretty well I could read the test or maybe I can-even 
-write the test in such a way that I understand the code 
-pretty well but I-can also use intellectual control there's 
-a great bag of software-engineering techniques that include 
-abstract data types information hiding-structuring things 
-as state machines that help me in my ability to 
-reason-through that code so I think all of those work 
-really well for a single-module how about for your entire 
-system it's different for the entire system-here's the 
-argument I'm going to make I think all of you guys would 
-agree if you-look at your current project and you count the 
-number of unit tests versus-the number of end-to-end tests 
-there's something like a hundred to one maybe a-thousand to 
-one maybe even more of a ratio the number of end-to-end 
-tests you-have versus unit tests is that because the state 
-space of your individual-modules is so much larger than the 
-state space of the entire program well of-course not that 
-doesn't make any sense you know by definition the state 
-space-of the whole program is is big so then why aren't we 
-dumping tests on it-because it's hard you know like these 
-things take a long time to run they take-a long time to 
-write they're finicky they're often flaky so I think 
-what-really is going on with software architecture and the 
-reason you guys are-here today is that we have 
-traditionally in our field of software architecture-used 
-intellectual control to keep things on track we're here in 
-Manhattan which-has a grid plan right grid plan was an 
-architectural decision made early on-that is reaping pros 
-and cons as we as we're here today so when you set up 
-an-architecture you might say I have these views of the 
-problem I'm gonna apply-certain standard styles to it I 
-understand that I'm gonna promote-latency and I'm gonna you 
-know get hurt in some other way and I might do some-choice 
-ting to enforce some of these constraints so what can we 
-do-I'm obviously what I suggest is you should delete all 
-your tests just delete-them all right now and go no before 
-Twitter lights up what I'd suggest is-what we really want 
-is both okay but the real question here is how can we 
-keep-that intellectual control that we start with how can 
-we keep it going the first-thing to do is culture right if 
-we start having this conversation if you use 
-this-vocabulary of intellectual control and talking about 
-what structured-programming was really all about you can 
-perhaps get everybody on board and try-to keep this going 
-failing that the answer is more testing-but of a different 
-type property based testing and model-based testing let 
-you-state what your abstractions are in your tests and make 
-sure that they stay there-the reason that's interesting is 
-that there's a strong cultural bias against-deleting 
-somebody else's tests right so if you go into a module that 
-has-property based testing or model-based testing and you 
-need to extend it you're-kind of on the hook to extend that 
-that those tests to work in that same way if-you look at 
-your project and you suspect that you actually have low 
-amounts of-intellectual control I suggest asking the two 
-questions first-what about your process is driving you 
-towards intellectual control if the-answer is well we're 
-being driven to make sure it passes the style guide 
-and-make sure it has good test coverage and that we deliver 
-on time but there's no-nothing about the process that 
-encourages intellectual control that's-the first place to 
-look the second thing is companies can accidentally 
-reward-people that create complexity and make it hard to 
-reason and and unfortunately-discourage people who collapse 
-that back down like we all want to make it nice-and simple 
-but sometimes the incentives in the company don't work that 
-way so-overall thank you guys very much for listening to 
-this talk this is kind of a-an abstract topic to be talking 
-about early in the morning what we've been-chatting about 
-here is the way that we keep control over large amounts 
-of-software which is an inherent problem with software 
-architecture in the old-days before we all decided that 
-testing was cool we had to structure the code in-such a way 
-that it was easy to think through okay today we have 
-that-opportunity along with our tests and what we're really 
-shooting for is-something like a nice balance of reasoning 
-and testing I've written a-couple papers on this on my 
-website that spell out some of these things in a bit-more 
-detail feel free to check those out thank you guys very 
-much-[Applause]
+it's my pleasure to welcome george fairbanks-i think george 
+has already signed up hi george hello-great to see you 
+again and uh yeah software engineers at google uh-and uh 
+it's gonna have a very interesting talk but-i want to touch 
+a bit on something because you-also wrote a book that's 
+called just enough software architecture-right and it's a 
+nice title to it so how detailed do our-software designs 
+need to be and how do we know it's enough-thank you for 
+asking that that's that's uh one of the reasons i wrote the 
+book-is the book is like 10 years old now okay-and so the 
+world has changed in a decade uh but 10 years ago we were 
+still-reading software architecture books and the the 
+really bright people-that written those books had in many 
+cases been funded by-military projects so imagine the kinds 
+of things you have-to do if you need to assemble an 
+enormous number of-subcontractors to build literally a 
+battleship or you know-software system that'll integrate 
+radar and where are my people and the-communications like 
+you imagine the staggering size of that-project and then 
+you look at the techniques that-they use right and so the 
+techniques are perfectly appropriate for staggeringly-large 
+engineering efforts okay and so here we are-in the late 
+2000s and i'm looking at the projects that i've worked on 
+which were-not large battleships okay and so then i-said 
+look guys really you need to be taking a look at the risks 
+that your-projects are facing and you can pick up like out 
+of the-goody bag these architecture techniques and you can 
+apply them-and you can stop at some point you don't have to 
+do everything you can just do-the ones until you go all 
+right i think my risks are low-enough but the only thing 
+that's reckless-is if you knowingly don't look at the 
+techniques-or you just rush in uh and and throw caution to 
+the wind right so they're-how do you get the balance 
+between them and so that was the uh my motivation 
+for-writing the book i think a bunch of the ideas in the 
+book-at this point uh good teams have internalized them 
+uh-and uh yeah people take it as as common-knowledge that 
+you uh would like the whole team to-understand the design 
+as opposed to like one person sitting in the corner 
+however-i do want to make one additional point that coming 
+on-the heels of kevlin's talk is that a lot of people-like 
+to talk about their job roles okay and they also love to 
+talk about the-process like when do i design do i design 
+early do i design late-you know do i prototype and then 
+revise right those are the the topics just-being discussed 
+critically important however what i love to chat about 
+and-what i'm going to chat about in my talk today and what 
+i chat about in the book-is let's put it aside the job 
+roles let's put aside-the process that we use for the most 
+part okay and say like if i leave that-aside what is the 
+engineering idea that's-still sitting there because if i 
+see a prius drive by i go-that's a hybrid car right if i 
+see a porsche 911 i go oh-that's an internal combustion car 
+and if i see a tesla i'm like oh that's a-battery car and i 
+don't know how they organize their-teams i don't know if 
+they're the chief architect i don't know if they did 
+short-iterations or if they did big design up front-but i 
+can look at the engineering artifact and i can talk about 
+the-characteristics of battery vehicles are good for these 
+things but you have-range anxiety okay so that's that's 
+really what i-focus my energy on because yeah we can talk 
+for a long time about-process and the process is highly 
+dependent upon your team whereas-battery vehicles always 
+have a known set of trade-offs right at any given 
+point-well and then also as we were discussing about your 
+talk-uh earlier it's about how do uh define or describe 
+architecture to-peers or other people and uh now i'm also 
+taking a quote from-kathleen talk actually he mentioned the 
+quote from-martin fowler saying that yeah architecture is a 
+term that-lots of people try to define but then with little 
+agreement-you know uh that's true and unfortunately if you 
+go take a look-at uh the writing about software design and 
+software architecture-uh there's unfortunately two groups 
+broadly speaking and they unfortunately-don't read each 
+other's writing uh and that's-that's that's not healthy 
+okay so there's one group that came out-of uh well there's 
+a lot of carnegie mellon-and software engineering authors 
+uh and they wrote a bunch of books-specifically about 
+software architecture starting in the 90s okay in the 
+early-90s and the topic of software design and-there's a 
+group of people that came out of the oo community the 
+martin fowlers-of the world uh and so forth that uh these 
+people-came up through oo design and then they moved 
+into-software architecture okay and i think that part of 
+the reason for the schism-is that the people that were 
+doing oo were very interested in agile approaches-in how 
+can i get in and do it right now and especially in the 90s 
+like i said-the literature was about how to build 
+battleships reliably-and that wasn't the problem that they 
+were confronting in the late 90s early-2000s people were 
+looking at how do i build websites well-uh and i don't mean 
+like the biggest company megacorp.com but just you know-my 
+mom and pop.com like what are the techniques that are 
+appropriate for that-so i think that's why the the schism 
+happened however-you know i don't really believe there's a 
+huge disagreement in the community-about what architecture 
+is okay that is it's some abstraction of-the structure of 
+the system and the relationships between things okay 
+so-like i might say this is a client server system-and that 
+eliminates a whole bunch of details about how the files 
+are-organized and so forth right it's like it's just the-uh 
+conceptualization of it and that is as opposed to say-a 
+peer-to-peer system which has an equal relationship between 
+the nodes whereas-client server one calls the other but the 
+server-doesn't call the client that's that's the rules of 
+the game that's what that-architecture is about all right 
+so then um let's uh-you have the floor okay and let's see 
+if i can muster the technology-to make it all work so if i 
+go here and then i say no i want to say-share screen sorry 
+i don't do uh zoom every day-and i do that and it looks 
+like you guys are looking at my-screen is that right yes 
+okay fantastic okay uh well-thank you very much for 
+inviting me here it's a great pleasure and a 
+great-opportunity because we have something that i'd 
+like-to share with you that traditionally has been very 
+hard to-understand which is what is software 
+architecture-the thing is that software architecture is 
+easier to understand-if you have 10 years of experience say 
+i can refer to-hey you know all those systems you built you 
+can sort of think about them and-zoom out and see the 
+commonalities and the-differences between them that's very 
+difficult to do-if you're a brand new engineer okay if 
+you're still an undergraduate or maybe-you've just you're 
+having your uh first job uh and-you don't have that many 
+systems you've built it's hard to reflect on those so-my 
+goal with this talk is to explain software 
+architecture-without having to refer to systems that you've 
+already built and so i hope-at the end you will understand 
+this and appreciate why it's so important-and i'm going to 
+click on the right window and then the slides advance 
+yes-okay so um before copernicus people were gazing out-at 
+the stars and they built diagrams like you see here-this is 
+a diagram of the planets and it shows cycles and-epicycles 
+okay in this particular model they have the stars revolving 
+around the-earth instead of around the sun and as it turns 
+out that-created enormous amount of confusion if you were 
+the top of your game the top-of your field you could 
+understand what was going on-15 uh sorry 500 years ago with 
+this um but can you imagine if somebody came to-you and 
+said okay this is a great model now add a comment 
+trajectory to this uh-like it would maybe if you could do 
+it it would be incredibly tedious-but what you'd really 
+like is copernicus's model-okay uh there's a perspective on 
+that same-thing that's going on that makes things so much 
+easier to understand now-if i ask you to bring a comment 
+trajectory into this it's almost-straightforward you can 
+figure that out the point here is that the change 
+of-perspective didn't change the solar system but it made 
+what was going on-easier to understand so the question is 
+is there a similar perspective you can-have on software 
+that yield that kind of reduction in-complexity that that 
+kind of clarity in terms of what's going on-i believe 
+software architecture is that perspective okay-it may not 
+be the last word but it is the-current abstraction that 
+will help you best reduce the complexity in your-systems 
+software architecture is a competitive-advantage and the 
+reason for that is that software-is always getting more 
+complicated and that's not by accident-uh we build software 
+up to the level of the complexity that we can-maintain it 
+okay here's the thing if the person next to you or a 
+competitor-starts to master software architecture 
+and-they're able to build more complicated more 
+sophisticated systems they're able-to succeed with larger 
+and larger systems-when you are not or you're slow at doing 
+so-well it puts you at a competitive disadvantage 
+so-software complexity has always been the number one enemy 
+of software developers-and it always has been it always 
+will be so as software systems get more complex-software 
+architecture is what we should turn to to keep that down-so 
+as i mentioned in this talk i'm going to talk about 
+software architecture-without referring to your past 
+experience i'm going to do-that in three sections the first 
+is there's a great case study-that was done by rackspace 
+and they explained how they built some-system three 
+different times it was the same-functionality but they 
+built it three different ways-that's a great way to glimpse 
+what the software architecture is-the second part of the 
+talk is gonna be a timeline of the architecture 
+insights-that is those aha moments uh when we went oh-it's 
+not as simple as this it's actually this other insight 
+and-then finally we are gonna ourselves do a walk through 
+of a system we'll keep-the requirements the same and we'll 
+design it a couple different-ways and see how that works 
+out what i'm hoping at the end of this talk-is that either 
+this will be your first understanding of software 
+architecture-that is you go aha i get it myself or if you 
+already know software-architecture you can use this talk or 
+the ideas in this talk-to explain software architecture to 
+someone else so-in this first section i have three goals 
+first is i hope that you can glimpse the-software 
+architecture abstraction second you can see that the 
+architecture-is tied to particular qualities like speed or 
+reliability and finally that-there's no perfect 
+architecture it's always about trade-offs so-rackspace is a 
+hosting provider and they had a problem people would 
+call-them up to their customer service representatives-and 
+they would say i'm having some problem with my email server 
+that-rackspace was hosting and they would work with that 
+customer-service representative to diagnose the problem 
+okay and so they-built a first version of a system to do 
+that-that first system used the email servers themselves 
+to-hold on to the log files what they did was they wrote a 
+script-that would ssh into the email servers and run the 
+same grep expression across-the log files that lived on 
+each one of those servers-and then compile all the results 
+back together and hand it to the customer-service rep so 
+this way if you're calling up and-you've got a problem the 
+customer service rep would-concoct a new query on the fly 
+and would query the live data from each-one of these 
+machines the problem that they had is that-running a query 
+on the machines takes a little bit of time on the machine 
+time-that was supposed to be spent serving email-and so as 
+their number of customers grew they found a number of-uh 
+calls into the the help center increased and-over time 
+those email servers are spending more and more of 
+their-time running the greps instead of actually 
+serving-emails they're like ah we can do better than 
+this-so their second version they left the data in log 
+files on the server-but every so often they would push them 
+up to a mysql database-now the customer service rep instead 
+of running grep queries on each one of the-email servers 
+the queries would run against a mysql-database of course 
+that's a data structure that's optimized for doing-queries 
+it's already in relations and we have an sql query-language 
+to do this now this worked great for a while but-the 
+problem is as their business grew as they had more-and more 
+of these email servers they eventually had the problem that 
+my-sequel itself started to have performance problems okay 
+that-occasionally they would uh cause the system to 
+fail-and it would take longer longer to load up all the 
+data from the-email servers into the into the database so 
+you had to wait longer and longer-before you could actually 
+run a query so in the old system you could run the-query 
+right away in the new system uh it scaled to many more 
+servers but-sometimes it fell down and you had to wait a 
+little bit a while-so they did another change instead of 
+using a mysql database-they used hadoop they streamed the 
+email logs not kept them local at any point-they stream 
+them directly into the hadoop distributed file system-and 
+then periodically every 10 minutes or so-they would run a 
+mapreduce job that would index all the-log files and then 
+that way they could still run an sql query-against the 
+index now of course the problem is that the index is at 
+least 10-minutes old and it took about 10 minutes to run 
+so-the staleness of the query was maybe 10 to 20 
+minutes-okay so let's take a look at those three 
+systems-and let's take a look first at the data 
+refreshments in the first version-you could run a query 
+against completely current data-in the second version and 
+then the third version you had to wait for the data 
+to-either be loaded or to be indexed and that took 10 or 
+20-minutes in terms of scalability the whole reason-they 
+changed away from the first system is that-it only scaled 
+the dozens of servers after that-they found that those 
+servers were slowing down in the second system-it scaled up 
+to hundreds of servers but the problem is-eventually that 
+single my sequel box uh became a bottleneck and it 
+wasn't-reliable it was a single point of failure and even 
+though-they got to hundreds of servers they they had 
+troubles there and the-third system they at the time of 
+their report hadn't had-any scalability issues and then 
+finally in terms of the ability-to write a query on the fly 
+in the first one-assuming your customer service reps could 
+write a regular expression-um they could write a query 
+across the current data-like a customer calls and they can 
+say yes i'm looking at the log files right-this second in 
+the second and third examples they-had to write an sql 
+expression or a mapreduce program-now an sql expression 
+probably is even easier to write than a regular-expression 
+so that was not much of an impediment-but what they found 
+was their customer service reps were not-ready to drop down 
+to java and write raw mapreduce programs okay-this was not 
+something they were ready to do-and even if they could do 
+that the time it takes to bang out an sql query or-regular 
+expression was way less than it was to create a custom 
+mapreduce program-so basically if the system didn't 
+already-support the query you wanted it wasn't really easy 
+to add a new query-to it so the thing that i want you to 
+see from-that is you hopefully glimpsed the architecture 
+abstractions that we saw-and we saw that it wasn't that any 
+one architecture was perfect they they all-had trade-offs 
+between them so that was the case study let's take a-look 
+next at the aha moments that people have had-over time the 
+previous speaker kevland mentioned-several the same points 
+that i'm going to mention here which was-a delight to me 
+that we came up with the same topics-so here they are uh so 
+just read this and i'm sure you can figure it out-uh no 
+just kidding uh what i'm gonna do to try to make-uh this 
+big pile a little bit more comprehensible is i'm gonna 
+group them-first i'm gonna show you what happened as far as 
+we-understood interfaces better and better how we 
+understood views-better and better then patterns and then 
+finally structure-so first let's take a look at interfaces 
+interfaces are probably one of the first-things that we 
+figured out when we did software development-back in the 
+1940s we first invented the subroutine okay and as soon as 
+we-invented the subroutine uh very quickly we understood 
+that-the same interface could support either a fast 
+implementation maybe that-used very little memory or a 
+slower implementation sorry fast-implementation to use lots 
+of memory or a slower implementation to use very-little 
+memory and of course we had very little memory on the 
+machines back in-the 40s so this is a really big deal the 
+point being is that even in the-1940s we are separating out 
+different qualities of the-implementation separately from 
+what it does so for example if it's a sorting-algorithm it 
+might be fast and use lots of memory-or it might be slow 
+and use very little memory-you might have to make that 
+trade-off uh the next thing that happened-and it was at 
+least in place by the 1960s is that people were 
+separating-their interfaces from their implementations and 
+we know this was the-case because in algol 60 it separated 
+the idea of a-compiled unit of a program from the linked uh 
+program that was the-final one and so in that way you could 
+have one-library for example that had the fast uses a lot 
+of ram implementation-or another library target that has 
+the slower uses little ram implementation-but the really 
+interesting thing and you also heard this in the last 
+talk-was in the 1970s with david parnus and what he said 
+was simply having the-same interface and two different 
+implementations-is not enough to really give you what you 
+want as far as how you divide up a-system into modules if 
+you really want to encapsulate things and really-preserve 
+your ability to change the implementation later you-have to 
+decide in advance what it is that is your secret-that is 
+what is the decision that you might want-to change and if 
+you keep that behind the api-you're in better shape you 
+contrast that with what we still do today sometimes-which 
+is we put two fields on a class like x and y-and then we 
+instinctively put get x and get y on that class-so having 
+get x and get y technically speaking allows you to have 
+the-interface implementation split it's not very much a one 
+because you're-leaking those details across the api 
+boundary-okay the next group of insights that we had 
+involved views-now in other branches of engineering that 
+you're familiar with we use-lots of different views not a 
+single view of the thing that we're building-for example 
+with a house you might have a top-down view of the house 
+the front-view of the house and going a little bit farther 
+afield-you might have an electrical view of the house like 
+where the circuits are going-or it might be the heating and 
+air conditioning view of the house that-would talk about 
+where the duct work or how the heat moves around over 
+time-okay so the idea of using multiple views was-already 
+around but in the 1960s the people that were very excited 
+about-structured programming made a specific insight and 
+what they-said was the way we write programs today makes 
+it-hard for us to imagine what happens at runtime so the 
+two different views are-the static view of the code and 
+then what you're imagining which is-the dynamics of the 
+code at runtime and they said that if we-constrain the way 
+that we write our programs that is you 
+structured-programming and we don't use go to's as just 
+one-example it becomes way easier for us to imagine-and get 
+get certainty about what's going to-happen at runtime so 
+that was the that was a big jump right-that we had to think 
+about two different views-and that we changed the way that 
+we write code to make our thinking across-those views 
+easier in the 1990s there was just an explosion-of these 
+different views uh people were understanding there-weren't 
+just static and dynamic views but there's a famous paper by 
+philippe-christian who wrote about the four plus one views 
+okay and that-would include things like concurrency now if 
+you had two equivalent systems uh-and one was single thread 
+and the other was multi-threaded-you have a whole different 
+set of issues at hand and so when you're-viewing the system 
+you would like to know which things run in their 
+own-threads or their own processes okay another one that is 
+very relevant-to us today is a deployment view now if i 
+rewind the clock say 25 years-if you wanted to know what 
+version of for example the schema-is on our database server 
+in production right now you got to go walk over to-that 
+person's desk and say did you install the security updates 
+and-did you install the current schema and they'd say oh no 
+actually i didn't-get around to that okay so in order to 
+get that idea that view of-the deployment like what is 
+running in production-you probably had to go around and 
+talk to people we do a much better job of-that today right 
+because we've automated our processes by which-code moves 
+into production okay so that has been a huge 
+improvement-the final insight or at least uh on this list 
+that came-about views was the idea that some views 
+are-irreconcilable and this is an important distinction-so 
+take that static and dynamic view you guys remember the 
+halting problem the-halting problem says if you take a look 
+at a program-you can't be confident that this program is 
+going to ever terminate because it-might have an infinite 
+loop in it but we can't prove that it doesn't okay at-least 
+for a lot of programs when we start looking at 
+software-architecture views that kind of problem comes 
+up-over and over so for example when i talk about the 
+deployment if i-am looking at my source code it turns out i 
+can't understand what's going to-happen at runtime yes but 
+i also don't necessarily know where-that source code is 
+deployed and i really need that in order to-reason about 
+the system okay so you have all these different views-that 
+are not reconcilable an analogy of this going back to 
+the-houses is all those views that we talked about at the 
+house the top-down the front the electrical the heating all 
+of those at some point-are reconcilable they're all sort of 
+three-dimensional views of the system-however there are 
+other things that are relevant for your house for 
+example-maybe the size of your house affects how many taxes 
+you pay or-depending on where your house is you may or may 
+not be allowed to have-goats or chickens in the backyard 
+okay these are zoning kinds of questions-it's not clear how 
+i put that into my three-dimensional model like it's a 
+very-important view but hard to figure out your 
+software-might have regulations that apply in one country 
+but not another-it's hard to put that in the source code 
+view of the model of your system okay-so this was a big 
+deal um the next group of things we're gonna-take a look at 
+is patterns patterns obviously all started with 
+christopher-alexander who is a building architect and 
+started-describing um that many architects just 
+design-things in a tree structure but that's actually not 
+the way that we-see stuff built in practice the things that 
+we really love in practice-have patterns and the patterns 
+kind of interlock in interesting and complicated-ways and 
+so the oo design community really-picked up on this and 
+they talked about design patterns and so forth-the 
+architecture community followed right after okay-so by the 
+early 90s the software architecture community-led by mary 
+sean and uh and partners uh not partners uh clements uh 
+had-created uh catalogs of the architecture patterns in 
+fact they wrote a-a funny named paper called a field guide 
+to box ology because they had seen lots-of systems 
+described with boxes and lines and they were just-trying to 
+bring order to the chaos and say we think there's-a handful 
+of these these different patterns-the thing that came right 
+after you come up with a catalog-is you realize that 
+certain categories of systems certain patterns-make it easy 
+to get certain qualities out of your system-okay so we're 
+going to see more of this later but this diagram that-this 
+table that's here shows uh from one of their early 
+papers-that for example data flow systems uh are-it makes 
+it easy to change your algorithm uh but it doesn't make it 
+easy-to change your data representation that's what the 
+minus means there-uh something that didn't happen until 
+2010 which is really surprising it took-us this long is 
+that up until 2010 we had only been-talking about patterns 
+and software architecture-for runtime so if you think about 
+client server-well that's a description of a runtime 
+relationship here your client maybe is-running on the web 
+browser and your server is running in your data-center or 
+something like that okay or pipe and filter you've arranged 
+a-bunch of little programs on a unix or linux command line 
+and you're-piping the data between them okay that's 
+what-the arrangement of that happens at run time the thing 
+that they figured out in-2010 and it's an aha moment and i 
+have to admit-i was not ready for this when it happened and 
+i rebelled against it for a-while until like i was like oh 
+this is the most-obvious idea in the world those patterns 
+occur on every single-view right so you've got patterns of 
+how you organize-your modules and in fact uh the the uh 
+anyway one of the the solid patterns-arranges modules in a 
+certain way and then the same thing you have 
+deployment-patterns today so for example red green 
+deployments is an example of a-pattern that happens for how 
+you deploy things-finally there were a bunch of insights 
+regarding structure-the first happened in 1975 and this was 
+so important i'm going to read you a-little quote from it 
+because it feels like somebody wrote it-today current 
+languages discourage the accurate recording-of the overall 
+solution structure they force us to write programs in which 
+we-are so preoccupied with the trees that we lose sight of 
+the forest as do-the readers of our programs now i can tell 
+you that this represents-a lot of my experience right i'm 
+reading some program and it's an enormous-difficulty to pop 
+out of that and i've seen people-make mistakes where they 
+didn't realize some code was going to be running on 
+the-server or not or always be running on the client-in the 
+90s we started to connect the idea of styles with 
+qualities-and there was another abstraction that happened 
+here that helped to structure-things since time began we 
+have taken modules-and we draw them as boxes and we can put 
+boxes inside of boxes we can zoom in and-out of the boxes 
+this is like completely normal of course we think of-things 
+this way but until the 90s nobody thought about doing-the 
+same thing for the communication between uh two-different 
+things so it turns out we can do the same thing-not only 
+can we characterize the kinds of communication say between 
+a client-and a server and you'd say between a client 
+and-server you have a call return connection okay the 
+client calls in and-the server responds and the rules of 
+that connector say the-the server can't spontaneously 
+generate things-okay now i know in real life things we call 
+servers sometimes-push events over to say uh the web 
+browser-but according to the style definition that is a 
+different kind of connector-that's an event connector okay 
+so this was a real eye opener-that's the same way we can 
+nest uh modules we can nest connectors and-sometimes uh a 
+connector that i consider to be-call return can be 
+implemented in terms of events-okay like if you think about 
+it on the wire you've got a bunch of-udp or tcp ip packets 
+going back and forth-which don't obey events they don't 
+obey a client server they don't obey remote-procedure call 
+there is a certain level of abstraction-there okay so that 
+was the timeline of-architecture abstractions and i hope 
+that that was helpful for you-uh vanities are interesting 
+of course you can uh jump-back and and find those original 
+research they're also sort of-caught up to date in any of 
+the modern software architecture books some-references on 
+that at the end um the thing that i'm hoping with all 
+of-this is that when you heard about these-you're 
+reflecting on your current team and something that 
+you-might have noticed is that like some of my teammates 
+still-are not getting the interface versus implementation 
+distinction right-some of my teammates technically have an 
+interface but the interface leaks all-the the details 
+across it and so forth as-you as you march up these aha 
+moments that people have had over-time so one way of 
+thinking about progress-is how far up that stack has your 
+team gotten i mean-to what level of insight is your team 
+operating-every day okay now we're in the third section of 
+the-talk and in the third section we're going to do-a 
+walkthrough of designing a system several different times 
+using the same-requirements and we're going to see uh the 
+troubles-that can that can happen the same set of 
+requirements are the-following that you want to list movies 
+starring a certain actor you-want to list movies released 
+in a certain year you want to-list movies alphabetically 
+and then finally you want to open up-your program so that 
+the customer can add new processing so for example 
+the-customer might have a ratings database that they want 
+to merge in-uh to the data that you've got and you're 
+starting with-a file that has a bunch of json records one 
+per movie-and here's the part where this gets interesting 
+imagine that the developer-who just did requirement number 
+one has moved on-to another team or left your company okay 
+so what you're doing is you're now-having developer number 
+two pick up the next-requirement and they have to just look 
+at the code and see what happens-and what we're going to 
+try to do is we're going to try not to change 
+the-architecture accidentally we're going to assume that 
+the first developer-was thinking something when they chose 
+a certain-architecture and if i accidentally change it-i 
+might accidentally lose the benefits that that person was 
+depending on-so let's give it a shot okay our catalog of 
+patterns is going to be-four patterns and we sort of 
+alluded to some of these the first one is pipe and-filter 
+which you're familiar with uh with like uh uh grep and word 
+count-on the linux command line this thing is really good 
+for-incremental processing right so it can process a line 
+at a time and it either-emits a line or it doesn't uh the 
+bad of this is it's not terribly-efficient right because uh 
+you don't get a chance to say operate-on all the data at 
+one time different kinds of efficiency problems-but it's 
+not that it's terrible it's just not super great for the 
+best-efficiency there's a variant of this that sounds-very 
+similar called batch sequential and the-difference between 
+pipe and filter and batch sequential-is if you think about 
+a compiler a compiler finishes-one phase of processing like 
+tokenizing before it moves to the next phase which-might be 
+like building an ast and so it runs on the entire data set 
+to-completion and then it generates an output-okay so it 
+can feel like pipe and filter except that it does not 
+operate-incrementally there's also another style called 
+repository based which you've-used a million times anytime 
+you put stuff in a relational-database you're doing a 
+repository style and then you can generally do 
+uh-structured queries into that the problem with the 
+repository-repository based styles is that as we saw with 
+rackspace we-gotta load the data in first so that may be uh 
+an obstacle and then-finally there's a pattern called big 
+ball of mud which i highly recur-encourage everyone to read 
+this paper there's a citation at the end-and the thing 
+about big bald mud is there's no rules and the problem 
+with-there being no rules is it doesn't really help you do 
+anything in-particular it doesn't help you with 
+incrementality-it's not particularly efficient so forth 
+okay so walk through number one-uh let's imagine we give 
+this uh requirement to our first developer-uh to list the 
+movie starring a certain actor and then the-uh developer 
+scratches uh her head and says hmm this is sort of like the 
+linux-command line i can use a pipe and filter pattern 
+okay-and so it goes ahead and does that and remember the 
+piping filter is going-to process things incrementally so 
+as the records start streaming through-the pipeline it's 
+going to emit uh the records that-have the actor that's 
+been requested okay-and so this is pretty cool thanks the 
+developer because we can even add third-party programs to 
+this like you know my filter for actors could be just one 
+of-many so that developer goes away and we give-the system 
+to the next developer and this developers asked can you 
+list the-movies in a certain year and this developer does 
+the most obvious-thing in the world the developer just goes 
+into the existing program and-starts editing it okay now 
+that's not the way we were-thinking about things in pipe 
+and filter in pipe and filter-you would create a bunch of 
+little filters and you can compose them later-on each one 
+of the filters is independent of each other-but this 
+developer has actually gone into the filter for-uh actors 
+and has changed it so that it also does years so-they're 
+mixing the concerns if we keep going like this we just have 
+one big-program one big ball of mud so that's the end of 
+walkthrough number-one because we've accidentally wandered 
+out of the style and we no-longer get the benefits from 
+that style okay walk through number-two uh same requirement 
+list the movie-starting certain actor same thing actor is 
+gonna or sorry the developer-does pipe and filter okay but 
+it's different in round number two-uh when we try to list 
+the movies for a certain year-the developer goes aha this 
+is a pipe and filter program-what i need to do is add a 
+filter for the movie year okay-so this is an edit that is 
+within the style and it stays within the-architecture which 
+means that the third developer-could come in and add yet 
+another filter so in fact this is exactly what the-third 
+developer does the requirement is to return the 
+movies-alphabetically and the developer goes aha this is 
+pipe and filter i'll add a-filter for sorting but here's 
+the problem is that sorting-is not incremental at least as 
+done on the unix command-line right in order to sort 
+something you need-to have all of the data you can't emit 
+the results until you have all the data-that comes in in 
+fact you can try this at home-if you take a file or you 
+take a stream and you start grabbing across it you can-see 
+that it outputs the the lines you know the the things that 
+it finds line-by line however if you do sort it waits and 
+then-it gives you all the results okay now what we've done 
+is we've taken-an architecture which was pipe and 
+filter-and turned into batch sequential now honestly for-a 
+lot of systems the distinction between pipe and filter and 
+batch sequential-is not that important it's not a big deal 
+but just imagine there was some-system that was taking an 
+input continuously that is so-if you think about unix 
+command line there's no end to file character there's-just 
+an open stream that's coming through if you-were counting 
+on getting incremental results-as they appear if they come 
+into the stream well you're going to be-a bit bummed if 
+somebody comes in and modifies the program and sticks in 
+a-batch job right because all your incrementalism is-gone 
+so like i said sometimes no big deal but-you need to be 
+aware that you just changed the architecture right-there 
+okay walk through number three uh the-same requirement the 
+difference is this developer says-hmm this sounds like a 
+database problem i could load all the different 
+movie-records into the database and then i can run 
+queries-and i'll just write some sql so they use the 
+repository pattern-and when the second developer comes in 
+there's already a database that's loaded-with all the 
+movies and the requirement is to-look for the ones in a 
+certain year turns out this edit is super easy-you just add 
+a where clause to the sql and the program no problem-how 
+about the third developer again you've got two different 
+queries-in the sql and you've got a database this developer 
+does the same thing-just adds an ordered by clause in order 
+to sort the records okay-this is looking like a cakewalk 
+remember requirement number four which was to-allow the 
+customer to add new processing so for example they might 
+have their own-data set which has like the number of 
+stars-for various movies like the rating stars and are we 
+really going to let this-customer go into our source code 
+and like edit the the sql-query if they did edit the sql 
+query would-like the program work i think you know this is 
+going to give-us a lot of trouble like if we'd known that 
+requirement we would have chosen a-different architecture 
+okay this would have been a lot easier-with pipe and filter 
+point being is that some of these things are hard-you may 
+not always know what requirements are coming out-and again 
+i'm not trying to tell you what the process is you should 
+follow-but what i am saying is you can see that system is 
+pipe and filter that system is-repository based that system 
+is a batch sequential system-and you can see the qualities 
+that it makes easy or the qualities that it-makes hard okay 
+when you choose that who has the-titles on the team you 
+know what you call each other uh whether you-have stand-up 
+meetings all those are interesting questions but 
+not-related to this right which is that the uh structure of 
+your program the-architecture of your program will make it 
+easier or harder to-get these qualities so please don't 
+come away from this having a favorite-architecture okay 
+that's not the point there may be-architectures that are 
+more suited to your problem-and architectures that are less 
+suited the important thing to look at them is-regardless of 
+the functionality of the program uh-you want to choose an 
+architecture that's tied to the qualities that 
+you're-looking for so it could be security or it could be 
+speed or could-be incrementality okay so let's wrap up-in 
+this talk the goal was to explain software architecture 
+without reference-to you having had 10 years of experience 
+in-building building lots of systems i've done that-by 
+trying to talk about a case study that already existed with 
+rackspace they-built a server three different ways i talked 
+to you about the timeline of-architecture insights and what 
+we have discovered over time-and then finally we did uh 
+some walk-throughs of imagining that we were-on a team and 
+we had designed an architecture and-where we could go off 
+course as we accidentally-changed the architecture or we 
+could have done it differently with uh-deliberate changes 
+in case we saw what happened when we did change-things i 
+hope that when you take away the-lessons from here you are 
+going to have a shift in your-perspective right the 
+perspective change can make-things that were previously 
+complicated a lot easier to understand-so your old 
+perspective might be i need to bring 100-of myself to work 
+i need to roll up my sleeves and work very hard and if i 
+do-that and i'm very smart i'm going to be successful guess 
+what-all of that is table stakes the person next to you the 
+company next to you-they're all working very hard and 
+they're all very sharp as well-the thing that you want to 
+take away here is that the architectural-perspective is 
+that a suitable architecture makes-certain problems easier 
+to solve and it can actually make other problems 
+very-difficult to solve so getting the architecture right 
+sort-of makes a lot of those qualities come for-free you 
+want the architecture to handle those problems for 
+us-another thing that you may be thinking today is i'm 
+going to get into my ide-and i'm going to design software 
+inside the ide i do that all the time of-course you're 
+going to continue to do that-but the thing that you might 
+not have been doing up until now-is that you're not using 
+models that aren't the code itself so the things-that we've 
+been looking at the things that we've been talking 
+about-are not necessarily visible in the code so you need 
+to go beyond the code you-need to be talking with your 
+colleagues about-abstractions okay that you are not going 
+to see in-terms of for loops and classes and functions-by 
+the way that's what every other engineering discipline 
+does-finally you may have heard the expression make it 
+work-make it right make it fast i don't actually disagree 
+with that advice-but there's a slightly different spin on 
+this once you understand-architecture which is if your 
+intention is to actually make something fast-you may need 
+to choose the right architecture that enables that to 
+happen-okay um i've actually had some experience with-a 
+system that was designed for very high throughput okay that 
+is the total volume-of processing going through the system 
+was supposed to be very high-and then someone asked us to 
+make it very low latency and-the problem is the things that 
+are very good at very large-amounts of data tend not to be 
+good for very quick-responses okay so the point is that 
+it's a good idea to ask questions early-and say by the way 
+do you need you know sub millisecond responses in-which 
+case i'm going to need to think about that-earlier as 
+opposed to just hoping it works out-so we started the talk 
+with this idea that-copernicus introduced a change in 
+perspective he didn't change-the solar system but what he 
+did was he changed the perspective-so that the solar system 
+was simpler to understand-that's the kind of perspective 
+that we're looking for for software-architecture it turns 
+out we're not the only ones-there have been an enormous 
+number of people for the last-60 or more years that have 
+been trying to understand software and trying to-make it 
+simple there are a whole bunch of abstractions-and insights 
+here and as we understand these we start to-understand 
+software it becomes simpler for us-i want to go back to the 
+quote that i gave you at one point-uh that was from 
+programming enlarge in the small-and i want to tell you 
+something i didn't tell you before-that paper was written 
+when people were still typing-conference papers with 
+typewriters this is a scan-from that paper it was literally 
+typed you know like if you make a mistake-you got to retype 
+the page kind of thing okay-and they're saying these things 
+about programs that are-still true of so many of our 
+programs today-so my question to you is why is it that so 
+many of our problems are-the same as 1975 okay why is it 
+that we are not taking-advantage of the abstractions that 
+we have-and giving our perspective right so that we can 
+work on bigger problems-the architecture brings us that 
+kind of simplicity the complexity of the code is-already 
+there but the models give us the right-perspective and 
+avoid us bumping into our cognitive limits-i want to thank 
+you guys for the opportunity to give this talk today i-hope 
+that's been helpful for you uh if you want to follow up 
+some more-i'd recommend the documenting software 
+architectures book-from 2010 the problem with this book is 
+number one-it says the word documenting in the title which 
+is going to scare you away-and number two it should not be 
+your first book on architecture okay the-thing is though i 
+think it has the best description of-architectures if you 
+want a good introductory paper i say one of the 
+very-earliest papers is fantastic you can read it online 
+it's by david-garland and mary shaw introduction to 
+software architecture-also here is the big ball of mud 
+paper which by the way is not just about the-big ball of 
+mud architectural pattern it's actually-about all the 
+different context that describes why it is we still 
+find-ourselves stuck in 1975 development practices-and then 
+finally there's a longer architecture lecture which i 
+gave-a while back uh on youtube uh it goes into a bunch of 
+these topics in a bit-more detail so with that i hope this 
+was helpful-thank you guys so much and uh let me know if 
+you've got any questions-thanks a lot george uh really 
+insightful and also uh-yeah thanks for the extra let's say 
+resources-or reading material and uh i have to admit i was 
+scared at some-point especially in the last part with the 
+walkthroughs-that it seems that there's always a 
+moment-when the new requirement comes in and then throws 
+your whole-architecture of balance right um yeah again i 
+want to-distinguish well first of all tell me how do i 
+on-zoom how do i uh undo my presentation uh how do i stop 
+presenting-uh yeah you can you have the well share screen 
+button-uh you can toggle it off a place for me on the 
+bottom side of the screen okay-i'm gonna give up i'm sorry 
+i'm like your grandmother figure out-zoom apologies no no 
+it's gone it's okay okay-uh so your question was um 
+sometimes i get requirements and-uh the new requirement is 
+completely mismatched to my existing architecture-is that 
+right yeah yeah yeah that stinks doesn't it-yeah but you 
+know like it's it's like yeah it's like you know what 
+happens is-uh and you can see this in the rest of the world 
+there's a uh-lots of machines out there that have been 
+modified-uh in ways that you were like well if i'd known 
+you wanted it to fly-i wouldn't have built you a bus and 
+then we were bolting wings on it i mean-that's not the 
+right thing to do so it's like it's nothing special 
+that-we're in software development i also completely agree 
+with the idea-that we should use prototyping in addition to 
+models that i've been-chatting about here so and again this 
+is the same thing that-everybody else does the only real 
+thing that i would-push on a bit is i don't know of any 
+other discipline-any other engineering discipline that 
+would say we only do prototyping-or we only use models okay 
+uh so for example like you know if you got to-build a new 
+kind of airplane they do a bunch of prototypes to learn-the 
+different parts okay um if you're doing a if you're 
+doing-something that's very well understood they may 
+prototype a lot less because-they sort of are making 
+incremental changes if you change the color of a 
+car-everyone understands like you don't need to build a 
+prototype to change the color-okay but if you're building a 
+new kind of engine i can guarantee-there's a room in the 
+back where they're tinkering around with engines for 
+six-months before they uh make the design in the computer 
+and-then push it out to production right so it's really 
+about getting that that-balance right between the two i 
+think maybe also because you touched-quite a bit on various 
+views of the architecture and-the system and i think it's 
+also uh important to make-some some of these decisions 
+transparent most-of the big ones because i think that's 
+sometimes doesn't-happen there are some decisions that are 
+taken by i know parts of the team or-just within the team 
+and not with all the stakeholders-and then the problem is 
+not that you get a new requirement that uh-requires a big 
+shift but that some people are not aware of it-and say yeah 
+well i would have let you know that this is coming up 
+next-yeah i i 100 agree i'm gonna get two points on this 
+first-is the things that i chatted about today we're 
+talking about architecture views-now those tend to be the 
+whole picture okay um but a lot of-times in the way that we 
+build software is we-make decisions incrementally and so 
+especially in the last 10 years-there's been a lot of 
+movement towards you know i really want to have an-updated 
+view but if that's expensive to build-i can certainly write 
+an architecture.md file-stick it in the root directory of 
+my github project and every time-i make a decision that 
+would impact one of those views-an architecture decision i 
+write it down and say why and-it's right there in the code 
+so somebody can jump in and find it i think that's-that's 
+hugely important the second thing i would say though-is 
+that the decision records themselves let me try-this uh 
+imagine that you had to-draw something archaic like a 
+flowchart okay and you had two different tools one-tool uh 
+has like a template and it only-allows certain kinds of 
+things to be drawn and connected to the next kind of-thing 
+right it's it's enforcing some some rules of-flowcharts 
+right so like no dangling connectors or no islands-like oh 
+the whole thing has to be connected or something like that 
+right-compared to you scribbling on a whiteboard right on a 
+whiteboard-you can break all the rules you can make invent 
+new symbols that don't exist okay-so the thing about 
+architecture decision records and this is what michael 
+keeling-gets very right on this is that it takes six months 
+or so of-mentoring so let's say you understand adrs very 
+well-and your your colleagues don't they will tend to write 
+them-in because a word processor is an open unstructured 
+environment-they're going to write a whole bunch of stuff 
+and they're going to say like i-like company x and i don't 
+like company y and so we're doing company x-you know like 
+and you're like yeah but what is it about company x is it 
+the-fact that you don't like their licensing is it you 
+don't like their design you-know what what is it why did we 
+choose these things-so with time people could become very 
+good at using the unstructured-environment of say like a 
+text file to describe things that are really-relatively 
+structured okay to get at the essence of the arc-too i have 
+opinions and i wrote them down in a file you see what i 
+mean see-the distinction on drawing yeah yeah so then if i 
+understand it-correctly uh in the beginning or especially 
+if-let's say you know what you're doing you need 
+some-constraints yes that's right and in fact um-kevlin was 
+chatting about extreme programming and legos just a few 
+minutes-ago and uh i i don't hear this language as-much as 
+i used to but when xp was very young-i remember the number 
+one thing i kept hearing over and over again-is that some 
+people think that xp is being able to do whatever you 
+want-and that is not the case they would say xp-is more 
+structured is more disciplined than whatever you're doing 
+right now-okay the difference is it's a different set of 
+constraints we-believe that it points you in the right 
+direction so you can only avoid-doing certain kinds of 
+architecture documents which was popular-back in the 90s 
+right they said you can skip that-if you have a certain 
+kind of way that ideas-are transmitted through the team 
+including pair programming and other-practices so that like 
+if we're all on the same-team we keep that design in our 
+head we don't have to write-a big paper binder full of 
+documents and put it on the shelf the way that-the 
+battleship guys were doing in the 1990s-yeah totally agree 
+and uh yeah we could i feel we could talk about this-uh 
+more and more unfortunately we have a-conference thank you 
+very much yeah so but i think people will hate us-if we 
+don't we skip another break like we did before but uh yeah 
+thank you-very much for being with us george and 
+hopefully-you'll agree to do it uh again i saw your trick 
+last guys uh you-know thank you very much let me know i 
+don't even know where the-next one is so like all right 
+i'll see if i can do it thank you-yeah we'll uh definitely 
+be in touch again uh-awesome session thank you [Music]-you
