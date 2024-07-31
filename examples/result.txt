@@ -1,66 +1,59 @@
 # SUMMARY
-Luke van Loon discusses protein's role in muscle adaptation, protein requirements, and the effects of exercise on muscle protein synthesis.
+George discusses the importance of intellectual control in programming, contrasting it with statistical control, and emphasizes the need for reasoning alongside testing.
 
 # IDEAS:
-- Muscle can gain mass on as little as 8 grams of protein per kilogram of body weight.
-- Exercise increases muscle sensitivity to protein intake for up to 48 hours.
-- Muscle tissue is constantly being synthesized and broken down, renewing every 50 to 100 days.
-- Protein requirements are based on nitrogen balance studies, suggesting a minimum of 0.8 grams per kilogram.
-- Anabolic resistance in older adults can be mitigated by physical activity.
-- Muscle protein synthesis is maximized with about 20 grams of high-quality protein per meal.
-- Resistance training can lead to greater muscle mass gains with higher protein intake (1.2 to 1.6 grams).
-- Cold water immersion immediately after resistance training may blunt muscle protein synthesis.
-- Collagen supplementation may not significantly increase muscle protein synthesis but could benefit connective tissues.
-- The body adapts to varying protein intakes, maintaining balance despite lower consumption.
-- Exercise is more effective than hormonal changes in promoting muscle health.
-- Protein distribution throughout the day can optimize muscle reconditioning.
-- The turnover rate of organs like the liver and brain is much higher than that of muscle.
-- Nutritional needs may vary based on age, activity level, and body composition.
-- Plant-based proteins can be less effective for muscle synthesis compared to animal proteins.
-- The signaling role of amino acids in collagen may have benefits beyond muscle synthesis.
+- Edsger Dijkstra emphasized the need for intellectual control in programming.
+- Programming practices have remained surprisingly similar over the past 25 years.
+- Smalltalk included features like lambdas and data flow operators long before Java.
+- Regular code delivery every two weeks was practiced 25 years ago.
+- Regression test suites are now common, providing confidence in code changes.
+- Manual testing was used as a double-check rather than the primary method of assurance.
+- Intellectual control involves understanding code before running it.
+- Statistical control relies on running code to gain confidence in its functionality.
+- Over-reliance on testing may lead to diminished reasoning about code.
+- Complexity in projects tends to build up over time, making it harder to maintain control.
+- Refactoring is not a solution for lost intellectual control; it only preserves behavior.
+- Projects often drift towards statistical control without conscious decision-making.
+- Maintaining intellectual control can help manage complexity effectively.
+- The balance between intellectual and statistical control is crucial for project success.
+- Property-based and model-based testing can help maintain intellectual control.
+- Cultural factors within teams can influence the level of intellectual control maintained.
 
 # QUOTES:
-- "You can actually gain muscle on 8 grams of protein."
-- "Exercise makes the muscle more sensitive to the stimulation of muscle protein synthesis."
-- "All tissues are constantly being renewed, remobilized, and refurnished."
-- "The body can adapt to more or less protein."
-- "Anabolic resistance can be overcome by physical activity."
-- "20 grams of high-quality protein maximizes muscle protein synthesis."
-- "Cold water immersion may compromise acute recovery after exercise."
-- "Collagen is not a very high-quality protein because almost 50% is composed of Proline and Glycine."
-- "Exercise is much stronger than hormonal changes in promoting muscle health."
-- "The turnover rates of all your other organs are much higher than that of muscle."
-- "Plant-based proteins are often deficient in one or more specific amino acids."
-- "The body gets smarter how it handles protein."
-- "Muscle memory allows for quicker adaptation after a long break from training."
-- "Excess energy in any form—glucose, fat, or protein—is the problem."
-- "Hydrolyzed collagen may provide benefits for connective tissues but lacks essential amino acids."
-- "The signaling role of amino acids in collagen may have benefits beyond muscle synthesis."
+- "We should be paying attention to intellectual control."
+- "Surprisingly it was pretty similar to what you're doing today."
+- "We were doing delivery every two weeks."
+- "Almost everybody would say we all have regression test suites today."
+- "I feel worried that actually everything is okay because by definition we can't test everything."
+- "Intellectual control as Dijkstra was talking about is before you run the code do you have good confidence it's gonna do what you expect."
+- "Statistical control you run the code once or many times and because you've run it in representative cases you give yourself confidence."
+- "Our reliance on testing has numbed us to the fact that we're doing less reasoning than we used to."
+- "Once a project loses its intellectual control, very few teams have either the money or the time to recover."
+- "Complexity builds up over time on projects."
+- "Refactoring can't change those requirements."
+- "If you look at your project and you suspect that you actually have low amounts of intellectual control..."
+- "What we're really shooting for is something like a nice balance of reasoning and testing."
 
 # FACTS:
-- Muscle tissue renews every 50 to 100 days at a rate of 1 to 2% per day.
-- Protein requirements are generally set at 0.8 grams per kilogram body weight.
-- Muscle protein synthesis peaks around 3 hours after a meal and wears off in about 5 to 6 hours.
-- Cold water immersion can reduce muscle protein synthesis if done immediately after exercise.
-- The turnover rate for organs like the liver and brain is significantly higher than that of muscle.
-- Anabolic resistance is more pronounced in older adults but can be mitigated by exercise.
-- The average person consumes between 1 and 1.3 grams of protein per kilogram body mass daily.
-- Collagen comprises about 5% of the connective proteins in muscle tissue.
-- Exercise increases growth hormone levels, which can aid in muscle recovery.
-- The body synthesizes approximately 300 grams of protein daily but only consumes about 70 grams.
+- Dijkstra's structured programming eliminated the use of go-to statements.
+- Many programming languages have had features like lambdas for decades.
+- Testing practices have evolved significantly over the last 25 years.
+- The complexity of software projects increases super-linearly as more modules are added.
+- Intellectual control can help manage complexity effectively in software development.
+- The state space of an entire program is larger than that of individual modules.
+- Property-based testing encourages maintaining abstractions in tests.
+- Cultural biases can influence how teams approach complexity and reasoning.
 
 # REFERENCES:
-- Studies on nitrogen balance for establishing protein requirements.
-- Research on the effects of cold water immersion on muscle recovery.
-- Studies comparing plant-based and animal-based proteins for muscle synthesis.
-- Research on collagen supplementation and its effects on connective tissues.
+- Edsger Dijkstra's Turing Award lecture on intellectual control.
+- Smalltalk programming language features.
+- Papers written by George on his website discussing these topics.
 
 # RECOMMENDATIONS:
-- Aim for a daily protein intake of at least 1.2 grams per kilogram for optimal muscle gains.
-- Distribute protein intake evenly across meals to maximize muscle reconditioning.
-- Engage in regular physical activity to combat anabolic resistance, especially in older adults.
-- Avoid cold water immersion immediately after resistance training to prevent blunting gains.
-- Consider collagen supplementation for potential benefits to connective tissues, especially post-surgery.
-- Monitor total energy intake to avoid excess calories from any macronutrient source.
-- Incorporate a variety of protein sources, including both animal and plant-based options, for balanced nutrition.
-- Focus on resistance training as a key component of health and fitness at any age.
+- Foster a culture that values intellectual control in programming practices.
+- Encourage discussions around structured programming and its benefits.
+- Implement property-based and model-based testing to maintain intellectual control.
+- Regularly assess processes to ensure they promote intellectual control.
+- Avoid over-reliance on testing as a substitute for understanding code.
+- Stay proactive in managing complexity through consistent refactoring and simplification efforts. 
+- Recognize the signs of losing intellectual control early to prevent project stagnation.
