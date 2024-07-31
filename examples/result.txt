@@ -1,73 +1,66 @@
 # SUMMARY
-George Fairbanks discusses software architecture, its evolution, and practical insights from his book "Just Enough Software Architecture" during a talk.
+A software designer discusses how using contracts can improve design clarity and simplicity, helping developers communicate and identify complexities in their work.
 
 # IDEAS:
-- Software architecture techniques are often derived from large military projects, which may not apply to smaller software systems.
-- The balance between detailed software design and risk assessment is crucial.
-- Good teams internalize architectural ideas, making them common knowledge.
-- Job roles and processes in software development can distract from core engineering ideas.
-- Understanding the characteristics of different vehicle types can parallel understanding software architectures.
-- There is a schism in software architecture literature between traditional and agile approaches.
-- Software architecture is an abstraction of system structure and relationships.
-- The complexity of software systems is increasing, necessitating better architectural understanding.
-- Rackspace's case study illustrates how different architectures can solve the same problem with varying trade-offs.
-- Architectural decisions should be transparent to all stakeholders to avoid mismatched requirements.
-- Incremental changes in software development can lead to architectural drift if not managed properly.
-- The importance of multiple views in software architecture helps in understanding complex systems.
-- Patterns in architecture can facilitate certain qualities while complicating others.
-- The evolution of software architecture insights has been gradual, with many "aha" moments over decades.
-- The choice of architecture impacts the ease of implementing new features or requirements.
-- Prototyping and modeling should be balanced in software development practices.
-- Architectural decisions should be documented for clarity and future reference.
-- The right architecture can simplify problem-solving in software development.
-- Understanding trade-offs in architecture is essential for effective system design.
-- The historical context of software architecture reveals persistent challenges that remain relevant today.
+- Becoming a good software designer often feels frustrating and slow.
+- Contracts can reveal hidden complexities in software design.
+- They help separate concerns and improve communication among team members.
+- Writing contracts makes design issues more visible to everyone.
+- Contracts can guide developers towards simpler designs.
+- Short contracts are preferred over convoluted ones.
+- Contracts encourage uniformity in handling edge cases.
+- They promote decomposing complex methods into simpler ones.
+- Contracts help ensure functions operate on a complete domain.
+- Minimizing side effects leads to easier reasoning about code.
+- Contracts can highlight surprising elements in the code.
+- Teams using contracts develop a vocabulary around predicates and invariants.
+- A structured approach to design can lead to clearer modules.
+- Contracts can serve as a tool for simplifying thought processes.
+- Writing down design rules aids in team communication.
+- Contracts can help identify better places to implement logic changes.
 
 # QUOTES:
-- "The only thing that's reckless is if you knowingly don't look at the techniques."
-- "Software architecture is a competitive advantage."
-- "Software complexity has always been the number one enemy of software developers."
-- "There’s no perfect architecture; it’s always about trade-offs."
-- "If I see a Prius drive by, I go, 'That’s a hybrid car.'"
-- "The change of perspective didn’t change the solar system but made it easier to understand."
-- "You want to choose an architecture that’s tied to the qualities that you’re looking for."
-- "The architectural perspective makes certain problems easier to solve."
-- "You need to go beyond the code; you need to be talking with your colleagues about abstractions."
-- "If your intention is to actually make something fast, you may need to choose the right architecture."
-- "Why is it that so many of our problems are the same as 1975?"
-- "The complexity of the code is already there, but the models give us the right perspective."
-- "You can see that system is pipe and filter; that system is repository based."
-- "The decision records themselves take six months or so of mentoring."
-- "Some people think that XP is being able to do whatever you want—and that is not the case."
+- "If wishes were horses beggars would ride."
+- "Contracts are like an invisible hand that is guiding your design."
+- "By writing down the contracts and making them visible they can open your eyes."
+- "You are the force of simplicity."
+- "We hate typing long contracts and we seek short ones."
+- "The act of trying to find that short sweet contract is going to cause us to do a couple things."
+- "Contracts influence us to minimize side effects."
+- "When you start thinking in contracts, you start trying to find ways to say well this is a big problem to solve."
+- "Even if you can't find a really good place to put the complication, the contract is at least telling you."
+- "Using contracts or thinking in contracts has this invisible force on your design."
+- "When teams are thinking about contracts top of mind, they start having designs that look like this."
+- "It's great at communicating the design that you've got with the rest of the co-workers."
+- "Contracts aren't foolproof but they can help guide you towards simpler designs."
+- "They help us make our design simple."
+- "Contracts reveal the messy parts."
 
 # FACTS:
-- Software architecture literature has roots in military-funded projects from the 1990s.
-- The first version of Rackspace's system used email servers to hold log files directly.
-- MySQL databases can become bottlenecks as systems scale up.
-- Hadoop allows for distributed processing but introduces data staleness issues.
-- Architectural patterns have evolved from runtime relationships to include deployment patterns.
-- The concept of separating interfaces from implementations dates back to the 1940s.
-- The halting problem illustrates challenges in reconciling static and dynamic views in programming.
-- Architectural decision records (ADRs) help document important architectural choices.
-- The idea of using multiple views in engineering has been around since at least the 1960s.
-- The term "big ball of mud" describes a chaotic architectural style lacking structure.
+- Many developers struggle with becoming proficient in software design.
+- Contracts can help identify when a proposed code change complicates existing logic.
+- The concept of total functions is relevant in functional programming.
+- Pure functions are easier to reason about than those with side effects.
+- Clear contracts can lead to better testing and understanding of code.
+- Teams that use contracts often develop a shared language around their designs.
+- Factoring out common statements in contracts can simplify code maintenance.
+- The separation of concerns is crucial for effective software design.
+- Using contracts can lead to clearer module dependencies in software architecture.
+- Writing design documentation alongside code improves team communication.
 
 # REFERENCES:
-- "Just Enough Software Architecture" by George Fairbanks
-- Rackspace case study on system design
-- "Documenting Software Architectures" book (2010)
-- "Introduction to Software Architecture" paper by David Garlan and Mary Shaw
-- "Big Ball of Mud" paper
-- YouTube lecture on software architecture by George Fairbanks
+- The concept of contracts in software design.
+- The idea of predicates and invariants in programming.
+- The practice of writing README.md or design.md files for code documentation.
 
 # RECOMMENDATIONS:
-- Consider the risks your project faces when choosing architectural techniques.
-- Encourage team-wide understanding of design rather than relying on a single architect.
-- Document architectural decisions for clarity and future reference.
-- Use multiple views to understand complex systems better.
-- Balance prototyping with modeling to enhance design processes.
-- Reflect on your team's architectural insights regularly to improve practices.
-- Choose architectures that align with desired system qualities like speed or reliability.
-- Foster open communication about architectural decisions among all stakeholders.
-- Be aware of how incremental changes can affect overall system architecture.
-- Explore historical insights into software architecture for better understanding.
+- Consider using contracts as a guiding principle in software design.
+- Aim for simplicity by seeking short and clear contracts.
+- Decompose complex methods into simpler, more manageable parts.
+- Minimize side effects in functions for easier reasoning.
+- Use contracts to facilitate discussions about design changes with colleagues.
+- Document design rules alongside your code for better team communication.
+- Encourage a shared vocabulary around predicates and invariants within your team.
+- Regularly review and refine contracts to ensure they remain relevant and clear.
+- Explore functional programming principles to enhance your understanding of contracts.
+- Use contracts as a tool for identifying potential bugs before they arise.
