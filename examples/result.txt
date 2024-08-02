@@ -1,71 +1,56 @@
 # SUMMARY
-Colton Carnival, COO of Fast Graphs, discusses the tool's focus on fundamental analysis for long-term investors, showcasing its features and benefits.
+The discussion focuses on the prevention of the four major diseases: cardiovascular, cancer, neurodegenerative diseases, and metabolic diseases, emphasizing actionable insights.
 
 # IDEAS:
-- Fast Graphs is designed for long-term fundamental investors.
-- The tool emphasizes business fundamentals over stock price.
-- It significantly reduces the time needed for stock research.
-- Fast stands for Fundamental Analyzer Software Tools.
-- Earnings determine market price; stock prices follow earnings trends.
-- The fair value ratio is calculated based on growth rates.
-- Users can visualize historical data to assess stock valuation.
-- Overvaluation represents risk, while undervaluation indicates potential opportunity.
-- The tool allows for quick comparisons of multiple stocks.
-- Dividend payout ratios are easily visualized alongside stock performance.
-- Fast Graphs provides a comprehensive view of a company's financial health.
-- Analysts' forecasts are integrated into the tool for future projections.
-- The performance section compares stocks against benchmarks like the S&P 500.
-- Users can create and manage multiple portfolios within the tool.
-- The screening tool helps identify investment opportunities based on specific criteria.
-- Fast Graphs offers educational resources and tutorials for users.
-- The platform is continuously updated with new data and features.
-- Users can customize their analysis with various metrics and views.
-- The tool aims to help investors make safer investment decisions.
-- Fast Graphs is working on integrating ETFs into its offerings.
+- Atherosclerotic diseases and metabolic diseases have the most insight into prevention.
+- Cardiovascular disease has a genetic and environmental component but not much luck involved.
+- A-lipoprotein with apob protein is crucial in atherosclerotic disease.
+- Endothelial damage increases the risk of atherosclerosis.
+- Oxidation of cholesterol in apob particles leads to inflammation and heart attacks.
+- Reducing apob particles lowers the risk of cardiovascular disease.
+- Protecting the endothelium is essential for cardiovascular health.
+- Smoking, high blood pressure, and metabolic conditions weaken the endothelium.
+- Inflammation is less directly manageable compared to apob and endothelial health.
+- Cardiovascular disease is preventable despite being the leading cause of death globally.
+- Cancer has fewer clear genetic drivers compared to cardiovascular disease.
+- Obesity and smoking are significant environmental triggers for cancer.
+- Most cancer mutations are acquired rather than inherited.
+- Early and aggressive screening for cancer is crucial for better outcomes.
+- Neurodegenerative diseases like Alzheimer's have some genetic understanding but lack effective treatments.
+- Interventions for cardiovascular health also benefit brain health.
+- Exercise significantly reduces the risk of both cardiovascular and neurodegenerative diseases.
+- Cognitive and movement reserves are important for resilience against neurodegenerative diseases.
+- Metabolic diseases stem from overnutrition and energy imbalance.
+- Metabolic diseases increase the risk of other chronic diseases.
 
 # QUOTES:
-- "Fast graphs is really built for the long-term fundamental-investor."
-- "We focus on the fundamentals of a business first."
-- "Earnings determine market price where the earnings go the stock price is going to follow."
-- "You can waste a lot of time without a tool like Fast Graphs."
-- "Anytime it's under the orange line it's undervalued; anytime it's over the orange line it's overvalued."
-- "Overvaluation represents risk."
-- "This is a tool to think with."
-- "Valuation is super important."
-- "You can't invest in the past."
-- "The analysts have never missed essentially."
-- "This gives me more detail, more information."
-- "We do have this one thing right here called a smart-metric."
-- "The screening tool can be very daunting but I promise it's not too bad."
-- "We have a learning center with a ton of articles to read through."
-- "We will visualize ETFs better than anybody."
-- "We appreciate everybody joining and taking the time out of your day."
-
+- "Even though cardiovascular disease is the leading cause of death... it doesn't need to be."
+- "There is a log linear reduction in ascvd as apob goes down."
+- "The higher the inflammation, the more likely... this is going to be."
+- "Obesity comes with more inflammation comes with more growth factors such as insulin."
+- "Cancer runs in a person's family... we still aren't really even able to identify the genes."
+- "Two-thirds of cancers have a very strong tie to obesity."
+- "The treatment options for cancer are fewer... than for cardiovascular disease."
+- "What's good for the heart is good for the brain."
+- "Avoiding neurodegenerative diseases is the first, second, and third priority."
+- "The real name of the game with neurodegenerative diseases... is avoiding them."
+  
 # FACTS:
-- Fast Graphs covers approximately 20,000 US and Canadian equities.
-- The platform updates end-of-day data by 5 PM Eastern Standard Time.
-- Analysts' estimates are sourced from various data providers.
-- The tool allows users to plot various financial metrics for analysis.
-- Fast Graphs provides access to historical data spanning 20 years.
-- Users can compare up to three stocks simultaneously in performance charts.
-- The platform includes features for tracking portfolio performance and transactions.
-- Fast Graphs offers preset screens for finding new investment candidates.
-- The company plans to integrate ETFs into its offerings in the future.
-- Users can access financial statements directly from the platform.
-
+- 19 million people die from cardiovascular disease each year.
+- Cardiovascular disease is the leading cause of death in both men and women in the U.S. and worldwide.
+- About 50% of first heart attacks are fatal.
+- Two-thirds of cancers are strongly linked to obesity.
+- The median survival for stage four cancer patients has improved but cure rates remain low.
+- Neurodegenerative diseases currently have virtually no viable therapeutic options.
+  
 # REFERENCES:
-- Fast Graphs (the tool itself).
-- YouTube channel for educational webinars and tutorials.
-- Learning Center with articles and resources on investment analysis.
-
+- Familial hypercholesterolemia
+- BRCA1 and BRCA2 genes
+- Lynch syndrome
+  
 # RECOMMENDATIONS:
-- Utilize Fast Graphs for a comprehensive view of stock fundamentals.
-- Take advantage of the screening tool to identify potential investments.
-- Regularly check the YouTube channel for updates and tutorials.
-- Explore the Learning Center for in-depth articles on investment strategies.
-- Create multiple portfolios to track different investment strategies effectively.
-- Use the performance comparison feature to benchmark against major indices like the S&P 500.
-- Monitor dividend payout ratios to assess income potential from investments.
-- Engage with customer support for personalized assistance and questions.
-- Experiment with different metrics to find the best fit for your investment style.
-- Stay updated on new features and data integrations as they become available.
+- Lower apob particles to reduce cardiovascular disease risk.
+- Protect endothelial health by avoiding smoking and managing blood pressure.
+- Engage in regular exercise to lower risks of multiple diseases.
+- Prioritize early screening for cancer to improve outcomes.
+- Focus on maintaining cognitive and movement reserves for neurodegenerative disease resilience.
