@@ -1,68 +1,71 @@
-SUMMARY:  
-The content discusses the training data of an AI model, which is current up to October 2023.
+# SUMMARY
+Colton Carnival, COO of Fast Graphs, discusses the tool's focus on fundamental analysis for long-term investors, showcasing its features and benefits.
 
-IDEAS:  
-- AI models are trained on vast datasets to improve their performance.  
-- The cutoff date for training data can significantly impact the relevance of the information provided.  
-- Continuous updates are essential for maintaining the accuracy of AI responses.  
-- The knowledge of an AI is static after its last training date.  
-- Users should be aware of the limitations of AI regarding current events.  
-- The training process involves complex algorithms and data processing techniques.  
-- AI can provide insights based on historical data but may lack real-time information.  
-- Understanding the training data helps users gauge the reliability of AI outputs.  
-- The evolution of AI technology is rapid, necessitating frequent updates.  
-- Transparency about training data is crucial for user trust in AI systems.  
-- AI's knowledge is a reflection of the data it was trained on, including biases.  
-- The importance of diverse datasets in reducing bias in AI responses.  
-- Users should verify information from AI with up-to-date sources.  
-- The role of human oversight in the deployment of AI technologies.  
-- Ethical considerations in the use of AI trained on historical data.  
-- The impact of outdated information on decision-making processes.  
-- AI's ability to learn from new data is limited by its training schedule.  
-- The significance of user feedback in improving AI models post-deployment.  
-- The relationship between data quality and AI performance.  
-- The potential for misinformation if users rely solely on outdated AI knowledge.  
+# IDEAS:
+- Fast Graphs is designed for long-term fundamental investors.
+- The tool emphasizes business fundamentals over stock price.
+- It significantly reduces the time needed for stock research.
+- Fast stands for Fundamental Analyzer Software Tools.
+- Earnings determine market price; stock prices follow earnings trends.
+- The fair value ratio is calculated based on growth rates.
+- Users can visualize historical data to assess stock valuation.
+- Overvaluation represents risk, while undervaluation indicates potential opportunity.
+- The tool allows for quick comparisons of multiple stocks.
+- Dividend payout ratios are easily visualized alongside stock performance.
+- Fast Graphs provides a comprehensive view of a company's financial health.
+- Analysts' forecasts are integrated into the tool for future projections.
+- The performance section compares stocks against benchmarks like the S&P 500.
+- Users can create and manage multiple portfolios within the tool.
+- The screening tool helps identify investment opportunities based on specific criteria.
+- Fast Graphs offers educational resources and tutorials for users.
+- The platform is continuously updated with new data and features.
+- Users can customize their analysis with various metrics and views.
+- The tool aims to help investors make safer investment decisions.
+- Fast Graphs is working on integrating ETFs into its offerings.
 
-QUOTES:  
-- "AI models are trained on vast datasets to improve their performance."  
-- "The cutoff date for training data can significantly impact the relevance of the information provided."  
-- "Continuous updates are essential for maintaining the accuracy of AI responses."  
-- "The knowledge of an AI is static after its last training date."  
-- "Users should be aware of the limitations of AI regarding current events."  
-- "The training process involves complex algorithms and data processing techniques."  
-- "AI can provide insights based on historical data but may lack real-time information."  
-- "Understanding the training data helps users gauge the reliability of AI outputs."  
-- "The evolution of AI technology is rapid, necessitating frequent updates."  
-- "Transparency about training data is crucial for user trust in AI systems."  
-- "AI's knowledge is a reflection of the data it was trained on, including biases."  
-- "The importance of diverse datasets in reducing bias in AI responses."  
-- "Users should verify information from AI with up-to-date sources."  
-- "The role of human oversight in the deployment of AI technologies."  
-- "Ethical considerations in the use of AI trained on historical data."  
+# QUOTES:
+- "Fast graphs is really built for the long-term fundamental-investor."
+- "We focus on the fundamentals of a business first."
+- "Earnings determine market price where the earnings go the stock price is going to follow."
+- "You can waste a lot of time without a tool like Fast Graphs."
+- "Anytime it's under the orange line it's undervalued; anytime it's over the orange line it's overvalued."
+- "Overvaluation represents risk."
+- "This is a tool to think with."
+- "Valuation is super important."
+- "You can't invest in the past."
+- "The analysts have never missed essentially."
+- "This gives me more detail, more information."
+- "We do have this one thing right here called a smart-metric."
+- "The screening tool can be very daunting but I promise it's not too bad."
+- "We have a learning center with a ton of articles to read through."
+- "We will visualize ETFs better than anybody."
+- "We appreciate everybody joining and taking the time out of your day."
 
-FACTS:  
-- AI models require extensive datasets for effective training.  
-- The last training date can affect the accuracy of an AI's responses.  
-- Outdated information can lead to poor decision-making by users.  
-- Diverse datasets help mitigate biases in AI outputs.  
-- User feedback is vital for refining and improving AI systems.  
-- Algorithms used in training can be complex and multifaceted.  
-- The rapid pace of technological advancement necessitates regular updates to AI models.  
-- Misinformation can arise if users rely solely on outdated AI knowledge.  
-- Human oversight is essential in ensuring ethical use of AI technologies.  
-- The quality of data directly influences the performance of AI systems.  
+# FACTS:
+- Fast Graphs covers approximately 20,000 US and Canadian equities.
+- The platform updates end-of-day data by 5 PM Eastern Standard Time.
+- Analysts' estimates are sourced from various data providers.
+- The tool allows users to plot various financial metrics for analysis.
+- Fast Graphs provides access to historical data spanning 20 years.
+- Users can compare up to three stocks simultaneously in performance charts.
+- The platform includes features for tracking portfolio performance and transactions.
+- Fast Graphs offers preset screens for finding new investment candidates.
+- The company plans to integrate ETFs into its offerings in the future.
+- Users can access financial statements directly from the platform.
 
-REFERENCES:  
-- No specific writing, art, tools, projects, or other sources of inspiration were mentioned in the content.
+# REFERENCES:
+- Fast Graphs (the tool itself).
+- YouTube channel for educational webinars and tutorials.
+- Learning Center with articles and resources on investment analysis.
 
-RECOMMENDATIONS:  
-- Regularly update AI models to ensure they provide relevant information.  
-- Educate users about the limitations and capabilities of AI systems.  
-- Encourage verification of AI-generated information with current sources.  
-- Promote transparency regarding the training data used for AI models.  
-- Implement diverse datasets to reduce bias in AI responses.  
-- Foster user feedback mechanisms to enhance AI performance post-deployment.  
-- Emphasize the importance of human oversight in deploying AI technologies.  
-- Advocate for ethical considerations in the development and use of AI systems.  
-- Highlight the need for continuous learning and adaptation in AI models.  
-- Stress the significance of understanding the context behind AI-generated insights.  
+# RECOMMENDATIONS:
+- Utilize Fast Graphs for a comprehensive view of stock fundamentals.
+- Take advantage of the screening tool to identify potential investments.
+- Regularly check the YouTube channel for updates and tutorials.
+- Explore the Learning Center for in-depth articles on investment strategies.
+- Create multiple portfolios to track different investment strategies effectively.
+- Use the performance comparison feature to benchmark against major indices like the S&P 500.
+- Monitor dividend payout ratios to assess income potential from investments.
+- Engage with customer support for personalized assistance and questions.
+- Experiment with different metrics to find the best fit for your investment style.
+- Stay updated on new features and data integrations as they become available.

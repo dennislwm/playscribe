@@ -1,1 +1,829 @@
-
+hi everyone my name is Colton Carnival I am the COO here at 
+fast grafts I work-with the development team and everything 
+and yeah I wanted to thank you guys all-for attending today 
+we're going to be going over what fast graphs is who 
+it's-really targeted for who can really take advantage of 
+it and and show some-features and really show how to use 
+the tool at the bottom of your Zoom you-should see a little 
+button that says Q&A so at any point in time you guys 
+can-type in answers or questions there and throughout this 
+webinar we'll we'll try-and answer all of them some of them 
+may be directly answered some of them may be-answered 
+through stuff that I'm already going through so at any 
+point in time-feel free to do that but let's go ahead and 
+get started so I will share my-screen and yeah get started 
+so first things first who is fast graphs really-for right 
+so fast graphs is really built for the the long-term 
+fundamental-investor it works because it's focused on the 
+business behind the stock and the-price second where 
+traditionally most other websites that you're looking 
+at-for stock research you are you're looking at Price first 
+and we like I-said focus on the fundamentals of a business 
+first and what I will do here-in a minute is go through 
+what we're seeing on this chart and show you how we-do that 
+but within seconds you can see if a stock is even worth 
+looking into as-an investment candidate it's really really 
+really shortens your investment-time that you have to syn 
+into your research when looking at stocks I can I-can 
+quickly go through a bunch of stocks and almost instantly 
+look at them and be-like it's not really even worth my time 
+to to dive into the financials even more-or the 10ks the 10 
+Qs that type of stuff which is which is all stuff that 
+you-have to do but you can waste a lot of time without a 
+tool like Fast graphs-fast stands for fundamental analyzer 
+software tools so once again we are-we're really focused on 
+the fundamentals of the business earnings determine-market 
+price where the earnings go the stock price is going to 
+follow but it-also represents that the fast in fast grafts 
+represents how fast it can speed-up your your research 
+process when investing in stocks so let's take a look-at a 
+at some charts we're going to take a look at some companies 
+uh some good-ones some bad ones to describe what I've been 
+talking about but first I want to-take a look at this we're 
+going to kind of pull apart what we're seeing on the-screen 
+and then yeah go from there so I can take all of these 
+lines off on the-chart and at first I know it can be 
+daunting but once you really figure out-what the lines mean 
+it's it's super easy but I want to just start with with 
+price-which everybody's used to right so if you go to other 
+websites for stock-research you're going to see price 
+movement that's what everybody's focused-on should I have 
+bought here after it dropped dropped should I bought 
+here-after it dropped should I bought here after it dropped 
+is this overpriced is-this overpriced you never really know 
+unless you're really looking at the-fundamentals of the 
+business and once again that's what fast graphs shows 
+you-so by clicking on this fair value ratio down here I can 
+plot what we call the-fair value ratio and so we calculate 
+a fair value ratio of a 15 times earnings-based on the 
+growth rate of the company and as growth rates change the 
+fair-value changes and I can change shorten time frames I 
+can increase time length-in time frames I can use this down 
+here and then notice as I'm changing time-frames this 
+growth rate has gone up to a 1629 which then has given me a 
+16.2 n-fair value right if I drag this back here and I'm 
+looking at a 9.2 it's-giving me a 15 times fair value and 
+what that means-is we're plotting adjusted earnings per 
+share so you actually get a whole-plethora of metrics to 
+work with but right now we're plotting adjusted-operating 
+earnings adjusted EPS each fiscal year and what we have 
+done is we-apply this 15 times multiple to every single one 
+of these right so this 8.52-that we that we see right here 
+this represents that at 8.52 * 15 this is-8.85 * 15 11 * 15 
+and so on and then what we do cuz like I said we focus 
+on-the fundamentals of the business first we put the stock 
+price on top of it now-as you can see where the business 
+goes the stock price goes in the long run-right this is 20 
+years of data that we're looking at okay so there's 
+going-to be short-term volatility there's going to be times 
+where it's not exactly-on the Orange Line times where it's 
+over times where it's under-extended periods of time where 
+it's under and sometimes we'll see stocks-where it is over 
+the Orange Line many times or for long periods Scott 
+Richard-just asked a question when you say fair value is it 
+normalized PE based on-growth EPS estimates to get fair 
+value via multiplication Scott I don't-necessarily 
+understand what you're asking there but in simplistic terms 
+the-way that we calculate fair value is we calculate the 
+compound annual growth-rate of the time that we're looking 
+at based on the metric that we're looking-at and based off 
+of that growth rate we use a few different formulas which 
+you-guys can read in our learning section in our Learning 
+Center that calculate that-fair value ratio so I hope that 
+answers your question we do have forecasting as-well which 
+I will get to in a minute so in really simplistic terms 
+when I'm-looking at a at a historical chart that's what 
+this chart is called right-here anytime it's under the 
+orange line it's undervalued anytime it's over the-orange 
+line it's overvalued now that doesn't mean you can't make 
+money right-buying something overvalued but what 
+overvaluation represents is risk right a-stock can be 
+extremely overvalued and keep going up especially in the 
+short-term as people are pumping money into it as people 
+are super excited about that-stock but at some point it 
+probably will fall you can never say it's going to-fall for 
+sure but what you are doing is you are extending yourself 
+and you are-buying in to a lot of risk and so this little 
+blip over here right this you-could argue is overvalue but 
+that doesn't mean you can't buy it and one-thing I can do 
+is I can left click here and then left click anywhere on 
+the-price line and see a growth rate right so if it were if 
+I were to have bought-it then and then held it out till 
+here I would have gotten a-13.55% annualized percent or 
+annualized rate of return okay I would have turned-$10,000 
+into $29,000 now this is where valuation-really becomes 
+important overvalued versus undervalued if I would 
+have-waited a few years first of all I would have had to 
+have gone through about a-year and a half of losses losing 
+23% total or 17.64% per year before I-started to rece to 
+see that return but if I would have waited a few years 
+till-it was undervalued to buy this and I'm going to choose 
+a bottom and go till our-last closing price I would have 
+had 21% annualized rate of return so I would-have turned 
+$10,000 into 41,9 124 that's a huge difference right-like 
+what did what was the comparison it was-$41,000 versus oops 
+let me get one versus-$31,000 right so $10,000 more dollars 
+I made off of my investment in a year and-a half less time 
+that's due to buying a good valued company that is growing 
+fast-right so I want to take a look at a couple other 
+companies this is elevance-right here this is a a managed 
+healthc care company that's the sub industry-over here I 
+guess before I do that let me let me show a few more 
+portions of-what we're looking at over here so we have on 
+the side here called what we-call fast packs okay and if 
+you're on a smaller screen you may see it below okay-but on 
+on normal size screens on larger screens it's going to be 
+to the right-but what this represents is we've got some 
+information regarding the stocks or-previous clothes the 
+Blended PE which the Blended PE is something that 
+we-specifically use here at fast graphs it's a mix between 
+the trailing and the-forward PE we like to use a blended PE 
+ratio because we we think it represents-a more current 
+valuation of the stock if you use a trailing PE then you're 
+using-historical data that that's not not the current 
+earnings of the company if-you're using forecasting data so 
+a forward PE forecasting data is not-guaranteed to be 
+correct so you can be overstating or misjudging what the 
+PE-Ratio is but what we do is we take a blended average 
+between the last actual-and the nearest forecasting data 
+point so that would mean I'm taking a PE ratio-between this 
+33.1 14 and this 37.25 estimate number and coming up with-a 
+PE ratio time weighted average based off of that then down 
+here we have the-graph key so this is representing the 
+growth rate of that orange line that we-see the fair value 
+ratio is this 15 right here so that is the the actual-what 
+ratio this orange line is plotted at and then we also have 
+this thing-that's called the normal PE so the normal PE is 
+what the market has-normally traded this stock at okay so I 
+can see that this is traded normally at-a 4 14 times 
+multiple instead of a 15 that's due to these many years 
+right-here of it being under the orange line if I were to 
+shorten this we can see it-slightly over okay that's due to 
+these time periods being slightly over the way-that we 
+calculate that normal PE is it's the fiscal year end pees 
+trimmed the-average of the fiscal year end pees trimmed for 
+a high and a low and then if-it gets below five years we 
+just do the we we don't do any trimming so it's just-the 
+the average of the fiscal year npes but so this then gives 
+you an idea of-what the market has normally traded it at 
+right because there can be times-where based on the growth 
+rate we're calculating a lower PE ratio but it may-never 
+have hit that PE ratio so we also Supply this normal PE 
+line so you can-say okay over the last 20 years this is 
+what this stock has normally traded at-and if it's 
+significantly over that blue line and over the orange line 
+I mean-you're kind of looking at a clear picture of of 
+overvaluation in that-sense so that's that's why we include 
+that blue line then I have a few other-things on here we 
+have two forms like two ways that we show dividends we 
+show-a dividend payout ratio line okay so that's plotting 
+this dollar1-15150 at the same ratio as this and what this 
+represents is actually the payout-ratio so I can see that 
+this is 17.6% payout ratio right here that line right-here 
+is roughly 17.6% this Orange Line basically and we-can see 
+that over here a little bit better so this company's 
+maintaining a-17 to 16 to 177% payout ratio on their 
+dividends and we'll see in other-companies that's going to 
+be a lot higher you instantly see the payout-ratios with 
+fast grabs right boom right there on the chart we then also 
+showed-the dividends as this green shaded area above the 
+orange line to represent you-as a shareholder you're 
+getting a participation in the earnings and then-your 
+dividends on top of that so that's what that green shaded 
+area represents-on top of that you can also plot a dividend 
+yield okay so as the stock-price is lower the dividend is 
+higher as the stock price gets higher in terms of-valuation 
+the dividend yield gets lower okay so couple different 
+lines that you-can throw on here you can take them off if 
+you want and so on so let's take a-look at a couple other 
+companies I want to show you guys a company that is a-good 
+low Growth Company so we can see stability and earnings 
+here right this-this orange line is is not really wavy 
+right like it's it's growing at a solid-rate I can see the 
+change per year down here they had a high growth 177% 
+this-year then 1% 8% 8% a little bit of drop there post 
+recession so this is the-2008 recession the the big housing 
+recession that we had and then this-other gray shaded area 
+represents the co recession but as we can all see this is-a 
+relatively stable but solid grower this has only grown 
+at-4.07% compared to that 13 to 16% that we saw with 
+elevance that last company as-we can see I can plot the 
+stock price on top of this and over the long run this-stock 
+price follows where this company goes now there's times of 
+overvaluation-and Times of of undervaluation right so we 
+have some undervaluation back here we-have some 
+overvaluation up here but it tends to always return to the 
+mean and-this is another picture of a company that I may 
+want to invest in now also-take a look at the dividend 
+payout ratio I can instantly see that this payout-ratio is 
+higher than elanes right I can instantly see they pay more 
+in dividends-than elevance and they're paying around it 63 
+64% payout ratio so once again-instant looks into like 
+what's going on with the company potential Investments-what 
+you could be getting out of it as an investor let's look at 
+a company now-where it is kind of bad in no growth and I'm 
+going to take the stock price off so-this is a company 
+where their earnings were good back through 2009 and 
+now-they've started losing money all throughout these years 
+and to No-Surprise the stock price is dropped that whole 
+time right so I can instantly see-this is not a company I 
+would want to invest in there's a difference in stock-price 
+drops there's this stock price drop is driven completely by 
+the-fundamentals of the company deteriorating and I can 
+instantly see-that there's no there's no question about it 
+I there's no research I have to-do I'm visually seeing all 
+this so fast and that's what makes fast graphs 
+really-really powerful another company that we can look at 
+this is just another ugly-company we're going to see 
+cyclicality and earnings okay and what does-everybody think 
+the stock price is going to do when I plot it basically 
+follows-it this company has gone nowhere they had this boom 
+in earnings up till 2008-and then we saw a huge crash in 
+the stock price and it stayed relatively-flat since this is 
+dead money this is a decade or more of just dead money 
+that-fast grafts can help you avoid right like we all want 
+to make money we all-want to make safer Investments and 
+fast grafts is really here to help you make-sa safer 
+investment decisions one more company I want to show you 
+guys is SMG-and we can see that there's some cyclicality in 
+this company we had some-drops down here bit back up a boom 
+back in in earnings here and then a collapse-in earnings 
+and what's stock price do it follows it right we aren't 
+making this-fit we are purely calcul ating what we think is 
+a fair value ratio based on the-growth rate and it is 
+undeniable that the stock price follows where 
+those-earnings go okay cyclical companies you'll see 
+cyclical stock prices you-want to see another cyclical 
+company caterpillar is one for example here's-cyclicality I 
+can instantly see that this company is a cyclical company 
+just-off the earnings what's the stock price do it follows 
+it I mean it almost-follows it to a te right there is 
+disconnects there's always going to be-disconnects 
+short-term disconnects but in the long run we can see that 
+let's-see someone asked where can I see free cash flow for 
+covering the dividend-there's actually two spots that you 
+can see that so in the list of metrics that-we have we have 
+free cash flow we have operating cash flow sales EIT ebit 
+so if-I just click this we're looking at free cash flow 
+here's a point where free cash-flow hasn't covered the 
+dividend here's another point but all throughout 
+these-years they cover it we can also go to the fiscal 
+Fitness which this is a a-section that gives you some 
+pre-built charts operating cash flow growth share-BuyBacks 
+operating cash flow greater than net income and I can see 
+on here-that free cash flow for the most part is covering 
+the the dividends someone just-asked fast grafts is endof 
+day data what time does it update so we update as soon-as 
+we get data from our data provider we do actually offer 
+International stocks-so with a Bas plan we offer us and 
+Canadian stocks which is roughly-covering 20,000 equities 
+and then when we if you were to buy the international-data 
+plan that jumps it to about 80 to 990,000 for US Stocks I 
+would say-roughly at by 5: pm. Eastern Standard time we 
+have loaded in most of the-unofficial pricing and then we 
+get the total like complete official pricing-sometime by 
+midnight but and what that means unofficial means is is 
+that it can-change they're making sure I guess that that 
+data is correct but most of the-times it's not going to 
+change but unofficial pricing comes in 
+relatively-relatively quick and then as for fundamental 
+data we get fundamental data-we get new estimates all 
+throughout the day so we're constantly loading 
+data-whenever we can get whenever we get data from our data 
+provider whenever they-upload data to their system is when 
+we pull it so it's it's intermittently it's-throughout the 
+day but yeah so end of day stock price data does 
+come-relatively fast into the system Okay so we've covered 
+a few companies good ones-bad ones how fast you can really 
+view what these companies look like with fast-graphs right 
+well one thing that I want to cover now is the metrics that 
+you can-look at right so I can look at for all these 
+companies I can look at tons of-different metrics plotting 
+all of these eida ebit sales right these are all-available 
+for use for valuation purpos some companies are going to 
+look better-on some metrics and some companies than other 
+companies like if I go to Amazon-for example and we're 
+looking at adjusted operating earnings we see this-massive 
+disconnect I can take this off and I can say okay well 
+that's never-tracked operating earnings right but if I go 
+to operating cash flow this company-tracks operating cash 
+flow to a T So as an example Chuck Carnaval the CEO of-fast 
+graphs he always says this is a tool to think with so we 
+give you the-things the data to look at and you can kind of 
+put together pictures of-valuation by using all of these 
+metrics a major question that we get is what is-the best 
+metric to use and this isn't us being snarky or anything 
+our best answer-is use all of them right I mean it's so 
+fast I can just click through all of-these really fast and 
+see different pictures of the company I 
+wouldn't-necessarily go through them this fast I'd take a 
+little bit of time and and-take a look at like Amazon sales 
+are really smooth right that's that's-instant data I see 
+right there boom really smooth fast growing sales that's-a 
+that's a great thing to see in in a company generates a ton 
+of operating-cash flow boom right there already that fast 
+and once again that's what's so-powerful about fast grafts 
+we do have this one thing right here called a smart-metric 
+so as I look at different companies notice that it 
+keeps-defaulting to adjusted operating earnings even though 
+I was on operating-cash flow and then if I were to look at 
+a company like a Reit it's actually-going to default to 
+adjusted funds from operations now if I were to click 
+this-off and change it to eida for example I can now search 
+for other companies and-it's going to stay on eida but this 
+smart metric just kind of helps speed up-the investment 
+process there okay now that we've kind of gone through 
+the-historical chart and all of this I want to take a look 
+at some of the other-functions that we have available on 
+the tool we have this chart this section-called the 
+performance section and what this allows you to do is 
+compare stocks-the growth rate of stocks all of that to up 
+to three comparison tickers right now-I have it being 
+compared to the Spy I'm going to get into what these charts 
+are-in a second I can see down here that these are my 
+performance results if I-were to invested $10,000 into 
+Johnson and Johnson this would have been my-starting price 
+my ending price how much I invested my beginning shares 
+ending-shares and then I get a performance result down here 
+comparing the two-Investments so over that same time frame 
+the amount of dividends the growth like-the Capital Growth 
+so my annualized growth without dividends total and 
+then-total annualized rate of return I also get some 
+dividend performance stuff down-here so I can see that on 
+average Johnson and Johnson grows their dividend-faster 
+than the spy and then compound and average growth rate they 
+growing it-much faster than spy y then I can also come down 
+here I can see all of the-dividends being paid out for 
+Johnson and Johnson I can quickly go in between-summary 
+detail I can also put newest and oldest swapping those 
+things now back to-this chart I want to choose a different 
+company I want to go back to elevance by-the way you can 
+click up here you can left click or I'm clicking the 
+forward-slash the thing just below the question mark on my 
+keyboard and that also lets-me open this up and type up 
+here without taking my hands off with keyboard but I-want 
+to take a look at elevance and show you guys what this 
+chart is really-showing us so once again fast graphs 
+focuses on fundamentals first earnings-determine market 
+price the fundamentals of the company are going to 
+ultimately-determine the return of the investment in the 
+long run okay so what we do is on-this performance chart 
+we're not just focusing on price we focus on price and-then 
+also the change the cumulative change of the metric that 
+we're looking-at so if I was looking at operating cash flow 
+notice this has also changed to-operating cash flow for 
+both elevance and the Spy I'm going to go back to-adjusted 
+EPS for this case now what we do is we show the cumulative 
+change of-the Spy versus elevance from a EPS standpoint and 
+a price standpoint so I-can see if I take these apart that 
+elevance has significantly outperformed-the Spy in terms of 
+return right can also hit this and change this to-compound 
+annual growth rate so I'm looking at a 13.64% compound 
+annual-growth rate versus an 8.03 huge difference right and 
+why well if I plot-the earnings of both of these I can see 
+that the earnings of elevance has-significantly outperform 
+the earnings of the Spy the growth rate right and 
+it's-stable it's growing super stable stable and there's no 
+question really at this-point as to why elevance has grown 
+more it's because the company has grown-faster than the Spy 
+has so that stock price has reflected it this chart 
+down-here then is also comparing valuation in conjunction 
+with this price change-because price change is a form of a 
+few things right if it were to go from-undervalued to 
+overvalued it's going to have a compounded effect on that 
+price-change whether just like if it goes from overvalued 
+to undervalued it's going to-have a dampening effect on 
+that price change so what we plot is the fair value-ratio 
+which is the flat dotted lines right here right so I have 
+two fair-value ratios which based on the growth rates of 
+the earnings the spy and-elevance both have the same one 
+and then I'm plotting the Pees here as well okay-so we can 
+see a massive tick in PE ratio for the Spy while elevance 
+has also seen-that right during this time frame but it went 
+from undervalued to roughly fairly-valued while the Spy has 
+basically gone massively overvalued and then we saw a-big 
+drop whereas we've seen elevance down here kind of 
+maintaining around its-fair value and once again we can see 
+that right here right so we can see that-it's rotating 
+around its fair value line we can take a look at a company 
+like-Cisco okay so this would be this is a perfect-example 
+of why you need to also compare valuation at the same time 
+if we take a-look at the Cisco price and the Spy price spy 
+has outperformed Cisco but if-I look at the EPS growth of 
+this Cisco has significantly outperformed the Spy-EPS 
+growth 7.28 versus 10% right but why has Cisco 
+underperformed then why do it-underperformed the SP why why 
+is it not followed that earnings growth it's-because Cisco 
+was significantly overvalued back here in 2003 and it's-now 
+come down in 2023 and 2024 back to fair value okay we can 
+see that on the-historical chart we can see this massive 
+overvaluation okay even though this-company was growing 
+extremely fast at this point in time 23% a year if you-were 
+to invest in this company over this time frame you would 
+made 3.22% per year-why because of overvaluation okay so 
+valuation is super super important and-this Performance 
+Tool helps you understand what is also causing 
+that-performance to be affected positively or negatively 
+the next thing that I want to-take a look at is the 
+forecasting tool I'm going to go back to elevance this 
+is-kind of where you can really see how much money you can 
+make in an investment-right so this is the kind of the 
+important part the historical chart the-performance chart 
+these are historical stuff that lets you see how the 
+stock-has performed but you can only invest in the future 
+you can't invest in the past-and yes historical performance 
+does not guarantee future performance but what it-does is 
+let you see how well managed a company is and stay away 
+from cyclicals-things like that like I'm confident in a 
+company like elevance more than I am-confident in a company 
+like Caterpillar or us steel for example or Ford right 
+so-now we can take that information that we have and take 
+it to the forecasting tool-and what the forecasting tool 
+allows us to do is we show forecasts of the-company all 
+sourced from analysts we show the median estimate for each 
+one of-these years some companies are going to have more 
+analysts some companies are-going to have less and then 
+some companies might not have any analysts or-in any 
+estimat that's just kind of the nature of the game with big 
+data-unfortunately but what this does is we then plot what 
+these estimates are going-to be and then just like on the 
+historical chart we derive a fair value-formula based on 
+that growth rate and I can plot over every single one of 
+these-lines right and see what potential returns would be 
+if it were to go to-these certain points right so elevance 
+we are expecting roughly a-13.47% rate of return annualized 
+rate of return okay so that's a total 355.82-82% return by 
+2026 in conjunction with that I have-this thing called the 
+analyst scorecard and what we do is we actually rate 
+how-accurate the analysts have been in the past to give you 
+more confidence in how-in those analysts going forwards and 
+what we do for this is we we hold them-one year in advance 
+and two years in advance so this estimate for 2014 
+for-example they they a estimated $8.3 for 2014 fiscal year 
+EPS that was-made a year prior back in 2013 we then give 
+them a 10% margin of error so this-was a a 5% difference so 
+we give it a hit right whereas this is a 23%-difference so 
+they actually it was a beat and then the analysts have 
+never-missed essentially so I can be really really really 
+confident in these-analysts we did the same thing but at 
+two years so this 2014 was actually made-in 2012 they were 
+expecting 810 and it got 885 and we give the 2-year a 
+20%-margin of error but that gives me a ton of confidence 
+into what this company can-do and and what these analysts 
+can do for this company we can then also look-at some 
+previous estimates some current estimates these ones aren't 
+changing a-lot so we're not seeing a big change but there's 
+some companies where like UNFI-they can go through really 
+big changes and this is due to a huge valuation at-this 
+point we're looking at 298 right here so that that's why 
+this graph is is-kind of blown out but as I can see I can 
+change some of these and we're getting-different estimates 
+down here that are the analysts were providing I use 
+this-company as a as a big Stark difference I would have 
+not def I would probably-avoid this company if I were you 
+guys but going back to elevance I can run all-these 
+calculations right I can then take the normal multiple hit 
+this drop down-and I can take what historical normal 
+multiples have been for this company I-can choose one of 
+these low ones and make sure as a conservative 
+estimate-okay I'm going to be returning maybe 8% per year 
+okay so that's that's still a-great investment on a 
+conservative side and so on so this this gives me 
+more-detail more information this lets me take historical 
+Norms now of how this-company has traded and lets me run 
+investment analysis opportunities on-what I could be 
+earning on this investment we also have a long-term-growth 
+estimate this is a a single estimate provided by a data 
+provider so-they're expecting 12% long-term growth once 
+again you can do you can run your-mouse over all of these 
+okay we also have a historical compound annual 
+growth-notice that this defaults the fiveyear so does the 
+normal multiple this-defaults to the fiveyear but you can 
+change them to whatever year you want so-I can plot this 20 
+% historical growth I mean this 13.5% historical growth 
+rate-for the for the 20 years I can plot that that now 
+changes the estimate on here-that will change what fair 
+value multiple we are we are plotting based on-the growth 
+rate and I can see that this company has is growing has 
+grown solid-and I can use these historical Norms to see 
+what potential investment returns-would be in the future 
+okay so that's oh and I'm sorry there is the Custom 
+Tool-this allows you to input whatever data you want 
+basically I'm just going to-show a huge difference if I 
+wanted to say if I expected they were going to-make $60 in 
+earnings per share in 2025 I can plot that I can enter 
+custom growth-rates I can if I want if I thought they're 
+going to grow 30% per year right-I can plot that so the the 
+custom chart just lets you put in custom data run-your own 
+analysis basically if you if you've come up with certain 
+assumptions-and numbers on your own the analy scorecard 
+we've covered that This-research report this is a a beta 
+not all companies going to have research reports-but we do 
+have some available fund graphs is another very important 
+feature-fund stands for fundamental underlying numbers this 
+just lets you plot a bunch-of data for this company from 
+the financial statements so just a big data-plotter lets 
+you kind of run some more analysis on your own we have per 
+share-we have in millions data so notice that this is sales 
+revenue in millions if I-go to per share this is now going 
+to show me sales per share okay like I can-come here I can 
+see the the shares outstanding as well that's being 
+blown-out by the sales so shares outstanding is dropping 
+and that would affect how-sales per share is growing right 
+so I would see a larger growth in sales back-here during 
+that steeper drop of delution coming out basically 
+where-they're they're taking shares out of the market and 
+increasing shareholder value-through share BuyBacks so 
+that's a really important thing to look back and-forth 
+between the per share numbers and the en Millions number to 
+see how much-Financial manipulation is happening right like 
+a company can really boost up-their per share values by by 
+buying back a ton of shares that would kind of 
+show-manipulation in some numbers versus if their actual 
+inm million sales have-flatlined we also have ratios so in 
+here you can look at liquidity ratios so-current ratio 
+quick ratio we've got some profitability ratios and then 
+we've got-a ton of valuation ratios to also plot on here 
+some of these companies-healthcare companies don't have 
+ebit and eida so that's what we're seeing there-but now I'm 
+plotting PE ratios right here I have a bunch of functions 
+around-here you guys can feel fre free to play around with 
+these they're pretty-straightforward logarithmic birth 
+versus arithmetic lines versus bars things like-that just 
+to make it an easier viewing experience for for you guys we 
+then also-show financial statements for these companies and 
+the financial statements-that we offer are pretty powerful 
+the functions that they have so it's just a-a basic 
+financial statement there's nothing fancy here right but I 
+can then-plot this by clicking these charts here and I get 
+compound annual growth numbers-and total growth numbers 
+here so huge growth and sales in this company I can-then 
+shorten this and this growth rate changes okay so this is 
+reactive showing-you that data I can show it yearly I can 
+show it in quarters so now I'm looking-at quarterly data I 
+can also look at F so what f is is notice that we show 
+the-fiscal years as well as the quarters themselves in 
+between this doesn't have-a plottable value just because it 
+wouldn't make any sense I can also click-up here and go 
+directly to the 10 Q if I wanted to I can go to the 10K if 
+I-wanted to so that's all super simple looks like the sec's 
+loading time's-taken a little bit don't know what's going 
+on on their end but yeah so I can-go to their financials 
+really fast from there let's see is that loaded yet nope-I 
+can look at period over period growth I can look at 
+Absolute growth I can look-at as a percent of Revenue so 
+this is basically looking at it like margins and-that sense 
+I can look at the growth period over period growth here I 
+can-reorder it and then I can do some adjustments if I need 
+to for splits-fully adjusted and whatnot balance sheet same 
+thing per period over period growth-this one is a as a 
+percent of assets or as a percent of liabilities so all 
+these-numbers are this cash only is the cash divided by the 
+total assets whereas-liabilities is this is divided by the 
+total liabilities and stockholders-Equity so it just gives 
+you a better representation of the percent values on-these 
+financial statements and then finally we have a-cash flow 
+statement this only has absolute in Period over period 
+growth-but let's you look at cash flow statements really 
+easily and yeah same-functions over here we have a few 
+other tools in the system we have portfolios-as well as 
+screening tools so let's take a look at portfolios first 
+you can-create tons of portfolios and we have a bunch of 
+features that actually function-with that company app so 
+that we were just in what we call the company app-we're now 
+in the portfolio app so I can go in here I can actually 
+plot buys and-sells in here so notice that I have Holdings 
+data I I can plot transactions-of this and then we we offer 
+as a as a basic portfolio that's what this one is-it's 
+actually a or a simple portfolio is what it's called we 
+have five Advanced-portfolios allowed for our premium users 
+but basic allows me to still plot-transactions and then if 
+I were to click on one of these notice that this has 
+now-added this thing up here where it tells me the 
+portfolio and then the tickers-right and then now I've 
+plotted all of my buys and sells on here buys being-green 
+sells being red with an average cost and then now I'm going 
+to use the-arrow keys on my keyboard and I'm using the 
+right arrow and I can quickly go-through this portfolio and 
+I'm plotting all the buys and all the sells of 
+this-portfolio right here so that's an awesome feature I 
+can click in here and-change this I can plot we've got some 
+premium portfolios we actually have-screens that you can 
+also plot which I'll get into here in a minute it but-going 
+back to the portfolios if I take a take a look at a 
+advanced portfolio I-get quite a bit more data right so I'm 
+getting the top gainers the top losers-the top traded I'm 
+also getting some information right here so net 
+investment-the xir on the equity the total Equity return of 
+this portfolio the amount of-income I've actually earned on 
+this portfolio and the current yield and this-is giving me 
+a a date range for all of this data I can also toggle 
+between-showing open positions in all of the positions I've 
+ever had in a portfolio I-personally just do the open 
+positions in my portfolio because obviously those are-the 
+stocks that I'm following but if you want accurate track 
+more accurate-tracking data then you should put in all of 
+your buys and sells of your portfolio-not just your open 
+positions but this gives me a quick look summary look at 
+my-like day change of my portfolio so I can see Foot Locker 
+and and and AMG and-these stocks right here they've all had 
+good good gains over the last as of the-last close whereas 
+Southwest Delta UNFI these companies right here we've 
+seen-some losses and then we've got volume over here we 
+then also have an event-feed so you can see cck this was 
+the latest 10q that was released that was-actually released 
+yesterday and then we have a port folio growth chart so 
+this-is showing the net investment versus the value of the 
+portfolio and this this is-actually edit or auditable so if 
+I click on net investment I can see the deposits-and 
+withdrawals of this portfolio equals the net investment and 
+then as of right-now we assume that each buy is a deposit 
+while each sell in dividend is a-withdrawal so it's showing 
+you I this this portfolio had $779,000 worth of-buys based 
+off of the sells and the income that was made off of it 
+it's got-$113,000 in withdrawals and then now my gain is 
+basically from the 65,000 to the-81,000 that exists right 
+here if I scroll down here I can see some asset-allocation 
+and sector diversification so I've got it broken down 
+between midcap-large cap small cap and other and then same 
+thing with sectors so this is-showing it as sectors so just 
+giving me a a bunch of diversification information-on this 
+and then we do we are working on a cache feature and 
+actually are working-on a broker connected feature which is 
+in beta we've actually released it to a-small amount of 
+subscribers right now and we're fully testing that out 
+but-what that does is it would allow you to connect your 
+brokerage firms to directly-to fast graphs which would get 
+a snapshot of and it would look like this-it would be an 
+advanced portfolio but it would get any new trades that you 
+have-by the end of the day it syncs up with that and then 
+your positions everything-so it's just an it just automates 
+it so you don't have to manually put in all of-your 
+transactions getting back to this down here I have a really 
+interesting-chart this lets me see the estimated growth 
+rate and this is the growth rate-of the the smart metric 
+that we have so going back to what we talked about at-the 
+very beginning of this this is the estimated growth rate of 
+the smart-metric not of the stock not of the investment 
+itself but of the smart-metric and then the dividend yield 
+okay so then what it lets me what it shows me-is the my 
+kind of average of what my estimated like earnings growth 
+rate of-my portfolio is going to be as well as the dividend 
+yield and it's all based on-waiting and everything like 
+that so this kind of gives me an interesting look-into how 
+my portfolio is set up for future growth then we also have 
+a-waiting chart down here this one's pretty straightforward 
+under Holdings I-have a bunch of data here by the way 
+you'll see all these symbols in these-tables when you see 
+stocks and these are what we call snapshots so at any 
+point-in time I can click this and a something a drawer 
+pops out from the right side-and it just kind of gives me a 
+quick snapshot of what that stock looks like-and at any 
+point in time I can click these and it will draw it even 
+from the-snapshot I can hit open section and go to any of 
+these I want so if I wanted to-go to the forecasting 
+section of cck I can do that straight from that snapshot-it 
+opens it up in a new tab so you don't lose your old tab the 
+Holdings tab I-mean this is just like a general thing that 
+you'd see on your brokerage firm-shows you waiting market 
+value ignore these two things over here this is just-some 
+debugging stuff that we've had and then yeah just general 
+stuff that you'd-be used to seeing from here I can look at 
+transactions that's acting slow right-now but yeah here we 
+go I can see all the transactions from right here 
+really-fast and by the way if I were to plot one of these I 
+can quickly see-transactions from within the company 
+section as well so this lets me look at-the transactions in 
+this specific portfolio I can add transactions-manually if 
+I want and yeah the other thing you can do from here is add 
+and-remove from portfolios so as you're going through a 
+bunch of stocks you-might find a research candidate by 
+clicking through some things maybe-you're clicking through 
+one of our preset portfolios and you say wow that-stock 
+looks really interesting I can quickly come here and hit 
+add to-portfolio and maybe I have a watch list portfolio so 
+we can go ahead and do that-we can create a quick watch 
+list portfolio I'm just going to make it a-simple one I'm 
+going to hit create manually I'm going to call it 
+watch-watch list I'm going to keep it in USD and then 
+there's no stocks in here I-could add Johnson and Johnson 
+if I wanted to and LKQ maybe and oops Johnson-on Johnson on 
+accident let me add the two of these so now I have those 
+two in-there right now I'll get back to that adding to that 
+watch list we have these-preset portfolios so I can go 
+through I could go into this and see the S&P 500 I-could 
+actually graph it from here by clicking that button and now 
+I can-scroll through this and I could be like oh maybe 
+apple or ABV or or one of these-stocks maybe I want to add 
+this stock to my watch list so i' just go here and I-could 
+add it to the watch list I could actually add it to these 
+other ones too-if I want but hit save changes it's now in 
+that watch list portfolio but yeah-back to this we have a 
+bunch of preset portfolios for you guys to go through-and 
+potentially find new investment candidates also one other 
+thing that I-want to get to or show you guys is views so 
+you can create unlimited views that-allow you to see 
+certain data items right so this is an income and 
+price-returns view for this portfolio so I'm looking at all 
+these price returns and a-dividend yield I can edit this 
+View and I could add G sector if I wanted to if I-were hit 
+update it would updated across all the portfolios that have 
+this view-or I could save this as a new view plus gex is 
+what I could call it and I could-save this as a new view 
+and now I've got these two and then now if I were to go-to 
+another portfolio I could then add an existing View and 
+refresh my page I-could add an existing View and there's 
+that gix one so now I have that on two-portfolios also 
+notice that I have this view manager where I can see all 
+the-views that I have I can edit this view from here I can 
+also manage what-portfolios this view is on all from here 
+so it's just an easy spot to to handle-all of that all of 
+this there's a lot of data to go through on here I 
+definitely-recommend you guys going to the YouTube channel 
+and taking a look at the-screening webinar that we did I 
+think it was last week maybe two weeks ago but it-basically 
+goes through a lot of this data the views and the screener 
+have the-same data items in the same format so definitely 
+recommend you guys going-through that also reach out to us 
+at any point in time we have this thing down-here called 
+intercom at any point in time you guys can drop us a 
+message-we're here to help you have a question on something 
+maybe you have a question-on how to build a screener in a 
+specific way or what something means just drop us-a 
+question we're here to help any point in time the last 
+thing I want to show-you guys is the screening tool so it 
+can be very daunting but I I promise it's-not too bad I 
+definitely recommend you guys to go look at that 
+screening-webinar we did a whole hour long on the screener 
+and yeah I'm not going to go-into it detail from here but 
+basically I mean I can search for certain stocks-right I 
+can I can look for stocks in the consumer staple-with we're 
+going to do long-term debt to Capital less than 50 I can do 
+market cap-20 billion or more and let's do price return 
+greater than 5% I don't know if-this going to give me 
+anything no it didn't positive price returns let's look-at 
+that there's 19 okay so there's a lot that you can do with 
+this right screens-the whole database that we have super 
+powerful screener and we're actually in-the process of 
+redeveloping this screener to give you more 
+powerful-features in the future like being able to-compare 
+have it say I want the current PE ratio to be less than the 
+5year-normal PE ratio some so some super powerful features 
+coming out in the-future and then finally the last thing 
+that we have is the preset screens so we-offer a bunch of 
+preset screens for you guys to also find new stocks 
+new-Investments and I can click on any of these here's the 
+S&P 500 with growth-greater than1 % it's brought it down to 
+34 stocks and this can change every day-as data changes it 
+could FMC could could leave this and I can go through here 
+and-look at it on a snapshot or if I click this it has now 
+loaded that screen into-here and then now I can just 
+quickly go through all of this right and I can find-boom 
+Cummins maybe this is something I want on my watch list so 
+then I go here-click add to watch list and there you go so 
+that kind of sums up everything we've-got a couple 
+questions on the on here that I want to answer because we 
+have a-few minutes but other than that that kind of sums up 
+everything for fast-graphs we definitely recommend you guys 
+taking a look at the YouTube channel-like I said reaching 
+out to us we have a learning center by the way if you 
+click-this up here and click Learning Center there is a ton 
+of information in here a-ton of Articles to read through 
+and yeah go through this to learn certain things-about 
+portfolios about the company section all of that but let's 
+see oh-Keith that actually I think answers your question so 
+yes we do have training-videos there's demo videos in here 
+there's tutorials there's written-articles the whole 
+YouTube channel is basically a demo video so like I said 
+I-recommend checking that out going there Hector Martinez 
+just asked about ETFs so-that is one of our biggest 
+requested items we don't have ETFs yet but we're-going to 
+work on getting those in and we we actually have have two 
+ETFs we have-the spy and the iwv but those are the only two 
+that we have right now but-we're going to work on on making 
+this better but we visualize we will-visualize ETFs better 
+than anybody no one will visualize it like a company-like 
+this where we actually have a earnings line and everything 
+for this to-actually represent valuation and whatnot but 
+yeah ETFs are coming in the future-they are just not here 
+yet cool well that's kind of it looks like that's it-for 
+some questions Scott you asked about cost things like that 
+and yeah I mean-I'm I'm not going to necessarily go through 
+stocks right now we don't really-have the time for that but 
+yeah I we may have some stuff on the YouTube 
+channel-regarding regarding costs so make sure you check 
+that out Jay we do not have an-iPhone app right now no we 
+Prim we have fully focused on the web but we are-working on 
+improving our mobile experience on the web and then we 
+do-want to eventually get build a an actual iPhone and 
+Android app in the future-cool well guys I really 
+appreciate everybody joining taking the time out of-your 
+day and yeah we really appreciate it and for everybody that 
+joined this-webinar we actually have some coupons that 
+we're going to be sending out to-you guys so make sure you 
+guys check your emails over the next few days and-whatnot 
+and you may get a coupon for a discount for signing up and 
+in for-joining the webinar so I appreciate it guys that's 
+it for now like I said feel-free to contact us at any point 
+in time we're happy to help hope everybody has a-great day 
+bye guys
