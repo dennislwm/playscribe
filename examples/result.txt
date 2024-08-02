@@ -1,73 +1,70 @@
 # SUMMARY
-Sid, CEO of GitLab, discusses the company's ESG report, employee connections, and environmental initiatives during an AMA session for new hires.
+The discussion explores the evolution of medicine from 1.0 to 3.0, highlighting the transition from ineffective practices to a focus on prevention and health span.
 
 # IDEAS:
-- GitLab's fiscal year 2024 ESG report highlights a 40% representation of women in both individual contributor and leadership roles.
-- The purchasing team has improved procurement from underrepresented groups.
-- In-person events are essential for building trust and informal communication among remote teams.
-- Virtual events can facilitate informal communication but lack the depth of in-person interactions.
-- Acknowledging past achievements is crucial in performance reviews to foster employee morale.
-- GitLab values community and environmental focus as core aspects of its identity.
-- The company aims to maintain its values despite becoming publicly traded.
-- Climate change is a significant concern, with renewable energy production seen as a key solution.
-- Off-grid solar cells are viewed as a promising advancement for solar energy efficiency.
-- Companies like Swift Solar and Terraform Industries are highlighted for their innovative approaches to renewable energy.
-- Carbon offsets are being considered by employees as a way to contribute to environmental sustainability.
-- GitLab encourages open discussions about environmental initiatives among its employees.
-- The importance of creating meaningful connections in a remote work environment is emphasized.
-- The balance between virtual and in-person gatherings is crucial for team dynamics.
-- Transparency about failures can foster a culture of learning within the company.
-- GitLab's commitment to diversity and inclusion is a priority for its leadership.
+- Medicine 1.0 dominated human existence until the late 19th century.
+- Early medicine relied on beliefs in gods, spirits, and humors.
+- Life expectancy during Medicine 1.0 was around 30-40 years.
+- Major causes of death included communicable diseases and maternal mortality.
+- The scientific method, codified by Francis Bacon, revolutionized medicine.
+- The introduction of the light microscope and germ theory advanced medical understanding.
+- Medicine 2.0 emerged with randomized controlled trials (RCTs) enhancing treatment efficacy.
+- Lifespan doubled from the late 1800s to the early 2000s due to medical advancements.
+- Medicine 2.0 effectively manages many acute conditions today.
+- Chronic diseases have become the leading causes of death in modern times.
+- Medicine 3.0 aims to address the shortcomings of Medicine 2.0.
+- A shift in resource allocation is needed towards preventive care in Medicine 3.0.
+- Health span should be prioritized alongside lifespan in medical practice.
+- Medicine 3.0 focuses on early intervention and personalized treatment.
+- Chronic obstructive pulmonary disease (COPD) is largely preventable through lifestyle changes.
+- The Four Horsemen of death include atherosclerosis, cancer, neurodegenerative diseases, and metabolic diseases.
+- Public health initiatives are crucial for preventing diseases like COPD.
+- The healthcare economy needs a balanced investment between treatment and prevention.
+- Medicine 3.0 emphasizes tailored therapies based on individual evidence.
+- Health span is often neglected in current medical practices.
 
 # QUOTES:
-- "One statistic that I'm very proud of is that we have not only a lot of women... it's about 40%."
-- "I see them as still kind of professional connections... getting to know someone as a person."
-- "It's important to acknowledge the great work people do."
-- "It feels like the core of the company at GitLab... that we're inclusive and that we're being good stewards of the environment."
-- "I think the biggest way to combat climate change is renewable energy production."
-- "The best US solar company is Swift Solar."
-- "I think batteries can solve the day-night cycle."
-- "Carbon offsets is one of the things we can do."
-- "The fact that it's even mentioned... is really special to me among all of the other for-profit companies I've worked for."
-- "I appreciate that I agree that carbon offsets is... something we can do."
-- "We should always kind of try to do the maximum remote that we can."
-- "I think it's hard to do things within GitLab."
-- "I'm really excited about the potential they can have."
-- "I kind of have a mistake more days than not."
-- "I think if they are successful then we can build more solar than we need in the summer."
-- "It's essential to build trust."
+- "Medicine 1.0...was largely ineffective."
+- "The median life expectancy would have been into the late 30s or early 40s."
+- "Francis Bacon codifying the scientific method...is something we take for granted today."
+- "Human lifespan approximately doubled."
+- "Medicine 2.0 was and remains an enormous success."
+- "Lifespan has largely faltered."
+- "The leading causes of death today are very different types of diseases."
+- "Medicine 3.0 is to try to address where medicine 2.0 has fallen short."
+- "Health span is to be given at least as much effort and attention as lifespan."
+- "Medicine 3.0 really has two main hallmarks."
+- "We need to shift resources away from solely focusing on medicine 2.0."
+- "When it hits the fan...you want medicine 2.0 there to backstop those things."
+- "Chronic diseases are the leading causes of death in modern times."
+- "The purpose of medicine 3.0 is to prevent rather than treat chronic disease."
+- "Most healthcare dollars are spent on addressing lifespan."
 
 # FACTS:
-- GitLab's ESG report indicates a 40% representation of women in leadership roles.
-- The company has made strides in purchasing from underrepresented groups.
-- GitLab operates as a fully remote company, emphasizing both virtual and in-person connections.
-- The company became publicly traded recently, raising concerns about maintaining its core values.
-- Climate change is identified as a major global issue requiring urgent action.
-- Renewable energy production is seen as a critical solution to climate change.
-- Off-grid solar technology is being developed to enhance solar energy efficiency.
-- Swift Solar is recognized as a leading company in solar technology innovation.
-- Terraform Industries focuses on making electrolyzers more efficient and affordable.
-- GitLab encourages discussions about environmental initiatives among employees.
-- The company has over 15 suggestions for organizing virtual events to enhance communication.
-- Performance reviews should balance future expectations with recognition of past achievements.
-- GitLab's leadership emphasizes the importance of diversity and inclusion in its values.
-- The company aims to minimize carbon emissions through various initiatives.
-- Employees are encouraged to share their thoughts on environmental practices within GitLab.
-- GitLab's community focus extends beyond software development to include social responsibility.
+- Homo sapiens have existed for about 250,000 years.
+- Life expectancy was significantly lower before the late 19th century.
+- The introduction of sanitation practices contributed to increased lifespan.
+- The scientific method was not utilized in early medical practices.
+- Randomized controlled trials became a cornerstone of modern medicine.
+- Major advancements in medicine occurred between the Civil War and World War I.
+- Chronic diseases now dominate causes of death compared to infectious diseases.
+- COPD is primarily caused by cigarette smoking, a public health issue.
+- The Four Horsemen of death include coronary artery disease, cancer, neurodegenerative diseases, and metabolic diseases.
+- Lifespan improvements occurred over just a century, a small fraction of human history.
 
 # REFERENCES:
-- GitLab's fiscal year 2024 ESG report
-- Swift Solar
-- Terraform Industries
-
+- Francis Bacon's work on the scientific method.
+- Light microscope advancements.
+- Germ theory development.
+- Randomized controlled trials (RCTs).
+  
 # RECOMMENDATIONS:
-- Continue prioritizing in-person events for team bonding and trust-building.
-- Balance recognition of past achievements with future goals in performance reviews.
-- Foster open discussions about environmental initiatives among employees.
-- Explore partnerships with innovative companies in renewable energy sectors.
-- Encourage employees to share their ideas on improving GitLab's environmental impact.
-- Maintain transparency about challenges and failures to promote a learning culture.
-- Invest in off-grid solar technology advancements for sustainability efforts.
-- Regularly assess the effectiveness of virtual events in fostering informal communication.
-- Ensure that diversity and inclusion remain central to GitLab's growth strategy.
-- Consider implementing carbon offset programs as part of corporate responsibility initiatives.
+- Shift healthcare resources towards preventive measures in Medicine 3.0.
+- Focus on health span as much as lifespan in medical practices.
+- Tailor therapies based on individual patient needs and evidence.
+- Invest in public health initiatives to reduce preventable diseases like COPD.
+- Encourage early intervention strategies for chronic disease management.
+- Educate healthcare providers on the importance of health span.
+- Allocate healthcare funding more evenly between treatment and prevention efforts.
+- Promote lifestyle changes to mitigate chronic disease risks.
+- Foster research into personalized medicine approaches for chronic conditions.

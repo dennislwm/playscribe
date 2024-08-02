@@ -1,163 +1,166 @@
-all it's buffering rather slowly sorry just one-moment no I 
-think it's streaming welcome uh welcome everyone I'm Sid 
-CEO at-gitlab and this is our ask me anything opportunity 
-for new hires thanks you all-for joining gitlab ail you 
-want to kick us-off sure I'd love to thank you for the 
-opportunity by the way for all of us new-hires to get to 
-know more about you and the company um I dropped a 
-couple-questions the first one is as you very well know 
-gitlab recently releas-released our fiscal year 2024 ESG 
-report um I've linked this to the document if-anyone wants 
-to read on that further and I'm curious if there is 
-anything within-that report that the company is working on 
-that you are particularly proud-of I think um one statistic 
-that I'm very proud of is that we have uh not-only a lot of 
-women in uh who who joined us as individual contributors 
-it's about-40% but also women in leadership is about 40% as 
-well then recently I'm-impressed with how fast sharid and 
-the purchasing team have-been able to uh kind of change our 
-purchasing to-uh purchase more from under represented 
-groups that was great-thank you I love to hear that I 
-appreciate-that um if it's okay I guess I'll dive into the 
-next question then then we'll-jump to the next team member 
-does that sound okay yeah go for it perfect so the-second 
-question I have is you know it appears that gitlab has 
-definitely-prioritized creating meaningful connections 
-between members team members-not only in person but also 
-virtually um and I appreciate that since we are a-remote 
-company I'd love to hear if you think that um specifically 
-these Summits-and iners opportunities for departments to 
-get together do you foresee these-continuing to remain a 
-priority for future years or do you think that at any-point 
-we might shift a little bit more towards virtual um 
-Gatherings as teams-yeah thanks for asking and um-um I see 
-them as still kind of professional connections they're 
-your-co-workers after all and the the the the lingo we try 
-to use or I try to use is-informal communication it's kind 
-of yeah getting to know someone as a person-which you're 
-probably alluding to um and and go know more about kind of 
-the-person behind the coworker I think that's essential to 
-build trust and we-use both uh virtual events and in person 
-events to do that I think with inperson-events you can do 
-things that are much harder uh otherwise I'm thinking 
-of-sharing a meal together um and conferences where kind if 
-you very-quickly alternate who's speaking and and finish 
-each other sentences with a new-group that's tougher to do 
-in the zoom meeting we're really good at doing-things from 
-Motu we have like 15 plus suggestions how to organize a 
-virtual-event to help with informal communication-um but I 
-I really see added value to the inperson to the iners is 
-just expensive-both in time and money so we should always 
-kind of try to-do the maximum remote that we can and then 
-use the in the iners for stuff-that's uniquely within iners 
-thank you thank you-too oh question question number three 
-can you-help me here yes this is chia friend engineer and 
-crazy theage source code-this morning I'm one-onone with my 
-manager for having your name as the zoom-title yes uh this 
-morning I went on with my manager I learned the stories of 
-Team-Member One so back in 2017 uh the the nightmare 
-happened to an engineer-working here it will be a nightmare 
-for anyone um the story is also linked in-that post but 
-essentially um the person executed command was able to drop 
-some-tables in PR we lost about six hours of data um it's a 
-very touching story and-uh I guess like for in the spirit 
-of transparent and sharing fail failure uh-can you share a 
-mistake or failure that you learned from-Recently thanks 
-for the question uh I don't know so so many-um yesterday 
-I-um apologize to one of to two team member because in the 
-performance review-of that person I was very focused on the 
-future-and what uh what could be better and what 
-my-expectations were but I didn't focus on the year that 
-was passed and all the-extraordinary things that person had 
-done-and um yeah-the it's I'm always I'm always 
-hopefully-looking into the future U and that's what we're 
-here for we're working to-make things better but really 
-important to acknowledge the great work people do-and I 
-kind of dropped a ball on that and when I reread what I 
-wrote I was like oh-I can't believe believe I missed uh 
-these these big achievements that the-person did so that's 
-that's the first example that-comes to mind but I I kind of 
-have a a mistake more days than-not thank you for that 
-thanks for the question anybody else there who wants to-ask 
-something on the public stream should I just chime in can 
-you hear me-okay yeah go ahead Alex um so I've been really 
-pleased with uh the sort of-Community Focus and 
-environmental Focus that really feels like the core of 
-the-company at gitlab like it's a software company but it 
-it feels to me as a as a-new employee like it really 
-matters to the company that uh that-we're inclusive and 
-that we're being good stewards of the environment 
-and-things like that not just an afterthought however large 
-companies-tend to change hands tend to evolve um you know 
-recently gitlab became a-publicly traded company do you 
-have thoughts on how to ensure that those-values that make 
-gitlab so special to me um continue as the company grows 
-and-changes yeah yeah thanks for that um a good question I 
-I-have although like we care about the environment as a 
-company I don't think-it's it's one of the uh the first 
-things that come to-mind like we in our top values results 
-for customers and then in our values we-have diversity 
-inclusion and belowing that's super important to me that 
-people-feel included and welcome here um-the as a software 
-company we have-less kind of direct um things we can 
-influence in the-environment and there are some things that 
-actually make us a bigger impact on-the environment because 
-we hire people in so many countries and then we bring-them 
-for example together for Summit we we CA a lot of aircraft 
-pollution and-things like that so that's a tougher subject 
-um I think-we uh we see a role for every company to kind of 
-try to compensate carbon-emissions and things like that but 
-I think for the rest I think it's hard to-do things within 
-y lab um I think-I sorry I found it easier to do things 
-outside of-gitl um I'll get all-my it's okay if I get all 
-my little Soap Box what I do outside of gitl help 
-with-these things-absolutely so regarding like environment 
-is many things but the the the biggest-thing that comes to 
-mind is climate change I think the biggest way to 
-combat-that is uh renewable energy production and the way 
-to do that is solar and the-biggest way we can make solar 
-better in my view is for off skyed solar cells-that are 
-more affordable to Manufactured more efficient flexible and 
-lighter-weight and the best us Solar Company is Swift-solar 
-um a couple of years ago I let one of-their rounds couple 
-weeks ago I did a full day board-meeting uh with them 
-that's the first time I did a full day Bard meeting 
-not-even at gitlab do we do that but it was well organized 
-and Joel did a great job-bringing people together um but 
-I'm really excited about-the potential they can have and I 
-think if they are-successful then we can build more solar 
-than we-need in the summer problem with solar 
-it's-intermittent I think batteries can solve the day night 
-cycle but we'll have to-overbuild for the summer by a 
-factor of three to have enough in the-winter um but that 
-means also during a huge-part of the year the other three 
-non-winter seasons will have more than-enough electricity 
-and there's great companies like terraform that are 
-trying-to make inefficient that affordable electrolyzers to 
-do something useful-with that so terraform is a company 
-terraform industri is a company I'm-looking forward to 
-diving into to seeing how they're-doing but uh yeah so I I 
-think we're doing what we can uh-within G lab but I'm I'm 
-also really excited what we can do outside of-gitlab feel 
-free to share like what what you-think we're doing okay as 
-a as a company what we maybe could be doing but aren't-of 
-to get your take uh I've already um taken I've only-been 
-here for a month but I've already taken my first couple of 
-steps into um-thinking about off you know Carbon offsets 
-for uh Duo and and such there's-been some some people have 
-been very uh helpful with uh directing me to where I-should 
-share my thoughts um I don't have any I-don't have any 
-Earth shaking ideas but I'm really I think my the main 
-thing I-have to say about the company is the fact that it's 
-even mentioned and that-anyone is even thinking about it is 
-really uh special to me among all of the-other for-profit 
-companies I've worked for um my original background was 
-in-nonprofit environmental activism so I worked there 10 
-years before I went to-for-profits so um I'm I'm impressed 
-even even though you say it's not a core part-of the 
-company it's still more than most what I appreciate that I 
-agree that-carbon offsets is is is one of the things we can 
-do and uh you'll find-other people get lab hopefully 
-equally passionate I know that stenh who our one-of our 
-fellows is is very passionate about this as-well thank you 
-thank you anybody else for the public stream
+do you want to talk real quick about medicine 1.0 2.0 3.0 
+so medicine 1.0 is-the type of medicine that dominated for 
+virtually all of human existence so if-we you know if we 
+argue that humans have been around you know Homo sapiens 
+have-been around about 250,000 years from from the arrival 
+of our species until-the latter part of the 19th century um 
+we were practicing this thing called-medicine 1.0 which 
+truthfully wasn't medicine in the way that we think 
+about-it today it wasn't scientific in the way that we 
+understand science today it was-the best that humans could 
+do missing this tool right missing this tool of-inference 
+and you know it relied on a belief about you know perhaps 
+Gods-Spirits humors um and so you know it to be just blunt 
+was largely ineffective-um and so you know the the doctor 
+of the past didn't have any tools in large part-because 
+they didn't have any understanding of what was going on 
+in-terms of disease processes so not surprisingly humans uh 
+didn't live that-long on average uh and you know the median 
+life expectancy would have been-into the late 30s or early 
+40s um the causes of death were typically related-to 
+communicable diseases uh infections and and death 
+Associated um-with child mortality and um maternal 
+mortality so just the process of having-a baby was 
+incredibly dangerous to both the mother and the baby um and 
+obviously-that heavily skews lifespan data if you're 
+killing young mothers and babies-in the process of having 
+babies you're really bringing down lifespan and 
+life-expectancy and couple that with infections 
+communicable diseases and-Trauma um and you know I think 
+most people aren't surprised to know that yep-that's pretty 
+much how people died um and then of course after the after 
+you-know the Civil War and we we move into the latter part 
+of the 19th century a-couple of things start to come 
+together now the first of these actually happened-in the 
+17th century um but it wouldn't become gerine to Medicine 
+until 300-years later um or 2 200 years later rather and 
+that was Francis Bacon-codifying the scientific method so 
+again this is something you we take for-granted today but 
+this idea that you would make an observation which is 
+what-science is All About You observe something around you 
+you observe-something in the natural world you form a 
+hypothesis about why it is-happening you design an 
+experiment that is equipped to test the-hypothesis you 
+conduct the experiment and measure the outcome and you 
+compare-the results of the experiment to the prediction of 
+the hypothesis and that is-effectively the framework for 
+what science is and so with that as the-scaffolding upon 
+which people could begin to make inference you now layer 
+on-some other remarkable discoveries and insights so a 
+creation of the light-microscope the Advent of germ Theory 
+and ultimately the-development of antimicrobial agents all 
+of these things collectively I think I-would add to that 
+just the practice of Sanitation led to a remarkable change 
+in-the trajectory of human lifespan um and of course it's 
+so-remarkable that if you go from the late 1800s until you 
+know fast forward just-100 years which again is a sliver of 
+time across a 250,000 year timeline-human lifespan approx 
+imately doubled um so you know again 3 four 
+five-generations to double human lifespan that had 
+previously been unchanged for-hundreds of Generations is a 
+remarkable feat and we call this new system of-medicine 
+medicine 2.0 now there's lots of more Nuance to-get into 
+medicine 2.0 uh medicine 2.0 ultimately developed even 
+more-remarkable statistical tools that allowed for things 
+called random-controlled experiments or rcts randomized 
+control trials and this-really allowed medicine 2.0 to 
+flourish and become-supercharged and um obviously for the 
+most part medicine 1.0 was completely-displaced by this now 
+that doesn't mean that there aren't still some quacks 
+out-there that practice witchcraft but for the most part um 
+you know when a person-has an infection when a person has 
+congestive heart failure when a person-is in renal failure 
+when a person has appendicitis and needs to have 
+their-appendix remove when a woman has a complicated 
+pregnancy all of these-things now for people who are in the 
+developed world are really easy things-to manage using the 
+toolkit of medicine 2.0 so again medicine 2.0 was 
+and-remains an enormous success and I certainly wouldn't be 
+sitting here-talking with medicine 2.0 I would likely have 
+been dead already uh as would you-have so why do we need to 
+go any further why do we need a medicine 3.0 well for-all 
+of the successes of medicine 2.0 it has indeed had a couple 
+of obvious and-notable failures um the most obvious is 
+that-lifespan has largely faltered so there really has not 
+been any extension of-lifespan beyond that which came from 
+the-eradication of the conditions that led to the demise of 
+most people uh between-the Civil War and the end of the 
+first world-war um in particular the types of diseases that 
+kill people today uh are-very different types of diseases 
+from those that killed people 150 years ago-so the bading 
+causes of death which I describe as the Four Horsemen of 
+death-uh are are the diseases of atherosclerosis so um 
+coronary artery-disease and cerebral vascular disease 
+cancer the neurodegenerative diseases-and dementing 
+diseases uh so Alzheimer's disease Parkinson's disease 
+Louis body-dementia vascular dementia frontal temporal 
+dementia all of those diseases-and then these slew of 
+metabolic diseases that while directly not-responsible for 
+an enormous number of lives lost compared to the 
+other-categories uh indirectly contri immensely by 
+amplifying all of these now-there's a couple of other 
+things I haven't mentioned there at the-population level 
+chronic obstructive pulmonary disease is also an 
+enormous-cause of death um but its cause is almost 
+exclusively related to cigarette-smoking so I don't really 
+hold medicine 2.0 particularly responsible for the-failure 
+of mitigating that that's really more of a public health 
+question um if-people don't smoke they don't get COPD even 
+though COPD is one of the leading-causes of death um there 
+are of course accidental deaths um and we can spend-some 
+time talking about those later because there's an enormous 
+spread of-what those look like across lifespan and of 
+course by geography-so in essence the purpose of medicine 
+3.0 is to try to address where medicine-2.0 has fallen 
+short it's not to replace medicine-2.0 um I certainly from 
+time to time um hear-feedback from people who I think 
+misunderstand the arguments I've tried-to lay out and uh 
+there there's nowhere that I'm suggesting that we need to 
+do-away with medicine 2.0 that we don't want the system as 
+it exists today in-its capacity to do what it can do what I 
+argue is that we need to shift-resources away from solely 
+focusing on medicine 2.0 to focusing on what we'll-talk 
+about in a minute which is medicine 3.0 so if we're putting 
+a 100 units of-resources today into medicine 2.0 I think 
+most economists would argue-that's still too many units of 
+of economic input in other words Healthcare-makes up far 
+too big a section of the economy so maybe instead of it 
+being a-100 units that go into Healthcare it really ought 
+to be closer to 60 units-that go into Healthcare and I 
+would argue further maybe 30 of those unit-units should be 
+aimed towards medicine 3.0 and 30 of those units should 
+be-aimed towards medicine 2.0 because when it hits the fan 
+and something goes-really wrong you know again trauma 
+infection Heart Attack by all means you-want medicine 2.0 
+there to back stop those things but medicine 3.0 job is 
+to-make those encounters with medicine 2.0 less frequent 
+less severe and later in-life so that is effectively the 
+difference the the the the the final-point I'll make on 
+that is kind of just briefly explaining what medicine 3.0 
+is-which is because at this point it's self-evident it 
+almost doesn't need to-be explained medicine 3.0 really has 
+two main Hallmarks uh the first is that it-is aimed at 
+preventing rather than treating chronic disease by acting 
+early-acting aggressively and tailoring the therapy to the 
+individuals based on the-best available evidence which is 
+not necessarily going to be derivable from-randomized 
+control trials and the second pillar of medicine-3.0 is 
+that Health span is to be given at least as much effort and 
+attention as-lifespan this is again another enormous 
+difference between medicine 2.0 and-Medicine 3.0 medicine 
+2.0 does not Place emphasis on health span its emphasis 
+on-health span is anywhere from zero to very small 
+depending on the subs-specialty so there are there are 
+certainly some Physicians whose-practices do take them a 
+little bit into the arena of Health span but um you 
+know-outside of for example Physicians uh or healthc care 
+providers who work-specifically in the arena of mental 
+health again it's relatively low-obviously orthopedic 
+surgery is a is a is a you know a discipline of 
+medicine-that is more squarely uh featured in the health 
+span Arena but for the most part-most of the healthcare 
+dollars are spent on addressing uh and trying to 
+elongate-lifespan um and I would argue that we need to be 
+you know putting just as much-effort into Health span so 
+that's that's the fundamental difference between-medicine 
+3.0 2.0 and 1.0 [Music]-no
