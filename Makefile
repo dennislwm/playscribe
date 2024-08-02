@@ -7,6 +7,9 @@ ci_build:
 docker_clean:
 	docker image prune -f
 
+docker_genius: ci_build docker_clean
+	cat $(FILE) | docker run --rm --env-file .env -i playscribe --pattern extract_article_wisdom
+
 docker_interactive: ci_build docker_clean
 	docker run --rm --env-file .env -it --entrypoint bash playscribe
 
