@@ -1,66 +1,66 @@
 # SUMMARY
-Alex from KTZ Systems discusses Tailscale's Magic DNS feature, explaining how it simplifies remote network access and DNS management without exposing services to the internet.
+Brandon shares a heartfelt message about faith, humility, and the importance of serving God without seeking earthly recognition.
 
 # IDEAS:
-- Tailscale eliminates the need for manual WireGuard key management.
-- The convenience of Tailscale outweighs the downsides of hosting keys externally.
-- Magic DNS allows devices in a Tailnet to be accessed by name.
-- Split DNS can be configured to query remote DNS services.
-- A local DNS server is essential for effective split DNS.
-- Unique subnet ranges prevent network conflicts.
-- Wildcard DNS entries simplify DNS management.
-- Tailscale runs a local DNS server on every client device.
-- Using postal codes or phone numbers can help create unique IP ranges.
-- Tailscale's architecture allows for secure remote access without exposing services.
-- The importance of maintaining a consistent naming scheme for services.
-- Tailscale's recent pricing changes have increased the free tier node limit.
-- The flexibility of naming conventions allows for personalized network setups.
-- Tailscale's local DNS caching improves efficiency by keeping requests local.
-- The ability to access remote services as if on a local network enhances usability.
-- Tailscale's model encourages technical users to adopt the service in professional environments.
+- Popularity and worldly success can distract from spiritual priorities.
+- True rewards come from actions done in secret for God.
+- The last will be first in the Kingdom of Heaven.
+- The devil can appear beautiful and deceitful, masking his true nature.
+- Fear can hinder faith and spiritual authority.
+- Praying in the spirit strengthens one's connection to God.
+- The importance of maintaining a heart aligned with God's intentions.
+- Angels are protectors, not companions; they serve specific purposes.
+- The significance of humility in receiving God's blessings.
+- Believers should focus on spiritual wealth rather than material desires.
+- The concept of seed time and harvest applies to spiritual actions.
+- God’s love is central to a believer's life and actions.
+- The need for discernment between God's voice and the devil's temptations.
+- The importance of prayer and worship in maintaining spiritual clarity.
+- Believers are encouraged to believe for greater things in the future.
+- The idea that God will provide for His children amidst worldly chaos.
 
 # QUOTES:
-- "The biggest compliment I can give to Tailscale is that it just works."
-- "Gone are the days of generating my own WireGuard keys."
-- "It's really important for your own sanity that the subnet ranges of all these different networks do not overlap."
-- "Using this method we're able to tell what service is running on which box and then which physical site that box is located in."
-- "This whole process is split-DNS in action."
-- "Tailscale runs a local DNS server on every single Tailscale client."
-- "The power of wildcard DNS matching."
-- "You're totally at liberty to make up your own naming conventions."
-- "Tailscale made some changes to their pricing structures."
-- "It's a super simple but very powerful way to route DNS requests around different endpoints."
+- "This life is a vapor."
+- "He that sows in secret will be rewarded openly."
+- "God is love; it's not what He does, it's who He is."
+- "Fear tolerated is faith contaminated."
+- "You have to understand who you are in Christ."
+- "Greater is He that is in you than he that is in the world."
+- "You will have peace that passes understanding."
+- "The devil comes to kill, steal, and destroy."
+- "You can hang out with Jesus; you hang out with the Holy Spirit."
+- "Always keep yourself small in your own eyes."
+- "The last will be first and the first will be last."
+- "I will never bow my knee to you."
+- "You have to test the spirits."
+- "The wealth of the sinner is laid up for the righteous."
+- "You are the head, not the tail, above and not beneath."
+- "You can do a lot in five months."
 
 # FACTS:
-- Tailscale allows for remote access without opening ports in firewalls.
-- Each Tailscale client operates its own local DNS server.
-- Split DNS requires control over DHCP settings in remote networks.
-- Wildcard DNS entries can return the same IP address regardless of the subdomain queried.
-- Tailscale's free tier now supports up to 100 nodes.
-- The service is designed to appeal to technical users who may introduce it into their workplaces.
-- Local DNS caching prevents unnecessary external queries for known addresses.
-- Subnet routers can be run on various devices, including Raspberry Pi.
-- The use of unique identifiers in IP ranges can simplify network management.
-- Tailscale's architecture allows for seamless integration of multiple remote sites.
+- The Bible emphasizes that true rewards come from humble service.
+- The concept of seed time and harvest is a biblical principle.
+- Angels are described as ministering spirits sent to protect believers.
+- Fear can lead to a lack of faith and spiritual authority.
+- The devil can disguise himself as an angel of light.
+- Spiritual gifts can be misused if not aligned with God's will.
+- Believers are encouraged to pray for their enemies.
+- The Bible states that God will never forsake the righteous.
+- The year 2024 is seen as a time for believing in greater things.
+- The importance of maintaining a heart aligned with God's intentions is emphasized.
 
 # REFERENCES:
-- Tailscale
-- WireGuard
-- Proxmox
-- OpenSense
-- Pi-hole
-- Ubuntu
-- Cloudflare
-- Ansible
-
+- The Bible (various scriptures referenced throughout).
+- Personal experiences shared by Brandon regarding spiritual encounters.
+  
 # RECOMMENDATIONS:
-- Consider using Tailscale for simplified network access and management.
-- Implement a local DNS server for effective split DNS functionality.
-- Use unique subnet ranges to avoid conflicts in network configurations.
-- Establish a standardized naming scheme for easier service identification.
-- Explore wildcard DNS entries to streamline DNS management.
-- Regularly review and adjust your network setup based on personal needs and experiences.
-- Utilize low-power devices like Raspberry Pi for running subnet routers.
-- Leverage Tailscale's features to enhance security while accessing remote services.
-- Document your network configurations for future reference and troubleshooting.
-- Engage with the Tailscale community for tips and shared experiences.
+- Focus on serving God without seeking recognition or praise from others.
+- Engage in regular prayer and worship to strengthen your relationship with God.
+- Maintain humility and avoid seeking personal glory.
+- Test all spirits to discern their origin—whether from God or the devil.
+- Believe for bigger things in your life and trust in God's provision.
+- Pray for those who criticize or oppose you, following Jesus' example.
+- Seek to understand your identity in Christ to combat fear and doubt.
+- Regularly read scripture to ground yourself in God's promises.
+- Commission angels for protection over yourself and loved ones.
+- Cultivate an atmosphere of love in your interactions with others.
