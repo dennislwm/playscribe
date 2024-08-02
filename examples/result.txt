@@ -1,70 +1,47 @@
 # SUMMARY
-The discussion explores the evolution of medicine from 1.0 to 3.0, highlighting the transition from ineffective practices to a focus on prevention and health span.
+A Duo chat session featuring Aaron and Yan discusses challenges with GitLab API compatibility across different versions and extensions, focusing on user experience issues.
 
 # IDEAS:
-- Medicine 1.0 dominated human existence until the late 19th century.
-- Early medicine relied on beliefs in gods, spirits, and humors.
-- Life expectancy during Medicine 1.0 was around 30-40 years.
-- Major causes of death included communicable diseases and maternal mortality.
-- The scientific method, codified by Francis Bacon, revolutionized medicine.
-- The introduction of the light microscope and germ theory advanced medical understanding.
-- Medicine 2.0 emerged with randomized controlled trials (RCTs) enhancing treatment efficacy.
-- Lifespan doubled from the late 1800s to the early 2000s due to medical advancements.
-- Medicine 2.0 effectively manages many acute conditions today.
-- Chronic diseases have become the leading causes of death in modern times.
-- Medicine 3.0 aims to address the shortcomings of Medicine 2.0.
-- A shift in resource allocation is needed towards preventive care in Medicine 3.0.
-- Health span should be prioritized alongside lifespan in medical practice.
-- Medicine 3.0 focuses on early intervention and personalized treatment.
-- Chronic obstructive pulmonary disease (COPD) is largely preventable through lifestyle changes.
-- The Four Horsemen of death include atherosclerosis, cancer, neurodegenerative diseases, and metabolic diseases.
-- Public health initiatives are crucial for preventing diseases like COPD.
-- The healthcare economy needs a balanced investment between treatment and prevention.
-- Medicine 3.0 emphasizes tailored therapies based on individual evidence.
-- Health span is often neglected in current medical practices.
+- The problem arises from discrepancies between self-managed and GitLab.com versions.
+- Self-managed users may be several milestones behind, causing compatibility issues.
+- The GitLab CLI and editor extensions need to handle version compatibility.
+- A language server could centralize API changes, reducing redundancy.
+- Backward compatibility is crucial for extension queries to avoid breaking changes.
+- Testing against older versions of the API is challenging but necessary.
+- Experimental fields in APIs do not guarantee stability for production users.
+- Slash commands in the UI library must also be backward compatible.
+- Community Edition users may lack access to certain features despite being on the latest version.
+- Documentation for developers needs improvement to cover shared UI components and versioning issues.
 
 # QUOTES:
-- "Medicine 1.0...was largely ineffective."
-- "The median life expectancy would have been into the late 30s or early 40s."
-- "Francis Bacon codifying the scientific method...is something we take for granted today."
-- "Human lifespan approximately doubled."
-- "Medicine 2.0 was and remains an enormous success."
-- "Lifespan has largely faltered."
-- "The leading causes of death today are very different types of diseases."
-- "Medicine 3.0 is to try to address where medicine 2.0 has fallen short."
-- "Health span is to be given at least as much effort and attention as lifespan."
-- "Medicine 3.0 really has two main hallmarks."
-- "We need to shift resources away from solely focusing on medicine 2.0."
-- "When it hits the fan...you want medicine 2.0 there to backstop those things."
-- "Chronic diseases are the leading causes of death in modern times."
-- "The purpose of medicine 3.0 is to prevent rather than treat chronic disease."
-- "Most healthcare dollars are spent on addressing lifespan."
+- "It's caused some frustrations where you get little quirks in the UX."
+- "We still have to do the testing and make sure they're robust enough."
+- "This is just an architecture product; the way our product works will stay with us."
+- "A minor little change... what could possibly go wrong?"
+- "Updating their GitLab instance would have resolved the issue."
+- "We should have a fallback provided on the client side."
+- "The current tests are basically just testing the Happy Path."
+- "There's no safety net when you're using the public fields."
+- "Even if you are working behind the experimental flag, it's not going to save you."
+- "Make sure your queries that are called from the extensions are backwards compatible."
 
 # FACTS:
-- Homo sapiens have existed for about 250,000 years.
-- Life expectancy was significantly lower before the late 19th century.
-- The introduction of sanitation practices contributed to increased lifespan.
-- The scientific method was not utilized in early medical practices.
-- Randomized controlled trials became a cornerstone of modern medicine.
-- Major advancements in medicine occurred between the Civil War and World War I.
-- Chronic diseases now dominate causes of death compared to infectious diseases.
-- COPD is primarily caused by cigarette smoking, a public health issue.
-- The Four Horsemen of death include coronary artery disease, cancer, neurodegenerative diseases, and metabolic diseases.
-- Lifespan improvements occurred over just a century, a small fraction of human history.
+- Self-managed instances can run one milestone behind GitLab.com.
+- The GitLab API can change between versions, affecting extension functionality.
+- Community Edition users may not have access to Enterprise-only features.
+- The GitLab CLI and extensions authenticate against different API versions.
+- Integration testing often does not cover older self-managed instances by default.
 
 # REFERENCES:
-- Francis Bacon's work on the scientific method.
-- Light microscope advancements.
-- Germ theory development.
-- Randomized controlled trials (RCTs).
-  
+- GitLab CLI
+- GitLab language server
+- Duo chat API
+- GraphQL API
+- GitLab UI shared components
+
 # RECOMMENDATIONS:
-- Shift healthcare resources towards preventive measures in Medicine 3.0.
-- Focus on health span as much as lifespan in medical practices.
-- Tailor therapies based on individual patient needs and evidence.
-- Invest in public health initiatives to reduce preventable diseases like COPD.
-- Encourage early intervention strategies for chronic disease management.
-- Educate healthcare providers on the importance of health span.
-- Allocate healthcare funding more evenly between treatment and prevention efforts.
-- Promote lifestyle changes to mitigate chronic disease risks.
-- Foster research into personalized medicine approaches for chronic conditions.
+- Ensure all extension queries are backward compatible with older API versions.
+- Implement a query builder to manage version-specific fields more efficiently.
+- Create Docker images that mock old versions of the GraphQL schema for testing.
+- Improve documentation for developers regarding versioning and compatibility issues.
+- Regularly check for experimental fields in production code to avoid breaking changes.

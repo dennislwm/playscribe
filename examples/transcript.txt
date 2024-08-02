@@ -1,166 +1,535 @@
-do you want to talk real quick about medicine 1.0 2.0 3.0 
-so medicine 1.0 is-the type of medicine that dominated for 
-virtually all of human existence so if-we you know if we 
-argue that humans have been around you know Homo sapiens 
-have-been around about 250,000 years from from the arrival 
-of our species until-the latter part of the 19th century um 
-we were practicing this thing called-medicine 1.0 which 
-truthfully wasn't medicine in the way that we think 
-about-it today it wasn't scientific in the way that we 
-understand science today it was-the best that humans could 
-do missing this tool right missing this tool of-inference 
-and you know it relied on a belief about you know perhaps 
-Gods-Spirits humors um and so you know it to be just blunt 
-was largely ineffective-um and so you know the the doctor 
-of the past didn't have any tools in large part-because 
-they didn't have any understanding of what was going on 
-in-terms of disease processes so not surprisingly humans uh 
-didn't live that-long on average uh and you know the median 
-life expectancy would have been-into the late 30s or early 
-40s um the causes of death were typically related-to 
-communicable diseases uh infections and and death 
-Associated um-with child mortality and um maternal 
-mortality so just the process of having-a baby was 
-incredibly dangerous to both the mother and the baby um and 
-obviously-that heavily skews lifespan data if you're 
-killing young mothers and babies-in the process of having 
-babies you're really bringing down lifespan and 
-life-expectancy and couple that with infections 
-communicable diseases and-Trauma um and you know I think 
-most people aren't surprised to know that yep-that's pretty 
-much how people died um and then of course after the after 
-you-know the Civil War and we we move into the latter part 
-of the 19th century a-couple of things start to come 
-together now the first of these actually happened-in the 
-17th century um but it wouldn't become gerine to Medicine 
-until 300-years later um or 2 200 years later rather and 
-that was Francis Bacon-codifying the scientific method so 
-again this is something you we take for-granted today but 
-this idea that you would make an observation which is 
-what-science is All About You observe something around you 
-you observe-something in the natural world you form a 
-hypothesis about why it is-happening you design an 
-experiment that is equipped to test the-hypothesis you 
-conduct the experiment and measure the outcome and you 
-compare-the results of the experiment to the prediction of 
-the hypothesis and that is-effectively the framework for 
-what science is and so with that as the-scaffolding upon 
-which people could begin to make inference you now layer 
-on-some other remarkable discoveries and insights so a 
-creation of the light-microscope the Advent of germ Theory 
-and ultimately the-development of antimicrobial agents all 
-of these things collectively I think I-would add to that 
-just the practice of Sanitation led to a remarkable change 
-in-the trajectory of human lifespan um and of course it's 
-so-remarkable that if you go from the late 1800s until you 
-know fast forward just-100 years which again is a sliver of 
-time across a 250,000 year timeline-human lifespan approx 
-imately doubled um so you know again 3 four 
-five-generations to double human lifespan that had 
-previously been unchanged for-hundreds of Generations is a 
-remarkable feat and we call this new system of-medicine 
-medicine 2.0 now there's lots of more Nuance to-get into 
-medicine 2.0 uh medicine 2.0 ultimately developed even 
-more-remarkable statistical tools that allowed for things 
-called random-controlled experiments or rcts randomized 
-control trials and this-really allowed medicine 2.0 to 
-flourish and become-supercharged and um obviously for the 
-most part medicine 1.0 was completely-displaced by this now 
-that doesn't mean that there aren't still some quacks 
-out-there that practice witchcraft but for the most part um 
-you know when a person-has an infection when a person has 
-congestive heart failure when a person-is in renal failure 
-when a person has appendicitis and needs to have 
-their-appendix remove when a woman has a complicated 
-pregnancy all of these-things now for people who are in the 
-developed world are really easy things-to manage using the 
-toolkit of medicine 2.0 so again medicine 2.0 was 
-and-remains an enormous success and I certainly wouldn't be 
-sitting here-talking with medicine 2.0 I would likely have 
-been dead already uh as would you-have so why do we need to 
-go any further why do we need a medicine 3.0 well for-all 
-of the successes of medicine 2.0 it has indeed had a couple 
-of obvious and-notable failures um the most obvious is 
-that-lifespan has largely faltered so there really has not 
-been any extension of-lifespan beyond that which came from 
-the-eradication of the conditions that led to the demise of 
-most people uh between-the Civil War and the end of the 
-first world-war um in particular the types of diseases that 
-kill people today uh are-very different types of diseases 
-from those that killed people 150 years ago-so the bading 
-causes of death which I describe as the Four Horsemen of 
-death-uh are are the diseases of atherosclerosis so um 
-coronary artery-disease and cerebral vascular disease 
-cancer the neurodegenerative diseases-and dementing 
-diseases uh so Alzheimer's disease Parkinson's disease 
-Louis body-dementia vascular dementia frontal temporal 
-dementia all of those diseases-and then these slew of 
-metabolic diseases that while directly not-responsible for 
-an enormous number of lives lost compared to the 
-other-categories uh indirectly contri immensely by 
-amplifying all of these now-there's a couple of other 
-things I haven't mentioned there at the-population level 
-chronic obstructive pulmonary disease is also an 
-enormous-cause of death um but its cause is almost 
-exclusively related to cigarette-smoking so I don't really 
-hold medicine 2.0 particularly responsible for the-failure 
-of mitigating that that's really more of a public health 
-question um if-people don't smoke they don't get COPD even 
-though COPD is one of the leading-causes of death um there 
-are of course accidental deaths um and we can spend-some 
-time talking about those later because there's an enormous 
-spread of-what those look like across lifespan and of 
-course by geography-so in essence the purpose of medicine 
-3.0 is to try to address where medicine-2.0 has fallen 
-short it's not to replace medicine-2.0 um I certainly from 
-time to time um hear-feedback from people who I think 
-misunderstand the arguments I've tried-to lay out and uh 
-there there's nowhere that I'm suggesting that we need to 
-do-away with medicine 2.0 that we don't want the system as 
-it exists today in-its capacity to do what it can do what I 
-argue is that we need to shift-resources away from solely 
-focusing on medicine 2.0 to focusing on what we'll-talk 
-about in a minute which is medicine 3.0 so if we're putting 
-a 100 units of-resources today into medicine 2.0 I think 
-most economists would argue-that's still too many units of 
-of economic input in other words Healthcare-makes up far 
-too big a section of the economy so maybe instead of it 
-being a-100 units that go into Healthcare it really ought 
-to be closer to 60 units-that go into Healthcare and I 
-would argue further maybe 30 of those unit-units should be 
-aimed towards medicine 3.0 and 30 of those units should 
-be-aimed towards medicine 2.0 because when it hits the fan 
-and something goes-really wrong you know again trauma 
-infection Heart Attack by all means you-want medicine 2.0 
-there to back stop those things but medicine 3.0 job is 
-to-make those encounters with medicine 2.0 less frequent 
-less severe and later in-life so that is effectively the 
-difference the the the the the final-point I'll make on 
-that is kind of just briefly explaining what medicine 3.0 
-is-which is because at this point it's self-evident it 
-almost doesn't need to-be explained medicine 3.0 really has 
-two main Hallmarks uh the first is that it-is aimed at 
-preventing rather than treating chronic disease by acting 
-early-acting aggressively and tailoring the therapy to the 
-individuals based on the-best available evidence which is 
-not necessarily going to be derivable from-randomized 
-control trials and the second pillar of medicine-3.0 is 
-that Health span is to be given at least as much effort and 
-attention as-lifespan this is again another enormous 
-difference between medicine 2.0 and-Medicine 3.0 medicine 
-2.0 does not Place emphasis on health span its emphasis 
-on-health span is anywhere from zero to very small 
-depending on the subs-specialty so there are there are 
-certainly some Physicians whose-practices do take them a 
-little bit into the arena of Health span but um you 
-know-outside of for example Physicians uh or healthc care 
-providers who work-specifically in the arena of mental 
-health again it's relatively low-obviously orthopedic 
-surgery is a is a is a you know a discipline of 
-medicine-that is more squarely uh featured in the health 
-span Arena but for the most part-most of the healthcare 
-dollars are spent on addressing uh and trying to 
-elongate-lifespan um and I would argue that we need to be 
-you know putting just as much-effort into Health span so 
-that's that's the fundamental difference between-medicine 
-3.0 2.0 and 1.0 [Music]-no
+hello everybody and welcome to to yet another Duo chat 
+related pairing session-and I'm I'm very happy to have 
+teamed up with Aaron today because there was a a-quite 
+interesting problem um to encounter the other day and we 
+are going-to speak we are going to speak today about I was 
+about to say V is code-extension but it's actually all the 
+extensions kind of so the the middle-layer between EXT 
+itions and the API and therefore also the DU chat API that 
+um-we are working on in our team but um before I say 
+anything wrong Ain can you-just grab the screen and give us 
+a really quick introduction about the-problem because I 
+know you're the absolute expert on-this yeah absolutely 
+there's definitely a number of experts across the team 
+but-um at Summits one of the things I did is I created a 
+poster on this because one-of the frustrations just 
+developing poor community Edition Enterprise 
+edition-self-managed users which are maybe a milestone or 
+more behind sometimes-several Milestones behind and then 
+get up.com users which are actually ahead of-the curreny 
+Milestone because they have like uh whatever the next 
+releases dos-pre uh version enabled on their instance um 
+whenever someone's talking to it um-just going through all 
+of those it's caused some frustrations where you get-little 
+quirks in the ux or maybe you update a query or a request 
+or maybe a-request isn't present or has different 
+permissions-so that's essentially the summary of the 
+problem um so I've got got this sort of-poster here which 
+sort of like sums it up into a few pieces um essentially 
+when-you think of the gitlab CLI and the different editor 
+extensions as clients-as well as the gitlab language server 
+so the language server is used by all the-extensions um so 
+we have some some uh calls to the rust API and some call 
+the-graph kill API inside of the language server which 
+makes the problem a little-bit better because we're not 
+having to fight this problem uh and reinvent the-wheel over 
+and over and add version compatibility and testing into 
+every-single project every single time we have an API that 
+changes between gitlab-versions but uh we still have the 
+problem of requests that are directly-inside of the CL 
+extensions due we still have to do the testing and make 
+sure-they're robust enough so they don't break if we're 
+talking to the older-client version than expected-um so Yan 
+uh do you have something um yeah just just wanted to um 
+absolutely-um to to sum it up very um very briefly as if an 
+um I I don't know too much-about the the language server 
+and I'm I'm more than more than happy to learn-about it in 
+a second but from a Duo chat perspective that really means 
+for the V-code extension the basically how you how you how 
+this problem occurs or how you-run into this is um from 
+your extension you can authentic or when you install it-you 
+authenticate um with your gitlab instance which in in our 
+case usually-that is why why Engineers um are often 
+surprised by this in our case of often-is gitlab.com and if 
+that is the case there is zero problem but many many-times 
+this instance is going to be a self-managed and this is 
+where things-become interested interesting because um we 
+just don't know which version the-self-managed instance is 
+running on and it is absolutely fine and possible and-it 
+happens a lot of times that um self-managed instance are 
+just not yet-on the on the latest and greatest so this is 
+where where things getting are-getting really really really 
+interesting um in terms of the API and obviously-also the 
+client side code then kind of kind of expecting the API so 
+um there-are a couple of examples where we run into or 
+where we've been running into-these issues do we want to 
+kind of kind of showcase them and speak about the-fixes yet 
+or is there anything else you wanted to speak about 
+regarding the um-the the bigger architecture of this no I I 
+think he definitely summed it up well-um right like right 
+now vs code extension does a lot of authentication-and 
+connections to Duo chat and then in jet brins we we've 
+duplicated logic-right those are two editors right now that 
+actually have uh Duo C chat-capabilities we TR to 
+centralize some of the logic John Slaughter's been 
+working-on moving web View and creating a single source of 
+Truth for the IDE experience-and so with that it's going to 
+be in one place so where you manage those queries-but 
+currently we have jet brins and vs code extension both uh 
+authenticating-and then uh checking feature Flags checking 
+if they have du uh Duo chat-available there's a couple of 
+different fields that we quer the API for during-the 
+authentication authorization process to say whether we even 
+show The Duo chat-window inside of the ID gotta and from 
+that stage that window doesn't sort of-have any context of 
+hey what version of my talking to it just knows the 
+that-we've like defined some graph kale queries and those 
+graph kale queries are-what are what is called by front end 
+code and then we have to think about-keeping that 
+compatible with the gitlab UI okay okay project so yeah I 
+think we-can definitely drill into one of the examples I 
+think uh one before we go-there um just one one brief thing 
+um um on on that topic because you just-mentioned the 
+language server um with a limited understanding of what 
+the-language server will does or will do in all details but 
+to get it right the-problem we're currently speaking of 
+that will stay right we will have to whatever-enhancement 
+we we doing around this like this is just an archit prodct 
+like the-way our product works at the end of the day so 
+this is something that will all-no matter the level of 
+refactoring this will stay with us right exactly so 
+right-now what happens is for every extension that we 
+expose to a chat in we have to-solve the problem again and 
+we have to solve it separately whereas when we-migrate to 
+the language server we'll only have to solve it in one 
+place so-we'll have to solve it in the git lab UI project 
+well two places you have the-gitlab UI and then you can 
+pull the gitlab UI into the monolith so the-version update 
+is there and then you'll have to pull the gitl UI changes 
+into-the language server project and so then there'll be 
+two places to solve it-instead of whatever number of 
+extensions that we support do a chat in okay so-it's 
+basically just about bundling you could you could say in 
+inex context-understood awesome cool um so yeah we've got a 
+couple of example issues where-this has these are very very 
+common within the extension world and the Dual-chat world 
+so let's let's look into them and see what the problems 
+actually been-and how to look around these yeah absolutely 
+I think uh one good example-is recently there was a new 
+platform origin attribute added so on gitlab.com-the 
+backend change was pushed out to be compatible with the 
+front end so the-front end and G .c and excuse me and the 
+most updated version of the gitlab uh vs-code extension if 
+you had to update client you were using the new field 
+and-that wasn't a problem but for self-managed users once 
+we did that-upgrade and if you were on the latest version 
+of the vs code extension with-the old version of gitlab so 
+you're using the old version of the gitlab API-which didn't 
+support this field it caused a breaking change so whenever 
+you-tried to use chat and send a message it failed because 
+there was a feel that-didn't exist in the old graph kill 
+schema which is what the old instance is-using or your 
+self-managed instance was using and so um that that just 
+caused a-compatibility issue there and which created a bug 
+and-so yep yep yep yep yeah thanks thanks for summarizing 
+it it perfectly that was-a very interesting day at the 
+office because it it really it really showcased-that um 
+such a a minor little change in this case like basically an 
+existing-graft adding a new field what could possibly-go 
+wrong um we and I was one of the engineers working on this 
+we had no idea-about the underlying complexity that we 
+actually been been running into so um-yeah the issue at the 
+end of the day was the um the backend API and the 
+decline-side API in certain cases where the back end wasn't 
+updated they ran out of sync-there was no fallback provided 
+on the client side which we should have and-aon's probably 
+show will show us in a bit how how you do that um and that 
+is-then when when things when things clashed the good news 
+in this case I'm-not too sure if that is um if that is true 
+for all the issues that we're-speaking of still like it's 
+it's not perfect but from a user perspective like-updating 
+their gitlab instance would have res solved the issue right 
+like we-we would have had the fix in in place if things go 
+really go wrong it's it's-another thing if they don't want 
+to or or can't update but um it is it is not-out of this 
+world like it is not in a completely broken State it's just 
+yeah a-very inconvenient at the moment yes the so the there 
+there would be two-workarounds in place for this to it' be 
+upgrading your gitlab instance which-some gitlab admins 
+just aren't able to do that they have schedules for 
+updating-for self-manage for dedicated instances uh 
+dedicated instances actually run one-Milestone behind at 
+all times so for dedicated instances the users would not-be 
+able to do something because we because that's a managed 
+update-that behind so the alternative there is before we 
+introduce the breaking chain-to the query um you would 
+update the previous extension version to the-previously 
+working extension version so in this case this fix went out 
+I think-in 5.0.0 whenever we released a new extension 
+version so the fix would have-been rolling back to 4.9.3 or 
+whatever the previous uh update of for the-extension and 
+you can do that through the marketplace inside of vs code 
+and-downgrade your extension and once that was done you'd 
+be able to use the chat-clients again with no issues um so 
+it can be complex depending on because the-users don't 
+necessarily have control of their gab instance version so 
+we do want-to have sort of the best experience for users on 
+different-versions gotta got you so yeah what I what I was 
+going to show you here is as-you as yic described like it's 
+extremely simple in terms of this change and like-you 
+wouldn't think this would break something but because this 
+field didn't-exist in old versions you can see this this 
+two line change essentially where-we're adding a value for 
+what the uh platform origin would be and we're-adding this 
+uh string in because we're adding this uh string in which 
+is not-null that's going to be always required in the query 
+and then because we always-put it in the input then even if 
+it was nullable because we're always putting-the input if 
+it's a field that is null but doesn't exist still that 
+would still-break when you're sending that to the API and 
+so what we have to do then is we-have to entirely strip 
+platform origin out in this input from the request which-is 
+what I ended up doing when I added in the fix-to U when I 
+added a fix um unfortunately this one I had to like 
+maintain two-queries in the future what I would love to see 
+is if we have like uh a query-Builder so we can literally 
+have like a directives graphic Sports directives M I-would 
+love to see is if we could have the query and then on the 
+query where we-have fields that are optional or in a 
+specific version if you tag those as at-minimum version 
+17.2 and then whenever we check the version against the 
+gab-server we say oh this one's on 171 strip out all 
+minimum version higher than that-and so at that stage that 
+would that would make that would be development-experience 
+improvements whereas right now um I had to add in two 
+separate uh-query strings for the query before and after 
+the change and so this is-literally the same query but I've 
+tooken it back before the uh Mr to add the New-Field and 
+then we have the 17 three and later um I think after 
+discussions that-that version number is wrong it should 
+actually save uh two versus three so we-should revisit that 
+to make sure the version is correct there we can do 
+that-inside we can do that as part of the session too-um 
+and that that brings me to one of the next things so right 
+now we don't have-like we have testing uh our testing and 
+integration testing and all is built-against gitlab.com or 
+staging doglab.com in a lot of cases which of course 
+is-going to have the latest version of the API available to 
+us and the latest-version of the schema our current 
+integration testing-and and testing doesn't catch for 
+self-managed instances by default you-have to add in 
+additional unit test to cover old instance-versions uh oh 
+um yeah great great Point um I didn't-even think about this 
+yet um so to hear correctly the current tests are-basically 
+just uh testing the Happy Puff like this is all all latest 
+and greatest-and um for full stop okay but testing against 
+older releases um good luck with-that that definitely 
+sounds challenging to to build as a Tas case also 
+like-where do you make the distinction like when is when 
+it's too old and we don't-we don't care about anymore um um 
+so yeah excited excited to see that but um-that would for 
+sure catch a lot of these things-currently absolutely and 
+there I have some ideas around that as well that I-can talk 
+about and we have like a Docker image that mocks some old 
+versions of-the schema but it's not perfect I think like in 
+the future if if what we could-do is uh every time there's 
+a a tagged releasing git lab if we create a new uh-graphql 
+schema like Docker image it's a mock like a that specific 
+schema version-and then Mark the responses that's just 
+going to increase-the coverage like because then we can go 
+and look at all the old vers tags-whereas right now it's 
+whatever queries that you put in manually in the 
+docker-image so you can put in queries and then say that 
+you have a request header or-something like that or starts 
+the image with particular flag so it behaves like-one 
+particular version cool good stuff H well before we-go all 
+the way um into into test L what I just put on the agenda 
+or to to sum it-up is make sure your queries that are 
+called from the extensions which in the-Dual chat contacts 
+is basically every qu query um are backwards compatible 
+on-declin and deserver because this will be very much 
+needed and there's no other-way you will be running into 
+this so this is uh for sure something which is-also to be 
+fair um hard to reproduce locally so it is um I I need to 
+find a-good place um in the in the docks where we can um 
+Can can link to this in-probably bold and and a lot of fun 
+size so we don't forget about-it yeah so I'm Shing I was 
+going to add to the dogs-um yeah the like the the point you 
+just uh removed from the agenda and-absolutely no worries 
+about this but um speaking about like local reproduction-is 
+that going to be trivial you would kind of yeah so I in in 
+the past when-I've been running against the old GDK version 
+that isn't always reliable-sometimes when you go to the 
+previous Milestone and multiple Milestones 
+behind-especially the GDK is not quite happy to play with 
+you and then you end up taking-a day or two as developer to 
+get that working and that's not that-practical oh okay um 
+yeah it it that that really doesn't sound too practical-but 
+I I feel like well in best case we get some we get some 
+test coverage-around this still um this seems like once you 
+are aware of the problem it-actually seems like an easy 
+enough problem to to work around even if you-can't fully 
+reproduce it um because it's basically just like a safety 
+net you-just have to apply and then you you should be good 
+to go yeah absolutely I-think one of the things is if 
+there's new fields and that's that's on inputs-or on 
+outputs or uh return types or on input types so in the case 
+inut this is-input type and that's put into the mutation 
+and so if there's new Fields-added there or if there's new 
+Fields added to the actual like fields that you-were asking 
+to be returned from the query in either case you have-to 
+you have if if those are new newly added fields to the back 
+end you can-know that okay in previous milestones we don't 
+have that field so all you have to-do then is add a 
+fallback inside the clients code and you don't have to 
+do-all the testing because the existing query that has been 
+working already for-those old versions has been tested and 
+validated and at the time of that-Milestone there's end to 
+end test coverage on that query potentially-mhm gotcha 
+gotcha thanks so much for um for going into that um one 
+more thing-that just crossed my mind before we go to the 
+next example is what we just-mainly like we mainly we spoke 
+about this issue we-looked at the client side code um um it 
+is pretty straightforward um or pretty-clear at this point 
+how the CLI Side Resolution for this can um can look 
+um-it's basically check for diversion and then apply 
+whatever whatever um graph-query is safe to use in that 
+case Okay um looking on the the backend changes-and the API 
+is there anything that is on your mind where you'd be like 
+okay-handling a change like that would be considered um a 
+good or best practice-and also a a really don't practice um 
+speaking about out versioning these-things yeah so we have 
+some development guidelines already and those are-actually 
+um right on the mark in terms of what we should be-doing so 
+all right so breaking changes so this-list of Breaking 
+changes any breaking changes are going to break all 
+clients-that's guaranteed so if you're making any of 
+these-changes because the important thing to look at here 
+is that there's this list-of exemptions and a lot of Duo 
+fields and Duo chats and Duo code suggestion-fields are 
+marked as at experimental and experimental fields are-not 
+subject to our normal breaking changes policy and so is for 
+folks-developing extensions or contributing to extensions 
+they need to be aware of if-they're making those breaking 
+changes even though it's not part of the-dication policy 
+and the break and change policy or get lab by default that 
+they-still need to be mindful that they're not using an 
+experimental query and then-making a breaking change to 
+that experimental query in a later-version oh okay so to to 
+sum it up um even if-you are working behind the 
+experimental flag it's not going to save you like-this 
+problem would still occur ex there's any experimental 
+fields that-you're that have been used in the extension 
+there's there's production-clients using those experimental 
+Fields so if you make a breaking change even-though it was 
+an experiment you've broken up like production-users gotcha 
+okay cool um yes thanks for highlighting this this it do 
+seems to be-um very important it is is it fair to say that 
+there like with the um with the-architecture that we're 
+running on there is no such thing as an um 
+experimental-field at the end of the day because if it if 
+it behaves like any other fiing-you have to maintain it 
+well it's still it's still great to have like the um 
+the-meta on it and provide it but um yeah to sum it up 
+these things they will behave-in our case just like any 
+other field and we cannot rely on their their um-additional 
+safety net yeah absolutely there's no safety nuts when 
+you're using-the public Fields essentially you know it's 
+great to have the metadata around-like you said from the 
+developer perspective but that's it's purely right-now it's 
+purely on the back end side the front end the front end 
+whether it's-gitlab UI inside of the mon ly or the 
+extensions do not benefit from Fields-being marked as 
+experimental or not gotcha okay learning number 
+two-experimental graph Fields graph Fields don't solve the 
+problem-either yep sweet so we do have um one more example 
+which is kind of same but-different um do you just want to 
+jump into the agenda and click the yes is-this is this for 
+the slash commands or yeah yeah yeah let's start with 
+the-slash commands um it is it is going to be rather rather 
+easy to show the um-like one thing to to watch out on this 
+particular example like the the feature-that that was 
+planned on being worked on was to um basically um adjust 
+the um or-or remove one of the current SL commands that 
+that we're currently having and the-interesting part about 
+this this slash command in the the current state of 
+our-code base actually had occurrences or it was being 
+referred to in the gitlab UI-um shared UI library that 
+we're using in all of the loot codes integration 
+codes-whatever we want to use it um for every host system 
+gitlab com all the-extensions and the back end so now 
+things are getting getting rather-interesting um from the 
+from the things that we uh or from the problem that we-just 
+spoke about we're already aware about a problem being in 
+the backend and-in the integration layer but this is now 
+something where you'd be like it goes as-far as the the 
+shared UI Library it is also if you are aware of it a 
+rather-easy fix you just have to make sure um that also the 
+UI library in this case is-backwards compatible or in best 
+case it doesn't even or make make it as Dynamic-that it 
+doesn't even have to know about this information but if it 
+does then-just make it adjustable using a prop or whatever 
+the technique so um yeah that's-that's basically where we 
+at at at this point it is same but different um point-we we 
+should definitely highlight here is um this might affect 
+systems you-don't really really expect them to be um as it 
+matters for the UI Library which-um API were running 
+against yeah absolutely and I think yeah-like you said it 
+ends up being a prop inside of the like this is the mock 
+data-so this isn't useful but um let's see in the view 
+components I think there's a a-prop around slash commands 
+as well um there definitely is-um I could open I can open 
+this project locally to help navigate-or if you just search 
+for props in in doat view-didn't think I'd be opening this 
+one locally you might want to see the whole-file though 
+because you've got to highlight it under-there like seems 
+to be perfect you there we go and if you search for-slash 
+commands yeah there's a problem array of-SL commands uh to 
+display in the chat it says just search for array off slash 
+and-then it should be there we go one up there you go 
+okay-so yes there's a prop here yep that is that is where 
+we at now-so um yeah that is definitely something too cool 
+yeah and then from the vs code-extension side then okay we 
+gota wait the array of-Slash commands um the the 
+description is actually pretty misleading um what this-prop 
+does what we just showed you is to actually highlight The 
+Help menu of the-slash commands the thing is though there 
+is some logic that is running behind-some of the slash 
+command which is actually not a problem at this point-which 
+got us into the problem so if you would type SL clear there 
+would be some-logic as if we would empty the chat um client 
+side only at this point and this-would be the changes that 
+we would need to make sure um that they are running-against 
+the the right API soever C behind it um yeah making this 
+also-configurable via prop and hopefully provide a better 
+name to not run into-the same thing we just did um would be 
+would be a fix so just something to to-be cautious about 
+about yep and then yeah if we search for-SL cleen yeah we 
+have these special messages Concepts set of each 
+extension-so each extension has to say uh what what 
+messages am I going to interpret as-a literal command to 
+pass into the API rather than a chat message 
+there're-special handling on the client side as you 
+described gotcha awesome um we do-have one more um one more 
+example very can showcase um the the challenge about-um 
+using different I version API versions cool yeah and so the 
+last one-is related but instead of being specific around 
+version numbers this one is-actually related to the 
+distribution that we're using for git lab so it's not-uh so 
+some security reports features like uh the security 
+dashboards and-stuff are ultimate only features so if 
+you're a user that is on-a Community Edition instance of 
+gitlab that means you won't have access to-these ultimate 
+only or Enterprise only Fields um and what that ends up 
+uh-meaning is that the graph K API won't have the fields 
+when we run so the way-we develop with the the like 
+existing uh like lib graphql folder um anything-under there 
+is available to community edition users for free users but 
+if it's-a field that's under the E uh path inside while 
+you're developing lab like-project if it's under e then 
+it's actually a field that's only available-to Enterprise 
+users so if the fields you're adding are under e slash 
+and-they're in the extension on the back end then you have 
+to make sure-that uh whatever client side you have is the 
+client is checking whether you are-an Enterprise uh user or 
+not so we can see here there's take take-a take a quick 
+quick step back so if I'm hearing you correctly get a vs 
+code-ension running and so far we've been speaking about 
+pluging in a gitlab-instance which might not be on the 
+latest uh on the latest version which-causes problem but in 
+this case the user actually might be on the on the 
+very-very latest but and it's also so the the version 
+number it can also be old like-these things can double up 
+but um imagine being on the on the latest-version that's 
+okay it is not about licensing right but it might be a 
+gitlab-Community Edition running that actually doesn't it's 
+CEO only it doesn't-care you cannot add a license to it um 
+that that's kind of weird and that is-what you need to 
+check for exactly so it's not the license license would 
+be-like uh like particular add-ons around Duos there could 
+be like a Duo you have-your Duo Pro add-on you could have 
+your Duo code suggestions that on on your-whatever 
+subscription your administrator's bought but as a 
+user-you're not able to see any of that right so as a user 
+it's just whether you're-Enterprise Edition so whether your 
+instance has is installed is Enterprise-Edition or whether 
+it's Community Edition and so as a user of 
+Community-Edition even if you're on the very latest and 
+greatest version number any-fields and graph K mutations 
+queries um any operations in general any of those-that are 
+not defined inside of the nor like the the like the shared 
+path inside-of the code base uh you won't have access to 
+those fields so uh what we've-done in the case of the vs 
+code extension is we've added in a required-Enterprise flag 
+so if you need to validate the gitlab version number 
+you-can do that plus you can also validate that your 
+instance uh is a Enterprise-gitlab installation and so at 
+that stage then you gain the ability uh you then we-then uh 
+using that we can see here that the rest API there's a ver 
+version-metadata rest API and it returns whether your 
+Enterprise or not and so we've-added a protection here 
+where for the security reports we-actually do a check of 
+that so we check whether so for security findings you-need 
+to be on like 16.1 at least and you also must be an 
+Enterprise user and then-we had a fall back based on uh 
+whether that's true or not gotcha gotcha okay-thanks uh 
+thanks for highlighting um this specific um thing again I'm 
+very-pleased to have found an issue that at least for once 
+is not directly affecting-us at do chat because we e only 
+but who knows we e only today um things are-moving quickly 
+that that might might change it one well that that that's 
+it-yeah because we're uh do chat is e only it's better um 
+and the way that's we-protect and ensure it's e only is we 
+actually do uh we do a few license-checks and subscription 
+checks before we even try to load doo doo chat features-um 
+how did you say the check the check obviously works in both 
+ways yeah so we-are actually yeah sure so but we do we do a 
+pre-flight check in this case-though because we know that 
+duo is only going to be available behind certain-Flags so 
+yeah the way that works then is we have a get project 
+licenses request-and so we can see in in this request um 
+we'll be able to say query get project-this is what the 
+query looks like and this query we know only certain get 
+um-you can only have certain gitlab versions um for this 
+and so if you don't-have a gitlab version for this you're 
+not actually able to use the add-ons so-U we don't have to 
+worry about it presenting users to this and then have-not 
+having a compatible API we're able to say like uh whether 
+you have du-features enabled and then whether you have code 
+suggestions-enabled um and then we also have a Duo chat 
+available as another query gotcha-so there's a couple of 
+like project level like so administrators from the-project 
+level on like the settings they can set uh project settings 
+uh instance-settings group settings around Duo features in 
+some cases and this is also-true for feature Flags so 
+because we had these queries we're able to check all-that 
+without necessarily knowing about subscription and stuff 
+like that because-there's like an admin is able to specify 
+whether do was enabled for their project-or not okay okay 
+cool thanks for for showcasing that check so um 
+added-another learning to the agenda the backwards 
+compatibility problem doesn't-only affect versions keep 
+Community Edition in additions in mind make sure-you're 
+checking for it before accessing e only resources did I get 
+you-right awesome cool um this answered a lot of my 
+questions and I'm uh really-hoping that we um that this is 
+going to be a good resource to to deal with all-the the 
+complexity that just comes along with um yeah um serving so 
+so many host-system is there anything um on your mind that 
+we didn't speak about yet-really we should know about I 
+think we've covered a lot of the stuff here um-the future 
+things is better documentation for developers you know-like 
+I think we C like even on this call we've identified a 
+couple of points-where hey we probably could have 
+documented this better so developers-knew it going into it 
+because right now I think our documentation is 
+very-specific around back end and front end which is all 
+monolith so it doesn't even-go outside into it doesn't even 
+go into gab UI right now which that shared UI-components 
+obviously affects the extensions and it effects get uh 
+the-front end as well gotcha awesome yeah let's um 
+let's-create a couple of follow-ups um so we can uh enhance 
+our Docks but um yeah my-questions are for sure answered 
+thanks so much for uh for this tour um in-inversion land 
+and yeah speak to you soon thank you so much Ain yes thank 
+you-have a good one
