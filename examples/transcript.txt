@@ -1,284 +1,870 @@
-hey everyone Chris Jer and today I'd like to show you orb 
-STC a brand new-Fast light and Powerful way to run 
-containers and VMS on Mac OS with OP-stack you can say 
-bye-bye to Docker desktop and to other programs 
-like-virtual box because it is so much better and faster 
-than all of them so let's get-into it I'm going to talk a 
-bit about the program explain what it makes-different than 
-all of the other tools and we'll also have a look at some 
-of-the unique features for deploying containers and VMS on 
-Mac like the-simulus integration of file sharing and the 
-network stack as well as the-kubernetes integration 
-automatic https certificates for local deployments and-some 
-other cool stuff that you will love as a tech nerd trust me 
-so yeah Tech-nerds like us we love software that helps us 
-to do our day-to-day work and I-quickly want to show you 
-another nice tool which I know those of you who work-in it 
-will absolutely love because if you're managing resources 
-and assets in-a company you know this is a big challenge 
-especially if the company has-hundreds of thousands of 
-servers network devices applications and other assets-this 
-is exactly where fatom comes into play the sponsor of 
-today's video Fatam-is a platform that discovers and maps 
-all your it infrastructure like servers-and business 
-applications within minutes no matter if it's on premise or 
-in the-cloud and it's one of the fastest Solutions in the 
-market that solves the-challenge of understanding how a 
-change of your infrastructure will impact your-business and 
-I it operations fom has many amazing features but one thing 
-that-I believe stands out from the rest is that it 
-discovers all the assets-entirely by itself and it groups 
-them into business applications completely-agentless and it 
-also does continuous it documentation that is fully 
-Dynamic-which is super cool because documentation in it is 
-so freaking-important and hard to do as well you can use it 
-for many practical use cases such-as change management 
-impact analysis cmdb Cloud Migra-data center transformation 
-drbc cyber security and many more and it starts-with an 
-entry-level self-service speed boats plan which allows you 
-to manage-100 servers for 10 grand annually which is by the 
-way a fair deal in a market-fied with other notoriously 
-expensive tools it also has a 14 days trial where-there is 
-no sales call needed so just check it out and start 
-managing your it-infrastructure dependencies like a pro of 
-course you will find a link to it in-the description of the 
-video all right so let's learn more about the-program orst 
-you can find all the information on the official website 
-or.-Def and there you can see the developers position this 
-as some sort of-replacement for Docker desktop so it's a 
-light fast and easy way to run-containers on your local Mac 
-device as well as some Linux virtual machines but-we will 
-also have a look at this in a few minutes the cool thing 
-about this-program is once you install it you don't have to 
-learn an entirely new system so-all the commands you know 
-from Docker as well as the docker file and everything-just 
-works the same way in OBC it just replaces the layer of how 
-the containers-are managed on your system by the way if you 
-want to learn-more about the architecture opst also has 
-some great documentation that-explains it in a bit more 
-detail so how the containers and VMS are managed on-the Mac 
-and why it is faster you can see those surfaces are written 
-in a mixture-of Swift go rust and c and it does have some 
-pretty optimizations and features-that allow this 
-application to act much faster than dock or desktop and it 
-also-comes with some additional cool features that are very 
-interesting for developers-like file sharing custom Dynamic 
-hashing and optimization to provide a fast bind-Mount 
-points and access to the Mac files and it also does have 
-some very-interesting networking features I will also show 
-you in a bit more detail and-it's also written with 
-security in mind you can also find some speed metrics 
-on-the website to actually see how much faster it is than 
-darker desktop so for-example if you buil a darker 
-container on darker desktop that would take 19-minutes on 
-orb stack it's doing the same task in just 7 minutes and it 
-also-doesn't take as much CPU power and a battery 
-consumption from your Mac so-when you are working with a 
-MacBook Pro for example and you're developing-containers 
-for kubernetes or Docker or St is just the better 
-technology that-will not drain so much battery and you can 
-do all the things in a much more-efficient way to install 
-opst on your local Mac just click on get obst and-then you 
-can download the application and go through the 
-installation-procedure or you can put this on line command 
-in your terminal if you're using-Homebrew Homebrew is just 
-a great application on Mac OS and that is-automatically 
-installed it by the way also runs alongside with Docker 
-desktop-so you don't need to worry about Docker desktop 
-being replaced or anything being-damaged Ops that can even 
-migrate all the containers you're running on Docker-desktop 
-two ARB stack as well with all of the networks and volumes 
-attached to-them so it's very very simple and easy if you 
-open the application you can see-on the left side you have 
-a menu for browsing your containers your volumes-your 
-images as I can see I currently don't have any running 
-containers but-there is a quick example of how you can do 
-this so let's just copy the command-run this and then we 
-can open the Local Host in my browser and yeah here we 
-are-that's our container that we have just deployed and it 
-just took about a-millisecond and when you have a few 
-containers running on your Mac you can-also inspect the 
-lock file search for something you can delete the locks 
-or-you open a terminal directly inside the running 
-container where you can do some-administrative tasks access 
-files whatever you want to do with it and if-you click on 
-the files menu it also opens the finder where you can see 
-all-the files in the container just on your local Mac file 
-browser so it couldn't be-easier than than that and if you 
-want to run kubernetes you-can also turn on kubernetes and 
-it automatically starts deploying a very-lightweight 
-kubernetes cluster on your local Mac device so there you 
-can see if-you go to Containers there is a new drop down 
-menu for kubernetes where it-already deployed the core DNS 
-the local path provisioner so that is necessary to-run 
-kubernetes and then you can start deploying your manifest 
-or experiment-with Helm charts and just use your local Mac 
-as a testing kubernetes clust to-develop applications in a 
-container orchestration layer one thing that might-be 
-interesting is you can see on the uh bottom left corner you 
-can see there's a-pro version and trial that ends in seven 
-days so you can see there is a paid-option for OPC but if 
-we go back to the website and go to pricing you can 
-see-there's also a free tier for personal non-commercial 
-use and this you can use-to run containers run Linux 
-machines without any limitations or something-like that if 
-you need a business and Commercial usage license and you 
-want-some additional features then you have to buy a pro 
-license or an Enterprise-license but honestly I think if 
-you're just a home lab tech nerd like me and-and you just 
-want to run a few containers on your local Mac 
-or-experiment with kubernetes and a few VMS then the free 
-personal license is-totally sufficient so that's what I'm 
-also using I just still have the Pro-trial but when it's 
-expiring I'm just using the free plan-but let's also take a 
-look at some of the special features in opst that I-believe 
-make it even better than Docker desktop or some other 
-competitive-programs like pman desktop I think this is 
-really really nice for all the people-that work with web 
-applications in Docker or want to learn how traffic 
-and-load balancing works it's really really amazing so when 
-we go to the-architecture and documentation page you can 
-see there are some pretty cool-features especially the 
-domain name features so you can see that orb stack-doesn't 
-just work with the Local Host so what I've just 
-demonstrated in this-example it also runs a domain name 
-that is called ar. local so this is really-nice to test web 
-applications you don't need any port numbers for web 
-services-so if you have a darker container that uses the 
-port 3000 you can basically-just ignore it because arst 
-automatically detects what port the web-application is 
-using and then it automatically routes the traffic to 
-that-particular port and it also issues secure 
-https-certificates for those services so you really don't 
-need to test any sech-manager traffic or something like 
-that you can really test web applications in-a very secure 
-way on your local device it's pretty cool for example if 
-you uh-want to run an engine X web servers with trusted TLS 
-certificates testing here on-op stack you can just use uh 
-that example here uh let's go to my project-folder and 
-let's open this and create a new-darker compost file paste 
-in that and now this is just-deploying a simple engine X 
-web server you could also add labels for custom-domains so 
-for example if you want to have something like enginex test 
-one.-local this is totally fine we can just go here and 
-start the compos stack now-if we go back to or stack you 
-can see there is a new compos project so darker-compos 
-projects are also indicated with a drop- down project 
-folder and here-when we go to this container you can see 
-that it attaches the enginex test. one.-loal domain to it 
-so when we just click on this it opens the browser to 
-our-enginex website and as you can see it also has an https 
-connection with-trusted TLS certificates really really 
-amazing you don't need to configure-anything or trust any 
-self-signed certificates in your browser it's-automatically 
-done in ARB St again I love this feature so much because 
-I-often have web applications that I like to test on my 
-device and now this is so-easy there's also an amazing 
-integration for the kubernetes cluster in opst deck-so for 
-example if you want to test and expose service objects in 
-kubernetes for-web services or you want to play around with 
-Ingress controllers and load-balancers like traffic or 
-engine X this is also really easy and greatly-integrated in 
-obst for example you have a domain that is automatically 
-attached-to any load balancer Services you deploy to the 
-local cluster and you can also-easily access any cluster IP 
-addresses from your local Mac so to demonstrate-this for 
-example we can just deploy a simple engine X to get access 
-to the OBS-kuber this cluster you just switch your config 
-to use ARB stack and then you can-just use the cube CDL 
-command it's also integrated in the installation of 
-ARB-stack so you automatically have all the CLI features 
-that you need-and here you can see there are all the 
-containers that are currently running on-my local cluster 
-so if we now want to deploy a new engine X image so 
-for-example let's create a new namespace called engine X 
-and deploy it here now-we also need a service object so I'm 
-going to use the type cluster IP for now-so this is usually 
-only available and accessible within the local network 
-of-kubernetes so you can simply just copy the internal 
-cluster IP op and open it-in the web browser and then 
-immediately get access to the port deployed in-kubernetes 
-by just accessing the local IP address if we open or stack 
-and go to-Services you can see this is a service object for 
-the partt that we have-attached it to and here you can also 
-find the domain for the cluster so this-is usually the 
-service name the name space service object cluster. local 
-and-then you can access it by name as well if you want TLS 
-certific ific Ates and-test Ingress controllers this is 
-also possible very easily so if we go back to-the 
-documentation you can see you can choose from an engine X 
-Ingress-controller or traffic so if we quickly want to 
-deploy traffic to this cluster-we can also do it by just 
-copying those commands here those load balancer-service 
-objects in orb kubernetes also get a different domain that 
-is called-ks. or. looc a wildcard domain that you can use 
-to test the traffic Ingress-controller you can also 
-automatically access it in your browser and then you-can 
-try the Ingress controller you can play around with it and 
-try exposing-cluster IP objects using traffic I think this 
-is really really nice where you-want to test some exposing 
-of services some certificate management Ingress-controllers 
-and all that stuff it's really amazing but let us also have 
-a-look at the integration of virtual machines in arst where 
-you can run fully-blown Linux machines but in a highly 
-integrated and very lightweight way so-when you go to the 
-documentation you can see this is pretty similar to 
-the-windows subsystem for Linux so it would be something 
-like a Mac subsystem for-Linux where you can just run any 
-services in those virtual machines where-you can access 
-them from your Mech also using the Local Host domain and 
-you can-also have immediate access to any files on your Mac 
-inside the virtual machine-but let me just show it to you 
-it's also pretty nice so you can just go through-the web UI 
-click on new machine and deploy a new Ubuntu machine or 
-choose a-any other Linux distribution like Arch Linux 
-sentos Debian and some other Linux-dis that you might want 
-to try out you choose the version that you want and if-you 
-want the CPU type apple or the Intel emulation layer with 
-Rosetta so this-also works great to test a try out x86 
-architectured uh application on your Mac-it's pretty cool 
-and it's also really really fast the emulation layer in 
-Mac-OS runs runs also very very fast fast but I'm going to 
-choose the Apple CPU-type which is even faster I create the 
-machine and now it's going to install a-new Ubuntu 24.4 on 
-my Mac so this probably just-takes a few seconds so it's 
-not even taking a minute or so and then the-virtual machine 
-should be ready for us and you can immediately access this 
-VM-from your terminal when you just use the ARP command so 
-you can see the VM is now-ready installed and you can 
-easily access all the files using this and uh-yeah then you 
-got the full virtual machine file system on your-Mac and 
-yeah let's just type in ARP in the terminal and then you 
-got access to-the VM it's also as easy as that and as you 
-can see this automatically gets me-access to all the local 
-files on my Mac from the Linux VM so it's really similar-to 
-wsl2 where the virtual machine is highly integrated into 
-the operating-system and you can access the files vice 
-versa and easily run any Linux-applications so for example 
-if we want to run a python script but I don't want-to run 
-the python script on my Mac I want to test how it would run 
-on a Linux-VM I can just use the ARB command and then type 
-in any command uh after that-that will automatically be 
-executed in the virtual machine so for example if we-just 
-run a simple python script that will open a web server on 
-Port 8000-guess what happens when we type in the name of 
-the virtual machine Ubuntu ar.-local Port 8000 you can see 
-you get immediate access to the web application-running in 
-virtual machine from your Mac without having to Route any 
-network-ports or without having to remember an internal IP 
-address or anything like-this it just magically works by 
-using the name of the virtual machine. or.-local and then 
-the port you want to access on the virtual machine and 
-yeah-this is so simp and it is so nice integrated so you 
-can easily test and-run any Linux applications on your Mac 
-you can develop stuff you can test it-and if you don't need 
-it anymore well you can simply just destroy it when you-go 
-back to orst and stop it delete it and it's as easy as that 
-all right so-that's it about orb stack I think it is 
-absolutely amazing and it will be my-daily driver on Mac to 
-run containers and VM from now on it has been 
-super-reliable and easy to use but of course I I know love 
-to hear your opinion about-it so please let me know what do 
-you think about opack leave a comment down-below and as 
-always thanks everyone for watching I'm going to catch you 
-in the-next video so take care bye-bye
+e [Music]-welcome back everyone we're here for another Q&A 
+we're going to talk about-keto intermittent fasting 
+nutrition you name it uh bring your questions but-anything 
+that I say that violates your agreement between you and 
+your doctor-just check with them first because that's I 
+have to make that disclaimer-all right Steve we're going to 
+try to rapidly go through as many questions as-humanly 
+possible today you ain't kid we're going to knock out the 
+hour with-tons so let's start off with social media and 
+let's go to Esmeralda from-YouTube what can I do to help 
+treat a swollen lower back on my right-side I mean the 
+thing that comes to mind first is um a natural 
+anti-inflammatory-and that would be vitamin D probably no 
+less than 20,000 I use um and what's-interesting about one 
+of the first symptoms of vitamin D when you're-deficient is 
+is low back pain so that could help you also even if it's a 
+dis-problem there's a lot of vitamin D receptors in the 
+disc itself for a-reason to help support collagen in that 
+disc so I think-uh that would probably be the greatest 
+thing you should do um of course if it's-higher up in the 
+lower back it could mean potential Stone kidney you 
+know-problem but again I I need more data to figure that 
+out okay Esmeralda good luck-with that lamped Ward from 
+YouTube what could be-the reason behind a person not losing 
+weight despite cutting back on a lot of-calories and only 
+eating once or twice a day I know you would think that if 
+you-just cut calories you lose weight probably what's 
+happening is your-metabolism is very efficient which is a 
+nice way of saying-slow um so I don't know what you're 
+eating when-you're eating it um so rather than focus on 
+calories I would focus on keeping-your carbs low as as low 
+as possible and then the second thing if you're just-doing 
+one meal a day um and you're not losing weight are you 
+losing-size um if you're losing size what could be 
+happening is you could be gaining-muscle mass and that can 
+be a little bit heavier per volume than fat so you're-going 
+to uh you might be losing fat but not losing 
+weight-initially but I think a much better indicator to 
+know if it's working or not-is your Cravings go away and 
+can you go from one meal to the next um without-being 
+hungry or too hungry because if you're truly in fat burning 
+you have you-just don't have an appetite anymore and if 
+that's happening then you just need-to ride the wave give 
+it more time to let it work because it's all about-getting 
+healthy to lose weight not losing weight to get healthy 
+very-encouraging okay our great friend seow tin from Rumble 
+is hair analysis a good-indicator for mineral deficiency 
+and heavy metals in the body that's-interesting I think 
+it's a a rough idea with certain minerals and 
+definitely-heavy metals but um here's the problem with uh 
+like magnesium and potassium-99.9% or actually probably 99% 
+of all that mineral is not going to be-necessarily where 
+you could find it easily it's going to be deeper in 
+the-cell this is why I like blood analysis even hair 
+analysis it doesn't really-tell you what's really going on 
+uh intracellularly so uh for that you need-to do a biopsy 
+or there's other tests you can do but it's it's not easy 
+to-find out if you're deficient in that so um I I don't 
+really um use that as a-reliable test the hair analysis 
+there's some pluses and minuses it's a little-bit hazy but 
+you know it wouldn't hurt just to look at it see see what 
+it says-especially for heavy metals all right dig into that 
+yavon-from Facebook my dermatologist says I have overload 
+of yeast on my scalp yuck-what can I do to improve this 
+condition a lot of people address this-topically with some 
+cream zinc cream um castro oil things like that I-really 
+think there's a communication from the microbi-imbalance on 
+the surface of your skin and your gut there's definitely 
+a-connection because I know people that have problem with 
+the gut and they maybe-take an antibiotic and then they end 
+up with a skin problem wait a second how-did that happen 
+because there's this whole communication Network and um 
+it's-all it all works together so I would focus on the 
+inside of your body just as-much as the outside with a good 
+probiotic um one thing that feeds yeast-and candida is 
+sugar and carbs start es things like that so you got to get 
+off-that probably up your garlic um and then just give it 
+time and I think um that-that can be greatly improved all 
+right Kashi from YouTube what is the best way-to treat a 
+fatty Le liver excuse me an enlarg gall-bladder I think the 
+the fastest way is getting on the healthy version of 
+the-ketogenic diet you can actually remove fat when you do 
+that um couple other-things that can speed things up 
+choline choline is a good nutrient to help get-fat off your 
+liver and so um those are the two things I would I would do 
+as far-as the gallbladder goes um what irritates the 
+gallbladder is nuts grains-seeds things like that um you 
+may benefit from TKA which will thin the-bile take this the 
+pressure off the gallbladder um but you know I think 
+I-would stick with those those recommendations okay very 
+good Anita-from Facebook how can I naturally bring down my 
+blood-pressure probably the most common cause of high blood 
+pressure that when you-look into alternative type things or 
+viewpoints is a deficiency in vitamin-D and one of the side 
+effects for by taking too much D is that you end up-with 
+low blood pressure so H 90% of all type of hypertension is 
+called essential-which means they don't know what causes it 
+um-but it's going to be either a problem with the vitamin 
+D-deficiency maybe a potassium deficiency but also the 
+inside layer of your artery-can be inflamed so I know of 
+someone very young 22y old athlete top athlete-has uh 
+starting to get some high blood pressure and um the first 
+thing I'm-going to ask is what are you eating and sure 
+enough pancakes syrup more carbs-all that's very 
+inflammatory in the inside of the artery which then 
+can-trigger this reaction the blood pressure starts going 
+up so just by making that-tiny little change in the diet 
+you can usually handle blood pressure so if-someone has 
+high blood pressure before you start trying different 
+vitamins and-stuff get rid of the sugars and the the 
+starches and that that might just handle-it right there 
+very good sadon from YouTube can smoking contribute to 
+the-formation of psoriasis I don't know I I I don't know-if 
+that's a primary thing um so I'm not sure but it's um 
+probably contributes to-a lot of other problems yeah no 
+kidding okay dehy from YouTube what are the best-sources 
+for Boron they have uh a product out there-borax um that is 
+a mineral I think it's from a part of Utah if I'm not 
+mistaken-but borax is a interesting thing there's been some 
+past research for arthritis-beneficials arthritis so Boron 
+is a um is a mineral that supports Bone and-Joint uh it's 
+also natural anti-inflammatory you don't need much of-it 
+it's a trace mineral and uh some people get it from doing 
+borax borax-also is a powerful anti-inflammatory I'm 
+sorry-antimicrobial so the reason I don't talk about it 
+too-much is because um you'll be quickly banned from 
+YouTube of recommending-these bizarre remedies that you 
+know people don't want you to talk about all-right so Karen 
+from uh great questions today Karen from Facebook in 
+your-opinion what milk is the best source of overall 
+nutrition cow coconut almond or-hemp Etc MH goat sheep then 
+cow the type of-protein I would recommend is uh A2 protein 
+it's a type of-um but I don't like these other milks I mean 
+I don't even consider them milk how-can you actually get 
+milk out of an almond or a-soybean or a coconut well a 
+coconut okay that's a little bit better but these-other 
+things uh I I would stay away from them all-right you heard 
+it Monica from uh Facebook what are the best nut 
+nutrients-to improve Vision um I think the best thing 
+for-vision Believe It or Not would be um you have vitamin A 
+get that from codiv oil-because if you're deficient in 
+vitamin A not only do you get night blindness you-can 
+actually become blind um there's a couple other nutrients 
+involved uh one-is vitamin D deficiency that can create um 
+problems with the-retina um as far as um other mechanisms 
+high-blood glucose is probably the the single thing that 
+destroys that retina um that-you need to change the diet 
+all right zezy from YouTube please tell-me what to do to 
+address low phosphorus levels how do you know you have 
+low-phosphorus you can get it tested see if you're low with 
+phosphorus it could be a-problem with your parathyroid um 
+but you can get good a-good source of phosphorus from raw 
+milk cheese and uh you have to you you know-find some 
+cheese um that has um that's aged for two months in the-US 
+so it's considered and it says Raw on it cuz that's kind of 
+the loophole that-you can use or if you're in Europe that's 
+even better yet you could uh get-some raw milk cheese but 
+that's low to with a good source of phosphorus just-curious 
+what's the ramifications of low phosphorus is that 
+fatigue-fatigue yeah okay well listen why don't we hit the 
+audience with the first-question of the day and there it is 
+okay which body tissue has the most-concentrated omega3 
+climb on it audience and let's see let's-go back to social 
+media Sandy from YouTube in your opinion uh uh sorry-excuse 
+me what's your opinion on NAD supplements how much per day 
+should we-take NAD supplements help support um part of the 
+mitochondria because it-helps to carry electrons and helps 
+you make energy it helps the mitochondrial-work as you age 
+NAD goes down and there's a whole very interesting 
+video-I'm going to create probably in a month from now on 
+that topic because um it's-regarding anti-aging but I think 
+one quick way to increase your NAD levels is-just to take 
+nin because the precursor the building block that makes ad 
+n ad is-nin now you can um purchase a an expensive um 
+molecule like NAD for-example plus and uh um different 
+derivatives of that which-are a lot more expensive but you 
+don't really need to you just take nin the-flesh kind and 
+take a little bit more and you'll get the same benefit 
+wow-that's uh helpful say off not say Dow from YouTube my 
+76-year-old mom has-hyperthyroidism what supplements should 
+she be taking she's already eliminated-Dairy gluten and 
+processed sugar from her diet take large amounts of 
+vitamin-B1 and also probably take vitamin D because-it's 
+usually an autoimmune disease Graves and that will lower 
+the-inflammation you need like probably 30 40 50,000 iuse 
+make sure that you take-it with magnesium uh but B1 is 
+important and if-you're taking any bile salts avoid them 
+because that's going to speed up the-thyroid that's good 
+for hypothyroidism not hyper because it's-going to make 
+your thyroid more hyper okay uh Marie who is in Toronto 
+on-YouTube what's the best way to recover from a taxia 
+caused by a brain tumor-surgery you want to touch that one 
+methylene blue is a good remedy for-that dilute it you want 
+to buy the um food grade methylene blue um a good-source of 
+vitamin E called tokat trinal would also be beneficial um 
+those are-two things that I I would probably take if I had 
+that problem all right Marie-hope that helps Sharon from 
+YouTube I've been experienced quite a few 
+heart-palpitations lately I just came off from wearing a 
+heart monitor for 30 days and-now waiting on the results 
+any idea what's causing these-palpitations it's usually a 
+deficiency of a mineral that is super important-behind 
+arrhythmias very hard to test and it's-not as easy to get 
+in the diet um and it can have profound effects over 
+the-rhythm of the heart and other aspects of the heart not 
+just magnesium um but-here's the thing you can't just take 
+a little magnesium and think you're GNA-get rid of that 
+within a a few days sometimes it takes weeks to see 
+the-change so if I had arhythmia or strong palpitations I 
+would be taking probably-600 to 800 um milligrams of 
+magnesium glycinate it'll also help you-sleep now you may 
+need some potassium with that you also um might like for 
+me-I had palpitations when I slept and that was coming from 
+the this-EMF thing that was in the back of my not my cell 
+phone but in the back of the-wall there was crosswires and 
+I was being bathed in a magnetic field which-is not good 
+for the heart um but palpitations are one of the um a 
+good-indication that you need more magnesium um also check 
+for other things too like-you know do you um do you put 
+your cell phone in your pocket right here right-right over 
+your heart that would be a bad-thing all right don't do 
+that for goodness sakes a good day to all of our-viewers 
+joining us uh in the UK Canada Mexico Albania Jordan Japan 
+Greece Italy-Nigeria Bangladesh Germany Chile Panama South 
+Africa Egypt Sweden France-Indonesia Trinidad and Tobago 
+Pakistan Israel Switzerland Armen Poland Finland-Ethiopia 
+the Netherlands uh India Oman Saudi Arabia Australia the 
+Virgin-Islands Qatar brunai Scotland Gambia Barbados 
+Thailand Cyprus uh let's see it-jumped a little bit there 
+uh uh Gambia Barbados Cyprus we said that Morocco-Zanzibar 
+Guyana uh the Czech Republic Kazakhstan New Zealand don't 
+want to-forget those and we don't want to forget all across 
+these United States so thanks-everybody so much for tuning 
+in in and making the show a great success and-speaking of 
+success the audience is always successful in answering 
+uh-questions and this one asks which body tissue has the 
+most concentrated omega3-or DHA 80% of our respondents say 
+it's the-brain 5% say it's the skin 5% say it's the liver 
+5% say it's the heart and 5%-say it's in the eyes boy 
+they're all over the place any Winter's doc-it's the eyes 
+um 60% of all fatty-acids um are concentrated in the retina 
+now which is an extension of your brain-so those of you 
+that said brain are partially correct but number two 
+is-brain that's that's like 25% of all the fatty acids are 
+DHA omega-3 fatty acids-so um the brain and the eyes are 
+like the uh get the L share of this uh DHA so-people are 
+taking fish oil but unfortunately-when you go to the 
+cheapest you're getting something processed from China-that 
+is probably rancid and could have heavy metals when it 
+comes down-to something that's going to replace or feed our 
+cell membranes I-would want a higher quality version of 
+fish oil I like Civ oil um so just-invest a little bit more 
+in that one because that one's are important 
+versus-something like niin which even though it's synthetic 
+it doesn't seem to be a-problem it seems to work there's 
+doesn't seem to be toxic effects but when you-get into oils 
+that go into the membranes go higher end with that because 
+you-don't want these cheap things going into your cell 
+membranes also the other thing-is they um they compete with 
+the omega-6 fatty acids like the the seed oils so if-you're 
+consuming the seed oils then the Omega the DHA is not 
+going-to go in so um that's a really big problem all right 
+very good why don't we-go to our first contestant if you 
+will today and his name is Jeff and he's-coming to us from 
+Providence Rhode Island Jeff go ahead with your 
+quick-question for Dr Berg hey Dr Berg um I have a you 
+know-times severe bloating and based on your videos you 
+know I think I might have-sibo but uh I'm a near vegan and 
+is there another option other than the-carnivore diet to 
+help with I will say it's it's difficult because-you eat a 
+lot of plants and you eat um probably everything vegan that 
+tends to-ferment they're heavy in the carbs so that's a 
+tough one um I don't know if-maybe you could do maybe 
+instead of carnivore do um just vegetarian and have-maybe 
+eggs as your protein and then um as far as-the what's that 
+I don't eat eggs I'm sorry I know you-don't um so the 
+problem is like how do we get rid of the fermentation in 
+your-small intestine because of bloating um there's a even 
+like in India it's the-highest population of vegan and 
+vegetarian people so you have a lot of-fermentation 
+bloating in the small intestine um so what are you going 
+to-eat that's not going to ferment that I mean if you-took 
+um probotics that could make it worse because what's 
+happening is have-the bacteria in the wrong place it's in 
+the small intestine you don't you want-it in the large 
+intestine so when it's in a small intestine as soon as 
+that-food goes in there it starts fermenting and the 
+problem with these uh-these microbes is they start stealing 
+your um your nutrients so you might end-up with more 
+nutritional deficiencies so I guess the only thing I would 
+say as a-tip would be garlic uh thyme Sage some herbs 
+that-maybe could as a natural antibiotic and do 
+intermittent fasting so you give it a-chance for all that 
+stuff to clear out to some degree uh and maybe some 
+apple-cider vinegar um to acidify the stomach a little bit 
+more but probably what-happened is you lost your stomach 
+acid acidity and so then some certain-microbes got through 
+and they started to form in the small small gut but it's 
+a-big problem yeah yeah I tried uh I tried to-live on 
+Bagels for a while that didn't work that didn't work I'm 
+surprised um-yeah I I have that t-shirt too still Al I used 
+to do the brand muffins for-breakfast and uh I always 
+wonder why I had so much bloating in the morning-so yeah 
+well uh you're welcome all right thanks for a great call uh 
+Jeff we-appreciate it and hope that helps okay let's go to 
+quiz question uh number two-for the day and and uh doc 
+there it is okay true or false trans fats were-considered 
+generally recognized as safe which is gross for over a 
+hundred-years All Right audience we know you'll grasp on of 
+that back to social media-lur from Facebook cod oil or 
+Krill supplements which is better for your n-nutritional 
+okay so Krill has a bit more um Omega-3s than even fish oil 
+but one-advantage of cod Li oil is that it has also vitamin 
+d and vitamin A so I I-think they're both good uh I tend to 
+do the cod oil um just because it has these-additional 
+things and if you really look at let's just take vitamin A 
+which is-very very important I don't eat liver um I wish I 
+liked it but I can't eat it so-you do get vitamin a from a 
+lot of foods but not in large amounts but you do get-the 
+precursor to vitamin A which is beta carotene which doesn't 
+convert over that-much in plants and things like that so 
+vitamin A is not as easy as you think to-try to get from 
+General Foods unless you're doing something like Civ oil 
+or-maybe um certain grass-fed like butter uh liver organ 
+Meats things like that um-but don't rely on your vitamin A 
+from vegetables because that's the precursor-it's called 
+beta carotene and you probably get like a few percent 
+that-converts the act the active form of retinol so retinol 
+is really important-for the immune system the inner 
+membranes and your sinuses all through-your digestive 
+system as well as for your immune system and your eyes 
+all-right very good good grief audience you guys are fast 
+already answered number-two true false trans fats were 
+considered generally recognized to save-grass for over a 
+hundred years and 90% of you uh say that it's true and 10% 
+say-it's a big fat lie who's who's right there so when 
+trans fats start started-coming out um a 100 years ago 
+there's this they're generally-recognized as safe this is 
+gr this gross uh thing is a loophole by industry where-you 
+can do your own studies and say it's safe yourself it 
+doesn't go through any-independent St studies so you'd be 
+shocked to find out how many chemicals-are generally 
+recognized as safe so anytime you hear that take it with 
+a-grain of salt it's just BS um but here we take trans fats 
+have been known to-cause cancer heart disease and so many 
+other problems and it's been safe for-over a hundred years 
+how could that happen so you can imagine how many 
+other-things are generally recognized as safe like multiex 
+is safe-right so I think uh we're great examples of human 
+guinea pigs Steve interesting-ji from Facebook what are the 
+best foods to treat excuse me to eat to address-hair loss 
+I'm all ears zinc insufficient-protein from red meat those 
+are two recommendations I think could help you-and then the 
+third would be B vitamins a lot of B vitamins maybe 
+nutritional-yeast would help as well um that would that's 
+where I would-start all right uh Arvin from Facebook what's 
+your recommendation to treat dry-eyes that's a vitamin A 
+deficiency so you guess what you need you need codiv-oil um 
+liver and that should that should take-care of it also 
+realize if you had your gallbladder removed um then you 
+don't-have the bile to help extract vitamin A from the 
+foods so I noticed that when-people have their gallbladder 
+out or have a gall stone or have gallbladder-problems 
+they're deficient in bile and they they can end up with dry 
+eyes as-one of the symptoms I had dry eyes really really 
+bad to the point where um-it would rip my cornea and of 
+course that was probably coming-from slightly poor diet 
+that I had for most of my life um which actually 
+just-created a deficiency well you know I uh when I-take a 
+nap and I have context I'll use the actual lens solution is 
+squirted-straight in my eye I don't know if that's good but 
+it loosens them it-loosens them up and uh I don't know 
+probably not that doctor recommended-Nancy from Facebook is 
+drilling down on this question she said that you-mentioned 
+that seed oils are bad for us but what are your thoughts 
+about black-seed oil supplements any better that's 
+completely different-they're not putting through an 
+industrial process to extract the-nutrients and heat it and 
+put solvents in it you're getting like straight black-seed 
+which is super super healthy I mean they found these black 
+seed black seeds-in the um two and Commons [Music]-um uh 
+mumification what do you call that a tomb-tomb um they 
+found that there it's been it's it's been used uh for 
+thousands of-years um um anything that did the test of time 
+like that there's something to-it of course you're going to 
+get people that'll say oh unless there's double-Blended 
+studies done by the pharmaceutical companies I'm not 
+going-to recommend I'm not going to take it that's fine um 
+who's going to pay for-that study it's not going to happen 
+yeah no kidding okay Stratovarius 11 from-Rumble please 
+explain the basics of health healthy keto everything I 
+read-seems aimed at people who need to lose weight I am 
+considered underweight-should I take it up and if so how 
+can it help me gain weight and stay healthy-good question 
+Strat aarius weight weight loss is just one of-the factors 
+but take a look at the other thing when you have-um a 
+problem that most people have it's called insulin 
+resistance um you you-might get fat fatty liver get tired 
+craving for-sweets insomnia all these other symptoms right 
+but-there's some other things too that can affect um affect 
+you um the ability to-absorb nutrients the um alteration of 
+your-testosterone um the ability to for the cell for the 
+mitochondria to generate-energy so there's so many benefits 
+now if you want to gain weight-um you know do you do you 
+have to take carbs is that the way to do it what if-you 
+just to have keep your carbs below 50 make sure they're 
+really like the-carbs are may I don't know berries 
+something like that and then what you-can do is going carbs 
+and probably not do the nuts so now your digestion 
+is-better eat real food healthy food get super healthy and 
+then just consume more-a little more calories maybe a 
+little more fat and um with your workouts with-weight 
+training you should gain some more muscle but it's you 
+don't always-have to gain muscle with carbs all right very 
+good we're going to toss out quiz-question number three and 
+right after that we're going to go to ROM uh Ramy-from 
+England so Ramy standby we'll be with you in a minute there 
+you go doc-okay how could artificial sweeteners cause more 
+weight gain than actual-sugar All Right audience jump on it 
+as we know you will and Ramy you're on with-Dr Berg for a 
+quick question hi thank you Dr Berg thanks for-speaking to 
+me um I had a full panel of Bloods done recently just you a 
+few few-weeks ago um it says I have elevated B12 now 
+obviously internet land is not-specific on what that 
+actually means because there's all sorts of advice on-how 
+to increase uh but everything-seems mostly everything seems 
+all right including liver and kidney functions so-what 
+could that be do you um take B12 as a supplement no no but 
+um no I we eat-fairly U healthy because I'm I'm you know 
+qualifying imminently as a-naturopathic health coach I do 
+follow a lot of your advice we eat only grass-fed-organic 
+you know stuff I I do like rice so that's the only reason 
+that I don't-really very not very success ESS with keto uh 
+but I do intermittent fast um I-try and do 24-hour fast 
+once a week uh but the B12 is just uh puzzling-me there's a 
+there's only a few um-genetic uh they're called 
+polymorphisms uh that relate to B12 and you may 
+have-something with that which it's very rare um so I think 
+I think that when you get-something like this I would 
+retest it because I don't trust um I've seen odd-things 
+like this pop out and then all of a sudden you change your 
+whole thing and-like oh it was a mistake or was an artifact 
+it's it's very weird to have-high levels of B12 if your 
+diet is that good um I mean one recommendation I know-you 
+do Rice um which is a starch um maybe you can and this is a 
+side note-maybe you switch that out with purple potatoes 
+just to see if you can do that-this is a little it's just 
+more nutrition than white rice but I don't-think that's 
+going to affect your B12 but I think I would retest it with 
+from-a different lab because I don't know if I trust that 
+the odds of you having some-polymorphism with B12 that's 
+increasing it I don't know that's that's very rare-as well 
+but it's a possibility yeah I feel well in general-because 
+you know I feel well but um I don't know how good a measure 
+is just to-say you feel well I have plenty of energy even 
+though I'm per menopausal I-don't have any brain struggling 
+with I have really good energy so-I definitely I think 
+that's that's going to be my next step I want to retest 
+and-see what somebody this is our beautiful right it's like 
+you're looking-into the blood and it doesn't really tell 
+you why it just kind of like oh-this is something that just 
+kind of a little too high I mean a better test-would be 
+that metabolomics test um I talked about that in other 
+videos-because then you can actually see B12 in the actual 
+enzyme Pathways and see if-it's being utilized correctly 
+there's some fascinating information I'm doing-this test um 
+like almost every two weeks on myself and the things that 
+I'm-discovering is just I would never in a million years 
+figure this out with a-blood test like one thing for 
+example is that um I tend to really push-myself with 
+exercise running up mountains and things like that and so 
+my-um antioxidant levels are just off the charts so I'm 
+actually generating so-much glutathione to handle the 
+oxidative stress which is a normal thing but it's-very um 
+it tells me I probably should give more time to recover 
+because-mentally I'm still 18 and but physically I'm almost 
+60 so anyway um you know it's-I think that metabolomic test 
+to get it's good to do at some point in your-life just to 
+see really what's going on behind the-scene I literally 
+said that to my husband because I saw your episode with-the 
+Greek doctor we're not very far from here is that because I 
+have-hypothyroidism ah that would be FAS I I yeah yes 
+okay-interesting okay yeah that would be something you 
+could check out as well-thanks on thanks so much for a 
+great call and uh we move on let's say let's-go back to 
+social media um uh quiz question number three while Ramy 
+was-telling us about things was answered by the audience 
+and it asked how can-artificial sweeteners cause more 
+weight gain than actual sugar 65% of-respondents say it's 
+because artificial sweeteners compromise the function 
+of-the gut biome boy that's a lofty answer 20% say it's 
+because they cause faster-or more powerful insulin spikes 
+and 15% say they can make you hungrier so you-eat more 
+who's right I think every I think some people have did a 
+quick-search on chat gbt but that's absolutely all three of 
+those answers are correct-they definitely increase appetite 
+they definitely increase um-insulin indirectly and they 
+mess up your microbiome but other than that they're-totally 
+fine they're perfectly healthy they're considered generally 
+recognized-as safe so by their own standard so I think 
+you're good to go on that all-right very good Deborah from 
+YouTube I've been diagnosed with-osteopenia uh what are 
+your recommendations on addressing this-disease so that's 
+kind of a precursor to osteoporosis-um I think I would step 
+back and really um reevaluate your whole diet because-it's 
+not just one nutrient deficiency for example vitamin K2 has 
+a function of-making your bones really solid and keeping 
+the calcium in the bone so here-you are taking vitamin K2 
+but vitamin K2 is dependent on magnesium to work so oh-now 
+we have to take magnesium so I think I would step back and 
+go like are you-postmenopausal have you just been through a 
+lot of stress um like what's-really behind this do you um 
+what's going on with your hormones like is a-high cortisol 
+that can destroy these bones but what I wouldn't do is 
+start-taking massive doses to just calcium in the form of 
+calcium carbonate I'd-probably instead consume more bone 
+building calcium complexes from like raw-cheese things like 
+that or goats cheese doing that doing the trace 
+minerals-making sure that you're um having enough collagen 
+like home broth would be really-really really smart um that 
+that's what I would start with uh and then consuming-really 
+really healthy keto um with lots of vitamin C because 
+vitamin C helps the-collagen in the bone um some people 
+consider osteoporosis to be scurvy of-the bones which is a 
+vitamin C deficiency huh okay so let's try this-same 
+routine we're going to go to a question here it is then 
+we're going to-go to Ariel and uh Los Angeles so there you 
+go doc out of all the nutrients-which one mostly influences 
+your energy level all right and as promis here is-Ariel 
+Ariel go ahead with your quick question for Dr-bird hi Dr 
+berd thanks for having me on the show so I have a pretty 
+severe-bloating and after watching each one of your videos 
+on sibo for about 20 times-each uh pretty much ruled out 
+everything besides uh sibo and I've been on the-carnivore 
+diet uh as well as taking pretty much every antimicrobial 
+possible-like oregano clove thyme uh taking also eight 
+pills of Bane hydrochloride and-apple cider vinegar and um 
+while all this has-improved uh like it's still there so 
+it's probably improved by 30 40% but-it's still there and 
+I'm just thinking should I keep going with this for 
+a-couple weeks or months now or should I just uh change 
+something up so does do-you just get bloating after you and 
+then it kind of goes down uh after a-while yeah but it 
+would be more with fiber or in probiotics so yeah yeah 
+um-do you eat nuts no I'm right now I'm on strict-carnivore 
+just eggs and meat okay okay and how many meals uh per day 
+do you-consume I'm doing two at about one and five do you 
+have any um fatigue in your-workouts uh no actually since I 
+did the carnivore I was on keto before but now-that I'm on 
+a carnivore it's even better uh able to train for a 
+couple-hours consistently I think you should just you-just 
+need to do this longer because it does take a bit of time 
+um it sounds-like you do probably have sibo and that you 
+have to realize that it's a slow-process sometimes it can 
+even take months so some people think it's going-to go away 
+right away but what we we want to do is create a shift and 
+I think-I'm glad that you're doing two meals a day maybe 
+even try sometimes to do one-meal a day just to clear out 
+that whole intestinal uh track um to make sure 
+that-bacteria um stays where it should um I think you're on 
+the right track uh you-just have to do it give it more time 
+but then after a couple months uh if you-were going to 
+introduce some Fiber I would do um either cooked fiber or 
+maybe-a little sour crout um slowly just to see if you 
+could test the waters to see-if you can do that um but I 
+had I had a similar thing to you um I didn't know-what it 
+was I thought it was normal but um yeah it sounds like the 
+uh your-microbes are just taking this fiber and fermenting 
+them in the wrong-place what did you do for your problem I 
+didn't know I didn't get a solution for-about 10 to 20 
+years so I I eventually um did a version what you're doing 
+and-uh eventually cut out all the the nuts and that seemed 
+to to work I don't think-I had it as severe as you though 
+but um you know also the quality of of-protein you eat is 
+important too you could try like I know that um if you 
+had-a choice between chicken or grass-fed red meat I 
+definitely do the red meat um-or any type of U meat from 
+animals that eat grass versus the grains which is the-pork 
+pork and the chicken which is high in Omega 6 which 
+is-inflammatory um I don't think you could find pork-that's 
+not high omega-6 or even chicken but even eggs might be an 
+issue for you-because that's also high in Omega 6 so you 
+might do better with um organ meats-or nose to tail maybe 
+some um a lot of different um lamb goat and and beef-all 
+right so uh my friend we are out of time U but hope that 
+works for you and-thanks for a really good call and let's 
+see where are we now let's go back to-social media no let's 
+not go back to social media let's go to quick 
+question-number four which was rapidly answered as usual 
+and it asks out of all the N-nutrients uh which are the 
+mostly influence excuse me which one mostly-influences 
+energy level and 60% of our respondents say it's vitamin 
+B12 20% say-it's vitamin B1 10% say it's potassium or 
+magnesium and the final 10% say it's-vitamin D okay so when 
+we're talking about-energy we're talking about a factory 
+called the mitochondria in that-mitochondria you have uh 
+assembly lines and you have gears and you have pumps-and 
+you have Motors and you have um rotational Motors that 
+actually make-what's called ATP it's actually the it's the 
+last thing on the chain of events-that makes this ATP it's 
+a it's a It's actually an enzyme that actually rotates-as 
+fast as a jet engine like 400 times a second each time it 
+rotates one time-around produces three ATP that enzyme is 
+dependent on one nutrient and this one-is this nutrient is 
+the most important for helping you make energy and 
+fueling-all the other gears and pumps and Machinery um and 
+that is-magnesium so this is why um one of the common 
+symptoms of uh magnesium-deficiency could be um fatigue but 
+also it could be cramps-because what's happening with 
+cramps is you have this this pump that's pushing-calcium in 
+and out of the uh the muscles and things like that so if 
+you're not-having enough energy to pump that down then you 
+get a build up of calcium and-it cramps but magnesium also 
+controls the calcium in the cell-so calcium um I mean 
+magnesium is so underrated um I recommend the 
+calci-Magnesium glycinate um take it before bed and it'll 
+help you sleep too U but-it's really important for energy 
+controlling too much calcium and also to-allow vitamin D to 
+work if you take high amounts of vitamin D over a long 
+period-of time without magnesium you create magnesium 
+deficiencies-because vitamin D is dependent on this 
+magnesium to get it to work so it's one-of those things 
+that I I wasn't aware of until um fairly recently of like 
+how-many things it's involved with it's so important okay 
+very good so our last-routine like this we're going to ask 
+quiz question number five then we're-going to go to Kathy 
+our final contestant if you will and then we're-going to 
+have a marathon on social media so standby folks Here's the 
+final-question true or false there evidence to suggest that 
+people with a slower-metabolism live longer interesting 
+we'll find out about-that all right let's go to uh Kathy 
+and let me cut her audio on and we're so-excited to have 
+her go ahead Kathy with your brief question for Dr 
+Bird-please and I'm excited Dr bur because I got the 
+Magnesium question right for the-mitochondria anyway um 
+because of em because of emotional and um-mental stress 
+throughout my life and low adrenals and uh other things I 
+finally-at 76 I said I have my um neurotransmitters tested 
+and my doctor-she didn't know what she was doing she just 
+looked some stuff up on the-internet and lab cor when I 
+went that text have them explain one of their-tests they 
+couldn't and the doctors don't seem to but um I was left 
+with uh-my dopamine which did not get a um which did not 
+get a outof range reference-which is a little triangle and 
+critical having a square which I didn't have any-of uh my 
+my dopamine is like um minus 30 and the range is 0 to 48 
+which I've-also read can be 48 to 50 to 60 and mine's minus 
+30 which is not-surprising um and also there's a test I 
+didn't understand it's a Gabapentin-serum which my doctor 
+kept saying that's a drug Kathy and I didn't sign up 
+for-that you had were taking this drug anyway for some 
+reason the Gaba Penton-was stried as um out of range not 
+critical but out of range and the-reference is 4.0 to 16 
+mine's minus one and it says low I have no and that must-be 
+Gaba I'm guessing that's Gaba and my one last thing so um 
+the-dopamine the Gabapentin serum and the um the epinephine 
+it says epinephine is-zero to 62 I'm 23 which I don't know 
+and my by the way-my adrenals are always low and um and 
+even if I have an angry thought my-adrenals crash I mean 
+it's through that so I just wanted to know the 
+dopamine-what's standard for that and what I can do and 
+which I did go and buy some-tyrosine and I got magnesium 
+threonate which all of my cramps in two days are-gone great 
+amazing yeah so um so for everyone um she was a patient for 
+years-in my clinic in Alexandra Virginia so uh good to see 
+you again um so I think I-think you're in the right track 
+with magnesium for sure um but like when you-take these 
+little factors and we look at them out of context of how 
+everything-works it's really hard to figure out what's 
+going on but I'm going to you-gave me enough data to to see 
+a Common Thread with all three of these because-they all um 
+they all relate to uh a deficiency in glutamine which by 
+the way-um the best source of glutamine is red meat red 
+meat vegetarian oh so this is-you know 45 years so when you 
+check when you look at uh metabolomic testing 
+that-someone's a veget a vegan sometimes a vegetarian 
+it's-literally empty it's like it's just just not enough uh 
+um material to come-through to the feed all the different 
+nutrients because we're not just talking-about amino acids 
+we're talking about all the other nutrients that are 
+very-dense in red meat uh so I think you just need to 
+switch over to a carnivore no-I'm just kidding um if you 
+can't do red meat for some reason I would do-glutamine as a 
+supplement glutamine and magnesium as a supplement because 
+you'll-that's really what you need to start building up uh 
+the-neurotransmitters it wouldn't hurt to to take a prootic 
+as well uh because your-microbes produce good um but I 
+think think for you glutamine will actually-help you in 
+it's also going to help support your adrenals because I 
+think-the the adrenaline part thing is compensating for a 
+lack of energy in-your mitochondria that's really what 
+happens because you your mitochondria is-not generating 
+energy so it has to get it from adrenaline so that is 
+it's-really hard to uh fix the mitochondria when you can't 
+when you're restricted by-putting certain ra raw materials 
+in the machine because you're trying to you're-trying to 
+run your Ferrari on diesel fuel but it just doesn't quite 
+it might-work for a little bit but then it shuts down yeah 
+I crave milk and I crave-cheese and I do goats milk and I 
+crave cheese but I don't I don't really do it-a lot um milk 
+is a little bloating to me the um the Kefir is fine the 
+kefir goats-SM kefir because it's fermented it's fine 
+cheese is okay but but the goats-milk I have to just have a 
+little bit but I crave it and it's and yet I read-the 
+dopamine saturated Fat's not good for dopamine but no no no 
+no no it is it-dopamine is actually um more of the 
+sympathetic Factor so I would uh um I-would definitely do 
+more of that cheese raw milk cheese goat cheese I would 
+do-more of that it's not going to be bad for you it's going 
+to help you greatly-because it gives you you source of uh 
+amino acids protein probiotics B-vitamins trace minerals so 
+yeah do that that's great-well thanks so much Kathy for a 
+great call we're out of time but uh we uh hope-that that 
+helps and let's go on quiz question number the final one 
+Kathy I-hope you get this it asks true false there is 
+evidence to suggest that people-with a slower metabolism 
+live longer and uh 62% of our respondents say that's-true 
+and 38% say in no way it is false doc what say there some 
+interest there's-some interesting evidence that say it's 
+true because-um a slow metabolism really is an 
+efficient-metabolism and those of us that had a 
+slower-metabolism way back in the day actually survived 
+because we could run on a-smaller amount of fuel for a 
+longer period of time now if you take someone-with a slow 
+metabolism and you feed them modern Foods they're not going 
+to live-long but if they actually get on a healthy program 
+they have a better um-they're better at um dealing with 
+energy they're more efficient with the-energy so they're 
+also uh more adapt to do more fasting as well whereas 
+someone-with a faster metabolism doesn't do as well 
+with-fasting so there's one advant manag to having a slow 
+metabolism at least one-right so I'm going to do a video on 
+some of-the maybe the genetics that were dealt with-um and 
+some of the advantages and disadvantages of what like if 
+you were-if you have genes that are more pro-inflammatory 
+uh your risk for cancer-goes down so there's always this 
+tradeoff um and I'm going to talk about-that in a future 
+video I think it's going to be interesting all right 
+very-good as promised we're going to do a marathon on 
+social media this is all-we're going to talk about for the 
+rest of the show so let's go to Julia from-YouTube what is 
+your recommended recommendation for daily dosage 
+of-magnesium glycinate for women minimally uh about 400 
+um-milligrams okay if you're just trying to M maintain it 
+but if if you if you're-trying to use it for any type of 
+therapeutic thing like inflammation-sleep problems uh 
+muscle cramping then double the doses-do dosage to 800 
+milligrams um there's not necessarily A Toxic effect if 
+you-take too much because your body will get rid of excess 
+but of course there might-be a you might feel nauseous 
+diarrhea if you take massive amounts but the reason-I like 
+the Magnesium glycinate is because the glycinate is glycine 
+which-helps other things especially for stress and 
+sleep-and um you don't get the diarrhea like 
+magnesium-oxide so that's why okay apparently there's a new 
+phenomenon on YouTube-where popup ads keep popping up and 
+interrupting Dr Berg's uh monologue and-so on and our 
+producer Terry wanted to remind you that you can go back 
+and look-at it after the fact hopefully they won't be there 
+and if they are then you-can go look at it at face on 
+Facebook or Rumble so we apologize for that and we-hope 
+that um YouTube stops it so you'll have to uh remind me 
+Steve uh we need to-remove the the ads off of this live 
+show oh good so we have iritating way to do-it all right 
+very good so we're on it audience stand by Julia from 
+YouTube uh-no we already did that one let's see Mike from 
+YouTube what are your thoughts-on taking St John's wart for 
+depression I think it's a great-alternative um I mean it it 
+creates a similar effect anti-depressants but-without all 
+the side however uh doctors don't like you to-take it if 
+you're on uh ssris at the same time because it can really 
+um alter-your serotonin in the wrong direction so that 
+being said if you're-not on an SSRI then I think it'd be a 
+great solution if you argue with your-doctor to see if if 
+it's okay to take both because I think what happens-whether 
+you have high blood pressure or high cholesterol or 
+depression or-whatever or anxiety and you're on a 
+medication for that people like to also-do Alternatives of 
+the same time and even if you're like you're a diabetic-and 
+you take berberine with your metformin and now your blood 
+sugar-becomes low and you go to the doctor and they go oh 
+my gosh your blood sugar you-have hypoglycemia we need to 
+give you sugar pills uh why don't we just cut-down the meds 
+I mean it's like duh I mean what what isn't the goal to 
+wean-you off medication over time um for some reason we 
+think that this medication is-normal that we have to take 
+it and it's just managing our symptoms for the rest-of our 
+life and this is the way it's going to be I'm like no I 
+thought like-can't we get rid of it um most conditions you 
+can so anyway-I just wanted to mention that all right 
+here's an interesting question from brlp-from Rumble uh can 
+you please discuss how our emotions and beliefs can play 
+a-part in maintain good health or destroying it maybe I 
+think it's a-superior thing um if you notice people that 
+are up on the emotional scale of-things they're literally 
+immune uh to infections and bacteria and yeast and-things 
+they they just don't get body problems and if they do they 
+kind of-have nine lives and they just they can survive 
+better so uh I even noticed in-practice those people that 
+are um lower on the emotional scale have a lot more-health 
+problems so do what you can to keep yourself high on the 
+emotional-scale whether it's going for long walks in the in 
+nature get doing busy with-work around the yard very very 
+important okay Renee from Facebook would-horseradish help 
+reverse or eradicate spider veins huh I think it's a 
+good-thing good thing that can help uh Rish in general are 
+really good for um-circulation arteries veins things like 
+that so I I just I can't consume-horseradish uh I wish I 
+could but I can't so I I'll get i'll get my-nutrition other 
+ways all right very good L from YouTube what do I get why 
+do I-get the shakes every time I break a fast I think what 
+you're eating um-hopefully it's not too many carbs um but I 
+think I would go smaller and more Gra-gradual because when 
+you do a fast uh you really alter your biochemistry 
+and-your hormones and um and then all of a sudden you push 
+it back and things can-have have have to adjust so I would 
+have smaller meals and um go into it a little-bit easier 
+until your body can fully handle this this is really called 
+uh-metabolic flexibility we're able to you know change your 
+fuel go in and out of-fasting and go back to meals you know 
+that takes some time to work that muscle-okay Moxy from 
+YouTube would kefir help reduce-bloating maybe maybe not 
+depending if you have sibo small intestinal 
+bacteria-overgrowth it'll make it worse because a probiotic 
+like you're going to add more-bacteria in there but I I 
+like kefir because it has more microbes than yogurt-and for 
+me it doesn't bloat me but also realize that you could be 
+allergic to-the casine in the milk which could bloat you or 
+even the-lactose this is why they have lactose-free uh 
+kefir or they might have-a better source of kefir it' be 
+sheep Che sheep milk um kefir or even goat-milk kefir if 
+you can find that that would be a little bit-better okay uh 
+Jennifer from Facebook what are the best food and 
+supplements-for someone and there are many without a 
+gallbladder I would probably take a bile-salt um after your 
+meal I would also take U-maybe some tutka in the middle of 
+the meal just to keep that thing cleaned out-um realize 
+that you may end up being deficient in the fat cble 
+vitamins in-which case you need to take them right so you 
+can don't forget um that also-includes omega-3 fatty acids 
+as in DHA so you may benefit from taking um not a-lot but 
+just some cive oil which will give you vitamin A and D and 
+then also-uh vitamin E and even K2 which is actually a lot 
+of times that's already-in the vitamin D supplement so it's 
+one of those things you just have to see if-it's creating a 
+deficiency or not if you have enough to um extract these 
+fat CYO-vitamins or not all right well Anthony has a tough 
+and familiar problem he's-writing us from Facebook what 
+would you recommend to someone who has severe-facial acne 
+well I'm an expert in it um because I've-had it really bad 
+so the first thing you want to do is cut down the sugar 
+and-refined carbs because that's creating higher androgens 
+and androgens make the-sebaceous gland the oil gland 
+enlarged and produce more oil which then feeds-bacteria and 
+the whole cycle cles on and on so low carb will usually 
+handle the-acne there's other nutrients too that are 
+beneficial for acne like um vitamin-E like vitamin D this 
+is why the sun is great for acne um but scrubbing your-skin 
+and try and popping your zits are very bad for acne um or 
+putting lotions-in or synthetic uh vitamin A which is um 
+what is that what's that called um that-retinol yeah like 
+retinoic um what's it uh there's some medication I 
+can't-remember but it's the vitamin A in high potency I 
+think the might have banned-it Wow Let's squeeze one more 
+in andz from YouTube which nutrient deficiency-could cause 
+uh my um let's see rapid involuntary eye movement uh-nagus 
+yeah that's it that's usually a B1 deficiency um it could 
+also involve um-B12 but it's usually B1 so take more B1 and 
+on that note thank you for watching-I will see you uh next 
+week same time same place-[Music]
