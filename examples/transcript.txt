@@ -1,283 +1,284 @@
-to double click on the four horsemen just a little bit you 
-mentioned what-those four are but do you also want to talk 
-a little bit about for each of them-what we know in terms 
-of prevention right so if medicine 3.0 prevention is-really 
-important you know how do you think about our knowledge of 
-those-diseases as it relates to someone who is trying to 
-live as long as possible sure-so we'll take them from the 
-top so the atherosclerotic diseases um-along with the 
-fourth Horsemen which is the metabolic diseases are 
-probably the-two that we have the most insight into um as 
-far as what are the-pathophysiologic drivers and therefore 
-we either theoretically uh or in some-cases practically 
-also have I think the best insight into how to prevent them 
-so-ascvd is a disease that has both a genetic component and 
-an environmental-component but it really doesn't have much 
-of a component of luck as far as we-can tell so you know 
-stochastic processes involving mutations uh doesn't-seem to 
-play a role right there's there's just pure causality from 
-the-standpoint of environmental triggers and from 
-genetic-inheritance so um both of those factors play 
-through three Pathways all of which-are important so first 
-is a lipoprotein path pathway second is an 
-endothelial-pathway and third is an inflammatory pathway 
-but I realized as I'm saying-that it doesn't make a lot of 
-sense so I'm going to try to step back and put-this into 
-English the three things that have to happen for 
-atherosclerotic-disease are as follows the first is a 
-molecule called A-lipoprotein which carries cholesterol 
-through the body and specifically A-lipoprotein that has an 
-apob protein on it because there are lipoproteins 
-that-don't have apobs on them and we don't have to worry 
-about those but the Lipo-proteins that have apobs on them 
-can enter the artery wall when the-endothelium uh is intact 
-but they do so more prevalently and more easily when-the 
-endothelium is damaged the endothelium is simply the lining 
-of-cells on the innermost membrane I mean closest to the 
-artery or outermost from-the standpoint of the artery wall 
-the one that is most in contact with the-circulation if 
-those um apob wrapped lipoproteins get trapped inside 
-the-endothelial layer a chemical process known as oxidation 
-takes place and that-leads to inflammation what that means 
-is the body thinks something is wrong and I-need to fight 
-it just as when you get an infection a healthy immune 
-system-detects the inflammation caused by the microbial 
-agent and it sends the troops-there to get rid of it but in 
-this case the insult does not come from an-infection it 
-comes from the oxidation of the cholesterol contained 
-within the-apob particle as it sits in the endothelium and 
-that process initiates a-devastating Cascade of events that 
-ultimately can create so much damage in-the wall of the 
-artery that it can lead to a rupture of the plaque which is 
-the-repairing process the rupture of that plaque acutely 
-leads to blood loss and-ultimately oxygen loss to the 
-muscles of the heart beyond the point of that-blockage that 
-process is known as a heart attack and about 50% of the 
-time-it is fatal the first time a person has one-so if you 
-want to think about preventing cardiovascular disease es 
-schic-cardiovascular disease you have to have an insight 
-into all of those things you-have to be thinking about how 
-do I have fewer apob particles because the more of-those 
-particles you have the more of them that are going to enter 
-the-endothelial space the data on this is uh as unambiguous 
-as any data are in-medicine from clinical trials 
-epidemiologic trials and mandelian-randomization in other 
-words you have the only three layers of evidence you-can 
-ever look to experimental data Mr and clinical EPI and they 
-all say the-same thing there is a log linear reduction 
-in-ascvd as apob goes down the second thing you have to do 
-is you have to protect-your endothelium so anything that 
-aggravates and weakens and makes the-endothelium more 
-vulnerable to penetration by apob is problematic and-the 
-most common factors that we think are doing that are 
-smoking blood-pressure and very likely the metabolic 
-conditions that cluster with insulin-resistance 
-hyperinsulinemia um and uh type to-diabetes so some 
-combination of elevated glucose elevated insulin and 
-other-metabolic byproducts such as homocystine uric acid 
-all of these things serve to-weaken the endothelium along 
-with elevated blood pressure and smoking and-that creates a 
-greater susceptibility again it's not surprising that all 
-of-those things pose about an equal risk to cardiovascular 
-disease as does the-presence of elevated apob and then the 
-third piece of the-puzzle and the one for which we really 
-don't do much directly in the way of-treatment is the 
-higher the inflammation the more likely uh the higher this 
-is-going to be and the reason this is probably lesser of 
-the three is with-very rare exceptions is it a direct 
-therapeutic tool in other words we-clearly therapeutically 
-address the first two right we therapeutically lower-apob 
-we manage blood pressure we tell people to not smoking you 
-know tell-people to not smoke which of course is a therapy 
-we you know use exercise and-nutrition to manage metabolic 
-health and even pharmacology but directly from 
-a-pharmacologic standpoint we don't really manage 
-inflammation we can there are a-couple of agents that are 
-used somewhat not impressively uh and maybe somewhat-on the 
-margins impressively but most of the evidence around 
-reducing-inflammation probably comes from doing things much 
-more broadly around-nutrition sleep uh and exercise that 
-we've talked about elsewhere so in a-nutshell that's really 
-what it comes down to and it's for that reason that-I'm 
-often making a very bold statement which is even though 
-cardiovascular-disease is the leading cause of death um in 
-Men in women in the United States but-also in the world um 
-it doesn't need to be it really really doesn't need to 
-be-and it is a very bizarre tragedy that you know 19 
-million people a year still-die from cardiovascular disease 
-um given how much we know about what causes it-and how many 
-tools we have to prevent it so that's the first you kind 
-of-mentioned the first second Horseman there how do you 
-think about prevention-for the others which is 
-neurogenerative diseases and Cancers yeah so let's 
-take-them in order so cancer would be the next most uh uh 
-dead-of the of the horsemen and here is one where a lot of 
-what I said with respect-to um heart diseas is is actually 
-quite different you know in heart disease we-we really have 
-a pretty clear sense of what the genetics look like so 
-there are-a handful of genetic things like familial hyper 
-cholesterolemia which is-a very very heterogeneous 
-condition that raises APO lipoprotein uh B uh LP little-a 
-which will save for another time we've got lots of content 
-on that-um but when it comes to cancer we we know that boy 
-there are some really-clear and obvious genetic drivers of 
-cancer like there are a handful of genes-some that many 
-people have heard of such as braa one or braa 2 which are 
-heavily-associated with um breast cancer um or Lynch 
-syndrome um which-would be heavily associated with colon 
-cancer and other types of cancer but for-the most part part 
-when we say that cancer runs in a person's family we-still 
-aren't really even able to identify the genes through which 
-this is-transmitted it appears to be very polygenic 
-furthermore while we know of-at least two significant 
-environmental triggers for cancer smoking and obesity-and 
-I'll say more about obesity in a second um we actually have 
-very little-to say about many other triggers despite what 
-people would have you believe um we-have very little 
-insight about if at all foods you know specific Foods 
-at-isocaloric amount so we can talk about an abundance of 
-food because that-factors into the Obesity trigger but if 
-we're talking about a bunch of people-eating an isocaloric 
-energy balanced diet again despite all of the 
-propaganda-around this oh red meat this or soy that or 
-whatever there's actually just the-scantest of evidence to 
-suggest that any of these are promoting cancer in 
-the-slightest way so um when you take all of this together 
-what you realize is that-okay smoking is clearly driving 
-cancer obesity is clearly driving cancer not-all cancers 
-but many cancers about two-thirds of cancers have a very 
-strong-tie to obesity I think if you look under the hood of 
-that you'll realize it's-probably not the excess fat per se 
-or the adiposity that's driving cancer and-rather it's the 
-growth factors that are doing it so obesity comes with 
-more-inflammation comes with more growth factors such as 
-insulin and igf and it-seems more likely that those are the 
-things that are actually leading the-increase uh in cancer 
-but that leaves a bit of a-vacancy in terms of what else 
-explains it and this is where um you know a-scientist like 
-Bert vogelstein and others would suggest that look 
-there's-actually just a component of really bad luck here 
-um you know there are-mutations that occur every Cancer 
-begins with a mutation and most of those are-somatic 
-mutations that means that most of those are mutations that 
-occur in-cells that were developed normally right so these 
-are your your germ line the-cells you inherited were normal 
-cells but then mutations were Acquired and-mutations fall 
-into one of two categories these are either mutations-that 
-are tumor promoting so oncogenic mutations or they are 
-mutations of tumor-suppression so we have genes that are 
-set out to suppress cancer and if you-get a mutation in one 
-of those the body loses the ability to suppress cancer 
-and-then we get mutation in genes that turn cancer on and 
-again a number of these-are inherited but many of them most 
-of them are acquired and the what is vexing-us still and 
-again I think the best working hypothesis is that um bad 
-luck-plays a lot of role in that now you know it would be a 
-topic for an entirely-different podcast to look at other 
-things that may be triggering those-mutations again in some 
-cases we know that viruses play a role in those-mutations 
-but where what I'm really talking about is where do the 
-majority-of these come from and and anyway that that's an 
-area of of huge interest-um and um the other problem with 
-cancer that also is not afforded to-cardiovascular disease 
-is the treatment options are fewer um or I shouldn't 
-say-are fewer I would say are less effective so um a person 
-today who has advanced-cardiovascular disease has a much 
-better prognosis much better prognosis than a-person today 
-who has very Advanced cancer uh a person today with stage 
-four-I.E metastatic uh endothelial tumors so that means a 
-solid organ tumor like-breast lung pancreas prostate colon 
-one of the sort of quote unquote bread and-butter tumors a 
-person today who has one of those cancers that has spread 
-from-its original site to a distant site that's metastatic 
-or stage four cancer-that person has about the same 10year 
-survival as a person did with that tumor-50 years ago they 
-have a much longer median survival they will live 
-longer-they might live for 5 years instead of one year and 
-that's nothing to to to-sneeze at um but they're not cured 
-at any higher a rate um and and obviously-that's a 
-discouraging statistic um so that's um you know as we think 
-about-cancer we we obviously think the first and most 
-important thing is to do-everything you can to avoid 
-getting it but as I alluded to that Playbook is not-as 
-thick as the don't get heart disease Playbook um and that 
-leads to a very-controversial thing that I talk about which 
-is the importance of early and-aggressive screening um and 
-again we don't have to go into now we've already-devoted 
-tons of content to the arguments for and against that 
-approach but-hopefully this explains why um that is that is 
-still a position I-hold and so looking at the last of the 
-horsemen neurodegenerative disease such-as Alzheimer's um 
-something we get asked a lot about a lot how does that look 
-in-terms of what you kind of discussed on cancer 
-cardiovascular disease as it-relates to prevention well I 
-would say it's a little bit in the middle um in-other words 
-I think we actually have a slightly better sense of some of 
-the-causes uh not not in all cases um but certainly with 
-Alzheimer's disease we're-getting a much better sense of 
-which people are susceptible what genes play a-role from a 
-genetic susceptibility standpoint and genes do play a 
-pretty-big role there uh and we also understand the other 
-factors and part of the reason-for this Nick is there's a 
-very simple but surprisingly accurate adage which-states 
-what's good for the heart is good for the brain and study 
-after study-after study have demonstrated the following 
-every intervention that we-take to lower the risk of 
-atherosclerotic cardiovascular disease-also reduces the 
-risk of dementia and that means Alzheimer's disease 
-vascular-dementia uh which are the two main ones but 
-also-other forms of dementia so that means having better 
-metabolic Health having-lower apob having lower blood 
-pressure not smoking those things dramatically-reduce your 
-risk of cardiovascular disease and they dramatically 
-reduce-your risk of Alzheimer's disease now in area where 
-dementia has an even bigger-positive impact in intervention 
-and cardiovascular disease is with that of-exercise so it's 
-no surprise that exercise improves a person's odds of 
-not-getting and or surviving cardiovascular disease cancer 
-dementia but I would say-that the evidence for the benefits 
-of exercise are both greater in magnitude-and greater in um 
-confidence when it comes to the prevention 
-of-neurodegenerative disease so so um you know it's it's 
-interesting-because I do think that many people fear 
-dementia more than any other condition-um and there are 
-very obvious reasons why that would be the case um and 
-it-might be that in our practice we're a bit more 
-optimistic than most based on-just the nature of what we do 
-and um that you know the types of people that-are in our 
-practice meaning like you know people who really study 
-prevention-um and and really look at kind of these early 
-early signs of dementia and-looking you and look at how you 
-know specific interventions can make a-difference um but 
-unfortunately um the flip side of that-is that of all the 
-chronic diseases um the the dementing uh 
-and-neurodegenerative diseases are the ones for which we 
-have at this time virtually-no viable therapeutic options 
-so the real name of the game with uh narod Deen-diseases 
-but specifically the dementing diseases and the only other 
-one I'll-really mention here briefly is Parkinson's Disease 
-uh because it's the-most prevalent movement disorder is 
-that avoiding them is the first second and-third priority 
-on a list of three priorities um once we get into 
-treatment-land um at least at this point in time it's not 
-very promising-um so these are both diseases where having 
-as higher Reserve as you can make-a big difference so the 
-higher your cognitive reserve and the higher your-movement 
-reserve the more resilient you are to the effects of 
-these-conditions I think I should just State at the 
-conclusion here that you know we-we we shouldn't ignore the 
-fourth Horsemen which is of course the the-spectrum of 
-metabolic diseases as I said kind of at the outside I mean 
-I I think-along with cardiovascular disease we really have 
-a pretty clear sense um-mechanistically of what's driving 
-this I mean this appears to be primarily a-consequence of 
-overnutrition um so energy imbalance is-really the driving 
-factor of insulin resistance and insulin resistance 
-is-really the driving factor of the downstream effects that 
-ultimately lead-to everything from fatty liver disease type 
-2 diabetes and again these diseases-in their own right are 
-are quite harmful and devastating um but their their 
-real-uh danger of them is the effect that they're having on 
-the other three-Horsemen where they're increasing your risk 
-by you know 25 to 50% so they-really are gasoline on the 
-fire of the other diseases-[Music] no
+hey everyone Chris Jer and today I'd like to show you orb 
+STC a brand new-Fast light and Powerful way to run 
+containers and VMS on Mac OS with OP-stack you can say 
+bye-bye to Docker desktop and to other programs 
+like-virtual box because it is so much better and faster 
+than all of them so let's get-into it I'm going to talk a 
+bit about the program explain what it makes-different than 
+all of the other tools and we'll also have a look at some 
+of-the unique features for deploying containers and VMS on 
+Mac like the-simulus integration of file sharing and the 
+network stack as well as the-kubernetes integration 
+automatic https certificates for local deployments and-some 
+other cool stuff that you will love as a tech nerd trust me 
+so yeah Tech-nerds like us we love software that helps us 
+to do our day-to-day work and I-quickly want to show you 
+another nice tool which I know those of you who work-in it 
+will absolutely love because if you're managing resources 
+and assets in-a company you know this is a big challenge 
+especially if the company has-hundreds of thousands of 
+servers network devices applications and other assets-this 
+is exactly where fatom comes into play the sponsor of 
+today's video Fatam-is a platform that discovers and maps 
+all your it infrastructure like servers-and business 
+applications within minutes no matter if it's on premise or 
+in the-cloud and it's one of the fastest Solutions in the 
+market that solves the-challenge of understanding how a 
+change of your infrastructure will impact your-business and 
+I it operations fom has many amazing features but one thing 
+that-I believe stands out from the rest is that it 
+discovers all the assets-entirely by itself and it groups 
+them into business applications completely-agentless and it 
+also does continuous it documentation that is fully 
+Dynamic-which is super cool because documentation in it is 
+so freaking-important and hard to do as well you can use it 
+for many practical use cases such-as change management 
+impact analysis cmdb Cloud Migra-data center transformation 
+drbc cyber security and many more and it starts-with an 
+entry-level self-service speed boats plan which allows you 
+to manage-100 servers for 10 grand annually which is by the 
+way a fair deal in a market-fied with other notoriously 
+expensive tools it also has a 14 days trial where-there is 
+no sales call needed so just check it out and start 
+managing your it-infrastructure dependencies like a pro of 
+course you will find a link to it in-the description of the 
+video all right so let's learn more about the-program orst 
+you can find all the information on the official website 
+or.-Def and there you can see the developers position this 
+as some sort of-replacement for Docker desktop so it's a 
+light fast and easy way to run-containers on your local Mac 
+device as well as some Linux virtual machines but-we will 
+also have a look at this in a few minutes the cool thing 
+about this-program is once you install it you don't have to 
+learn an entirely new system so-all the commands you know 
+from Docker as well as the docker file and everything-just 
+works the same way in OBC it just replaces the layer of how 
+the containers-are managed on your system by the way if you 
+want to learn-more about the architecture opst also has 
+some great documentation that-explains it in a bit more 
+detail so how the containers and VMS are managed on-the Mac 
+and why it is faster you can see those surfaces are written 
+in a mixture-of Swift go rust and c and it does have some 
+pretty optimizations and features-that allow this 
+application to act much faster than dock or desktop and it 
+also-comes with some additional cool features that are very 
+interesting for developers-like file sharing custom Dynamic 
+hashing and optimization to provide a fast bind-Mount 
+points and access to the Mac files and it also does have 
+some very-interesting networking features I will also show 
+you in a bit more detail and-it's also written with 
+security in mind you can also find some speed metrics 
+on-the website to actually see how much faster it is than 
+darker desktop so for-example if you buil a darker 
+container on darker desktop that would take 19-minutes on 
+orb stack it's doing the same task in just 7 minutes and it 
+also-doesn't take as much CPU power and a battery 
+consumption from your Mac so-when you are working with a 
+MacBook Pro for example and you're developing-containers 
+for kubernetes or Docker or St is just the better 
+technology that-will not drain so much battery and you can 
+do all the things in a much more-efficient way to install 
+opst on your local Mac just click on get obst and-then you 
+can download the application and go through the 
+installation-procedure or you can put this on line command 
+in your terminal if you're using-Homebrew Homebrew is just 
+a great application on Mac OS and that is-automatically 
+installed it by the way also runs alongside with Docker 
+desktop-so you don't need to worry about Docker desktop 
+being replaced or anything being-damaged Ops that can even 
+migrate all the containers you're running on Docker-desktop 
+two ARB stack as well with all of the networks and volumes 
+attached to-them so it's very very simple and easy if you 
+open the application you can see-on the left side you have 
+a menu for browsing your containers your volumes-your 
+images as I can see I currently don't have any running 
+containers but-there is a quick example of how you can do 
+this so let's just copy the command-run this and then we 
+can open the Local Host in my browser and yeah here we 
+are-that's our container that we have just deployed and it 
+just took about a-millisecond and when you have a few 
+containers running on your Mac you can-also inspect the 
+lock file search for something you can delete the locks 
+or-you open a terminal directly inside the running 
+container where you can do some-administrative tasks access 
+files whatever you want to do with it and if-you click on 
+the files menu it also opens the finder where you can see 
+all-the files in the container just on your local Mac file 
+browser so it couldn't be-easier than than that and if you 
+want to run kubernetes you-can also turn on kubernetes and 
+it automatically starts deploying a very-lightweight 
+kubernetes cluster on your local Mac device so there you 
+can see if-you go to Containers there is a new drop down 
+menu for kubernetes where it-already deployed the core DNS 
+the local path provisioner so that is necessary to-run 
+kubernetes and then you can start deploying your manifest 
+or experiment-with Helm charts and just use your local Mac 
+as a testing kubernetes clust to-develop applications in a 
+container orchestration layer one thing that might-be 
+interesting is you can see on the uh bottom left corner you 
+can see there's a-pro version and trial that ends in seven 
+days so you can see there is a paid-option for OPC but if 
+we go back to the website and go to pricing you can 
+see-there's also a free tier for personal non-commercial 
+use and this you can use-to run containers run Linux 
+machines without any limitations or something-like that if 
+you need a business and Commercial usage license and you 
+want-some additional features then you have to buy a pro 
+license or an Enterprise-license but honestly I think if 
+you're just a home lab tech nerd like me and-and you just 
+want to run a few containers on your local Mac 
+or-experiment with kubernetes and a few VMS then the free 
+personal license is-totally sufficient so that's what I'm 
+also using I just still have the Pro-trial but when it's 
+expiring I'm just using the free plan-but let's also take a 
+look at some of the special features in opst that I-believe 
+make it even better than Docker desktop or some other 
+competitive-programs like pman desktop I think this is 
+really really nice for all the people-that work with web 
+applications in Docker or want to learn how traffic 
+and-load balancing works it's really really amazing so when 
+we go to the-architecture and documentation page you can 
+see there are some pretty cool-features especially the 
+domain name features so you can see that orb stack-doesn't 
+just work with the Local Host so what I've just 
+demonstrated in this-example it also runs a domain name 
+that is called ar. local so this is really-nice to test web 
+applications you don't need any port numbers for web 
+services-so if you have a darker container that uses the 
+port 3000 you can basically-just ignore it because arst 
+automatically detects what port the web-application is 
+using and then it automatically routes the traffic to 
+that-particular port and it also issues secure 
+https-certificates for those services so you really don't 
+need to test any sech-manager traffic or something like 
+that you can really test web applications in-a very secure 
+way on your local device it's pretty cool for example if 
+you uh-want to run an engine X web servers with trusted TLS 
+certificates testing here on-op stack you can just use uh 
+that example here uh let's go to my project-folder and 
+let's open this and create a new-darker compost file paste 
+in that and now this is just-deploying a simple engine X 
+web server you could also add labels for custom-domains so 
+for example if you want to have something like enginex test 
+one.-local this is totally fine we can just go here and 
+start the compos stack now-if we go back to or stack you 
+can see there is a new compos project so darker-compos 
+projects are also indicated with a drop- down project 
+folder and here-when we go to this container you can see 
+that it attaches the enginex test. one.-loal domain to it 
+so when we just click on this it opens the browser to 
+our-enginex website and as you can see it also has an https 
+connection with-trusted TLS certificates really really 
+amazing you don't need to configure-anything or trust any 
+self-signed certificates in your browser it's-automatically 
+done in ARB St again I love this feature so much because 
+I-often have web applications that I like to test on my 
+device and now this is so-easy there's also an amazing 
+integration for the kubernetes cluster in opst deck-so for 
+example if you want to test and expose service objects in 
+kubernetes for-web services or you want to play around with 
+Ingress controllers and load-balancers like traffic or 
+engine X this is also really easy and greatly-integrated in 
+obst for example you have a domain that is automatically 
+attached-to any load balancer Services you deploy to the 
+local cluster and you can also-easily access any cluster IP 
+addresses from your local Mac so to demonstrate-this for 
+example we can just deploy a simple engine X to get access 
+to the OBS-kuber this cluster you just switch your config 
+to use ARB stack and then you can-just use the cube CDL 
+command it's also integrated in the installation of 
+ARB-stack so you automatically have all the CLI features 
+that you need-and here you can see there are all the 
+containers that are currently running on-my local cluster 
+so if we now want to deploy a new engine X image so 
+for-example let's create a new namespace called engine X 
+and deploy it here now-we also need a service object so I'm 
+going to use the type cluster IP for now-so this is usually 
+only available and accessible within the local network 
+of-kubernetes so you can simply just copy the internal 
+cluster IP op and open it-in the web browser and then 
+immediately get access to the port deployed in-kubernetes 
+by just accessing the local IP address if we open or stack 
+and go to-Services you can see this is a service object for 
+the partt that we have-attached it to and here you can also 
+find the domain for the cluster so this-is usually the 
+service name the name space service object cluster. local 
+and-then you can access it by name as well if you want TLS 
+certific ific Ates and-test Ingress controllers this is 
+also possible very easily so if we go back to-the 
+documentation you can see you can choose from an engine X 
+Ingress-controller or traffic so if we quickly want to 
+deploy traffic to this cluster-we can also do it by just 
+copying those commands here those load balancer-service 
+objects in orb kubernetes also get a different domain that 
+is called-ks. or. looc a wildcard domain that you can use 
+to test the traffic Ingress-controller you can also 
+automatically access it in your browser and then you-can 
+try the Ingress controller you can play around with it and 
+try exposing-cluster IP objects using traffic I think this 
+is really really nice where you-want to test some exposing 
+of services some certificate management Ingress-controllers 
+and all that stuff it's really amazing but let us also have 
+a-look at the integration of virtual machines in arst where 
+you can run fully-blown Linux machines but in a highly 
+integrated and very lightweight way so-when you go to the 
+documentation you can see this is pretty similar to 
+the-windows subsystem for Linux so it would be something 
+like a Mac subsystem for-Linux where you can just run any 
+services in those virtual machines where-you can access 
+them from your Mech also using the Local Host domain and 
+you can-also have immediate access to any files on your Mac 
+inside the virtual machine-but let me just show it to you 
+it's also pretty nice so you can just go through-the web UI 
+click on new machine and deploy a new Ubuntu machine or 
+choose a-any other Linux distribution like Arch Linux 
+sentos Debian and some other Linux-dis that you might want 
+to try out you choose the version that you want and if-you 
+want the CPU type apple or the Intel emulation layer with 
+Rosetta so this-also works great to test a try out x86 
+architectured uh application on your Mac-it's pretty cool 
+and it's also really really fast the emulation layer in 
+Mac-OS runs runs also very very fast fast but I'm going to 
+choose the Apple CPU-type which is even faster I create the 
+machine and now it's going to install a-new Ubuntu 24.4 on 
+my Mac so this probably just-takes a few seconds so it's 
+not even taking a minute or so and then the-virtual machine 
+should be ready for us and you can immediately access this 
+VM-from your terminal when you just use the ARP command so 
+you can see the VM is now-ready installed and you can 
+easily access all the files using this and uh-yeah then you 
+got the full virtual machine file system on your-Mac and 
+yeah let's just type in ARP in the terminal and then you 
+got access to-the VM it's also as easy as that and as you 
+can see this automatically gets me-access to all the local 
+files on my Mac from the Linux VM so it's really similar-to 
+wsl2 where the virtual machine is highly integrated into 
+the operating-system and you can access the files vice 
+versa and easily run any Linux-applications so for example 
+if we want to run a python script but I don't want-to run 
+the python script on my Mac I want to test how it would run 
+on a Linux-VM I can just use the ARB command and then type 
+in any command uh after that-that will automatically be 
+executed in the virtual machine so for example if we-just 
+run a simple python script that will open a web server on 
+Port 8000-guess what happens when we type in the name of 
+the virtual machine Ubuntu ar.-local Port 8000 you can see 
+you get immediate access to the web application-running in 
+virtual machine from your Mac without having to Route any 
+network-ports or without having to remember an internal IP 
+address or anything like-this it just magically works by 
+using the name of the virtual machine. or.-local and then 
+the port you want to access on the virtual machine and 
+yeah-this is so simp and it is so nice integrated so you 
+can easily test and-run any Linux applications on your Mac 
+you can develop stuff you can test it-and if you don't need 
+it anymore well you can simply just destroy it when you-go 
+back to orst and stop it delete it and it's as easy as that 
+all right so-that's it about orb stack I think it is 
+absolutely amazing and it will be my-daily driver on Mac to 
+run containers and VM from now on it has been 
+super-reliable and easy to use but of course I I know love 
+to hear your opinion about-it so please let me know what do 
+you think about opack leave a comment down-below and as 
+always thanks everyone for watching I'm going to catch you 
+in the-next video so take care bye-bye

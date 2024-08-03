@@ -1,56 +1,66 @@
-# SUMMARY
-The discussion focuses on the prevention of the four major diseases: cardiovascular, cancer, neurodegenerative diseases, and metabolic diseases, emphasizing actionable insights.
+## SUMMARY
+Chris Jer introduces Orb STC, a fast and powerful tool for running containers and VMs on Mac OS, replacing Docker desktop and VirtualBox.
 
-# IDEAS:
-- Atherosclerotic diseases and metabolic diseases have the most insight into prevention.
-- Cardiovascular disease has a genetic and environmental component but not much luck involved.
-- A-lipoprotein with apob protein is crucial in atherosclerotic disease.
-- Endothelial damage increases the risk of atherosclerosis.
-- Oxidation of cholesterol in apob particles leads to inflammation and heart attacks.
-- Reducing apob particles lowers the risk of cardiovascular disease.
-- Protecting the endothelium is essential for cardiovascular health.
-- Smoking, high blood pressure, and metabolic conditions weaken the endothelium.
-- Inflammation is less directly manageable compared to apob and endothelial health.
-- Cardiovascular disease is preventable despite being the leading cause of death globally.
-- Cancer has fewer clear genetic drivers compared to cardiovascular disease.
-- Obesity and smoking are significant environmental triggers for cancer.
-- Most cancer mutations are acquired rather than inherited.
-- Early and aggressive screening for cancer is crucial for better outcomes.
-- Neurodegenerative diseases like Alzheimer's have some genetic understanding but lack effective treatments.
-- Interventions for cardiovascular health also benefit brain health.
-- Exercise significantly reduces the risk of both cardiovascular and neurodegenerative diseases.
-- Cognitive and movement reserves are important for resilience against neurodegenerative diseases.
-- Metabolic diseases stem from overnutrition and energy imbalance.
-- Metabolic diseases increase the risk of other chronic diseases.
+## IDEAS:
+- Orb STC is a new alternative to Docker desktop and VirtualBox for Mac OS.
+- It offers faster performance and better resource management.
+- The program integrates file sharing and networking features seamlessly.
+- Kubernetes integration allows for easy deployment of applications.
+- Automatic HTTPS certificates simplify local deployments.
+- Orb STC is designed for tech enthusiasts who value efficiency.
+- Fatom is a platform that maps IT infrastructure quickly and agentlessly.
+- Continuous IT documentation is crucial for effective management.
+- The entry-level plan for Fatom is competitively priced at $10,000 annually for 100 servers.
+- Orb STC retains Docker command compatibility, easing the transition for users.
+- The application is built using Swift, Go, Rust, and C for optimized performance.
+- Speed metrics show Orb STC can build containers significantly faster than Docker desktop.
+- It consumes less CPU power and battery, making it ideal for MacBook Pro users.
+- Users can install Orb STC via Homebrew or direct download.
+- The application allows migration of existing Docker containers easily.
+- Orb STC supports dynamic hashing and fast bind-mount points for file access.
+- It provides a user-friendly interface for managing containers and VMs.
+- The software includes a free tier for personal use without limitations.
+- Orb STC automatically assigns domain names for local services, simplifying web app testing.
+- It supports testing with trusted TLS certificates without manual configuration.
+- The integration of virtual machines allows running various Linux distributions effortlessly.
 
-# QUOTES:
-- "Even though cardiovascular disease is the leading cause of death... it doesn't need to be."
-- "There is a log linear reduction in ascvd as apob goes down."
-- "The higher the inflammation, the more likely... this is going to be."
-- "Obesity comes with more inflammation comes with more growth factors such as insulin."
-- "Cancer runs in a person's family... we still aren't really even able to identify the genes."
-- "Two-thirds of cancers have a very strong tie to obesity."
-- "The treatment options for cancer are fewer... than for cardiovascular disease."
-- "What's good for the heart is good for the brain."
-- "Avoiding neurodegenerative diseases is the first, second, and third priority."
-- "The real name of the game with neurodegenerative diseases... is avoiding them."
+## QUOTES:
+- "You can say bye-bye to Docker desktop and to other programs like VirtualBox because it is so much better and faster."
+- "Tech nerds like us love software that helps us to do our day-to-day work."
+- "Fatom is a platform that discovers and maps all your IT infrastructure like servers and business applications within minutes."
+- "Documentation in IT is so freaking important and hard to do."
+- "It just replaces the layer of how the containers are managed on your system."
+- "If you build a Docker container on Docker desktop that would take 19 minutes, on Orb Stack it's doing the same task in just 7 minutes."
+- "You can run fully-blown Linux machines but in a highly integrated and very lightweight way."
+- "You can easily test and run any Linux applications on your Mac."
+- "It has been super-reliable and easy to use."
+- "I think it is absolutely amazing and it will be my daily driver on Mac to run containers and VMs from now on."
+
+## FACTS:
+- Orb STC can build containers in 7 minutes compared to 19 minutes on Docker desktop.
+- Fatom's self-service plan starts at $10,000 annually for managing 100 servers.
+- The software supports Kubernetes deployment directly from the local Mac device.
+- Orb STC allows users to run various Linux distributions like Ubuntu, Arch Linux, and Debian.
+- The application can be installed alongside Docker desktop without conflicts.
+- It provides a free tier for personal non-commercial use with no limitations.
+- Orb STC automatically issues HTTPS certificates for local services.
+- The software integrates with Homebrew for easy installation on Mac OS.
+- Users can access files in virtual machines directly from their Mac file browser.
+- The application supports dynamic hashing for optimized file access.
+
+## REFERENCES:
+- Orb STC (official website)
+- Fatom (IT infrastructure mapping platform)
+- Homebrew (package manager for Mac OS)
   
-# FACTS:
-- 19 million people die from cardiovascular disease each year.
-- Cardiovascular disease is the leading cause of death in both men and women in the U.S. and worldwide.
-- About 50% of first heart attacks are fatal.
-- Two-thirds of cancers are strongly linked to obesity.
-- The median survival for stage four cancer patients has improved but cure rates remain low.
-- Neurodegenerative diseases currently have virtually no viable therapeutic options.
-  
-# REFERENCES:
-- Familial hypercholesterolemia
-- BRCA1 and BRCA2 genes
-- Lynch syndrome
-  
-# RECOMMENDATIONS:
-- Lower apob particles to reduce cardiovascular disease risk.
-- Protect endothelial health by avoiding smoking and managing blood pressure.
-- Engage in regular exercise to lower risks of multiple diseases.
-- Prioritize early screening for cancer to improve outcomes.
-- Focus on maintaining cognitive and movement reserves for neurodegenerative disease resilience.
+## RECOMMENDATIONS:
+- Consider switching to Orb STC for improved performance in container management on Mac OS.
+- Utilize Fatom for efficient IT infrastructure mapping and documentation.
+- Take advantage of the free tier of Orb STC for personal projects or learning purposes.
+- Explore Kubernetes integration within Orb STC for local application development.
+- Use automatic HTTPS certificates to enhance security during local testing of web applications.
+- Leverage the dynamic hashing feature for faster file access in containers.
+- Test various Linux distributions using the virtual machine capabilities of Orb STC.
+- Migrate existing Docker containers to Orb STC for better resource management.
+- Experiment with load balancers and Ingress controllers in the Kubernetes environment provided by Orb STC.
+- Engage with the community by sharing experiences or asking questions about Orb STC.
