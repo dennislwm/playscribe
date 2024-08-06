@@ -1,74 +1,57 @@
-# SUMMARY
-The Huberman Lab podcast features Andrew Huberman and Dr. Martha Beck discussing personal development, emotional well-being, and practical exercises for finding one's purpose.
+## SUMMARY
+Patrick from STH shares a quick tip on downloading ISOs directly to a Proxmox VE host for creating KVM virtual machines.
 
-# IDEAS:
-- Dr. Martha Beck emphasizes the importance of understanding one's essential self.
-- The "perfect day" exercise helps individuals visualize their ideal life.
-- Emotional support and insights are crucial components of effective therapy.
-- Regular therapy can significantly improve overall health and well-being.
-- The quality of sleep is foundational to mental and physical health.
-- Hydration is critical for optimal cognitive and physical performance.
-- The body has a sophisticated response to truth and falsehood.
-- Compassionate self-talk can help manage suffering and anxiety.
-- The concept of "suffering" is central to understanding personal pain.
-- The "three N's" method helps individuals notice and name their feelings.
-- Relationships often reflect patterns of codependency and self-abandonment.
-- The importance of being honest with oneself to maintain integrity.
-- The idea that love should not involve self-sacrifice or self-neglect.
-- The role of joy in creating economic ecosystems and personal fulfillment.
-- The significance of being present and aware in relationships.
-- The impact of societal expectations on personal happiness and integrity.
-- The necessity of allowing oneself to feel suffering without resistance.
-- The potential for healing through community and shared experiences.
-- The transformative power of embracing one's true nature.
-- The importance of setting boundaries in relationships for personal well-being.
-- The idea that change is inevitable and can be embraced positively.
+## IDEAS:
+- Downloading ISOs directly to the Proxmox VE host simplifies the VM creation process.
+- Changing the directory to `/var/lib/vz/template/iso` is essential for local ISO images.
+- Using `wget` allows for easy downloading of ISO files from URLs.
+- Creating a VM template can save time by avoiding repeated installations from ISOs.
+- Having multiple OS ISOs available is beneficial for flexibility in VM creation.
+- Scripting the download of multiple ISOs can streamline the process further.
+- Local ISOs are useful for quick installations when time is critical.
+- Utilizing network data stores can help save on storage costs as you scale.
+- The process of downloading ISOs can be completed in just a few steps.
+- A shout-out to QuadraNet for hosting the LAX mirror for ISO downloads.
 
-# QUOTES:
-- "You will learn to truly understand what is most important to you."
-- "The brain is a predictive machine."
-- "You don't make it up; you see it happen."
-- "The key is you allow it into your mind."
-- "I realized that a lot of people don't go to Harvard because they know they're smart; they go there because they're afraid they're stupid."
-- "You are not here to suffer."
-- "Love always sets the Beloved free."
-- "The only truth is that which feels liberating."
-- "You cannot make another person happy; happiness is an inside job."
-- "The way we do anything is the way we do everything."
-- "You have to get out of your own sadness to be present for others."
-- "Compassionate attention to one's suffering with no resistance is key."
-- "You can feel what feels right to you."
-- "The self loves experience and is not afraid to suffer."
-- "You are not here to suffer; you are here to learn from your suffering."
+## QUOTES:
+- "We wanted to share an easy way to load ISOs and this is one that we've used for years."
+- "This task essentially has three easy steps."
+- "You need to change the directory."
+- "We can simply use URL of a silly one and wget and we can wait a few seconds."
+- "We strongly suggest making your first VM a template."
+- "You probably will want to have at least some OS as well."
+- "You can repeat this process as needed."
+- "It is handy to have ISOs locally when you get into a pinch."
+- "As you get more advanced, you may also want to add ISOs on a network data store."
+- "This is an easy way to clear the first hurdle for making VMs."
 
-# FACTS:
-- Regular therapy can improve emotional life and relationships.
-- Proper hydration is critical for optimal neuron function.
-- The body has a sophisticated response system to truth and falsehood.
-- Compassionate self-talk can significantly reduce anxiety levels.
-- Many people lie multiple times within the first few minutes of meeting someone.
-- Emotional regulation is essential for effective empathy.
-- The concept of "suffering" is central in many therapeutic practices.
-- The brain's predictive capabilities influence how we perceive our lives.
-- There are healers born in every community who can help guide others.
-- The practice of meditation has been shown to improve mental health.
+## FACTS:
+- Proxmox VE is a platform for creating KVM virtual machines.
+- The local path for ISO images in Proxmox VE is `/var/lib/vz/template/iso`.
+- The `wget` command is commonly used for downloading files from the internet.
+- Ubuntu is a popular choice for virtual machine installations.
+- Having multiple templates can enhance efficiency in VM management.
+- Network data stores can reduce local storage requirements.
+- The process of downloading ISOs can be automated with scripts.
+- Quick access to ISOs can be crucial during urgent setups.
+- The STH main site offers additional resources and videos on Proxmox VE.
+- Subscribing to their YouTube channel provides ongoing tips and updates.
 
-# REFERENCES
-- Dr. Martha Beck's upcoming book, *Beyond Anxiety*.
-- BetterHelp for online therapy services.
-- Helix Sleep for customized mattresses.
-- Element for electrolyte drinks.
-- AG1 for foundational nutrition supplements.
-- Waking Up app for meditation practices.
+## REFERENCES:
+- Proxmox VE
+- Ubuntu
+- QuadraNet (LAX mirror)
+- STH main site
+- STH YouTube channel
 
-# RECOMMENDATIONS:
-- Engage in the "perfect day" exercise to visualize your ideal life.
-- Practice compassionate self-talk to manage suffering effectively.
-- Explore the mind-body connection through meditation and mindfulness practices.
-- Set clear boundaries in relationships to maintain personal integrity.
-- Embrace change as a natural part of life and personal growth.
-- Seek therapy regularly to enhance emotional well-being and relationships.
-- Hydrate adequately to support cognitive function and overall health.
-- Reflect on your essential self to understand your true desires and needs.
-- Use the three N's method to notice, name, and navigate your feelings.
-- Foster community connections for shared healing experiences.
+## RECOMMENDATIONS:
+- Change the directory to `/var/lib/vz/template/iso` before downloading ISOs.
+- Use `wget` for efficient downloading of ISO files.
+- Create VM templates to streamline future installations.
+- Consider having multiple OS ISOs available for flexibility.
+- Automate the downloading process with scripts for efficiency.
+- Keep local ISOs handy for quick access during urgent tasks.
+- Explore network data stores to optimize storage usage.
+- Visit the STH main site for more tips and guides.
+- Subscribe to the STH YouTube channel for video tutorials and updates.
+- Experiment with different Linux distributions to find the best fit for your needs.
