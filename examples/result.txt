@@ -1,57 +1,69 @@
 # SUMMARY
-A 60 Minutes segment discusses the Federal Trade Commission's investigation into Google's monopolistic practices and its impact on competition and consumers.
+Eduardo leads a discussion on Chapter 4 of the AI Engineering book, focusing on evaluating AI systems and their suitability for specific use cases.
 
 # IDEAS:
-- The FTC is investigating Google's data collection practices on Android.
-- Concerns are rising in Washington and Europe about tech giants' unchecked power.
-- Google, part of Alphabet, is worth over $750 billion.
-- Since going public in 2004, Google has acquired over 200 companies.
-- Google controls 90% of global internet searches.
-- Google's dominance affects startups' ability to secure funding.
-- Google's business model relies heavily on advertising and user data.
-- Competitors like Yelp struggle against Google's market control.
-- Google's search results prioritize its own content over competitors'.
-- The FTC previously recommended an antitrust lawsuit against Google, which was rejected.
-- Google's lobbying efforts significantly influence policy decisions.
-- The European Union is taking more aggressive action against Google than the U.S.
-- Google has been fined for anti-competitive behavior in the EU.
-- Algorithms used by Google manipulate search results to favor its services.
-- Many businesses depend on Google for web traffic and visibility.
-- Google's practices may lead to a lack of diversity in search results.
+- Evaluation of AI systems should prioritize use-case suitability over model performance.
+- Public benchmarks serve as guidance but may not reflect the best model for specific needs.
+- Privacy and data lineage are critical factors in model selection.
+- Self-hosted models offer control but may sacrifice performance compared to hosted solutions.
+- Designing an evaluation pipeline is essential for assessing AI system effectiveness.
+- Human evaluation remains crucial despite automation in AI assessments.
+- Metrics should be diverse to accurately reflect model performance across different user groups.
+- Continuous evaluation of the pipeline is necessary to ensure reliability and relevance.
+- The relationship between automated results and human perception can differ significantly.
+- Evaluating models requires a clear definition of success criteria and benchmarks.
+- Data diversity is vital for accurate evaluation metrics.
+- Evaluation should include resource usage and latency considerations.
+- Feedback loops in development cycles can enhance evaluation efficiency.
+- The choice between open-source and proprietary models impacts transparency and performance.
+- Evaluating the impact of changes in prompts or models requires robust datasets.
+- Collaboration between teams is essential for comprehensive evaluation coverage.
 
 # QUOTES:
-- "Google is a monopoly in several markets."
-- "The internet would not be accessible to us without a search engine."
-- "Google makes the internet work."
-- "If you're not at the top of the page... that's going to affect your business."
-- "Google is doing what's best for Google."
-- "They will snuff you out."
-- "Google's conduct was anti-competitive."
-- "Their influence... is very very difficult to challenge."
-- "We think that this is done on purpose."
-- "It's very difficult to find the rivals because on average you'd find them only on page four."
-- "Google wields enormous power across the industry."
-- "Our responsibility is to deliver the best results possible to our users."
+- "You don't really care which model is the best; you just care about your use case."
+- "The hardest part was measuring and knowing what to build in the first place rather than building the machine-learning model."
+- "Automate but do not forget about human evaluation."
+- "If you cannot make a decision on your evaluation, what's the point of evaluating in the first place?"
+- "There is often a reverse relationship between automated results and human perception."
+- "You should be evaluating across all of your target groups of users."
+- "How do we measure this at scale?"
+- "Your evaluation should get the right signal."
+- "If you improve, do higher scores mean improved responses?"
+- "We need a better data set, a more diverse data set."
+- "The metrics that we measure for code generation are correctness, comprehensiveness, and readability."
+- "It's ironic that we use a closed model like this with an open company."
+- "We can guarantee this later as well, especially because we're open."
+- "The choice of using a public open-source model or a private one adds complexity."
+- "We should have a bird's eye view of what's happening."
+- "It's important to balance out how different teams evaluate their specific impacts."
 
 # FACTS:
-- Google conducted 90% of the world's internet searches last year.
-- Google controls roughly 60% of worldwide advertising revenue on the internet.
-- The FTC closed its investigation into Google despite evidence of anti-competitive behavior.
-- Google spent more on lobbying than any other corporation last year.
-- The European Union fined Google $2.7 billion for anti-competitive practices.
-- Google's algorithms are designed to promote its own products and services.
-- The FTC's Bureau of Competition recommended an antitrust lawsuit against Google in 2011.
+- Many customers prefer self-hosted models for privacy reasons.
+- Public benchmarks may not run for all models, necessitating self-evaluation.
+- High toxicity levels in models can lead to legal issues.
+- The evaluation process can waste significant resources if not managed properly.
+- Open-source models tend to be less performant than proprietary ones.
+- The evaluation pipeline must be continuously assessed for reliability.
+- Diverse datasets are crucial for accurate performance metrics.
+- Human evaluators are necessary to validate automated results before production.
+- Latency and resource usage are important metrics in evaluating AI systems.
+- The relationship between different metrics can provide insights into model performance.
 
 # REFERENCES:
-- 60 Minutes segment discussing Google's monopolistic practices.
-- Gary Reback, prominent antitrust lawyer.
-- Jonathan Taplin, digital media expert and director emeritus of The Annenberg Innovation Lab.
-- Jeremy Stoppelman, co-founder of Yelp.
-- Margaret Vestager, European Union competition commissioner.
+- AI Engineering book (Chapter 4)
+- Discussions on self-hosted vs. hosted models
+- Evaluation guidelines and metrics for AI systems
+- Papers on human perception vs. automated results
+- UX research methods for data collection
 
 # RECOMMENDATIONS:
-- Investigate the implications of tech monopolies on competition and consumer choice.
-- Encourage regulatory bodies to enforce antitrust laws more rigorously.
-- Support startups and businesses that challenge dominant tech companies.
-- Promote transparency in how search algorithms operate and affect visibility.
-- Advocate for policies that limit the influence of lobbying by tech giants.
+- Define clear success criteria for evaluating AI models.
+- Incorporate human evaluations alongside automated assessments.
+- Regularly review and update evaluation pipelines for effectiveness.
+- Strive for diversity in datasets used for evaluation.
+- Create feedback loops to quickly assess changes in model performance.
+- Collaborate across teams to ensure comprehensive evaluation coverage.
+- Consider privacy and data lineage when selecting models.
+- Use real-world scenarios to test model effectiveness.
+- Document evaluation processes to facilitate knowledge sharing.
+- Explore guidelines for creating diverse datasets for testing.
