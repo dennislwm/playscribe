@@ -1,69 +1,69 @@
 # SUMMARY
-Eduardo leads a discussion on Chapter 4 of the AI Engineering book, focusing on evaluating AI systems and their suitability for specific use cases.
+Dr. Michael Silber and Dr. MRI Juna discuss the evolution and current practices surrounding the Multiple Sleep Latency Test (MSLT) in diagnosing sleep disorders.
 
 # IDEAS:
-- Evaluation of AI systems should prioritize use-case suitability over model performance.
-- Public benchmarks serve as guidance but may not reflect the best model for specific needs.
-- Privacy and data lineage are critical factors in model selection.
-- Self-hosted models offer control but may sacrifice performance compared to hosted solutions.
-- Designing an evaluation pipeline is essential for assessing AI system effectiveness.
-- Human evaluation remains crucial despite automation in AI assessments.
-- Metrics should be diverse to accurately reflect model performance across different user groups.
-- Continuous evaluation of the pipeline is necessary to ensure reliability and relevance.
-- The relationship between automated results and human perception can differ significantly.
-- Evaluating models requires a clear definition of success criteria and benchmarks.
-- Data diversity is vital for accurate evaluation metrics.
-- Evaluation should include resource usage and latency considerations.
-- Feedback loops in development cycles can enhance evaluation efficiency.
-- The choice between open-source and proprietary models impacts transparency and performance.
-- Evaluating the impact of changes in prompts or models requires robust datasets.
-- Collaboration between teams is essential for comprehensive evaluation coverage.
+- The MSLT was developed by Mary Carscadden in 1978 for diagnosing narcolepsy.
+- Sleep deprivation significantly affects MSLT results, with studies showing increased sleep latency after adequate sleep.
+- The revised 2021 parameters emphasize the need for at least 7 hours of sleep before the MSLT.
+- Actigraphy is recommended for monitoring sleep patterns leading up to the MSLT.
+- Discontinuing psychotropic medications before the MSLT is crucial for accurate diagnosis.
+- The 8-minute cut-off for narcolepsy diagnosis is not scientifically absolute and should be interpreted flexibly.
+- The specificity of REM latency on polysomnography is very high for diagnosing narcolepsy type 1.
+- Clinical suspicion should guide the interpretation of MSLT results, not just numerical cut-offs.
+- The importance of patient education regarding sleep hygiene before testing is emphasized.
+- The podcast highlights the need for controlled conditions during the MSLT to ensure valid results.
+- There are exceptions for holding certain medications longer than two weeks before the MSLT.
+- The integration of clinical acumen with MSLT results is essential for accurate diagnosis.
+- The podcast aims to clarify common misconceptions about sleep testing protocols.
+- The role of actigraphy in assessing sleep quality prior to the MSLT is discussed.
+- The impact of shift work on sleep patterns and MSLT outcomes is noted.
+- The necessity of a separate protocol for pre-MSLT polysomnography is highlighted.
+- The podcast addresses the challenges faced by patients in achieving adequate sleep before testing.
 
 # QUOTES:
-- "You don't really care which model is the best; you just care about your use case."
-- "The hardest part was measuring and knowing what to build in the first place rather than building the machine-learning model."
-- "Automate but do not forget about human evaluation."
-- "If you cannot make a decision on your evaluation, what's the point of evaluating in the first place?"
-- "There is often a reverse relationship between automated results and human perception."
-- "You should be evaluating across all of your target groups of users."
-- "How do we measure this at scale?"
-- "Your evaluation should get the right signal."
-- "If you improve, do higher scores mean improved responses?"
-- "We need a better data set, a more diverse data set."
-- "The metrics that we measure for code generation are correctness, comprehensiveness, and readability."
-- "It's ironic that we use a closed model like this with an open company."
-- "We can guarantee this later as well, especially because we're open."
-- "The choice of using a public open-source model or a private one adds complexity."
-- "We should have a bird's eye view of what's happening."
-- "It's important to balance out how different teams evaluate their specific impacts."
+- "The technique has been used in the diagnosis of narcolepsy for nearly 45 years."
+- "It is absolutely vital for an accurate interpretation of the MSLT."
+- "We suspect that even though they said they all slept adequately before, they were probably sleep deprived."
+- "I want you to try achieve eight hours in bed every night."
+- "If you don't take them off the anti-depressants, it's extremely hard to diagnose narcolepsy."
+- "The specificity for that less than 15 minutes REM latency on the preceding polysomnogram was 98%."
+- "The vast majority of narcoleptic patients will have latencies mean latencies of 8 minutes or less."
+- "This is not like an isolated test; it's got to be integrated with the clinician's pre-test probabilities."
+- "We try to get them off cannabis for a longer period than two weeks if we can."
+- "The new criteria state that on the MSLT report, the physician has to put what drugs they were on at the time of the study."
+- "It's important for everybody's sleep lab to have a separate protocol for pre-MSLT polysomnography."
+- "I think we've got to use the MSLT as an extension of clinical method."
+- "There are other ways of looking at narcolepsy, but we don't have a lot of other biomarkers."
+- "After 45 years, the MSLT is still a very helpful and valid tool for the diagnosis of disorders of hypersomnolence."
+- "You have to interpret it in that way."
 
 # FACTS:
-- Many customers prefer self-hosted models for privacy reasons.
-- Public benchmarks may not run for all models, necessitating self-evaluation.
-- High toxicity levels in models can lead to legal issues.
-- The evaluation process can waste significant resources if not managed properly.
-- Open-source models tend to be less performant than proprietary ones.
-- The evaluation pipeline must be continuously assessed for reliability.
-- Diverse datasets are crucial for accurate performance metrics.
-- Human evaluators are necessary to validate automated results before production.
-- Latency and resource usage are important metrics in evaluating AI systems.
-- The relationship between different metrics can provide insights into model performance.
+- The MSLT was first developed in 1978.
+- A study showed that increasing sleep from 7 to 10 hours raised mean sleep latency from 6 to 11 minutes.
+- The Wisconsin Sleep Cohort found increased odds of developing sleep onset REM periods among shift workers.
+- The revised 2021 parameters clarified that at least 7 hours of sleep is necessary before an MSLT.
+- Fluoxetine has a long half-life, necessitating a longer withdrawal period before testing.
+- The specificity of REM latency in diagnosing narcolepsy type 1 is extremely high at 98%.
+- The mean latency for proven narcolepsy patients was found to be 3.1 minutes in a significant study.
+- The ICD3 TR introduced a new criterion stating that an MSLT may not be required if REM periods are present on polysomnography.
+- Many patients may not remember what medications they were on prior to testing, complicating diagnoses.
+- Shift work and insufficient sleep correlate with lower REM periods in community studies.
 
 # REFERENCES:
-- AI Engineering book (Chapter 4)
-- Discussions on self-hosted vs. hosted models
-- Evaluation guidelines and metrics for AI systems
-- Papers on human perception vs. automated results
-- UX research methods for data collection
+- Mary Carscadden's development of the MSLT in 1978.
+- Revised 2021 parameters for MSLT by ASM.
+- Wisconsin Sleep Cohort study findings on sleep onset REM periods.
+- Studies on the effects of psychotropic medications on MSLT results.
+- Research by Donna Arant regarding MSLT protocols and criteria.
 
 # RECOMMENDATIONS:
-- Define clear success criteria for evaluating AI models.
-- Incorporate human evaluations alongside automated assessments.
-- Regularly review and update evaluation pipelines for effectiveness.
-- Strive for diversity in datasets used for evaluation.
-- Create feedback loops to quickly assess changes in model performance.
-- Collaborate across teams to ensure comprehensive evaluation coverage.
-- Consider privacy and data lineage when selecting models.
-- Use real-world scenarios to test model effectiveness.
-- Document evaluation processes to facilitate knowledge sharing.
-- Explore guidelines for creating diverse datasets for testing.
+- Aim for at least 7 hours of sleep nightly for two weeks before undergoing an MSLT.
+- Use actigraphy to monitor sleep patterns leading up to the test whenever possible.
+- Discontinue REM-suppressant medications at least two weeks prior to testing if feasible.
+- Educate patients about the importance of sleep hygiene before their MSLT appointment.
+- Consider individual patient circumstances when deciding on medication withdrawal timelines.
+- Ensure that polysomnography is conducted under optimal conditions prior to an MSLT.
+- Integrate clinical judgment with MSLT results for accurate diagnosis and treatment planning.
+- Encourage patients to communicate any recent changes in their medication or health status before testing.
+- Utilize separate protocols for pre-MSLT polysomnography to minimize disturbances during testing. 
+- Be flexible with diagnostic criteria, understanding that individual patient presentations may vary.
