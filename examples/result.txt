@@ -1,67 +1,67 @@
 # SUMMARY
-Scott Hansen discusses Terraform integration in GitLab, demonstrating how to use GitLab as a backend for Terraform state files and manage deployments.
+Mark discusses integrating Jira with GitLab to help a customer transition from older version control systems, focusing on setup and benefits.
 
 # IDEAS:
-- GitLab can store Terraform state files, eliminating the need for external storage solutions.
-- Terraform commands in GitLab are prefixed with "gitlab-", simplifying usage.
-- Using GitLab as a backend allows for better management of state files across branches.
-- The project example involves deploying a simple Lambda function that generates random numbers.
-- A common S3 bucket is used to maintain resources regardless of the branch.
-- Caching mechanisms in GitLab CI/CD pipelines improve efficiency by reusing data across jobs.
-- The importance of separating common infrastructure from application-specific resources is highlighted.
-- GitLab CI/CD allows for dynamic URLs for review apps based on branch names.
-- Manual approval processes can be integrated into deployment pipelines for better control.
-- The use of OIDC tokens for authentication between GitLab and AWS enhances security.
-- Terraform plans can be reviewed before applying changes, ensuring transparency.
-- The ability to automate environment destruction helps manage costs effectively.
-- Merge request pipelines can trigger deployments, ensuring only approved changes are applied.
-- Resource groups in GitLab prevent concurrent deployments to the same environment.
-- The integration of code owners can help manage approvals based on specific resource changes.
-- The demo project is designed to showcase best practices in using Terraform with GitLab CI/CD.
+- Integrating Jira with GitLab can facilitate smoother transitions for development teams.
+- The integration allows for issue synchronization between Jira and GitLab.
+- Teams often resist moving from older version control systems to modern solutions.
+- HTTPS is required for the integration to function properly.
+- Jira can automatically transition issues based on commit messages in GitLab.
+- The integration can enhance visibility of commits and merge requests in Jira.
+- Using personal access tokens is essential for the integration process.
+- The setup requires collaboration between Jira and GitLab administrators.
+- Different project keys can be used to map Jira projects to GitLab projects.
+- The integration can help automate workflows, improving efficiency.
+- GitLab's end-to-end functionality offers better management than using Jira alone.
+- There is potential for a migration tool to transfer issues from Jira to GitLab.
+- Understanding customer profiles is crucial for effective integration strategies.
+- The integration may limit visibility into GitLab's full data tracking capabilities.
+- Developers are encouraged to use GitLab's features fully for optimal results.
+- The integration serves as a stepping stone for customers hesitant to fully transition.
 
 # QUOTES:
-- "You can essentially use GitLab as a Terraform backend."
-- "I don't want to include that in my application Terraform because if I do that then if I tear it down for a feature branch then I tear down the bucket as well."
-- "I'm using cache to cache my Terraform directory just so I have that available to all the downstream jobs."
-- "This is just a straightforward Lambda function."
-- "In real application, I would say your comment would sit inside of its own project."
-- "The caching here is going to cache this Terraform directory."
-- "This is where the magic happens."
-- "You can see here where I have like domain prefix app version S3 bucket."
-- "This is just going to run a GitLab Terraform plan."
-- "You can have merge request approvals on here."
-- "This is just creating that zip file."
-- "You could theoretically also package them as artifacts and pass them along."
-- "This is going to give you a Terraform report here."
-- "You can look at those changes there but that gives you a quick look here."
-- "This is showing as there is no stop button here because it's in a stopping state."
-- "You can see what it currently looks like and then I can go to feature A."
+- "We're trying to drag them you know kicking and screaming into the 21st-century."
+- "If you try and set up the integration just using like bog standard HTTP, it doesn't seem to work."
+- "You can see all the commits and activity that happened on something as long as you reference the Jira issue."
+- "If you put the magic words, it can automatically move that Jira ticket into the done pile."
+- "This is like the level zero of getting them to understand that GitLab can integrate."
+- "The full value of our platform is always just realized if you use our functionality end to end."
+- "This stuff is better than nothing, and it helps get people onto it."
+- "There are some companies that will not just drop Jira and move over to GitLab."
+- "You have to allow access to your local network wherever Jira is hosted."
+- "You might want to limit the blast radius of one of these tokens getting leaked or exposed."
+- "It's important when we work with teams that they know that GitLab is the controller."
+- "The integration can help automate workflows, improving efficiency."
+- "This creates a new account gives you a password or a credential key."
+- "You have to consider what your group structure looks like on both sides."
+- "The integration allows for issue synchronization between Jira and GitLab."
 
 # FACTS:
-- GitLab CI/CD supports caching mechanisms for improved efficiency.
-- Terraform state files can be managed directly within GitLab.
-- AWS Lambda functions can be deployed using Terraform configurations.
-- Dynamic URLs for applications can be generated based on branch names.
-- GitLab allows for manual job approvals in CI/CD pipelines.
-- The integration of OIDC tokens enhances security between services.
-- Resource groups in GitLab prevent concurrent deployments to the same environment.
-- The use of S3 buckets is common for storing application artifacts.
-- Merge requests in GitLab can trigger automated deployment pipelines.
-- The caching mechanism ensures consistent data across jobs in pipelines.
+- HTTPS is required for secure communication between Jira and GitLab.
+- Personal access tokens are necessary for the integration setup.
+- The integration allows for automatic issue transitions in Jira based on GitLab activity.
+- Many teams are still using older version control systems.
+- The integration requires collaboration between different administrative teams.
+- A Docker container can be used to run Jira for testing purposes.
+- GitLab can track commits and merge requests linked to Jira issues.
+- The integration setup involves creating application links in both systems.
+- Different project keys can be used to map Jira projects to GitLab projects.
+- The integration may not provide full visibility into GitLab's data tracking capabilities.
 
 # REFERENCES:
-- Terraform documentation and helper tools provided by GitLab.
-- Example project demonstrating Lambda function deployment.
-- GitLab CI YAML configurations for managing environments and deployments.
+- Docker container for running Jira.
+- Official documentation on running Jira behind an Nginx proxy.
+- GitLab's personal access tokens for API access.
+- Application links in Jira settings for integration setup.
 
 # RECOMMENDATIONS:
-- Utilize GitLab as a backend for managing Terraform state files to streamline workflows.
-- Separate common infrastructure from application-specific resources to avoid accidental deletions.
-- Implement caching in CI/CD pipelines to enhance performance and reduce redundant operations.
-- Use dynamic URLs for review apps to facilitate easier testing and feedback loops.
-- Set up manual approval processes for critical deployments to ensure oversight.
-- Leverage OIDC tokens for secure authentication between GitLab and AWS services.
-- Regularly review Terraform plans before applying changes to maintain control over infrastructure.
-- Automate environment destruction to manage costs effectively and prevent resource sprawl.
-- Consider using resource groups in GitLab to manage concurrent deployments efficiently.
-- Explore the use of code owners for better management of resource changes and approvals.
+- Encourage teams to adopt modern version control systems like GitLab.
+- Use HTTPS for secure communication during integration setup.
+- Automate workflows by enabling issue transitions in Jira based on GitLab activity.
+- Consider using separate personal access tokens for different projects to enhance security.
+- Facilitate collaboration between Jira and GitLab administrators during setup.
+- Utilize Docker containers for testing integrations in a home lab environment.
+- Provide training on the benefits of using GitLab's end-to-end functionality.
+- Develop a migration tool to assist customers transitioning from Jira to GitLab.
+- Map project keys carefully to ensure proper synchronization between systems.
+- Regularly review and update integration settings as project needs evolve.
