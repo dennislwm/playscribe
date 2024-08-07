@@ -1,574 +1,612 @@
-come on oh live live this isn't even like-recorded and 
-uploaded good stuff all right ready yeah go for it 
-all-right folks so uh today I'm going to talk about 
-something easy and simple um-reference architectures so 
-these are gitlabs-um architectures and uh couple things 
-today we're going to cover are just I-want to cover some 
-key Concepts uh talk about single node versus ha when-to 
-use them we're going to go through some gitlab components 
-on the servers so-when you we get into the slides later 
-you'll see that gitlab is quite a-complex stack with a lot 
-of pieces and so I just want to talk through each-piece and 
-what its function is and then we'll start talking about the 
-reference-architectures themselves so we'll look at a 
-traditional 3K uh a cloud 3K using-cloud services Cloud 
-native hybrid 3K then we'll move on to get like Gio-talk 
-about that what it's used for what it does and does not do 
-and then the-final slide is just a getting started with get 
-and I think there's another-enablement session that'll 
-actually get into the details of how to deploy a-reference 
-architecture please feel free to ask-questions and 
-interrupt as we go along as well-um so the first thing and 
-uh you know Brian put this in I think this is a good-slide 
-just to start with real quick but uh gilb has three 
-offerings we do-self-managed which is what we're going to 
-focus on today and then we also have-a get laab dedicated 
-which is self-managed but G laab dedicated set-and then 
-gab.com which is our SAS offering all right key Concepts so 
-the-first thing I want to discuss is Omnibus and I think 
-that gets thrown around and-sometimes folks get confused 
-when we use it but what Omnibus is is it's gitlab's-bundle 
-package so includes all the installers for all the services 
-that we-talk about today and a few that I didn't include 
-because they're not as commonly-used so when you install 
-gitlab on servers-you get one file it's an rpmm file and 
-that one file can be used to install any-service Rus a post 
-scratch we'll get into all them later and how it works 
-is-you install the M file and then there's a configuration 
-file called to get laab-RB which is an ety gitlab gb. RB 
-and the configurations that you make in there-determine 
-what that node is and how that node gets configured so I'm 
-going to-pull up an example real quick and this is what 
-I-use when I'm trying to figure out how a service gets 
-configured so this is I-don't remember how many lines of 
-code it's huge but let's say you wanted to-install 
-postgress if you go into this file and-you uncomment out 
-postgress enabled equals true this node now 
-installs-postgress um and alternatively you have to tell it 
-not to install Services too-right so if you don't want post 
-crash you would have to set postc crash to-false High 
-availability so high availability-is your infrastructure um 
-being designed in a way that can tolerate outages 
-uh-without degradation or um performance hits so with 
-gitlab we can deploy within-region High availability uh but 
-we cannot do high availability outside the-region without a 
-loss of uptime and we'll get into that when we talk 
-about-Gio and what Gio does and its limitations uh the 
-other thing I want to-discuss here too is is when QA does 
-the reference-architectures they use the Expression double 
-double meaning when you talk to-grant for instance he'll 
-say that our reference architectures are double-double if 
-we say it's a 2K reference architecture it can support 
-8,000 users-more than likely on a standard load um but the 
-idea is is that if we want ha we-want to make sure that we 
-can tolerate outages without degradation performance-so if 
-half of our infrastructure goes down we don't want the 
-other half-getting hammered by the users we want them to 
-still feel like they're's up and-running and everything's 
-good so um our for most standard customers our-reference 
-architectures are Overkill they are very large but 
-they're-intentionally designed that way so that they meet 
-the ha qualifications-requirements and then Dr is uh how we 
-handle catastrophic outages right so if-you're in AWS for 
-instance what happens if Virginia falls in the ocean um 
-you-know that's where everything started that's that's 
-Netflix right-uh so how does a customer get their Source 
-back and gitlab solves this-problem with goo and I think a 
-lot of times customers get confused between ha-and Dr and 
-what requirements and what gitlab products uh solve for 
-those-problems then the only other two things I want to 
-cover that come up a lot in-calls with customers is RPO and 
-RTO so RPO the recovery Point objective is in a-disaster 
-scenario what is the recovery point in-time that we can hit 
-right so if you think about nightly-backups for instance if 
-you're running a backup nightly your recovery point in-time 
-has to be 24 hours because you're only running one back of 
-that instance-every 24 hours if you're doing hourly 
-snapshots you can hit a you know one-hour RPO so and if you 
-use Geo and we'll talk about this later uh your RPO 
-is-closer to 15 minutes or real time because you're 
-constantly streaming that-data to another region recovery 
-time objective is the maximum amount of time-that your 
-organization could be down until you covered so how long 
-does it-take your sves to get git lab back up and running 
-um as soon as it's outage-any questions on these no cool 
-all right-um I think the next slide kind of talks about a 
-little bit more and we'll go-into it but um you know 
-there's tradeoffs when you-talk about RTO and RPO the lower 
-those numbers are meaning the less data loss-you're willing 
-to accept and the faster you want to be up uh the more 
-expensive-the infrastructure is so uh simple Disaster 
-Recovery approaches are less-costly but carry a higher risk 
-of data loss and system on avability-and we'll talk about 
-that here so I want to kind of talk about a single 
-node-versus a reference architecture right and Brian 
-put-together a slide to talk about this uh it's like a 
-table I like the images so I-put together a network diagram 
-this is a 3K reference architecture with the 3K-Geo and 
-this is about $60,000 worth of VMS upfront and I'll kind of 
-get into-the cost and things like that how that works later 
-but um you know if a-customer comes to us and they say that 
-we need a 3K reference architecture and-it has to be highly 
-available and we want a 3K reference architecture 
-that's-highly available in the secondary region uh they're 
-asking for 50 servers-and $60,000 worth of BU VM clost for 
-the first-year so um the RTO and the are great with the 
-solution but it's also-incredibly expensive and you have to 
-have the staff to support-it for environment serving 2,000 
-or few users gitlab actually recommends a-single node so if 
-you go to the refence architecture documentation um you 
-know I-think Professional Services historically has hit use 
-the 1,000 user marker but-gab uh as a QA organization uh 
-recommends-2K and then um just kind of go through 
-the-advantages so if you look at the left side this is your 
-primary site and you-look at the right side this is your 
-secondary Geo site either one of these-can be a single node 
-and support up to 2,000 users so you know by going with 
-a-single node Geo for instance you're taking out a 
-considerable amount of-infrastructure um but you're giving 
-yourself a much easier uh infrastructure-to manage and set 
-up uh you can use gitlab backups and snapshots at the 
-same-time and uh you know the downside is you have a single 
-point-failure sorry any questions on ha and we'll get-into 
-the actual components and what they do out of curiosity do 
-we have an idea-how much of this total infrastructure is 
-represented by the database the post-gray infrastructure 
-yeah I'll get into the components and on side 
-but-absolutely so so this is the front end so your web 
-servers this is your-Sidekick your background jobs this is 
-your application database these six-servers right here this 
-is your cache database this is your fover Sentinel 
-and-console and then there's another database over for 
-gly-cluster um and then on your secondary site there's an 
-additional database for-tracking database for geo so a lot 
-of databases involved yeah yeah just-thinking that maybe 
-more modern databases might might provide some 
-some-efficiency in this area but that's just a wild thought 
-right nope you're not-wrong we'll get to that awesome Okay 
-Kevin Kevin on the um on the secondary-site how hot is that 
-how hot is it in order to fail over how long does it 
-take-I'll cover that later but it could be done in 
-15-minutes okay could you run could you run active active 
-no yes and no and I'll-cover that later all right you're 
-going more into I'll get into that yeah we-we'll we'll talk 
-about Gio at the end um you know when you talk to 
-customers-though yeah we we'll get into that in a later 
-slide I don't want to like-undercut it but very good 
-question so um I'm just gonna spend some time going-through 
-the different services that run on these just so everybody 
-knows um you-know these are the front-end Services uh 
-sidekick probably shouldn't be on this-list I kind of group 
-it with it and we'll talk about that later with-kubernetes 
-um you know but if a customer comes to us and they say hey 
-we want to-run gitlab and kubernetes these are the 
-components that essentially get put into-kubernetes so um 
-and then there's a diagram here on the architecture 
-site-and we're talking about these groups right here and 
-they're usually all on-the same node or in some cases split 
-up so we have Puma which used to be-called unicorn and 
-that's our frontend web server so Puma is uh when you go 
-to-gitlab.com and you see the goey uh that's Puma rendering 
-that for you and-then we have a service called gitlab shell 
-and gab shell is where all the git-operations over SSH are 
-managed so for instance if you clone a repository with-um a 
-key pair that that's going to be run through KB-shell 
-Workhorse is a reverse proxy load balancer and it handles a 
-lot of the-large or long running operations so um if you 
-look at this chart here you can-actually see that 
-everything goes through Workhorse before it goes to the-web 
-server it it kind of decides what goes the web server and 
-what doesn't and-the example that I'll give is um and it 
-might have changed it's been a while but-object storage 
-used to go from Workhorse directly to S3 right so if you 
-wanted to-uh check the logs on objects not being uploaded 
-to S3 the Workhorse logs would-house set you wouldn't 
-necessarily want your web server handling a large tar-file 
-uh we use engine X in the front end too-so engine X sits in 
-front of everything all web related stuff and determines 
-if-something's going to git lab Pages or if it's going to 
-Workhorse and then your-certificates are configured at 
-engine X rules if you need-them gitlab Pages uh gitlab can 
-serve static pages and they're served from S3-or object 
-storage and then finally sidekick which is a background 
-um-processor so sidekick jobs are stored in reddis and and 
-uh you know the example I-gave the example I like to give 
-and I don't know if this is still the case but-when you 
-think of an action in gitlab like if you delete a user git 
-lab-doesn't go and delete the user uh it creates a 
-background job in redis that-says hey this user is to be 
-deleted and then there is sidick processes that are-picking 
-up these jobs and deleting these users it's uh very similar 
-to how like-sqs and AWS would work any questions on the 
-frontend-services okay back end so we got gy and this 
-is-where all your source code is stored uh it used to also 
-store Snippets it may-still um but uh your actual source 
-code this that's on the gly-knowns we have prect so prect 
-shows up in our 3K architectures and higher and-it's for 
-high availability so prect does things like um you know 
-ensuring that-there's replication on the gly nodes load 
-balancing Val recover data-Integrity when a user makes a 
-commit what prect will do if you have three G-Elite nodes 
-prect will write that to two if that's what your 
-replication factor-is and then check the hash to make sure 
-that there's strong consistency across-the two and then 
-Mark that as as you know both nodes were written at the 
-same-time um if one node fails to write so you you have an 
-outdated version of the-repository on one node and the 
-other node for whatever reason is up to date-it'll will'll 
-uh flag that node and put a background job in um to go back 
-and-make sure that gets replicated we have reddis so redus 
-does-all of our caching um it does data caching so it's 
-used to frequently uh to-store frequently accessed data to 
-reduce load in the database um you can think of-things like 
-uh user information project metadata repository data um it 
-does page-caching so uh certain pages are cached up to 
-reduce or increase the rendering-speed if they're 
-frequently accessed it houses our background jobs and then 
-it-manages session management so when a user logs into 
-gitlab rdus is what makes-sure that their session stay is 
-held um as their load balcer might be moving-them to 
-different fun end nodes uh console and just remember 
-when-we showed that diagram before all of those are these 
-components broken up in-different servers so you know we 
-talk about the complexity of gitlab um it's-because there's 
-so many services that have to be installed but console is 
-uh-delivered as both the client and a server service and uh 
-it's used for two-things it's used for monitoring so it'll 
-collect Prometheus data um that can be-grafted with grafana 
-which used to be shipped with-gitlab uh it also will keep 
-an eye on the health of the postgress node and-elect a new 
-leader so uh if we're deploying our own postgress solution 
-in-a high availability scenario then console would go with 
-it Sentinel is-very much like console it monitors redus 
-rtis is H new Reedus-leaders Prometheus is for metrics 
-monit so we have two pieces that-we install there's 
-exporters and there's the promethus server uh and 
-the-exporters will gather metrics on gitlab services and 
-send them in so we can have-our graphs and dashboards to 
-make sure that we're monitoring G-laab uh the database so 
-we we use postgress in a lot of different areas in-get lab 
-there's you know um you can have it for application you 
-have to have one-for your application database uh if you 
-have G cluster you have to have a gy-cluster database and 
-then every Geo site has to have a postgress and you 
-know-just uh funny start when I started we actually 
-supported MySQL and postgress-uh but uh that just slowly 
-was spaced out and then uh the last two servers on-here are 
-in support of postr so PG bouncer helps us with uh 
-database-pooling or uh connection pooling for the database 
-and then along with the load-balance configuration and then 
-Patron supports the failover-activities alongside console 
-and PG bouncer-so we'll go right into talking through a 
-reference-architecture so this is gitlab's 3K 
-reference-architecture uh I think the EMS always ask why 
-doesn't implementation with-gitlab cost so much um or why 
-is there so much time that needs to happen with-it and it's 
-because gitlab ha is complex so uh in this scenario we've 
-got 25-servers two load balancers there's 8 S3 buckets uh 
-in those buckets we you know-artifacts external discs 
-uploads lfs packages dependency proxy terraform and-pages 
-and when we talked about the front end-components we were 
-talking about these components right-here um all of these 
-represent our backend-components and we actually have a 
-cost and uh calculator available now so-that's where I got 
-this from so if a customer says how much is-this going to 
-cost to deploy uh you can go here and share that cost in 
-this-example is $29,000 just to deploy the VMS on AWS-for 
-3K reference architecture this is not data storage this is 
-not Network-traffic um Ingress and egress this is just 
-straight up uh the VM size to spec-so so Kevin this is the 
-cost Amazon this is the cloud cost yes sir yeah so you-got 
-s new subscriptions all on top of this and obviously yeah 
-yeah yeah and it-kind of goes back to that slide earlier 
-you know when you when you start looking-at RTO and RPO and 
-you want better results and customers want ha 
-it's-expensive so this is the first 3K is where full ha 
-starts with-gitlab where you have gly cluster so when 
-customers come to us and they say-okay we have 50 
-developers but we need ha you know sometimes I don't think 
-they-understand that okay but can you manage 25 servers and 
-take on-$330,000 in VM costs um is that worth ha for you or 
-is a single node you know-with a single node Geo which we 
-talk about later the right-solution and just finally it 
-does does the level of subscription have an impact-on this 
-design you know ultimate feature does that add more comp 
-reputation power-maybe no no the biggest um drivers for 
-ultimate have historically been plan and-secure yeah um but 
-no I mean this is this is when a customer says hey I 
-need-ha this is entry-level ha this is what they're 
-asking-for okay cool and you can deploy this on gitlab's 
-free product uh but we don't-support it so uh if we've had 
-customers come and try to engage PS uh when they-were on 
-gitlab free and and you know it's we don't we don't want to 
-help them-build out something that normally would be a paid 
-tier this they have to do on-their own I kind of want to 
-show you what deploying to AWS and cloud services-can bring 
-the table though so uh with AWS customers and the GB 
-environment-tool supports this uh we can use services like 
-elasticache and RDS to-significant reduce the footprint so 
-uh we just took uh 12 servers out of the-Mex just by saying 
-Hey I want to manage Reddit service to last cache uh so 
-give-me an ha redish cluster and then the same goes to RDS 
-I want a multi-az RDS-instance um so pretty significant 
-reduction in-nodes and the next thing I want to point out 
-too is this when a customer comes to-us and says I want to 
-deploy with kubernetes-this section here is what's 
-in-kubernetes all of these still have to be VMS now you can 
-deploy these other-servers in Helm but the documentation 
-says that it's Alpha it might be beta-now but it's not 
-supporting a production environment and they should not 
-be-running these components in Helm um for their git lab 
-production deployment the-only servers that go into 
-production are these front end nodes here so when we-talk 
-to customers again going back to the smaller user counts 
-you know they-might have 50 users 100 users and they say 
-hey I want to run kubernetes what-they're really saying is 
-is I still want to have but is this uh 18-VMS for my 12 
-users but I want to add a kubernetes stack on top of that 
-and-manage that as well um and and we try to discourage 
-that until they get into the-much larger range you know I 
-think uh the QA team recommends folks be at 3K or-higher 
-Professional Services has seen success with Folks at 10,000 
-or higher-with a dedicated kubernetes team um and I I'll 
-kind of show you in a little bit-the advantages that 
-kubernetes brings to the table um but the the 
-biggest-disadvantage is that you also cannot do zero on 
-time upgrades with kubernetes-so any questions okay-so one 
-of the things we're learning with customers um and this is 
-where I got to-not say names but uh you know traditionally 
-we've always scoped-architectures based off user count you 
-have 2,000 developers this is the-reference architecture 
-for 2,000 users and that works that worked very well for-a 
-long time um but we have customers that are kind of using 
-gitlab in out of-thebox ways it's an automation tool with a 
-lot of power-and um you know we had one scenario where they 
-had 3,000 users but uh they-were using 25,000 users worth 
-of load on the system you know and so when we're-scoping 
-these These are the types of ones we want to ask the right 
-questions-you know why do you need to expand your git lab 
-footprint why are you moving to-the cloud um you know what 
-do you running on today how is it performing-today and if 
-we start to run into scenarios where we feel like a 
-customer-might be uh using more than um the standard 
-that's-something where we would want to do some Discovery 
-and get fast STS and actually-start looking at the requests 
-per second from their live production data uh then-just 
-saying hey here's a 3,000 user architecture and uh you'll 
-notice with-kubernetes it actually supports double the 
-request per second for the-infrastructure so one of the 
-advantages to kubernetes is is that it can scale um-those 
-front-end you know API type servers very quickly the ones 
-that-handle to get traffic and things like that um so you 
-lose zero downtime-upgrades the complexity goes up uh but 
-you do uh get better performance as a-whole and I shared 
-the link in the notes for this for fast stats which is a 
-tool-that you can use to collect this data any questions on 
-this one and then-we'll get into Gio-cool all right so Geo 
-so Geo can act and look like the-primary for Geographic 
-distributed users they don't necessarily know that 
-they're-on a Geon node and users can push and pull from Geo 
-node um and what happens-is is that if a user is connected 
-to a Geon node and they do a get push it-actually behind 
-the scenes proxies it to the primary so if they're on this 
-node-over here and they push to it it proxies it to the 
-primary which writes it and-then replicates it back to the 
-Geo node um and and for geographically-distributed users 
-when they pull it pulls from the Geo node so uh if you-have 
-you know your main site is in America's and I actually had 
-a customer-like this they had a data center in Soul uh 
-South Korea and uh when they were-cloning and fetching 
-large repositories it was taking forever and when they 
-set-up a Geo site that it went from you know um minutes to 
-seconds to PO those-repositories you can uh balance the 
-readon traffic 2 between your primary-and secondary sites 
-you know we have another customer we're talking to now-that 
-does significant amount of API calls against skab uh 
-they're looking at-standing up Geo and and that is so that 
-they can do all calls against the-secondary site the other 
-thing to note is that Geo-can share a URL between your 
-primary and your secondary so you can have a-separate URL 
-for geo but you can also uh have a unified URL and then uh 
-use some-uh geodns and load balancing to kind of distribute 
-the users where they-go any questions on the what geod does 
-from a distributor perspective no okay-uh so you can fail 
-over pretty quickly with Gio I did it with one customer 
-uh-they were 15,000 users and I was nervous and it happened 
-almost instantaneously-like it's like one command now um 
-it's gotten significantly easier than it used-to be so um 
-when a customer wants to fail over it's just you know 
-proing the-environment run the command and updating DNS uh 
-unless it's a unified URL which-in case it'll just work 
-Runner ERS automatically connect if they're still-up and 
-running because the URL is the same and the tokens that 
-they use are in-the database that's a read replica so uh 
-you can you know with the proper-planning you can fil over 
-very quickly to-go one of the limitations that you know 
-when folks say well why can't we use Geo-as an ha solution 
-uh and the reason is is just that the primary 
-authenticates-the secondaries authenticate after off the 
-primary so if your primary goes down-your GEOS actually go 
-down um until you fail over and so they are not yeah-that's 
-look um so just something to make sure you're aware of uh 
-once you fail-over then they they totally work but uh when 
-you authenticate against the geoc-secondary it actually 
-sends it back to the primary to authenticate so you 
-lose-that functionality if the primary goes down um the 
-other thing I want to call-it too is is that the geoc 
-secondaries and primary don't care what the other-one is so 
-you you going have a single node primary and a 50k 
-reference-architecture Geo don't do that that's crazy but 
-you can have the other way-around too so uh you can have a 
-3K reference architecture for your primary-site and uh 
-single nodes on the goo and you can have multiple that way 
-and the-only thing that it cares about is uh there needs to 
-be a re replica of the-database which can be within the 
-single node this is an AWS diagram so I have a-RDS re 
-replica here and that the two front ends can talk to each 
-other-because they communicate over apis and you know more 
-often than not you're-going to have a smaller Geo depending 
-on your ability to maintain-servers uh you know so keep in 
-mind that a 3K reference architecture with 25-servers a 3K 
-geo means you're managing 50 servers plus an additional 
-tracking-database is there any kind of use case 
-benefits-for by directional active active-so yes and no 
-right so so active active to me is if one goes down the 
-other one-works and we don't get passive okay yeah you've 
-got two use you-to you can absolutely use both for sure 
-yeah users you know if you've got users-all over the world 
-and you want to distribute it they can use those 
-other-sites now couple things to keep in mind they don't 
-necessarily know this but the-rights that they make are 
-actually going back to the primary so you want to make-sure 
-your primary is big enough and to support your secondary 
-nodes and those-secondaries will stop working if the 
-primary goes down until you actually-perform a failover 
-yeah so you can't you always have a primary you can't have 
-a-two primaries replicating back to two secondaries across 
-correct yeah okay-and I kind of touched this in the 
-beginning but with with gitlab within-region within data 
-center we can support ha um but we really can't support 
-true-ha across different regions the other thing uh and 
-it's-getting better but the recovery process from a g fover 
-uh you have to rebuild-the original site uh and it might 
-have changed I can double check the-documentation but 
-historically let's say that you had a catastrophic outage 
-on-your main site and you did a go over failover and your 
-user is using this um-the process to go back would be to 
-stand up a new primary site set it up as a Geo-secondary to 
-your now promoted geoc secondary let it replicate then 
-promote-your primary site again and then restand up your 
-geoc secondary set it up as a-geoc secondary to your 
-original primary site and then let that replicate as-well I 
-mean you're back up and running your users didn't really 
-miss a meat but-as an Sr or an admin you've got some work 
-ahead of-you I have a question um what is the typical 
-life-time for data replication and how do we ensure that um 
-data Integrity is-ured so the data um Gio has well the lag 
-time I'll tell you-right now is pretty quick it's it's it 
-happens when pushes happen um usually I-find that it's it's 
-within minutes if not faster uh you know there's 
-caveat-right if a customer you know I had a customer that 
-for some reason was-pushing like isos to repositories which 
-is a whole another conversation but-that's not the point 
-right um if they push a 10 gig ISO to-the GEOS secondary 
-you know they just have to be aware that it's not going 
-to-write to the geoc secondary it's going to be sent over 
-the primary to Bright in-the primary um and if they're in 
-America and South Korea that might take-a while and then 
-it's going to replicate to the geosite so things like that 
-would-take a while but if you think of your average get 
-commit and push there's not-a lot it's it's text right it's 
-code it's it's very quick it's not like you-you know in one 
-commit I'll push a gig of code um so it's very very quick 
-and-as far as the consistency goes um gilb there's a-table 
-and I'll see if I can find it I can follow up but um-so can 
-I just add here Kevin Yeah Yeah so basically for Gio uh you 
-know there-is a dashboard that you can see on the UI itself 
-and the replication keeps-going on um and you can make sure 
-that you know that is up to 100% it'll show-you both the 
-primary and the secondary site um and you can just make 
-sure that-you see it's in 100% sync and only once in sync 
-you can just just do the-failover I can probably try uh 
-seeing if I have my setup on and I can share a-screenshot 
-probably yeah that would be awesome and while she's looking 
-at that-let me know I'll switch the presenter to you um 
-I'll find it there's a table for-the different data types 
-and how G checks consistency so um use hash it's-it's 
-validated okay um the other thing to-call out too 
-especially when we talk about Cloud environments is is that 
-Gio-will replicate object storage for you um so if you're 
-going from AWS to gcp or-something like that you know Gio 
-can manage that for you uh but more often-than that when 
-you're working in Cloud environments like AWS they have 
-cross-region replication with buckets and you can also just 
-set that up and let Amazon-handle your replication of 
-buckets any other questions on-Gio just one so that's your 
-use case can you use Goo you can use Geo right to-migrate 
-can't you if if you've already got a Geo-environment 
-running and you want to migrate using Goo is that is 
-that-limited is that a limitation yeah when you you have 
-go-link coming in to do the migration it's like Hub and 
-spoke you know you have-your Central Primary and you can 
-have as many Geo nodes as you want and they can-be as big 
-or small as you want to right you can you can have a 3K 
-reference-architecture and then you can say I want one 
-single node Geo in South Korea soul-and I'm going to take 
-snapshots of that and that's just uh you know just just 
-in-case and then I might put another full 3K on the west 
-coast if I'm in the east-coast so that I can fail over to 
-that okay and they can all go into the-single instance they 
-all go into the single instance the caveat is is that-when 
-you fail over to a secondary all of the other GEOS 
-become-or they don't follow yeah yeah so you you would you 
-would want to hook them up-yeah brilliant thank you and um 
-here's the data types and the verification-replication 
-method so it's a pretty cool table um and and you know 
-especially-recently I don't think there's anything that 
-they don't have some kind of strong-consistency 
-verification for the data type this is also a great chart 
-if-you're sculping with a customer and they say does geom 
-replicate because there in-the past had been items or if 
-new object types come into play like when terraform-State 
-files first came into play for instance I don't think it 
-immediately-was supported by Gio as a replication type so 
-customers ask hey can you-support you replicate this type 
-to the secondary site you know this table right-here and I 
-I'll drop the link in the chat and then uh going on to the 
-last-slide here I just wanted to kind of sh I share this 
-with Partners too I think-this is pretty cool anybody 
-especially within gitlab can uh-go check out our gitlab 
-environment toolkit uh if you need help I can show-you how 
-you can create a cloud account at kit laab and um we have a 
-a a-implementation Services learning path which is free uh 
-for everybody uh gitlab-employees and customers they can go 
-and take this online course that education-provides and 
-then they can run through our Hands-On Workshop which I 
-think is-internal on but we do you know set it up for 
-partners and things like that which-is a g laab issue that 
-walks you through um deploying a 3K reference 
-architecture-in AWS just make sure you delete it when 
-you're done because it's $330,000 a-year so any any 
-questions on that-cool Jenice if you have it I'll let you 
-show it if not we can probably cut it-no so I have a 
-screenshot probably I can show uh does they have any 
-customer-names that's what I was checking no this is on my 
-sample so yeah I can share-this I mean I have anyway 
-destroyed this environment so it's it's okay but it's-just 
-a screenshot uh sharing my screen are we recording because 
-the it's on-yeah it's streaming live to YouTube Glen's got 
-us coverage-okay keep it safe I don't want to share 
-probably on-the live stream it's okay let's not we can stop 
-the recording in the chair-that's fine I'd rather like CL 
-said keep it safe than yeah make a mistake yeah-you can 
-just say it offl yeah excellent thank you Kevin very 
-much-for that any other questions comments it says it's 
-still live on YouTube it is it-is okay yeah before I want 
-to make sure-we've got everything covered that we can talk 
-about and then uh then-we'll go to the private portion so 
-any other questions comments uh I will I'll-will up the do 
-update the documentation Kevin you can send me the link to 
-your-presentation I can drop it in there as well and if 
-anyone has questions that-they want to answer drop them in 
-the doc as a comment and we can get we can get-to those as 
-well otherwise I will stop the live-stream portion of this 
-thanks again Kevin very much appreciate it
+was just telling me that uh it's hot and humid so folks-are 
+yeah hard to-work where where are you ygh-amam okay yeah so 
+this week is is is really-um strange hit so um yeah we just 
+made a calculation from Celsius to far gate and-it's um 
+close to 90 which is very and typical to this places so we 
+kind of-entering the fall season right now so the fall 
+season yeah should be should be-definitely lower but this 
+week is kind of exception so every day is around-90ish 
+degrees Fen and it's a yeah high humidity so it's yeah I 
+don't have air-condition at home so it's a little bit 
+tough-to concentrate my my oldest actually lives in 
+Amsterdam actually in Harlem uh-so and my yeah my youngest 
+is in Madrid and both have been suffering from Heat-at 
+different points in time so yeah you don't know really 
+where it's cter right-now either Madrid or Amsterdam 
+because um like I check two months ago or-something like 
+this when we were playing vacation it was really yeah we we 
+had-the same heat in Amsterdam around that time and then I 
+was really surprised to-see the lower temperature in the 
+South part of Europe like in Italy and Spain-it was much 
+lower well not much more low but maybe five degrees celsum 
+lower than-in these places and then you really think like 
+should you should you go for-vacation there or maybe you 
+can just stick here and then uh stay in the-sea everything 
+is changing Glen is in the the the cool part of the 
+United-States at least yeah for now at least most of the 
+time yeah yeah we we had a-couple we were just discussing 
+we had a couple 30 plus Celsius days here weeks-actually 
+earlier in the Summer where it was 30 plus Celsius 90 plus 
+Fahrenheit-for days on end yeah 247 am Washington DC always 
+has-these crazy Summers um we always have basically 30 plus 
+Celsius or 90 plus and-actually for for the last I know the 
+last four five days with like the high-90s which is like 35 
+Plus Celsius and super high-humidity so uh but that's 
+normal for the Eastern Seaboard-uh but it's September right 
+we're hoping that things-are getting better should be 
+wearing pumpkin spice at this point in time uhar-wearing 
+pumpkin wearing uh long coats and drinking pumpkin spice I 
+should say-not wearing pumpkin spice I know I don't judge 
+do what you want-um all right uh this will probably be a 
+quick one today uh really quick because-just talking about 
+fast outs which is the tool I had no clue even 
+existed-until just recently uh but it's actually already 
+come in handy a couple times so-let me just run through 
+What fast as is so I put the link to it uh in 
+the-enablement doc the notes doc just so folks can get to 
+it easily uh it's-actually a gitlab tool that we put 
+together it's built in Rust um-and it's basically a log 
+parsing tool now that's a very simplistic way to look-at it 
+but uh what it does it'll go through all your different log 
+files and-it will only hit certain types of log files 
+currently right now uh production-API gly prfi and sidekick 
+unstructured or-Json and it will parse through those and 
+it'll look for specific items and it'll-show you things 
+like request counts and uh errors and you know just 
+general-aggregation of some of your log information what 
+this is to substitute-for is like gitlab SOS which is our 
+tool that support uses to gather all the log-files for the 
+last week or whatever off of a machine and zip it up and 
+ship it-to them for for deep analysis from a customer uh 
+it's not a substitute for-Cabana Splunk grafana data dog 
+whatever a customer might be using to visualize-their own 
+stats and their error rates and things like that but what 
+it can do-is give you some very nice breakdowns of 
+information on the really quickly that's-a lot more 
+efficient than parsing through Json on in Vim or something 
+like-that right or even hand cranking your own JQ or or 
+yq-so I'm going to jump kind of right into just some demos 
+of what it does uh I-would suggest folks go and just take a 
+quick peek at the read me file too for-the project itself 
+and get an idea of some of the things it can do uh-it's 
+it's actually really handy so let me just pop through and 
+kind of go-through a couple demos really quick of some of 
+the things they can do for us so-uh I'm logged into my 
+gitlab instance right now I'm just in a fast 
+uh-subdirectory I've already pulled down the tar file and 
+unzipped and made the-fast STS binary executable by myself 
+things like that-so well one of the first things sometimes 
+you want to do is just take a-generalized look at uh log 
+files so you can just fast ass-the log itself but bulk of 
+the time what you want to see is not just the current-log 
+but you want to see the history of all the logs that are 
+going along so you-can actually cap through uh unzip all 
+the-archived log files particular type all the gz-files 
+append that with all the current production Json log files 
+and then you-pipe that through fast ads and it will 
+actually give you this aggregated view-of all of the errors 
+and uh speeds or excuse me all the uh request times 95-95th 
+percentile and things like that that are currently going on 
+in the-machine so we make this a little bigger for 
+folks-maybe so with this one command you can see now over 
+the entire history of all-of our production Json log files 
+we've had-176,000 requests to the controller metrics 
+controller-uh 99% six the the P99 649 milliseconds P95 is 
+510 giving you some great-performance stats across these 
+things but perhaps most importantly when you're-trying to 
+debug problems how many of these-fail so that's right there 
+you can already see oh I'm seeing some failures-in this 
+particular case in the Integrations controller testing 
+which-isn't that big a deal that was just me probably 
+failing to set up the Jenkins-integration from last week's 
+enablement session a few times-but instead of having to 
+parse for this Json log by hand you've already got an-idea 
+of where you should start looking for-things profile 
+updates controller have no idea what that's-about this is a 
+pretty clean instance there's not a lot going on error 
+wise-but you can already see I run one command I already 
+know where to start-looking for things but let's say you do 
+want to get-a little more specific with it about figuring 
+out exactly what kind of-Errors you're seeing fast stats 
+has a command called-errors where you can do the exact same 
+thing take the exact same set of files C-them all together 
+type it to fast stats and say just show me the errors that 
+I'm-dealing with and now you've got this nice visualization 
+tabled out for the-errors you've seen so you can see for 
+those uh invalid authenticity-authenticity tokens for some 
+of those uh record not unique so I'm seeing-some PG values 
+in there user status tried to create a user that 
+already-exists not quite sure how that happened bad 
+component project-multibranch so this is the one looks like 
+my integration controller because I-was trying to do stuff 
+in the Jenkins project so already you're now with 
+two-commands I know where my errors were occurring I've now 
+got a specific list-of those errors across all my 
+production logs archived across the box for the-last six 
+months here's where I can start digging in and this is a 
+lot faster than-any I have ever done by hand period I can't 
+this this price saved me three-days what I just did right 
+here I'm not even not it's not even an-exaggeration I the 
+amount of time to pars through Json by hand is-crazy oh 
+this is cool so so who wrote this uh I I don't know who 
+actually-created it originally uh I had to look at the 
+initial commit and things like-that I know it looks like 
+will did the last update to it but pretty cool useful-yeah 
+and again it'll do production Json API Json gly current if 
+you don't uh you-know you can tell it to do those specific 
+types of files and things like-that you can control which 
+Fields come out if you want to limit your data you-can 
+colorize it you can you can do benches you can actually use 
+it as kind-of a mini performance test to bench against 
+releases so they have they carry-the stats of what a short 
+release should perform like and you can do benches-against 
+those versions you can say hey take all my production Json 
+log files-using these stats we just generate up here out of 
+that log file compare that-to what we think gitlab 13.6 
+should have done or gitlab 16.1 Etc and so you can-start to 
+see where maybe your systems are falling apart compared to 
+what the-reference architecture looks like y um you can you 
+know there of course-various things for sorting searching 
+uh kind of putting out do you how do you-want to Output it 
+you know do you want a little more verbosity in your log 
+files-things like that of course it has a top command 
+display options for formatting-so a lot of different things 
+you play with out here I just kind of touch the-surface of 
+it to kind of give you an idea how easy it is just to even 
+get-started with it download a zip file untar it set it to 
+executable by your-user run it and you're good and you're 
+already into this level of detail with-your logging one 
+thing I did want to point-out really quick is something 
+that's really cool uh the Linux pre-compiled-binaries don't 
+come with this uh and I must admit I did didn't set up rust 
+on-my Linux box so I could compile it by hand uh but I did 
+download the Mac-binary to kind of give an idea of what 
+this looks like so I pulled down um onto-my Mac the fastest 
+binary already pre-compiled for Mac uh all the stuff 
+is-available in their releases so you can go straight to 
+the releases and get-uh their releases page and get 
+different binaries pre-compiled so I went ahead-and pulled 
+down the Mac one and then I pulled down uh the production 
+log that-same from that same machine we're just looking at 
+and also just the first-archive log the first gzip log and 
+then I just want to show really quick-that you know you can 
+pull it local do basically the exact same thing you 
+were-doing before if you want to do this on your local 
+machine like pull a bunch of-stuff down and then be able to 
+go offline and look at things offline-instead of having to 
+stay logged into the G lab box get the same 
+information-back but on the Mac or if you're ambitious 
+enough to compile your own on-a Linux box the cool thing 
+you can do is and start creating graphs with 
+this-information so same command but instead of saying 
+errors I told it to plot-things for me so you run it it 
+dumps this to a uh PNG file but then you take-that PNG file 
+and suddenly what you've got is-this pretty little display 
+of some of the basic stats that we just pulled from-that 
+box based on the log files so you see request rates down 
+here Q durations-request durations DB hits gly reddis CPU 
+time Etc so you're seeing all the stats-that we just pulled 
+out and they dump it out into a nice graph for you I 
+haven't-played with it to see what some of the other log 
+file types might give you uh-as far as the headers of you 
+know I'm I'm fairly certain request duration-request rate 
+are pretty consistent especially across like production 
+Json-and API Json but it would be interesting also to see 
+what some of the other in-data is that you can get out of 
+say your gly log files or things like that well-this this 
+Bas runs on any self-managed instance right yeah you can 
+run if you-can log into it get to the log files you can 
+run-this very good cool can I use it for go ahead yeah 
+can-I use this uh can I use this to um can I use this with 
+uh Cloud native like uh-when I get kidl on kubernetes would 
+you use it on that that's a good-question I don't have a 
+kubernetes instance up right now to test-that you could on 
+like gy because even in our Cloud native G is a 
+standalone-right so things that were kind of Standalone 
+prect gly sidekick I believe-right in our cnh hybrids 
+reference architectures or Standalone yeah I I-don't know 
+what you could do with rails and API because-really you 
+probably could I don't know how it does the rollover I'd 
+have to-look and see where the logs get rolled to because I 
+think it's yeah go ahead-yeah I was just wondering uh if I 
+understood this correct so it parses the-log files right it 
+doesn't really talk to the API to uh scrap all 
+this-information so it works with the existing logs so 
+there are some probably-pathes um defined within the tool 
+itself where the certain locks can be found-like production 
+Json lock for example or API Json so it doesn't really talk 
+to-API so it it works with the lock files right yeah yeah 
+because you look even-what we did here in these commands 
+we're saying give me production Json gz so I'm-kind of 
+thinking to myself if you did a cube cuddle logs follow or 
+a cube cuddle-logs or something along that line and just 
+dumped it into fast stats it would-probably pull the 
+information because because I think even in uh 
+kubernetes-the logging that comes out of the pods is in the 
+same format as what goes into-the Json into like production 
+Json and API Json so you would I'm guessing you-would get 
+the same information uh so what you can literally-yeah I I 
+probably didn't really follow at the very beginning so 
+literally what-you're doing here is just uh getting the 
+locks that are taken from maybe it it-could be taken from 
+the other instance or from anywhere you can put put it 
+to-your Mac for example and then you can work with the F 
+stats as the tool to-kind of uh get the information that 
+you need in the aggregated way so this is-what you get out 
+of the tool yeah exactly so you could either do-it on the 
+box we have access to all the rolled over log files and 
+things like-that you can say okay just give me the complete 
+history or you can pull down-some locally if you wanted to 
+uh or if you wanted to see the again if you-wanted to see 
+the graphical representation-you want to pull it down to 
+your Mac and use the pre-compiled binaries things-like that 
+so yeah I think uh the then then I could-answer my own 
+question about the cloud native what I can do I can just 
+uh-scrape locks uh from the port for example which the 
+about Services because-it just uh pushes the locks to the 
+standard output of the locks and then I-can scrape them and 
+then uh with the fast starts I can just do the-aggregation 
+yeah yeah makes sense probably have to play with this 
+myself-yeah I think if you were yeah I think if you-were 
+running like like on like if we were on my machine right 
+here and I that-I don't have an instance which pu cuddle 
+logs some web service and followed it-exactly yeah this is 
+because this is pushing to the um to the locks exactly-what 
+you see for example in the production Json locks file so 
+it's like-all the methods that are called by the uh rails 
+uh application inside like all-this different different 
+controllers that we are crawling and then the whole-Trace 
+is there so I believe if if I can just put it to the file 
+then I can work-with the plus that yeah that makes sense 
+that explains do we know where do you-know where rollover 
+logs go in like a kubernetes installation like in a 
+cloud-native hybrid where do the rails logs go when they 
+roll over do they roll over I-I think that's more of a 
+kubernetes question almost than a get-question if I want to 
+access logs from the web service which is the 
+rails-application so I just normally do the C CU CD locks 
+what exactly you have on-your screen I don't know if you 
+store them somewhere I think we just push them-to yeah to 
+the to the to the walks I'm not sure start them somewhere 
+yeah I-don't think they're ever rolled over then so I think 
+whatever you get is a-complete history of that pod's life 
+cycle exactly and then if it's gone then-and if it's gone 
+then yeah it's gone I but I might be wrong so maybe 
+we-maintain uh somewhere like the whole the whole uh yeah 
+the whole set of locks uh-yeah since the since the deploy 
+deployment of the hel chart for example-but uh yeah I could 
+be I don't know exactly okay-yeah I'll I'll dig into that 
+now now you got me curious about where those might-go uh 
+let's see and that be perfectly honest was really it today 
+was going to-be a short one kind of a filler for some other 
+stuff that we're while we're-waiting for some things GNA 
+get lined up but also I think very-useful I like wow this 
+existed this whole time and I did not know about it-this 
+sucks-yeah oh this this was great at least for me awesome I 
+have I have seen these St-um few times s but I never never 
+use that so I saw for example when support-is asking for 
+the gitlab source SOS results I think sometimes uh or 
+not-sometimes but I think uh fast stats is also kind of uh 
+integrated in gitlab SOS-I think it uh you can you can skip 
+that uh there are some Flags but uh yeah that-that that 
+this presentation is really useful and thanks now it makes 
+sense-what exactly it does so definitely going to try-it 
+yeah I'm definitely going to use it a lot more too oh yeah 
+it did bench me on-136 so my instance is not good in some 
+ways-that's that's sad awesome all-right thanks folks was 
+good thank you yeah no problem have a good one stay-cool 
+yeah later bye later-sure so just wanted to run over the 
+the fast T tool really quick I can't-remember uh who asked 
+to see this I full full this closure I had had 
+probably-heard about this tool in passing but never 
+actually used it myself until-about a month and a half ago 
+so I have no idea how long it's been around any-that kind 
+of things uh the link for it is in the docs in the 
+enablement-doc to go to the fast at site it is something in 
+our gitlab sport-team toolbox um that we use to read log 
+files so what it is not is a substitute-for gitlab SOS 
+which is as we kind of talked about a little bit is 
+an-aggregator for pretty much all logs across your entire 
+instance along with-some other metrics I can't remember 
+exactly what all is in there uh it's not-a substitute for 
+your Splunk your grafana your data dog uh kind of 
+thing-where you're aggregating all of your metrics to but 
+what it is is a very nice-way to look at log files for a 
+certain subset of our log files and get some-very basic 
+performance stats some error stats and even with the 
+pre-compiled Mac-or with a self-compiled Linux binary get a 
+nice image chart of some of those-metrics as well so we're 
+going to run through some of the basic functionality-really 
+quick of the-tool and just kind of give an idea what it 
+does like out of the box-so on the screen I've got my auntu 
+box my gitlab instance running in our-concrete Cloud uh 
+logged in and suited up as root so I can do that so I can 
+see-some of my logs Etc I'm going to go into my fast ass 
+directory I've already had-this pulled down it's been Ard I 
+didn't install rust and compile my own version-of it well 
+you know I must admit I didn't go that full nerd on 
+this-one but you have I thought about it I thought about it 
+for a second I'm like-oh what who are you what have you 
+done with exact I'm sorry two games balers-gate three and 
+Starfield came out I was busy-um so didn't have that I 
+didn't have the time to do that but I do have 
+the-pre-compiled Linux binary run in here so you know just 
+out of the box let's just-do something really simple with 
+it and say-um fast just kind of give an idea what it-does 
+right out of the box fast fs and I think we can-go H Bo 
+there [Music]-yeah that's that's what you said huh I was 
+not paying any attention I heard-typo and I'm like what bar 
+log is fine no it's over here-D stats still a typo why 
+didn't you catch that one Francis come-on I Believe In You 
+Glenn I believe well there's your first problem there's 
+your-first mistake so as you can see the kind of 
+the-default functionality of it is to take whatever file 
+you send it and pars out-some very basic metrics so here 
+you can see uh the default settings it's going-to give me a 
+count list RPS P99 95s median milliseconds for response 
+times-Etc across some of our different controllers in the 
+production-log so right away you can start seeing where am 
+I seeing errors where am I-seeing problems in my system uh 
+right now you can see I don't-have any kind of failure 
+counts everything looks fairly good uh the Met-metric 
+controller seems to be getting most of the attention right 
+now but-everything else seems to be going pretty well 
+nothing that's too out of the-ordinary as far as that as 
+far as these numbers L all right what what what is 
+it-showing me in that count is that showing me the number 
+of times that controller's-been accessed or is that showing 
+me errors for that controller like that's-showing you how 
+many times it shows up in the log files uh not 
+necessarily-errors you can see the percent fail over here 
+so if I take even this pipelines-controller it was hit 20 
+times here's some basic performance metrics no fail-gotcha 
+awesome thank you if I wanted to do the same-thing let see 
+I think I actually get on I think one of the things too is 
+is-when you look at the min max and median those are pretty 
+important-metrics especially because most of these are 
+database related activities and so-if there's performance 
+issues um and you see that the time it takes to do 
+a-specific type of request you know I think with UBS it was 
+like 10 seconds-and then on the dot right and then it would 
+fail that was clearly a timeout um-but it kind of gives you 
+like some performance idea of of what slow-specifically 
+underneath the hood and then you can dig in from-there so 
+kind of uh we'll actually run into that I pulled up the 
+bench command-we'll take a look at that so it gives you 
+some interesting things you can do-along that line here in 
+a sec but just kind of following up on Mike's question-is 
+giv me errors this is showing you some failure rates but 
+one other thing-you can do is one of the commands that's 
+actually in fast test is you can just-say from this log 
+file parse out all my errors for me so you can see that 
+there-are some invalid authenticity token errors in one of 
+my calls so it tells-you when those occurred how many of 
+them event times correlation IDs Etc so if-you're seeing a 
+huge amount of some sort of error you can kind of correlate 
+that-across the system really quickly from those production 
+log files and and get-that information without having to 
+vimit or write complex re X as Kevin was-saying or you know 
+some kind of JQ query that you're piping it through this 
+has-already got all that built up in there for-you hey 
+Glenn is this um sort of replicating some of the same data 
+that-you'd have in an APM like a data dog or New Relic or 
+even Prometheus or is it or-is it kind of unique it's kind 
+of replicating it's-giving you a faster uh much more 
+constrained view of the data so it's-it's not again it's 
+not a substitute for your data dogs your Cabas your 
+whatever-you're piping your document your metrics and your 
+logs to what this is we could-send the tool to a 
+self-managed customer and say run this and send me the 
+output-to help troubleshoot something right yeah or even if 
+you have access to their-instance log into it and just grab 
+it all really quick I think the big-Advantage here too over 
+something like data dog is is this is really 
+already-presenting the data in the format that you want it 
+from the get out perspective-versus data dog isn't 
+necessarily gonna have it organized this way you have 
+to-build that after you get it there does this work 
+on-Runners can you use no I don't think so yeah it only it 
+only works on this-subset of log types so your rails your 
+API your current your G pray pick and-sidekick so right now 
+this is only gab specific-uh instance specifically-so right 
+now we've just been looking at one individual file the 
+current-production log file but what happens if you want to 
+look across a more-historical view of that data you can 
+actually tell it via you know complex-cat pipes Etc to look 
+at everything that's in that log directory including-the 
+rolled over logs so by catting all the gz files piping-them 
+to unzip then cting the actual current production log file 
+and then-piping that entire thing to fast stats and doing 
+that errors command again you-let this run and now I have 
+an entire list of all the errors across all my-production 
+log files uh since I spun up this-instance so again you're 
+getting this very fast very quick view of the data-that can 
+help you debug something that's maybe either a long running 
+problem or-uh something more immediate that they're just 
+now seeing a performance problem-with that is really cool 
+yeah is that uh the command you just ran there 
+piping-everything around is that like in the readme or 
+anything like that-or uh I think that one is actually I 
+think that's where I got it from-okay and once you have the 
+general format for it you basically do the same-thing 
+across all the different log types too so you can do it for 
+gly current-prect current Etc there's just a slightly 
+different view of it like if I-if I go ahead and pull the 
+uh do the same thing but just look at-the gidy files 
+actually I went ahead-and forgot to grab a the front for 
+that one it looks-like there's all the errors I have in G 
+since I SP up this-instance so that's cool yep-oops so next 
+one I wanted to kind of look at-really quick was if we just 
+go to the production-one let see where's that the 
+production log you can tell it-toh I had it here up a 
+second ago where did I put it to Benchmark-things soell it 
+Das D bench and in the docs they use-13.6 so let go ahead 
+and do the same but basically what they do is they say 
+you-can compare the performance of your system against 
+performance of like kind-of a benchmark system a benchmark 
+jit laab instance and when you do that it's-kind of like 
+GPT in a way but it will spit out all this information 
+about-where you're seeing performance differences between 
+that reference-system and yours so this is something we 
+should have in the delivery kit for the-health check for 
+sure-yeah so you said it's kind of like GPT but it's not 
+it's not adding synthetic-data right right right I guess 
+the output I guess is what I'm kind of-reading average 
+response times and it has a built-in set of response 
+times-where you from actual usage or is there synthetic 
+usage being applied there are-synthetic numbers being 
+applied uh against based on numbers from gitlab.com-right 
+like the comparisons are against synthetic numbers but this 
+is like-actual data from your logs right yes yes ex we're 
+not generating billions of-synthetic hits to like it's not 
+a performance test in that sense it's more-of like a 
+monitoring thing it's a it's real real-usage looks like we 
+go up to 15.5 right now yeah actually in the 
+repository-there's a benchmark data folder and it shows 
+which-versions they were all added three months ago so we 
+only support 14 to 15-to five apparently yeah 155 is the 
+last one it just screamed at me when I tried-16.2 told me 
+155 was the latest one so again this could be very 
+useful-in running this against uh different log files 
+against different pieces of-component and saying okay how 
+are we maybe we're seeing something that's way-way way over 
+like you know 14.15 times and things like-that why what did 
+I do over here 2647 blob controller update out okay-that 
+makes sense um again just another way you can look-at the 
+data to see where potential problems might-lie that's 
+really cool yeah so kind of the the last big piece I-wanted 
+to touch on this really quick-is I'm going to pop over here 
+to my Mac and precompiled so I pulled down the Mac-version 
+of it and the reason I did that is I wanted to-show one of 
+the other things it can do so I don't want to ask this 
+there we go-so I went ahead and pulled down the log files 
+uh the production log Json log and-one of the archived Json 
+log files from this instance into my local so I could-run 
+the Mac version against it and the reason I wanted to be 
+able to do that is-the pre-compiled Mac version supports 
+the plotting function out of the box the-plotting function 
+is prettyy cool that it gives-you a nice little PNG file 
+based on the stats in your J in your log-files wow that's 
+really-cool and you can only generate that file on a Mac-I 
+want to make sure I understood what that was-there I think 
+your microphone broke Glenn or I'm suddenly-muted right 
+yeah definitely cut out for me too who's good at lip 
+syncing-read my lips lip reading lip reading I guess is 
+what I meant although if you-want to do some lip syncing 
+right now go ahead me spin up the Millie vanilly hold-on 
+um-so on on the Mac their pre-compiled binaries you can 
+download from the-releases Pages has this functionality 
+already built in so you you can tell it-to plot something 
+it will plot it and build your PNG file for you for 
+the-Linux version you would have to compile it on that box 
+so you'd have to download-you have toload cargo the whole 
+yard and get get everything done and I'm assuming-that has 
+something to do with the libraryies like right I'm doing it 
+on my-Mac and then showing the image in iterm because I 
+have the extensions for iterm-too and zshell downloaded so 
+I can do that-but um you can do the same thing across 
+different log types as well and I-think it gives you 
+slightly different output so if I do the same-thing again 
+just with the gly logs instead that I downloaded you can 
+see it-gives you some of the same stuff request rate 
+request duration uh it gives you-get RSS disre and write 
+information unload upload pack transmission that's-that's a 
+good metric to have uh failure rates and things like that 
+so depending-on what log file you're parsing you'll get a 
+slightly different piece of-information but again could be 
+very useful to see where you're having spikes-in discreet 
+or you're having spikes in your upload pack things like 
+that so-nice very useful information so I again I'm I think 
+I said jokingly earlier that-having this would probably 
+save me a couple days sometimes of parsing through-logs I 
+don't think that's an exaggeration-right it's written in 
+Rust pretty impressive yes-yeah and it's fast um I think 
+they even in their intro they have some-comparisons for J 
+yeah the Json stats app takes six-minutes to process a file 
+this takes 280 milliseconds so everybody-will yeah Will 
+Chandler uh what's two years ago so it's-at least two years 
+old I think-it's but yeah it's definitely got a lot better 
+like the first time I saw it a-few years ago it was still 
+fast at pulling in data but the amount of data-we can see 
+now and the amount of visualization of PR it's yeah it's 
+it's-really vital for uh doing any implementation work or 
+troubleshooting-any any issues this is cool it's always 
+cool seeing like charts getting-generated like we all like 
+looking at logs I guess but this is definitely the-a nicer 
+thing to visualize if someone's you know I mean we don't 
+like looking at-logs that's that's why this is 
+cool-[Laughter] sarcastic dead pan got yeah so we got 
+a-couple there I mean there's some other things in here to 
+look at of course it-has you know limit functions uh you 
+can control which Fields come out in the-output uh whether 
+you want it yl or Json I think uh actually no it's just 
+Json MD-text and CSV so you could actually dump a markdown 
+file of your results as well-if you wanted to upload on 
+like a collaboration project things like that-yeah that's 
+cool search functions Etc so uh that was really pretty much 
+it I-had for this I really just wanted to more than 
+anything get it out in-people's you know brains as a thing 
+that we have in our-toolbox and then so folks can start 
+using it and and downloading it and kind-of and hopefully 
+finding some use in it so questions anything anyone want to 
+see-specific specifically try like can it do XYZ-or I 
+already asked M can it do XYZ stupid customer hey my 
+windows-gitlab Runner is running 70% CPU usage great let's 
+take a look at it and look-at the logs and stuff and they 
+send me a screenshot of the CPU usage from 10 days-ago I'm 
+like this is nothing the awesome hey Greg welcome didn't 
+see you-sneak in there how you doing-sneaking s-nice potato 
+uh cool boil them mash them put-them in a stew-exactly 
+excellent that refence yeah Kevin seen that one read-that 
+one actually oh yeah read it-yeah awesome uh like I said 
+short one today then uh really more than anything-it's 
+pretty self-explanatory as a tool goes uh the documentation 
+is good for-telling you what the options are ex said of how 
+to use it I went ahead and threw-some of those shortcuts in 
+our enablement doc as well but I believe-they are in the 
+markdown somewhere here I just-can't find them right now 
+yeah there we go it's under the tips-section right above 
+building from source so same basic premise you can once 
+you-know that you can extract it to any different log type 
+of the of the five or-six that supports and and there you 
+go awesome pursuant to our previous-conversation today I 
+noticed that there's no license file in this 
+project-although it's public should there be like should we 
+be putting license files-in public projects for tools we we 
+normally do I'm surprised-this doesn't have a license um 
+all of our open source tools and services are-MIT licensed 
+so I I thought all of the support tools were also MIT 
+licensed as-well but this one might have been so this 
+one-might have been created a few years ago before we 
+started kind of scanning-through and adding licenses to 
+things yeah-okay awesome I'm going stop share then all 
+right and that's all I had for-today keeping it short and 
+simple for a Friday comments questions um volunteers-for 
+the next session I'll ask that question in the-channel 
+later we'll get we'll get that one-I might I think I'm gone 
+for the next session actually so probably need a-volunteer 
+or someone to uh or just cancel it outright one or the 
+other I-don't mind doing the architecture stuff reviewing 
+that if that's something you-want to have me do I think you 
+were thinking about doing-a Geo one what was the other one 
+you wanted to look at not just Geo I just-wanted to go 
+through what a reference architecture was because I don't 
+think-that everybody knows all the components to it um and 
+and what they mean and that-would include Gio gotcha and gy 
+cluster and then if-folks want me to do something more 
+specific to Geo or G cluster or-something like that that's 
+fine too but everybody know like what console is-for and 
+Sentinel and and all those nodes and how they-correlate I 
+think it be beneficial to have even if it's um just like a 
+review-for some of us it's probably changed a little bit 
+since you know really-I mean like last time I had to deal 
+with like heavy infrastructure was like pre-prefect so like 
+I would benefit from that-so might be um worthwhile I'll 
+throw on the list what pieces are actually in-kubernetes 
+and what parts aren't in your Cloud native hybrid 
+installation and why-Kevin he said the k word he said the k 
+word Smite him-W stke him San what's so funny about my 
+name-um cool all right anything else folks perfect I'll you 
+back some time on-a Friday have a great weekend Everybody 
+Take It Easy thanks for showing up-appreciate it thank you 
+thanks L see you all bye

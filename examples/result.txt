@@ -1,68 +1,68 @@
-# SUMMARY
-A presentation by Kevin discusses GitLab's reference architectures, focusing on key concepts, components, and deployment strategies for high availability and disaster recovery.
+## SUMMARY
+A discussion about the weather, personal experiences with heat, and an introduction to Fast Stats, a GitLab tool for log parsing.
 
-# IDEAS:
-- GitLab offers self-managed, dedicated, and SaaS solutions.
-- Omnibus is GitLab's bundled package for service installation.
-- High availability (HA) ensures infrastructure tolerates outages without performance hits.
-- Reference architectures are designed to support a specific number of users with redundancy.
-- Disaster recovery (DR) strategies are crucial for catastrophic outages.
-- RPO (Recovery Point Objective) and RTO (Recovery Time Objective) are critical metrics in disaster scenarios.
-- Single-node setups can be more manageable for smaller user bases.
-- GitLab's architecture includes multiple services like Puma, Redis, and PostgreSQL.
-- Kubernetes can enhance scalability but adds complexity.
-- Geo allows for geographically distributed users to access GitLab efficiently.
-- Active-active configurations can distribute load but require careful management.
-- Cloud services like AWS can reduce infrastructure footprint significantly.
-- GitLab's architecture can support both high availability and disaster recovery.
-- Monitoring tools like Prometheus and Grafana are essential for maintaining system health.
-- The cost of deploying GitLab can be substantial, especially for high availability setups.
-- Customers often underestimate the infrastructure needed for HA solutions.
+## IDEAS:
+- The current weather is unusually hot and humid, reaching close to 90°F.
+- Personal anecdotes about family members in Amsterdam and Madrid experiencing heat.
+- Fast Stats is a GitLab tool built in Rust for parsing log files.
+- It aggregates log data to provide insights like request counts and error rates.
+- Fast Stats is not a substitute for tools like Splunk or Grafana but offers quick log analysis.
+- The tool can visualize data by generating PNG files from logs.
+- Users can compare performance metrics against benchmark systems.
+- Fast Stats can handle various log types, including production and API logs.
+- The tool saves significant time compared to manual log parsing methods.
+- It allows users to filter and sort log data efficiently.
+- Fast Stats can be run locally on a Mac or compiled on Linux.
+- The tool supports output in multiple formats, including JSON and CSV.
+- It can help identify performance issues quickly by analyzing historical log data.
+- Fast Stats can be integrated into existing workflows for easier log management.
+- The tool is useful for troubleshooting customer issues by providing quick insights.
+- It can be used in cloud-native environments by scraping logs from pods.
 
-# QUOTES:
-- "GitLab is quite a complex stack with a lot of pieces."
-- "High availability is your infrastructure being designed in a way that can tolerate outages."
-- "Our reference architectures are intentionally designed to meet HA qualifications."
-- "The lower those numbers are, the more expensive the infrastructure is."
-- "For most standard customers, our reference architectures are overkill."
-- "If you want HA, you have to manage 25 servers and $330,000 in VM costs."
-- "Kubernetes supports double the request per second for the infrastructure."
-- "Geo can act and look like the primary for geographically distributed users."
-- "You can fail over very quickly with Geo; it's just one command."
-- "The replication keeps going on, and you can make sure that you see it's in 100% sync."
-- "GitLab's architecture is complex because there are so many services that have to be installed."
-- "You can use Geo to migrate if you've already got a Geo environment running."
-- "The cost of deploying GitLab is significant, especially for high availability setups."
-- "You want to make sure your primary is big enough to support your secondary nodes."
-- "With proper planning, you can fail over very quickly."
+## QUOTES:
+- "This week is kind of an exception so every day is around 90ish degrees."
+- "I had no clue even existed until just recently."
+- "What it does is it will go through all your different log files."
+- "This is a lot faster than parsing through JSON in Vim or something like that."
+- "This price saved me three days what I just did right here."
+- "You can actually cap through unzip all the archived log files."
+- "You can do benches against those versions."
+- "This is pushing to the logs exactly what you see."
+- "This could be very useful in running this against different log files."
+- "The documentation is good for telling you what the options are."
+- "I think this presentation is really useful."
+- "I believe if I can just put it to the file then I can work with the Fast Stats."
+- "This is definitely a nicer thing to visualize."
+- "The amount of time to parse through JSON by hand is crazy."
+- "It's written in Rust, pretty impressive."
+- "I think it gives you slightly different output."
 
-# FACTS:
-- GitLab has three offerings: self-managed, dedicated, and SaaS.
-- Omnibus is a single file used to install all GitLab services.
-- High availability can be achieved within a region but not across regions without downtime.
-- RPO can be as low as 15 minutes with Geo.
-- A traditional 3K reference architecture may require around $60,000 in VM costs upfront.
-- GitLab uses PostgreSQL extensively across its architecture.
-- The average data replication lag time with Geo is within minutes.
-- GitLab's architecture includes components like Puma, Redis, and Workhorse.
-- The cost of deploying a 3K reference architecture on AWS can reach $29,000 just for VMs.
-- Kubernetes deployments require careful consideration of user counts and infrastructure needs.
+## FACTS:
+- The temperature reached close to 90°F in the discussed region.
+- Fast Stats is built in Rust and designed for log parsing.
+- The tool provides performance metrics like request counts and error rates.
+- Fast Stats can generate visual representations of log data as PNG files.
+- It allows users to analyze logs from various sources, including production and API logs.
+- The tool can save users significant time compared to manual methods.
+- Fast Stats supports multiple output formats, including JSON and CSV.
+- It can be used in cloud-native environments by scraping logs from Kubernetes pods.
+- The tool is part of GitLab's support team toolbox.
+- Fast Stats has been around for at least two years.
 
-# REFERENCES:
-- GitLab's Omnibus package
-- GitLab's reference architecture documentation
-- Prometheus and Grafana for monitoring
-- AWS services like Elasticache and RDS
-- GitLab's environment toolkit
-- Implementation Services learning path
-- Hands-On Workshop for deploying a 3K reference architecture
+## REFERENCES:
+- Fast Stats (GitLab tool)
+- GitLab SOS (log aggregation tool)
+- Rust programming language
+- JSON and CSV formats for data output
 
-# RECOMMENDATIONS:
-- Consider single-node setups for environments with fewer than 2,000 users.
-- Use cloud services to reduce infrastructure costs and complexity.
-- Monitor RPO and RTO closely to ensure disaster recovery effectiveness.
-- Engage in discovery sessions to understand customer needs before scoping architectures.
-- Educate customers on the complexities of high availability and disaster recovery.
-- Utilize monitoring tools to maintain system health and performance.
-- Plan for significant infrastructure management when opting for high availability solutions.
-- Encourage customers to evaluate their actual usage against standard user counts when designing architectures.
+## RECOMMENDATIONS:
+- Explore Fast Stats for efficient log parsing and analysis.
+- Use the tool to visualize log data for better insights.
+- Compare performance metrics against benchmark systems using Fast Stats.
+- Integrate Fast Stats into existing workflows for easier log management.
+- Utilize the tool for troubleshooting customer issues quickly.
+- Check the documentation for detailed usage instructions and options.
+- Consider using Fast Stats in cloud-native environments for log scraping. 
+- Experiment with different log types to see how Fast Stats handles them. 
+- Take advantage of the plotting feature on Mac for visual data representation. 
+- Use Fast Stats to aggregate historical log data for performance analysis.
