@@ -1,68 +1,67 @@
-## SUMMARY
-A discussion about the weather, personal experiences with heat, and an introduction to Fast Stats, a GitLab tool for log parsing.
+# SUMMARY
+Jal introduces Fire Zone, a scalable replacement for legacy corporate VPNs, showcasing its features like gateway deployment, resource management, and real-time updates.
 
-## IDEAS:
-- The current weather is unusually hot and humid, reaching close to 90°F.
-- Personal anecdotes about family members in Amsterdam and Madrid experiencing heat.
-- Fast Stats is a GitLab tool built in Rust for parsing log files.
-- It aggregates log data to provide insights like request counts and error rates.
-- Fast Stats is not a substitute for tools like Splunk or Grafana but offers quick log analysis.
-- The tool can visualize data by generating PNG files from logs.
-- Users can compare performance metrics against benchmark systems.
-- Fast Stats can handle various log types, including production and API logs.
-- The tool saves significant time compared to manual log parsing methods.
-- It allows users to filter and sort log data efficiently.
-- Fast Stats can be run locally on a Mac or compiled on Linux.
-- The tool supports output in multiple formats, including JSON and CSV.
-- It can help identify performance issues quickly by analyzing historical log data.
-- Fast Stats can be integrated into existing workflows for easier log management.
-- The tool is useful for troubleshooting customer issues by providing quick insights.
-- It can be used in cloud-native environments by scraping logs from pods.
+# IDEAS:
+- Fire Zone is built on WireGuard, enhancing security and performance.
+- It integrates seamlessly with identity providers for user authentication.
+- The system is designed to be horizontally scalable, accommodating growth.
+- Gateways are lightweight Linux binaries compiled with Rust.
+- No need to open firewall ports for gateway deployment.
+- Real-time updates are facilitated by Elixir LiveView and Phoenix channels.
+- Access control is based on a default deny policy, enhancing security.
+- Policies can be created to manage access for specific user groups.
+- DNS resources allow management of access to both private and public applications.
+- The system supports IPv6 connectivity even on networks without it.
+- Users can revoke sessions in real-time, enhancing security management.
+- Fire Zone allows for easy integration with third-party SaaS applications.
+- The platform provides a secure way to manage access without needing prior IP addresses.
+- Configuration updates are broadcasted instantly to clients and gateways.
+- The demo showcases practical applications of Fire Zone in real-world scenarios.
+- Users can sign up for an account to explore Fire Zone's features.
 
-## QUOTES:
-- "This week is kind of an exception so every day is around 90ish degrees."
-- "I had no clue even existed until just recently."
-- "What it does is it will go through all your different log files."
-- "This is a lot faster than parsing through JSON in Vim or something like that."
-- "This price saved me three days what I just did right here."
-- "You can actually cap through unzip all the archived log files."
-- "You can do benches against those versions."
-- "This is pushing to the logs exactly what you see."
-- "This could be very useful in running this against different log files."
-- "The documentation is good for telling you what the options are."
-- "I think this presentation is really useful."
-- "I believe if I can just put it to the file then I can work with the Fast Stats."
-- "This is definitely a nicer thing to visualize."
-- "The amount of time to parse through JSON by hand is crazy."
-- "It's written in Rust, pretty impressive."
-- "I think it gives you slightly different output."
+# QUOTES:
+- "Fire Zone is a replacement for legacy corporate VPN."
+- "Gateways are lightweight self-contained Linux binaries."
+- "All access in Fire Zone is default deny."
+- "Everything you see here is updated in real time with Elixir live view."
+- "I should mention that everything you see here is updated in real time."
+- "This provides a secure and reliable way to lock down access."
+- "My Workforce needs to be signed in with Fire Zone in order to access my private repositories."
+- "Configuration updates are broadcasted in real time."
+- "Let’s go ahead and add a DNS resource."
+- "You can see here that the gateways I've deployed earlier are online and healthy."
+- "I'll go ahead and create the policy and you'll see now I have that resource in my list."
+- "The process takes about 10 seconds on average."
+- "I'll need to reauthenticate in order to gain access."
+- "This is the subnet where my gateways are deployed."
+- "You can obtain this from the admin portal."
 
-## FACTS:
-- The temperature reached close to 90°F in the discussed region.
-- Fast Stats is built in Rust and designed for log parsing.
-- The tool provides performance metrics like request counts and error rates.
-- Fast Stats can generate visual representations of log data as PNG files.
-- It allows users to analyze logs from various sources, including production and API logs.
-- The tool can save users significant time compared to manual methods.
-- Fast Stats supports multiple output formats, including JSON and CSV.
-- It can be used in cloud-native environments by scraping logs from Kubernetes pods.
-- The tool is part of GitLab's support team toolbox.
-- Fast Stats has been around for at least two years.
+# FACTS:
+- Fire Zone is built on WireGuard technology.
+- It uses Rust for compiling its lightweight gateways.
+- The system supports directory sync with major identity providers.
+- Gateways automatically load balance and fail over for each other.
+- The average time for connection migration between gateways is 10 seconds.
+- Fire Zone allows management of access to subnets similar to traditional VPNs.
+- It can manage access to services based on DNS names rather than IP addresses.
+- The platform supports both IPv4 and IPv6 connectivity.
+- Users can revoke sessions instantly, enhancing security protocols.
+- Fire Zone can secure access to third-party SaaS applications without prior IP knowledge.
 
-## REFERENCES:
-- Fast Stats (GitLab tool)
-- GitLab SOS (log aggregation tool)
-- Rust programming language
-- JSON and CSV formats for data output
+# REFERENCES:
+- Fire Zone website for account sign-up.
+- Terraform for spinning up gateways in the cloud.
+- Elixir LiveView for real-time updates.
+- Phoenix channels for broadcasting configuration updates.
 
-## RECOMMENDATIONS:
-- Explore Fast Stats for efficient log parsing and analysis.
-- Use the tool to visualize log data for better insights.
-- Compare performance metrics against benchmark systems using Fast Stats.
-- Integrate Fast Stats into existing workflows for easier log management.
-- Utilize the tool for troubleshooting customer issues quickly.
-- Check the documentation for detailed usage instructions and options.
-- Consider using Fast Stats in cloud-native environments for log scraping. 
-- Experiment with different log types to see how Fast Stats handles them. 
-- Take advantage of the plotting feature on Mac for visual data representation. 
-- Use Fast Stats to aggregate historical log data for performance analysis.
+# RECOMMENDATIONS:
+- Explore Fire Zone's features by signing up for an account.
+- Utilize Terraform for efficient gateway deployment.
+- Implement a default deny policy for enhanced security.
+- Consider integrating with major identity providers for user management.
+- Use DNS resources to simplify access management for applications.
+- Regularly review and update access policies as needed.
+- Monitor gateway health and performance for optimal operation.
+- Leverage real-time updates to maintain security compliance.
+- Test the system's capabilities with various user scenarios.
+- Stay informed about new features and updates from Fire Zone.

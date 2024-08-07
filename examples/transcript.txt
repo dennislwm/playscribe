@@ -1,612 +1,95 @@
-was just telling me that uh it's hot and humid so folks-are 
-yeah hard to-work where where are you ygh-amam okay yeah so 
-this week is is is really-um strange hit so um yeah we just 
-made a calculation from Celsius to far gate and-it's um 
-close to 90 which is very and typical to this places so we 
-kind of-entering the fall season right now so the fall 
-season yeah should be should be-definitely lower but this 
-week is kind of exception so every day is around-90ish 
-degrees Fen and it's a yeah high humidity so it's yeah I 
-don't have air-condition at home so it's a little bit 
-tough-to concentrate my my oldest actually lives in 
-Amsterdam actually in Harlem uh-so and my yeah my youngest 
-is in Madrid and both have been suffering from Heat-at 
-different points in time so yeah you don't know really 
-where it's cter right-now either Madrid or Amsterdam 
-because um like I check two months ago or-something like 
-this when we were playing vacation it was really yeah we we 
-had-the same heat in Amsterdam around that time and then I 
-was really surprised to-see the lower temperature in the 
-South part of Europe like in Italy and Spain-it was much 
-lower well not much more low but maybe five degrees celsum 
-lower than-in these places and then you really think like 
-should you should you go for-vacation there or maybe you 
-can just stick here and then uh stay in the-sea everything 
-is changing Glen is in the the the cool part of the 
-United-States at least yeah for now at least most of the 
-time yeah yeah we we had a-couple we were just discussing 
-we had a couple 30 plus Celsius days here weeks-actually 
-earlier in the Summer where it was 30 plus Celsius 90 plus 
-Fahrenheit-for days on end yeah 247 am Washington DC always 
-has-these crazy Summers um we always have basically 30 plus 
-Celsius or 90 plus and-actually for for the last I know the 
-last four five days with like the high-90s which is like 35 
-Plus Celsius and super high-humidity so uh but that's 
-normal for the Eastern Seaboard-uh but it's September right 
-we're hoping that things-are getting better should be 
-wearing pumpkin spice at this point in time uhar-wearing 
-pumpkin wearing uh long coats and drinking pumpkin spice I 
-should say-not wearing pumpkin spice I know I don't judge 
-do what you want-um all right uh this will probably be a 
-quick one today uh really quick because-just talking about 
-fast outs which is the tool I had no clue even 
-existed-until just recently uh but it's actually already 
-come in handy a couple times so-let me just run through 
-What fast as is so I put the link to it uh in 
-the-enablement doc the notes doc just so folks can get to 
-it easily uh it's-actually a gitlab tool that we put 
-together it's built in Rust um-and it's basically a log 
-parsing tool now that's a very simplistic way to look-at it 
-but uh what it does it'll go through all your different log 
-files and-it will only hit certain types of log files 
-currently right now uh production-API gly prfi and sidekick 
-unstructured or-Json and it will parse through those and 
-it'll look for specific items and it'll-show you things 
-like request counts and uh errors and you know just 
-general-aggregation of some of your log information what 
-this is to substitute-for is like gitlab SOS which is our 
-tool that support uses to gather all the log-files for the 
-last week or whatever off of a machine and zip it up and 
-ship it-to them for for deep analysis from a customer uh 
-it's not a substitute for-Cabana Splunk grafana data dog 
-whatever a customer might be using to visualize-their own 
-stats and their error rates and things like that but what 
-it can do-is give you some very nice breakdowns of 
-information on the really quickly that's-a lot more 
-efficient than parsing through Json on in Vim or something 
-like-that right or even hand cranking your own JQ or or 
-yq-so I'm going to jump kind of right into just some demos 
-of what it does uh I-would suggest folks go and just take a 
-quick peek at the read me file too for-the project itself 
-and get an idea of some of the things it can do uh-it's 
-it's actually really handy so let me just pop through and 
-kind of go-through a couple demos really quick of some of 
-the things they can do for us so-uh I'm logged into my 
-gitlab instance right now I'm just in a fast 
-uh-subdirectory I've already pulled down the tar file and 
-unzipped and made the-fast STS binary executable by myself 
-things like that-so well one of the first things sometimes 
-you want to do is just take a-generalized look at uh log 
-files so you can just fast ass-the log itself but bulk of 
-the time what you want to see is not just the current-log 
-but you want to see the history of all the logs that are 
-going along so you-can actually cap through uh unzip all 
-the-archived log files particular type all the gz-files 
-append that with all the current production Json log files 
-and then you-pipe that through fast ads and it will 
-actually give you this aggregated view-of all of the errors 
-and uh speeds or excuse me all the uh request times 95-95th 
-percentile and things like that that are currently going on 
-in the-machine so we make this a little bigger for 
-folks-maybe so with this one command you can see now over 
-the entire history of all-of our production Json log files 
-we've had-176,000 requests to the controller metrics 
-controller-uh 99% six the the P99 649 milliseconds P95 is 
-510 giving you some great-performance stats across these 
-things but perhaps most importantly when you're-trying to 
-debug problems how many of these-fail so that's right there 
-you can already see oh I'm seeing some failures-in this 
-particular case in the Integrations controller testing 
-which-isn't that big a deal that was just me probably 
-failing to set up the Jenkins-integration from last week's 
-enablement session a few times-but instead of having to 
-parse for this Json log by hand you've already got an-idea 
-of where you should start looking for-things profile 
-updates controller have no idea what that's-about this is a 
-pretty clean instance there's not a lot going on error 
-wise-but you can already see I run one command I already 
-know where to start-looking for things but let's say you do 
-want to get-a little more specific with it about figuring 
-out exactly what kind of-Errors you're seeing fast stats 
-has a command called-errors where you can do the exact same 
-thing take the exact same set of files C-them all together 
-type it to fast stats and say just show me the errors that 
-I'm-dealing with and now you've got this nice visualization 
-tabled out for the-errors you've seen so you can see for 
-those uh invalid authenticity-authenticity tokens for some 
-of those uh record not unique so I'm seeing-some PG values 
-in there user status tried to create a user that 
-already-exists not quite sure how that happened bad 
-component project-multibranch so this is the one looks like 
-my integration controller because I-was trying to do stuff 
-in the Jenkins project so already you're now with 
-two-commands I know where my errors were occurring I've now 
-got a specific list-of those errors across all my 
-production logs archived across the box for the-last six 
-months here's where I can start digging in and this is a 
-lot faster than-any I have ever done by hand period I can't 
-this this price saved me three-days what I just did right 
-here I'm not even not it's not even an-exaggeration I the 
-amount of time to pars through Json by hand is-crazy oh 
-this is cool so so who wrote this uh I I don't know who 
-actually-created it originally uh I had to look at the 
-initial commit and things like-that I know it looks like 
-will did the last update to it but pretty cool useful-yeah 
-and again it'll do production Json API Json gly current if 
-you don't uh you-know you can tell it to do those specific 
-types of files and things like-that you can control which 
-Fields come out if you want to limit your data you-can 
-colorize it you can you can do benches you can actually use 
-it as kind-of a mini performance test to bench against 
-releases so they have they carry-the stats of what a short 
-release should perform like and you can do benches-against 
-those versions you can say hey take all my production Json 
-log files-using these stats we just generate up here out of 
-that log file compare that-to what we think gitlab 13.6 
-should have done or gitlab 16.1 Etc and so you can-start to 
-see where maybe your systems are falling apart compared to 
-what the-reference architecture looks like y um you can you 
-know there of course-various things for sorting searching 
-uh kind of putting out do you how do you-want to Output it 
-you know do you want a little more verbosity in your log 
-files-things like that of course it has a top command 
-display options for formatting-so a lot of different things 
-you play with out here I just kind of touch the-surface of 
-it to kind of give you an idea how easy it is just to even 
-get-started with it download a zip file untar it set it to 
-executable by your-user run it and you're good and you're 
-already into this level of detail with-your logging one 
-thing I did want to point-out really quick is something 
-that's really cool uh the Linux pre-compiled-binaries don't 
-come with this uh and I must admit I did didn't set up rust 
-on-my Linux box so I could compile it by hand uh but I did 
-download the Mac-binary to kind of give an idea of what 
-this looks like so I pulled down um onto-my Mac the fastest 
-binary already pre-compiled for Mac uh all the stuff 
-is-available in their releases so you can go straight to 
-the releases and get-uh their releases page and get 
-different binaries pre-compiled so I went ahead-and pulled 
-down the Mac one and then I pulled down uh the production 
-log that-same from that same machine we're just looking at 
-and also just the first-archive log the first gzip log and 
-then I just want to show really quick-that you know you can 
-pull it local do basically the exact same thing you 
-were-doing before if you want to do this on your local 
-machine like pull a bunch of-stuff down and then be able to 
-go offline and look at things offline-instead of having to 
-stay logged into the G lab box get the same 
-information-back but on the Mac or if you're ambitious 
-enough to compile your own on-a Linux box the cool thing 
-you can do is and start creating graphs with 
-this-information so same command but instead of saying 
-errors I told it to plot-things for me so you run it it 
-dumps this to a uh PNG file but then you take-that PNG file 
-and suddenly what you've got is-this pretty little display 
-of some of the basic stats that we just pulled from-that 
-box based on the log files so you see request rates down 
-here Q durations-request durations DB hits gly reddis CPU 
-time Etc so you're seeing all the stats-that we just pulled 
-out and they dump it out into a nice graph for you I 
-haven't-played with it to see what some of the other log 
-file types might give you uh-as far as the headers of you 
-know I'm I'm fairly certain request duration-request rate 
-are pretty consistent especially across like production 
-Json-and API Json but it would be interesting also to see 
-what some of the other in-data is that you can get out of 
-say your gly log files or things like that well-this this 
-Bas runs on any self-managed instance right yeah you can 
-run if you-can log into it get to the log files you can 
-run-this very good cool can I use it for go ahead yeah 
-can-I use this uh can I use this to um can I use this with 
-uh Cloud native like uh-when I get kidl on kubernetes would 
-you use it on that that's a good-question I don't have a 
-kubernetes instance up right now to test-that you could on 
-like gy because even in our Cloud native G is a 
-standalone-right so things that were kind of Standalone 
-prect gly sidekick I believe-right in our cnh hybrids 
-reference architectures or Standalone yeah I I-don't know 
-what you could do with rails and API because-really you 
-probably could I don't know how it does the rollover I'd 
-have to-look and see where the logs get rolled to because I 
-think it's yeah go ahead-yeah I was just wondering uh if I 
-understood this correct so it parses the-log files right it 
-doesn't really talk to the API to uh scrap all 
-this-information so it works with the existing logs so 
-there are some probably-pathes um defined within the tool 
-itself where the certain locks can be found-like production 
-Json lock for example or API Json so it doesn't really talk 
-to-API so it it works with the lock files right yeah yeah 
-because you look even-what we did here in these commands 
-we're saying give me production Json gz so I'm-kind of 
-thinking to myself if you did a cube cuddle logs follow or 
-a cube cuddle-logs or something along that line and just 
-dumped it into fast stats it would-probably pull the 
-information because because I think even in uh 
-kubernetes-the logging that comes out of the pods is in the 
-same format as what goes into-the Json into like production 
-Json and API Json so you would I'm guessing you-would get 
-the same information uh so what you can literally-yeah I I 
-probably didn't really follow at the very beginning so 
-literally what-you're doing here is just uh getting the 
-locks that are taken from maybe it it-could be taken from 
-the other instance or from anywhere you can put put it 
-to-your Mac for example and then you can work with the F 
-stats as the tool to-kind of uh get the information that 
-you need in the aggregated way so this is-what you get out 
-of the tool yeah exactly so you could either do-it on the 
-box we have access to all the rolled over log files and 
-things like-that you can say okay just give me the complete 
-history or you can pull down-some locally if you wanted to 
-uh or if you wanted to see the again if you-wanted to see 
-the graphical representation-you want to pull it down to 
-your Mac and use the pre-compiled binaries things-like that 
-so yeah I think uh the then then I could-answer my own 
-question about the cloud native what I can do I can just 
-uh-scrape locks uh from the port for example which the 
-about Services because-it just uh pushes the locks to the 
-standard output of the locks and then I-can scrape them and 
-then uh with the fast starts I can just do the-aggregation 
-yeah yeah makes sense probably have to play with this 
-myself-yeah I think if you were yeah I think if you-were 
-running like like on like if we were on my machine right 
-here and I that-I don't have an instance which pu cuddle 
-logs some web service and followed it-exactly yeah this is 
-because this is pushing to the um to the locks exactly-what 
-you see for example in the production Json locks file so 
-it's like-all the methods that are called by the uh rails 
-uh application inside like all-this different different 
-controllers that we are crawling and then the whole-Trace 
-is there so I believe if if I can just put it to the file 
-then I can work-with the plus that yeah that makes sense 
-that explains do we know where do you-know where rollover 
-logs go in like a kubernetes installation like in a 
-cloud-native hybrid where do the rails logs go when they 
-roll over do they roll over I-I think that's more of a 
-kubernetes question almost than a get-question if I want to 
-access logs from the web service which is the 
-rails-application so I just normally do the C CU CD locks 
-what exactly you have on-your screen I don't know if you 
-store them somewhere I think we just push them-to yeah to 
-the to the to the walks I'm not sure start them somewhere 
-yeah I-don't think they're ever rolled over then so I think 
-whatever you get is a-complete history of that pod's life 
-cycle exactly and then if it's gone then-and if it's gone 
-then yeah it's gone I but I might be wrong so maybe 
-we-maintain uh somewhere like the whole the whole uh yeah 
-the whole set of locks uh-yeah since the since the deploy 
-deployment of the hel chart for example-but uh yeah I could 
-be I don't know exactly okay-yeah I'll I'll dig into that 
-now now you got me curious about where those might-go uh 
-let's see and that be perfectly honest was really it today 
-was going to-be a short one kind of a filler for some other 
-stuff that we're while we're-waiting for some things GNA 
-get lined up but also I think very-useful I like wow this 
-existed this whole time and I did not know about it-this 
-sucks-yeah oh this this was great at least for me awesome I 
-have I have seen these St-um few times s but I never never 
-use that so I saw for example when support-is asking for 
-the gitlab source SOS results I think sometimes uh or 
-not-sometimes but I think uh fast stats is also kind of uh 
-integrated in gitlab SOS-I think it uh you can you can skip 
-that uh there are some Flags but uh yeah that-that that 
-this presentation is really useful and thanks now it makes 
-sense-what exactly it does so definitely going to try-it 
-yeah I'm definitely going to use it a lot more too oh yeah 
-it did bench me on-136 so my instance is not good in some 
-ways-that's that's sad awesome all-right thanks folks was 
-good thank you yeah no problem have a good one stay-cool 
-yeah later bye later-sure so just wanted to run over the 
-the fast T tool really quick I can't-remember uh who asked 
-to see this I full full this closure I had had 
-probably-heard about this tool in passing but never 
-actually used it myself until-about a month and a half ago 
-so I have no idea how long it's been around any-that kind 
-of things uh the link for it is in the docs in the 
-enablement-doc to go to the fast at site it is something in 
-our gitlab sport-team toolbox um that we use to read log 
-files so what it is not is a substitute-for gitlab SOS 
-which is as we kind of talked about a little bit is 
-an-aggregator for pretty much all logs across your entire 
-instance along with-some other metrics I can't remember 
-exactly what all is in there uh it's not-a substitute for 
-your Splunk your grafana your data dog uh kind of 
-thing-where you're aggregating all of your metrics to but 
-what it is is a very nice-way to look at log files for a 
-certain subset of our log files and get some-very basic 
-performance stats some error stats and even with the 
-pre-compiled Mac-or with a self-compiled Linux binary get a 
-nice image chart of some of those-metrics as well so we're 
-going to run through some of the basic functionality-really 
-quick of the-tool and just kind of give an idea what it 
-does like out of the box-so on the screen I've got my auntu 
-box my gitlab instance running in our-concrete Cloud uh 
-logged in and suited up as root so I can do that so I can 
-see-some of my logs Etc I'm going to go into my fast ass 
-directory I've already had-this pulled down it's been Ard I 
-didn't install rust and compile my own version-of it well 
-you know I must admit I didn't go that full nerd on 
-this-one but you have I thought about it I thought about it 
-for a second I'm like-oh what who are you what have you 
-done with exact I'm sorry two games balers-gate three and 
-Starfield came out I was busy-um so didn't have that I 
-didn't have the time to do that but I do have 
-the-pre-compiled Linux binary run in here so you know just 
-out of the box let's just-do something really simple with 
-it and say-um fast just kind of give an idea what it-does 
-right out of the box fast fs and I think we can-go H Bo 
-there [Music]-yeah that's that's what you said huh I was 
-not paying any attention I heard-typo and I'm like what bar 
-log is fine no it's over here-D stats still a typo why 
-didn't you catch that one Francis come-on I Believe In You 
-Glenn I believe well there's your first problem there's 
-your-first mistake so as you can see the kind of 
-the-default functionality of it is to take whatever file 
-you send it and pars out-some very basic metrics so here 
-you can see uh the default settings it's going-to give me a 
-count list RPS P99 95s median milliseconds for response 
-times-Etc across some of our different controllers in the 
-production-log so right away you can start seeing where am 
-I seeing errors where am I-seeing problems in my system uh 
-right now you can see I don't-have any kind of failure 
-counts everything looks fairly good uh the Met-metric 
-controller seems to be getting most of the attention right 
-now but-everything else seems to be going pretty well 
-nothing that's too out of the-ordinary as far as that as 
-far as these numbers L all right what what what is 
-it-showing me in that count is that showing me the number 
-of times that controller's-been accessed or is that showing 
-me errors for that controller like that's-showing you how 
-many times it shows up in the log files uh not 
-necessarily-errors you can see the percent fail over here 
-so if I take even this pipelines-controller it was hit 20 
-times here's some basic performance metrics no fail-gotcha 
-awesome thank you if I wanted to do the same-thing let see 
-I think I actually get on I think one of the things too is 
-is-when you look at the min max and median those are pretty 
-important-metrics especially because most of these are 
-database related activities and so-if there's performance 
-issues um and you see that the time it takes to do 
-a-specific type of request you know I think with UBS it was 
-like 10 seconds-and then on the dot right and then it would 
-fail that was clearly a timeout um-but it kind of gives you 
-like some performance idea of of what slow-specifically 
-underneath the hood and then you can dig in from-there so 
-kind of uh we'll actually run into that I pulled up the 
-bench command-we'll take a look at that so it gives you 
-some interesting things you can do-along that line here in 
-a sec but just kind of following up on Mike's question-is 
-giv me errors this is showing you some failure rates but 
-one other thing-you can do is one of the commands that's 
-actually in fast test is you can just-say from this log 
-file parse out all my errors for me so you can see that 
-there-are some invalid authenticity token errors in one of 
-my calls so it tells-you when those occurred how many of 
-them event times correlation IDs Etc so if-you're seeing a 
-huge amount of some sort of error you can kind of correlate 
-that-across the system really quickly from those production 
-log files and and get-that information without having to 
-vimit or write complex re X as Kevin was-saying or you know 
-some kind of JQ query that you're piping it through this 
-has-already got all that built up in there for-you hey 
-Glenn is this um sort of replicating some of the same data 
-that-you'd have in an APM like a data dog or New Relic or 
-even Prometheus or is it or-is it kind of unique it's kind 
-of replicating it's-giving you a faster uh much more 
-constrained view of the data so it's-it's not again it's 
-not a substitute for your data dogs your Cabas your 
-whatever-you're piping your document your metrics and your 
-logs to what this is we could-send the tool to a 
-self-managed customer and say run this and send me the 
-output-to help troubleshoot something right yeah or even if 
-you have access to their-instance log into it and just grab 
-it all really quick I think the big-Advantage here too over 
-something like data dog is is this is really 
-already-presenting the data in the format that you want it 
-from the get out perspective-versus data dog isn't 
-necessarily gonna have it organized this way you have 
-to-build that after you get it there does this work 
-on-Runners can you use no I don't think so yeah it only it 
-only works on this-subset of log types so your rails your 
-API your current your G pray pick and-sidekick so right now 
-this is only gab specific-uh instance specifically-so right 
-now we've just been looking at one individual file the 
-current-production log file but what happens if you want to 
-look across a more-historical view of that data you can 
-actually tell it via you know complex-cat pipes Etc to look 
-at everything that's in that log directory including-the 
-rolled over logs so by catting all the gz files piping-them 
-to unzip then cting the actual current production log file 
-and then-piping that entire thing to fast stats and doing 
-that errors command again you-let this run and now I have 
-an entire list of all the errors across all my-production 
-log files uh since I spun up this-instance so again you're 
-getting this very fast very quick view of the data-that can 
-help you debug something that's maybe either a long running 
-problem or-uh something more immediate that they're just 
-now seeing a performance problem-with that is really cool 
-yeah is that uh the command you just ran there 
-piping-everything around is that like in the readme or 
-anything like that-or uh I think that one is actually I 
-think that's where I got it from-okay and once you have the 
-general format for it you basically do the same-thing 
-across all the different log types too so you can do it for 
-gly current-prect current Etc there's just a slightly 
-different view of it like if I-if I go ahead and pull the 
-uh do the same thing but just look at-the gidy files 
-actually I went ahead-and forgot to grab a the front for 
-that one it looks-like there's all the errors I have in G 
-since I SP up this-instance so that's cool yep-oops so next 
-one I wanted to kind of look at-really quick was if we just 
-go to the production-one let see where's that the 
-production log you can tell it-toh I had it here up a 
-second ago where did I put it to Benchmark-things soell it 
-Das D bench and in the docs they use-13.6 so let go ahead 
-and do the same but basically what they do is they say 
-you-can compare the performance of your system against 
-performance of like kind-of a benchmark system a benchmark 
-jit laab instance and when you do that it's-kind of like 
-GPT in a way but it will spit out all this information 
-about-where you're seeing performance differences between 
-that reference-system and yours so this is something we 
-should have in the delivery kit for the-health check for 
-sure-yeah so you said it's kind of like GPT but it's not 
-it's not adding synthetic-data right right right I guess 
-the output I guess is what I'm kind of-reading average 
-response times and it has a built-in set of response 
-times-where you from actual usage or is there synthetic 
-usage being applied there are-synthetic numbers being 
-applied uh against based on numbers from gitlab.com-right 
-like the comparisons are against synthetic numbers but this 
-is like-actual data from your logs right yes yes ex we're 
-not generating billions of-synthetic hits to like it's not 
-a performance test in that sense it's more-of like a 
-monitoring thing it's a it's real real-usage looks like we 
-go up to 15.5 right now yeah actually in the 
-repository-there's a benchmark data folder and it shows 
-which-versions they were all added three months ago so we 
-only support 14 to 15-to five apparently yeah 155 is the 
-last one it just screamed at me when I tried-16.2 told me 
-155 was the latest one so again this could be very 
-useful-in running this against uh different log files 
-against different pieces of-component and saying okay how 
-are we maybe we're seeing something that's way-way way over 
-like you know 14.15 times and things like-that why what did 
-I do over here 2647 blob controller update out okay-that 
-makes sense um again just another way you can look-at the 
-data to see where potential problems might-lie that's 
-really cool yeah so kind of the the last big piece I-wanted 
-to touch on this really quick-is I'm going to pop over here 
-to my Mac and precompiled so I pulled down the Mac-version 
-of it and the reason I did that is I wanted to-show one of 
-the other things it can do so I don't want to ask this 
-there we go-so I went ahead and pulled down the log files 
-uh the production log Json log and-one of the archived Json 
-log files from this instance into my local so I could-run 
-the Mac version against it and the reason I wanted to be 
-able to do that is-the pre-compiled Mac version supports 
-the plotting function out of the box the-plotting function 
-is prettyy cool that it gives-you a nice little PNG file 
-based on the stats in your J in your log-files wow that's 
-really-cool and you can only generate that file on a Mac-I 
-want to make sure I understood what that was-there I think 
-your microphone broke Glenn or I'm suddenly-muted right 
-yeah definitely cut out for me too who's good at lip 
-syncing-read my lips lip reading lip reading I guess is 
-what I meant although if you-want to do some lip syncing 
-right now go ahead me spin up the Millie vanilly hold-on 
-um-so on on the Mac their pre-compiled binaries you can 
-download from the-releases Pages has this functionality 
-already built in so you you can tell it-to plot something 
-it will plot it and build your PNG file for you for 
-the-Linux version you would have to compile it on that box 
-so you'd have to download-you have toload cargo the whole 
-yard and get get everything done and I'm assuming-that has 
-something to do with the libraryies like right I'm doing it 
-on my-Mac and then showing the image in iterm because I 
-have the extensions for iterm-too and zshell downloaded so 
-I can do that-but um you can do the same thing across 
-different log types as well and I-think it gives you 
-slightly different output so if I do the same-thing again 
-just with the gly logs instead that I downloaded you can 
-see it-gives you some of the same stuff request rate 
-request duration uh it gives you-get RSS disre and write 
-information unload upload pack transmission that's-that's a 
-good metric to have uh failure rates and things like that 
-so depending-on what log file you're parsing you'll get a 
-slightly different piece of-information but again could be 
-very useful to see where you're having spikes-in discreet 
-or you're having spikes in your upload pack things like 
-that so-nice very useful information so I again I'm I think 
-I said jokingly earlier that-having this would probably 
-save me a couple days sometimes of parsing through-logs I 
-don't think that's an exaggeration-right it's written in 
-Rust pretty impressive yes-yeah and it's fast um I think 
-they even in their intro they have some-comparisons for J 
-yeah the Json stats app takes six-minutes to process a file 
-this takes 280 milliseconds so everybody-will yeah Will 
-Chandler uh what's two years ago so it's-at least two years 
-old I think-it's but yeah it's definitely got a lot better 
-like the first time I saw it a-few years ago it was still 
-fast at pulling in data but the amount of data-we can see 
-now and the amount of visualization of PR it's yeah it's 
-it's-really vital for uh doing any implementation work or 
-troubleshooting-any any issues this is cool it's always 
-cool seeing like charts getting-generated like we all like 
-looking at logs I guess but this is definitely the-a nicer 
-thing to visualize if someone's you know I mean we don't 
-like looking at-logs that's that's why this is 
-cool-[Laughter] sarcastic dead pan got yeah so we got 
-a-couple there I mean there's some other things in here to 
-look at of course it-has you know limit functions uh you 
-can control which Fields come out in the-output uh whether 
-you want it yl or Json I think uh actually no it's just 
-Json MD-text and CSV so you could actually dump a markdown 
-file of your results as well-if you wanted to upload on 
-like a collaboration project things like that-yeah that's 
-cool search functions Etc so uh that was really pretty much 
-it I-had for this I really just wanted to more than 
-anything get it out in-people's you know brains as a thing 
-that we have in our-toolbox and then so folks can start 
-using it and and downloading it and kind-of and hopefully 
-finding some use in it so questions anything anyone want to 
-see-specific specifically try like can it do XYZ-or I 
-already asked M can it do XYZ stupid customer hey my 
-windows-gitlab Runner is running 70% CPU usage great let's 
-take a look at it and look-at the logs and stuff and they 
-send me a screenshot of the CPU usage from 10 days-ago I'm 
-like this is nothing the awesome hey Greg welcome didn't 
-see you-sneak in there how you doing-sneaking s-nice potato 
-uh cool boil them mash them put-them in a stew-exactly 
-excellent that refence yeah Kevin seen that one read-that 
-one actually oh yeah read it-yeah awesome uh like I said 
-short one today then uh really more than anything-it's 
-pretty self-explanatory as a tool goes uh the documentation 
-is good for-telling you what the options are ex said of how 
-to use it I went ahead and threw-some of those shortcuts in 
-our enablement doc as well but I believe-they are in the 
-markdown somewhere here I just-can't find them right now 
-yeah there we go it's under the tips-section right above 
-building from source so same basic premise you can once 
-you-know that you can extract it to any different log type 
-of the of the five or-six that supports and and there you 
-go awesome pursuant to our previous-conversation today I 
-noticed that there's no license file in this 
-project-although it's public should there be like should we 
-be putting license files-in public projects for tools we we 
-normally do I'm surprised-this doesn't have a license um 
-all of our open source tools and services are-MIT licensed 
-so I I thought all of the support tools were also MIT 
-licensed as-well but this one might have been so this 
-one-might have been created a few years ago before we 
-started kind of scanning-through and adding licenses to 
-things yeah-okay awesome I'm going stop share then all 
-right and that's all I had for-today keeping it short and 
-simple for a Friday comments questions um volunteers-for 
-the next session I'll ask that question in the-channel 
-later we'll get we'll get that one-I might I think I'm gone 
-for the next session actually so probably need a-volunteer 
-or someone to uh or just cancel it outright one or the 
-other I-don't mind doing the architecture stuff reviewing 
-that if that's something you-want to have me do I think you 
-were thinking about doing-a Geo one what was the other one 
-you wanted to look at not just Geo I just-wanted to go 
-through what a reference architecture was because I don't 
-think-that everybody knows all the components to it um and 
-and what they mean and that-would include Gio gotcha and gy 
-cluster and then if-folks want me to do something more 
-specific to Geo or G cluster or-something like that that's 
-fine too but everybody know like what console is-for and 
-Sentinel and and all those nodes and how they-correlate I 
-think it be beneficial to have even if it's um just like a 
-review-for some of us it's probably changed a little bit 
-since you know really-I mean like last time I had to deal 
-with like heavy infrastructure was like pre-prefect so like 
-I would benefit from that-so might be um worthwhile I'll 
-throw on the list what pieces are actually in-kubernetes 
-and what parts aren't in your Cloud native hybrid 
-installation and why-Kevin he said the k word he said the k 
-word Smite him-W stke him San what's so funny about my 
-name-um cool all right anything else folks perfect I'll you 
-back some time on-a Friday have a great weekend Everybody 
-Take It Easy thanks for showing up-appreciate it thank you 
-thanks L see you all bye
+hey I'm Jal and I'd love to show you fire zone fire zone is 
+a replacement for-legacy corporate vbn it's built on wire 
+guard it integrates with your identity-provider and is 
+designed from the start to be horizontally scalable I'll 
+be-showing you a few of its features now so let's get 
+started first I'll start by-spinning up a few fire zone 
+gateways in the cloud with terraform uh gateways 
+are-lightweight self-contained Linux binaries uh statically 
+compiled with-rust and they're responsible for terminating 
+your wire guard tunnels uh-to your private resources uh 
+gateways also perform that traversal so you don't-need to 
+open firewall ports to deploy them so let's go ahead and do 
+that now-I'll be prompted to enter a token uh this is used 
+to authenticate the-gateways and you can obtain this from 
+the admin portal while that's running uh-let's take a look 
+at the admin portal here I have a site named demo uh-sites 
+are where gateways are deployed uh and also where you 
+define your resources-uh the services the hosts or the 
+networks you want to manage access to-you can see here that 
+the gateways I've deployed earlier are online and 
+healthy-so all gateways in a site load balance and fail 
+over for each other if one-Gateway goes down uh connections 
+from your Workforce will automatically-migrate to another 
+healthy Gateway uh that process takes about 10 seconds 
+on-average uh and it happens without any user-intervention 
+so now that we have our gateways up and running let's 
+define a-resource in this case I'm going to add a 
+cider-resource uh which allows you to manage access to a 
+subnet similar to a-traditional VPN so this is the subnet 
+where my-gateways are deployed put in the address-here and 
+I'll allow SSH to them on TCP 22 and I'll allow icmp 
+for-Ping so all access in fire zone is default deny uh I've 
+got to create a-policy to allow access to anything uh a 
+policy uh ties a-group to the resource that it should have 
+access to in this case I've got a-devops group that I 
+created earlier and added my my user to uh it's a 
+manually-manage group uh but we also support directory sync 
+with all of the major-identity providers so if I've 
+connected my identity provider here I would see-the groups 
+in that list as well before I create the policy uh I should 
+mention-that everything you see here is updated in real 
+time with Elixir live view uh-all configuration updates are 
+also broadcasted to clients in gateways uh-using Phoenix 
+channels so let me sign into my client-first and I will 
+select the demo account sign in with jump-Cloud all right 
+so now my client is authenticated you'll see I have 
+no-resources I'll go ahead and create the policy and you'll 
+see now I have that-resource in my list okay so let's try 
+to Ping the Gateway and make sure that it's-working great 
+I'm able to Ping it so let's disable icmp and see 
+what-happens so I'll edit the resource I'll disable icmp 
+and I should see that the-pings are failing and it looks 
+like they're timing out all right so let's-turn it back on 
+come back here and edit the-resource turn icmp back on and 
+the pings are-succeeding okay so that's a CER resource uh 
+and-let's go ahead and add a DNS resource DNS resources 
+allow you to-manage access to private and even public apps 
+uh they can be used to manage-access to some services but 
+not others uh even if they resolve to the same IP-address 
+on the same host uh and they also handle that 6 to4 and 4 
+6-translation for you so your Workforce can connect to IPv6 
+resources even if-they're on a network with no IPv6 
+connectivity so in this-case we'll use a DNS resource to 
+lock down access to github.com using github's-IP allow list 
+feature I'll show you how that works so I'll put github.com 
+here-in the address using a wild card and I'll go ahead and 
+save it I'll-Define a policy allowing everyone in my 
+organization to access-GitHub we can see here that it's in 
+my resource list-now and as a final step I'll take the 
+public IP address that the gateways are-running from and 
+I'll enter that in the IP allow so let me go to GitHub go 
+to my-organization go to settings authentication 
+security-go to the IP allow list section enable it and 
+enter the public IP address of my-gateways so now my 
+private resources on GitHub are secured with fire zone 
+my-Workforce needs to be signed in with fire zone in order 
+to access my private-rep repositories on github.com so this 
+provides a secure and reliable way to-lock down access to 
+many thirdparty SAS applications without having to 
+know-their IP address es in advance just by using their 
+DNS-names all right the last thing I'll show you is what 
+happens when users are-removed from your organization I 
+mentioned that all configuration updates-are broadcasted in 
+real time so this includes deleting users as well 
+or-suspending them so what I'll do now is I will revoke the 
+session uh that my-client is using that I signed in with 
+earlier so-let me go to actors I'll go to my user 
+account-and I'll revoke the token that my client is 
+using-here and you can see that my client session has been 
+immediately terminated-uh and I'll need to reauthenticate 
+in order to gain access so that's it I hope-you enjoyed the 
+demo that's just a little taste of how fire zone can 
+be-used to secure your Workforce to try it for yourself 
+head to Fire zone. deev and-sign up for an account thanks 
+for watching
