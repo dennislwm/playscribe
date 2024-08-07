@@ -1,57 +1,57 @@
-## SUMMARY
-Patrick from STH shares a quick tip on downloading ISOs directly to a Proxmox VE host for creating KVM virtual machines.
+# SUMMARY
+A 60 Minutes segment discusses the Federal Trade Commission's investigation into Google's monopolistic practices and its impact on competition and consumers.
 
-## IDEAS:
-- Downloading ISOs directly to the Proxmox VE host simplifies the VM creation process.
-- Changing the directory to `/var/lib/vz/template/iso` is essential for local ISO images.
-- Using `wget` allows for easy downloading of ISO files from URLs.
-- Creating a VM template can save time by avoiding repeated installations from ISOs.
-- Having multiple OS ISOs available is beneficial for flexibility in VM creation.
-- Scripting the download of multiple ISOs can streamline the process further.
-- Local ISOs are useful for quick installations when time is critical.
-- Utilizing network data stores can help save on storage costs as you scale.
-- The process of downloading ISOs can be completed in just a few steps.
-- A shout-out to QuadraNet for hosting the LAX mirror for ISO downloads.
+# IDEAS:
+- The FTC is investigating Google's data collection practices on Android.
+- Concerns are rising in Washington and Europe about tech giants' unchecked power.
+- Google, part of Alphabet, is worth over $750 billion.
+- Since going public in 2004, Google has acquired over 200 companies.
+- Google controls 90% of global internet searches.
+- Google's dominance affects startups' ability to secure funding.
+- Google's business model relies heavily on advertising and user data.
+- Competitors like Yelp struggle against Google's market control.
+- Google's search results prioritize its own content over competitors'.
+- The FTC previously recommended an antitrust lawsuit against Google, which was rejected.
+- Google's lobbying efforts significantly influence policy decisions.
+- The European Union is taking more aggressive action against Google than the U.S.
+- Google has been fined for anti-competitive behavior in the EU.
+- Algorithms used by Google manipulate search results to favor its services.
+- Many businesses depend on Google for web traffic and visibility.
+- Google's practices may lead to a lack of diversity in search results.
 
-## QUOTES:
-- "We wanted to share an easy way to load ISOs and this is one that we've used for years."
-- "This task essentially has three easy steps."
-- "You need to change the directory."
-- "We can simply use URL of a silly one and wget and we can wait a few seconds."
-- "We strongly suggest making your first VM a template."
-- "You probably will want to have at least some OS as well."
-- "You can repeat this process as needed."
-- "It is handy to have ISOs locally when you get into a pinch."
-- "As you get more advanced, you may also want to add ISOs on a network data store."
-- "This is an easy way to clear the first hurdle for making VMs."
+# QUOTES:
+- "Google is a monopoly in several markets."
+- "The internet would not be accessible to us without a search engine."
+- "Google makes the internet work."
+- "If you're not at the top of the page... that's going to affect your business."
+- "Google is doing what's best for Google."
+- "They will snuff you out."
+- "Google's conduct was anti-competitive."
+- "Their influence... is very very difficult to challenge."
+- "We think that this is done on purpose."
+- "It's very difficult to find the rivals because on average you'd find them only on page four."
+- "Google wields enormous power across the industry."
+- "Our responsibility is to deliver the best results possible to our users."
 
-## FACTS:
-- Proxmox VE is a platform for creating KVM virtual machines.
-- The local path for ISO images in Proxmox VE is `/var/lib/vz/template/iso`.
-- The `wget` command is commonly used for downloading files from the internet.
-- Ubuntu is a popular choice for virtual machine installations.
-- Having multiple templates can enhance efficiency in VM management.
-- Network data stores can reduce local storage requirements.
-- The process of downloading ISOs can be automated with scripts.
-- Quick access to ISOs can be crucial during urgent setups.
-- The STH main site offers additional resources and videos on Proxmox VE.
-- Subscribing to their YouTube channel provides ongoing tips and updates.
+# FACTS:
+- Google conducted 90% of the world's internet searches last year.
+- Google controls roughly 60% of worldwide advertising revenue on the internet.
+- The FTC closed its investigation into Google despite evidence of anti-competitive behavior.
+- Google spent more on lobbying than any other corporation last year.
+- The European Union fined Google $2.7 billion for anti-competitive practices.
+- Google's algorithms are designed to promote its own products and services.
+- The FTC's Bureau of Competition recommended an antitrust lawsuit against Google in 2011.
 
-## REFERENCES:
-- Proxmox VE
-- Ubuntu
-- QuadraNet (LAX mirror)
-- STH main site
-- STH YouTube channel
+# REFERENCES:
+- 60 Minutes segment discussing Google's monopolistic practices.
+- Gary Reback, prominent antitrust lawyer.
+- Jonathan Taplin, digital media expert and director emeritus of The Annenberg Innovation Lab.
+- Jeremy Stoppelman, co-founder of Yelp.
+- Margaret Vestager, European Union competition commissioner.
 
-## RECOMMENDATIONS:
-- Change the directory to `/var/lib/vz/template/iso` before downloading ISOs.
-- Use `wget` for efficient downloading of ISO files.
-- Create VM templates to streamline future installations.
-- Consider having multiple OS ISOs available for flexibility.
-- Automate the downloading process with scripts for efficiency.
-- Keep local ISOs handy for quick access during urgent tasks.
-- Explore network data stores to optimize storage usage.
-- Visit the STH main site for more tips and guides.
-- Subscribe to the STH YouTube channel for video tutorials and updates.
-- Experiment with different Linux distributions to find the best fit for your needs.
+# RECOMMENDATIONS:
+- Investigate the implications of tech monopolies on competition and consumer choice.
+- Encourage regulatory bodies to enforce antitrust laws more rigorously.
+- Support startups and businesses that challenge dominant tech companies.
+- Promote transparency in how search algorithms operate and affect visibility.
+- Advocate for policies that limit the influence of lobbying by tech giants.
