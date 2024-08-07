@@ -1,416 +1,574 @@
-okay um mark thank you can you all see my screen that 
-says-agenda indeed yes yes so I haven't actually made an 
-agenda this is um some-slides I'm putting together uh for a 
-customer we're working with at the-moment and jira's a 
-really big part of convincing their Dev teams to get 
-on-board um it's it's a project that's actually been driven 
-by the security-team um they want to get all source code 
-and everything in into gitlab so it can-all be subject to 
-scanning and there are some teams that are stuck in prev 
-VCS-days um so we're trying to drag them you know Kicking 
-and Screaming into the 21st-century um but a big big part 
-of this is if we can get the jro integration-working so I 
-played around with it and if you've ever done this before I 
-don't-imagine anything I'm going to show you is going to be 
-you know revolutionary or-you know ground shaking or 
-anything like that um but I thought it'd be useful in-case 
-anyone hasn't hasn't done this and we can always record it 
-and then if the-first time anyone wants to set this stuff 
-up or or find out about it we-we've got a recording and 
-there's a chat yeah yep exactly yes Glenn I I I don't-think 
-I I did did I I don't think so I just forgot to say-it at 
-the beginning like I tried to remember to do so yeah yeah 
-exactly okay-so um yeah what I've done is I got this-going 
-in my home lab so I've got um an omnius installation of 
-gitlab running-here and I've also got jir running which 
-I've got going in a Docker container uh-for reference if 
-you want to do this yourself um it's quite 
-straightforward-I've got my here's the docker file um can 
-you see that or do I need to zoom in-I can see it fine cool 
-yeah that's it it's a really really simple Docker file-that 
-just starts using the official container when you start it 
-it'll prompt-you for license and you can if I just use like 
-a personal account you can go-and create like a trial 
-license that's good for I don't know 30 days or-something 
-like that it's it's enough to test the integration anyway 
-and the only-other thing I have to do with it is so I could 
-get lets en Crypt going I had to-stick it behind an engine 
-X proxy which was because it's running in a home-lab and 
-that's that's how I need to expose it to the outside world 
-and I-found that there is some documentation on what to do 
-if you're running jira-behind an engine X proxy but 
-effectively you just have to take the server. xml.-J2 file 
-out of the container and modify add these lines that I've 
-highlighted-here that have says okay traffic coming into 
-this thing is over this you know-this scheme that's the URL 
-and that's the port-I only mentioned that because as it 
-turns out having https like TLS-encryption is required 
-between both end points if you try and set up 
-the-integration just using like bog standard HTTP um it 
-doesn't seem to work and I-got quite a few errors um with 
-things saying no you know it must be a secure-endpoint Etc 
-so just worth bearing in mind and that's what that that 
-line does-in my Docker compose but you might not even you 
-might not need that-so according to this this sort of deck 
-I put together um I've covered like the-Integrations and 
-workflows and what you actually get out of it I figure for 
-this-what I'll do is I'll just skip through this very 
-briefly and then I'll actually-show you it and then we'll 
-look at the setup side of it okay or vice versa I'm-you 
-know I'm I'm open um and if anyone's got any questions or 
-comments or-anything just shout out as we go along okay 
-because I I really haven't-rehearsed this I don't really 
-have a script or anything so-um right so some of the 
-benefits you get out of it first off you get 
-issue-synchronization okay so anything that you create in J 
-any tickets that you can-create you can view them straight 
-from within gitlab itself which is which is-really sweet 
-and there's also an integration-that goes the other way so 
-that jir can see what's going on inside gitlab and-what 
-happens with that is you can see all the commits and 
-activity that-happened on something as long as you 
-reference the the Jer issue you know the-the the ticket 
-name like test-1 or whatever as long as you reference 
-that-in like your branches or your commit messages or your 
-merge requests it can-link them together so as an example 
-in jir this is what it looks like you can-see there's all 
-these commits merge requests and things um happening 
-and-we've also enabled there's a transitions thing that you 
-can enable so if you put-the magic words um closes test one 
-or resolves test one or something like that-it can 
-automatically move that jir ticket or issue or whatever 
-yeah issue-it's what we call them it moves that issue into 
-the done pile automatically-for you and there's also some 
-other stuff-you can do you like you can configure it so 
-that for instance-a um a a merge request cannot be closed 
-unless a um has an Associated Jer issue-with it which is 
-just quite nice as a sort of buil-in policy-thing so I uh 
-what I'll show you it um so I've got this enabled on a 
-few-projects if I go in here I'll probably zoom in I'll 
-zoom in just a little bit-so in jir if I go to my project 
-and I'll show you how I've done all like the-different 
-projects and the mappings and all of that stuff let's go to 
-my test-project and here's the backlog and let's just I 
-don't know-okay so I've now got a new issue here and if I 
-go here-um have I mentioned by the way I don't like-jir 
-nobody does yeah I'm like getting PTSD like-going through 
-this stuff again anyway so here's the issue and if we go 
-back to my-test project um there is a a built-in thing I 
-think this is done yeah under-the plan section there's a 
-jir issues and an open jir link and if I click on-jir 
-issues you see this is actually showing up now 
-interestingly um that I'm-guessing should be a jira logo 
-I've no idea why it isn't rendering or why I'm-just getting 
-a text thing here I'm look at that some other point but 
-anyway I-can I can see this has been created and I can 
-actually click in it and you've-got some details and things 
-um that are present here so that's really cool you-can see 
-the issues and things in JRA but if we do something to 
-actually generate-some activity here I'll show you how the 
-um what it looks like on the other side-so if I go back to 
-test project um let's make a new-branch and I call it I 
-know demo oh actually you know what I should-have done this 
-is better let's go back um let's make a branch and we'll 
-call it-after our jira-issue right now it will be able to 
-track it-and let's just edit something in here um we go 
-testing again and in my commit-message I'll reference this 
-so um working on test three yeah that'll do-you know you 
-can put a full commit message in but the important thing 
-it's-it's finding like that key okay so that's now gone if 
-I go over-to jir now here we go it's already found that 
-there's a branch if I refresh this-it might know that yeah 
-there we go and the commit so this is it's already-started 
-tracking this and and the activities getting recorded like 
-I made-a commit and I mentioned it and here's the link to 
-it and this also works if-you do um yeah let's do a merge 
-request working on test three because I called-the branch 
-the same thing as a j as an open Jer issue when I go to 
-close it it-automatically populates it with this te uh this 
-text as well which is really-nice so yeah let's do that 
-create mer request and there we go I will merge-it and if 
-we go back over here and refresh here we go yeah so it's 
-all been-updated so we can track it there's a commit 
-there's the merge request and-there's the you know it's 
-been closed by that commit and you can see it's-actually 
-moving moved into the done pile now so all of that 
-automations just just-happen for us which is really nice so 
-the way you go about hooking all-of these things up um 
-apart from yeah the https the TLs-stuff which is required 
-um you do have to allow access obviously to like your-local 
-network wherever Jirus hosted um I I've not done this 
-process by the-with like the the hosted Joc Cloud thing or 
-whatever their SAS thing is um I-don't actually know what 
-the process involved there is this is only I hasten-to add 
-for like self-hosted stuff um yeah so you have to allow 
-access to-your your internal Network and that's you do 
-through the gitlab network admin-stuff the other thing you 
-need is a jir personal access token and this is for-the 
-integration so that gitlab can see jir issues-um it works 
-pretty much the same way that we we think of you know 
-gitlab as-personal access tokens you just go in see if I 
-can remember it-it's profile I think yeah yeah yeah is you 
-just go to your user account profile-and then you create um 
-a personal access token-um so yeah this does mean that the 
-the user that this personal access token is-associated with 
-needs to have the ability to um I think be like an owner-of 
-the the various projects so that's a consideration you'll 
-have to make and-you have to decide whether you're going to 
-reuse the same connection because you-could in theory have 
-a separate user and a separate personal access token 
-for-each project or whatever that you want to hook up if 
-you wanted to like limit-the blast radius of one of these 
-tokens getting you know leaked or exposed or-whatever 
-that's probably what would suggest I'm guessing but um you 
-don't-actually need to everything can work over the same 
-like user connection as-long as that user's got the ability 
-to I think it's owner I don't think you need-admin 
-privileges I think it is just owner on J of these projects 
-which I've-got a few going here so the first thing you do 
-when you do this um if you go to-the admin era in gitlab 
-and go to settings and-Integrations uh you can find jir in 
-the list and you can configure it which I've-already done 
-but it shows up like this and it's really straightforward 
-you just-stick the the URL in uh the API URL you can leave 
-blank if it's the same as the-web URL um use a personal 
-access token put-your token in and then I've triggered or 
-ticked all of these things and said so-if someone makes a 
-commit or a merge request I want to send 
-everything-including all the details along with it and I 
-want to enable J-transitions which means that's the thing 
-when I put closes and then the issue-number it will 
-automatically move it uh down here you've got some 
-issue-matching about how it detects those issue uh keys I 
-think it calls them yeah-yeah issue Keys I've left these 
-blank I got-confused to start with because I thought these 
-were the things that reference the-actual like how you 
-could limit it or whatever to particular projects 
-that's-done in a separate place this is only if you're 
-using different key format so not-you know J-1 or something 
-like that or you're putting a prefix in them so I-just left 
-these things blank and then after you've got that-that's 
-like the base configuration that um other projects can 
-inherit as it-were um so if we pick my let's go back and 
-I'll show you how this is configured-if we go to let's go 
-to my first test project first and in here we've got 
-the-settings and integration and when you go 
-into-individual projects to enable jir there's this little 
-drop down up here-that says um use default settings or use 
-custom-settings what you'll want to do is go to use 
-custom-settings and then you can scroll down and you can 
-enable J issues and then-this is where you put your um like 
-what the jir project prefix is in-there um and all the 
-other details like the personal access token it says 
-just-leave blank to use the current configuration so 
-they're not exposed but-you can just use the the base 
-default ones that you've-configured and there's also this 
-thing I haven't played around with this but-apparently like 
-if the vulnerabilities are created you know there's the 
-option-in security uh the security dashboard to 
-automatically create issues from-vulnerabilities you can 
-automate that process in jir apparently but I've not-tried 
-that and there's a little test settings button you can 
-click and yeah-connection successful so if you look at my 
-other projects I've got here another-test yeah and 
-Integrations-the J in this one again is using custom 
-settings but you see I'm using a-different project key and 
-that's how I map them these different projects get-mapped 
-to these different projects-here okay and the other side of 
-it which is-how you get um uh jir to see all the changes 
-and track the changes that are-happening in gitlab-is it's 
-one of these processes where you have to create cback URLs 
-and tokens so-you have to have like two windows open really 
-and swap between them so in the-case I'm thinking of with 
-this customer this is going to necessitate getting the-jir 
-teams and the the gitlab admins together and putting them 
-together-um so what you do first is it's called 
-an-application Link in jir and that you can get to by going 
-to-settings and applications-and yeah application links on 
-the left hand side so you can create a new-application 
-again if you're concerned about limiting like the blast 
-radius of-things getting leaked or exposed whatever 
-you-might want to do one of these per team I guess um I've 
-just used the same one for-for all the the connectivity and 
-when you create this um-you also have to go into gitlab and 
-it's where's the-setting yeah add new application yeah so 
-we have to go to your user account this-time preferences so 
-yeah you'll need a user account on gitlab that has the 
-um-relevant permissions to repositories again so this is 
-why you might want to-split things out into I guess like 
-per project or per group-basis um but yeah there's this 
-applications button and you can add new-application and you 
-just give it a name like um jir and tick the API box 
-which-apparently is is required uh for this to work and 
-then you put the details from-one thing into the other so 
-that will give you um and jir you'll get a-callback URL 
-which you can paste into that box and when you go through 
-this-process this will give you when you add a new 
-application in gitlab this gives-you a new uh credential a 
-new password which for some reason is upside down in-that 
-window that's interesting change that um yeah so that-this 
-creates a new account gives you a password or a credential 
-key which you-can then go and go back into jir and paste 
-that in and once you've got those-two things done so it's a 
-bit of you know setup in one go to the other do-some more 
-setup copy call back URLs and uh credentials from one to 
-the-other once you've done that the next thing you do this 
-is so jir can talk to-gitlab you then need to go to this 
-thing dvcs accounts and this is where you hook-things up 
-per um per-group yes per group I think I think yeah it must 
-be because I've got one for that-yeah yeah so it's one per 
-group and in there um when you're setting this-up um it's 
-this window yep uh you point it-to a it's calls it a team 
-in jir but what it really is is the the name of of-the 
-group as it exists in gitlab so uh in other-words um-this 
-that part of the URL okay however it appears there that's 
-what you put in-and that's gives it access to that 
-particular group when that's in place-you can you just um 
-you you tell it you want to use the account uh 
-the-application link that you created earlier and then 
-these VCS accounts can-then use that connection to connect 
-back to gitlab and then they you can get all-the events 
-that are happening like um you know commits branches merge 
-requests-and so on so there's quite a few sort of accounts 
-or connection places that you-you need to set this up in 
-and that means I guess when you're doing it-you're going to 
-have to consider what your group structure looks like on 
-both-sides and how you're going to map them and you also 
-need to consider are you-just going to do something quick 
-and easy which would be to create the uh-just one connector 
-account and one personal access-token and have like a a 
-user that can access everything or you're going to go-sort 
-of more granular which I'm assuming would be what we we 
-would recommend-customers do but anyway that's it that's uh 
-the sum-total of what I know about jur integration after 
-like last few days-discuss thanks for this Mark um from 
-what I've seen I think it's it's-important when we work 
-with uh teams that they know that uh gitlab is 
-the-controller the controller I guess in the right 
-sometimes we'll get the ask oh can-we be in jira and have 
-it close a gitlab issue and kind of 
-backwards-implementation and so it's it's good to 
-understand how this this hookup works-because we want to 
-make sure it's like we're guiding them towards our 
-platform-but we're we're still allowing for the the 
-integration but uh we want them to-move like there is still 
-a little bit of that like let's get you out of the 
-jurus-system so I'm glad you brought this up yeah it's also 
-you know our own once you-go back to if you go to use just 
-using gitlab issues there's so there's a lot-nicer 
-management you don't need any of this integration stuff to 
-start with but-you also got things like you know when you 
-create issues you can automatically-create merge requests 
-and things and and create branches and it's a much 
-nicer-experience than this but yeah certainly uh for the 
-customer I'm working with at-the moment if they can't link 
-jir together with gitlab um they're really-not going to 
-adopt it and they they can't just replace jir because 
-even-though we could say Hey you know you're paying for the 
-same thing twice you know-you've got git LB why not use 
-that uh there's so many other parts of the-business that 
-are deeply tied into jir are using it so they're never 
-going to-get rid of jir completely or they you know they 
-might do I don't know we'll-keep pushing but um for the 
-time being jir is there it's they need it and this-is like 
-the perfect thing to actually get them using the platform 
-and then-they can still tie all their history together and 
-it and actually having like-the Auto closing stuff is um in 
-many ways is a lot nicer than their current-workflow 
-exactly this is like the like I mean-this in in a good way 
-the level zero of getting them to understand yeah 
-the-gitlab can integrate and and do the basic hookup to 
-jira um in case they've-been a jir shop and they don't want 
-to make the full transition then from a PS-perspective we 
-have um you know Max is working on some of the gr migration 
-so-that when they're ready to to transition over to git lab 
-we we are building out-an importer tool that will 
-automatically pull the issues and data and stuff that-they 
-had created in J into the the gitlab board and then if you 
-remember-from last week product is working on or they've 
-worked on the ultimate agile-planning uh piece so that's 
-another the product that can be like-again not I don't want 
-to use the word upsell but for customers as they're-working 
-on their TR like transformation from jir into gitlab uh 
-planning-functionality it's like this is the the three-step 
-approach I think of in terms-of like how we can help 
-customers from a PS perspective-MH yeah I think I think 
-there's really two use cases here so what drove the-atasan 
-takeout play uh sales motion was really the fact that 
-atasan is retiring-their self-managed instances and or 
-pushing their customers to either go to-their SAS or their 
-their higher end uh data center product so we saw 
-an-opportunity to maybe you know uh replace jir completely 
-that's why we basically-you know invested and and did the 
-uh the jira migration tool to basically you-know move a 
-customer completely out of J but that's a special case 
-because if you-are on on uh atlassian server right now 
-you're probably already a lagered in-terms of you know 
-using jira and and you know some of these guys literally 
-aren't-even paying licenses for any longer so so those 
-folks are more likely to move-off of the atasan stack in 
-totality large Enterprise customers less likely-uh it's 
-it's less likely that you're going to move a large company 
-with-thousands of J users off into gitlab um so you know 
-always keep in mind-different different archetypes or 
-different customer profiles that we're-dealing with you 
-know where one might apply or or the other uh got got 
-a-question for you uh Mark so so what is the what's the 
-impact in terms of-metrics so so we provide all this stuff 
-out of the box if you use gitlab as a-platform end to end 
-right uh you know and this flows into the Dora metric 
-and-and you know we we keep track of all kinds of things in 
-terms you know in-terms of the data model the data that we 
-track now using Jiro does that basically-just ignore those 
-specific you know data markers or what's going on or we 
-don't-know I'm not sure I understand the question-so yeah 
-could you could you um repeat so so so if if you basically 
-keep using-jira from an issue management perspective that 
-means that really uh-from a from a data model the way 
-gitlab tracks issues and understands the status-of issues 
-and you know all right is is not being tracked within 
-gitlab-it's basic so it's I don't believe it is because if 
-you if you look at it the-like when you plan things and 
-things like there's there's no there's no-linkage here with 
-any of anything under the-planning yeah that that that's 
-just like a completely separate Island if if you-like it do 
-have any integration what's whatsoever the only things that 
-you do-see is it like if you go to jir issues for instance 
-you get this little thing-which looks kind of the same but 
-you're obviously very limited in what you can-do so like 
-here's this one so we can still see the details there's 
-links to-things like you know that's what I did There's 
-commit there's the merge request-and and what happen but 
-that that's that's it oh and I can click on this-thing 
-which pops open jir yeah so so this is always I think-you 
-know from a from a the the way we can position this from a 
-PS perspective-I mean the the full value of our platform is 
-always just realized if you-use our functionality end to 
-end throughout the you know value stream as-soon as you 
-start integrating bits and pieces all over the place which 
-we can-do right uh we we we basically lose the visibility 
-to some extent the reason I'm-pointing that out is there's 
-even pieces of the system I I don't understand I've-just 
-heard of like the whole value stream uh piece which which 
-is-supposedly showing you your cycle times but it's all 
-based on us using the-platform end to end yeah that's right 
-I mean this this stuff is better than-nothing um and it 
-helps get people onto it but yeah the the end goal should 
-be-to have people the people that are using gitlab-the 
-developers and so on to to actually be using it end to end 
-yeah I mean no-this this is a real important integration 
-because as you said there-there are some companies that 
-will not just drop jir and move over to gitlab-that's 
-that's just the reality in the market okay anything-else 
-right I'll stop the share then when wake up yeah no I'm I'm 
-here-good morning uh I was just GNA say well-thanks Mark 
-appreciate it that's awesome um if there are any other 
-questions-folks have just reach out to myself from Mark the 
-email VI slack or even just-drop a comment in the uh in the 
-enablement office enablement open Office-notes and we'll 
-try to get that answer for you yeah in particularly as well 
-I-mean don't also i' say this is the first time I've done 
-this right so um I-probably got things wrong or um use 
-wrong terminology or whatever but if if-anyone in the 
-future is watching this and notices anything glaringly 
-wrong do-let me know okay was-good that case let's all take 
-some uh time back thank you very much Mark again-and take 
-care everyone have a great weekend thank you guys
+come on oh live live this isn't even like-recorded and 
+uploaded good stuff all right ready yeah go for it 
+all-right folks so uh today I'm going to talk about 
+something easy and simple um-reference architectures so 
+these are gitlabs-um architectures and uh couple things 
+today we're going to cover are just I-want to cover some 
+key Concepts uh talk about single node versus ha when-to 
+use them we're going to go through some gitlab components 
+on the servers so-when you we get into the slides later 
+you'll see that gitlab is quite a-complex stack with a lot 
+of pieces and so I just want to talk through each-piece and 
+what its function is and then we'll start talking about the 
+reference-architectures themselves so we'll look at a 
+traditional 3K uh a cloud 3K using-cloud services Cloud 
+native hybrid 3K then we'll move on to get like Gio-talk 
+about that what it's used for what it does and does not do 
+and then the-final slide is just a getting started with get 
+and I think there's another-enablement session that'll 
+actually get into the details of how to deploy a-reference 
+architecture please feel free to ask-questions and 
+interrupt as we go along as well-um so the first thing and 
+uh you know Brian put this in I think this is a good-slide 
+just to start with real quick but uh gilb has three 
+offerings we do-self-managed which is what we're going to 
+focus on today and then we also have-a get laab dedicated 
+which is self-managed but G laab dedicated set-and then 
+gab.com which is our SAS offering all right key Concepts so 
+the-first thing I want to discuss is Omnibus and I think 
+that gets thrown around and-sometimes folks get confused 
+when we use it but what Omnibus is is it's gitlab's-bundle 
+package so includes all the installers for all the services 
+that we-talk about today and a few that I didn't include 
+because they're not as commonly-used so when you install 
+gitlab on servers-you get one file it's an rpmm file and 
+that one file can be used to install any-service Rus a post 
+scratch we'll get into all them later and how it works 
+is-you install the M file and then there's a configuration 
+file called to get laab-RB which is an ety gitlab gb. RB 
+and the configurations that you make in there-determine 
+what that node is and how that node gets configured so I'm 
+going to-pull up an example real quick and this is what 
+I-use when I'm trying to figure out how a service gets 
+configured so this is I-don't remember how many lines of 
+code it's huge but let's say you wanted to-install 
+postgress if you go into this file and-you uncomment out 
+postgress enabled equals true this node now 
+installs-postgress um and alternatively you have to tell it 
+not to install Services too-right so if you don't want post 
+crash you would have to set postc crash to-false High 
+availability so high availability-is your infrastructure um 
+being designed in a way that can tolerate outages 
+uh-without degradation or um performance hits so with 
+gitlab we can deploy within-region High availability uh but 
+we cannot do high availability outside the-region without a 
+loss of uptime and we'll get into that when we talk 
+about-Gio and what Gio does and its limitations uh the 
+other thing I want to-discuss here too is is when QA does 
+the reference-architectures they use the Expression double 
+double meaning when you talk to-grant for instance he'll 
+say that our reference architectures are double-double if 
+we say it's a 2K reference architecture it can support 
+8,000 users-more than likely on a standard load um but the 
+idea is is that if we want ha we-want to make sure that we 
+can tolerate outages without degradation performance-so if 
+half of our infrastructure goes down we don't want the 
+other half-getting hammered by the users we want them to 
+still feel like they're's up and-running and everything's 
+good so um our for most standard customers our-reference 
+architectures are Overkill they are very large but 
+they're-intentionally designed that way so that they meet 
+the ha qualifications-requirements and then Dr is uh how we 
+handle catastrophic outages right so if-you're in AWS for 
+instance what happens if Virginia falls in the ocean um 
+you-know that's where everything started that's that's 
+Netflix right-uh so how does a customer get their Source 
+back and gitlab solves this-problem with goo and I think a 
+lot of times customers get confused between ha-and Dr and 
+what requirements and what gitlab products uh solve for 
+those-problems then the only other two things I want to 
+cover that come up a lot in-calls with customers is RPO and 
+RTO so RPO the recovery Point objective is in a-disaster 
+scenario what is the recovery point in-time that we can hit 
+right so if you think about nightly-backups for instance if 
+you're running a backup nightly your recovery point in-time 
+has to be 24 hours because you're only running one back of 
+that instance-every 24 hours if you're doing hourly 
+snapshots you can hit a you know one-hour RPO so and if you 
+use Geo and we'll talk about this later uh your RPO 
+is-closer to 15 minutes or real time because you're 
+constantly streaming that-data to another region recovery 
+time objective is the maximum amount of time-that your 
+organization could be down until you covered so how long 
+does it-take your sves to get git lab back up and running 
+um as soon as it's outage-any questions on these no cool 
+all right-um I think the next slide kind of talks about a 
+little bit more and we'll go-into it but um you know 
+there's tradeoffs when you-talk about RTO and RPO the lower 
+those numbers are meaning the less data loss-you're willing 
+to accept and the faster you want to be up uh the more 
+expensive-the infrastructure is so uh simple Disaster 
+Recovery approaches are less-costly but carry a higher risk 
+of data loss and system on avability-and we'll talk about 
+that here so I want to kind of talk about a single 
+node-versus a reference architecture right and Brian 
+put-together a slide to talk about this uh it's like a 
+table I like the images so I-put together a network diagram 
+this is a 3K reference architecture with the 3K-Geo and 
+this is about $60,000 worth of VMS upfront and I'll kind of 
+get into-the cost and things like that how that works later 
+but um you know if a-customer comes to us and they say that 
+we need a 3K reference architecture and-it has to be highly 
+available and we want a 3K reference architecture 
+that's-highly available in the secondary region uh they're 
+asking for 50 servers-and $60,000 worth of BU VM clost for 
+the first-year so um the RTO and the are great with the 
+solution but it's also-incredibly expensive and you have to 
+have the staff to support-it for environment serving 2,000 
+or few users gitlab actually recommends a-single node so if 
+you go to the refence architecture documentation um you 
+know I-think Professional Services historically has hit use 
+the 1,000 user marker but-gab uh as a QA organization uh 
+recommends-2K and then um just kind of go through 
+the-advantages so if you look at the left side this is your 
+primary site and you-look at the right side this is your 
+secondary Geo site either one of these-can be a single node 
+and support up to 2,000 users so you know by going with 
+a-single node Geo for instance you're taking out a 
+considerable amount of-infrastructure um but you're giving 
+yourself a much easier uh infrastructure-to manage and set 
+up uh you can use gitlab backups and snapshots at the 
+same-time and uh you know the downside is you have a single 
+point-failure sorry any questions on ha and we'll get-into 
+the actual components and what they do out of curiosity do 
+we have an idea-how much of this total infrastructure is 
+represented by the database the post-gray infrastructure 
+yeah I'll get into the components and on side 
+but-absolutely so so this is the front end so your web 
+servers this is your-Sidekick your background jobs this is 
+your application database these six-servers right here this 
+is your cache database this is your fover Sentinel 
+and-console and then there's another database over for 
+gly-cluster um and then on your secondary site there's an 
+additional database for-tracking database for geo so a lot 
+of databases involved yeah yeah just-thinking that maybe 
+more modern databases might might provide some 
+some-efficiency in this area but that's just a wild thought 
+right nope you're not-wrong we'll get to that awesome Okay 
+Kevin Kevin on the um on the secondary-site how hot is that 
+how hot is it in order to fail over how long does it 
+take-I'll cover that later but it could be done in 
+15-minutes okay could you run could you run active active 
+no yes and no and I'll-cover that later all right you're 
+going more into I'll get into that yeah we-we'll we'll talk 
+about Gio at the end um you know when you talk to 
+customers-though yeah we we'll get into that in a later 
+slide I don't want to like-undercut it but very good 
+question so um I'm just gonna spend some time going-through 
+the different services that run on these just so everybody 
+knows um you-know these are the front-end Services uh 
+sidekick probably shouldn't be on this-list I kind of group 
+it with it and we'll talk about that later with-kubernetes 
+um you know but if a customer comes to us and they say hey 
+we want to-run gitlab and kubernetes these are the 
+components that essentially get put into-kubernetes so um 
+and then there's a diagram here on the architecture 
+site-and we're talking about these groups right here and 
+they're usually all on-the same node or in some cases split 
+up so we have Puma which used to be-called unicorn and 
+that's our frontend web server so Puma is uh when you go 
+to-gitlab.com and you see the goey uh that's Puma rendering 
+that for you and-then we have a service called gitlab shell 
+and gab shell is where all the git-operations over SSH are 
+managed so for instance if you clone a repository with-um a 
+key pair that that's going to be run through KB-shell 
+Workhorse is a reverse proxy load balancer and it handles a 
+lot of the-large or long running operations so um if you 
+look at this chart here you can-actually see that 
+everything goes through Workhorse before it goes to the-web 
+server it it kind of decides what goes the web server and 
+what doesn't and-the example that I'll give is um and it 
+might have changed it's been a while but-object storage 
+used to go from Workhorse directly to S3 right so if you 
+wanted to-uh check the logs on objects not being uploaded 
+to S3 the Workhorse logs would-house set you wouldn't 
+necessarily want your web server handling a large tar-file 
+uh we use engine X in the front end too-so engine X sits in 
+front of everything all web related stuff and determines 
+if-something's going to git lab Pages or if it's going to 
+Workhorse and then your-certificates are configured at 
+engine X rules if you need-them gitlab Pages uh gitlab can 
+serve static pages and they're served from S3-or object 
+storage and then finally sidekick which is a background 
+um-processor so sidekick jobs are stored in reddis and and 
+uh you know the example I-gave the example I like to give 
+and I don't know if this is still the case but-when you 
+think of an action in gitlab like if you delete a user git 
+lab-doesn't go and delete the user uh it creates a 
+background job in redis that-says hey this user is to be 
+deleted and then there is sidick processes that are-picking 
+up these jobs and deleting these users it's uh very similar 
+to how like-sqs and AWS would work any questions on the 
+frontend-services okay back end so we got gy and this 
+is-where all your source code is stored uh it used to also 
+store Snippets it may-still um but uh your actual source 
+code this that's on the gly-knowns we have prect so prect 
+shows up in our 3K architectures and higher and-it's for 
+high availability so prect does things like um you know 
+ensuring that-there's replication on the gly nodes load 
+balancing Val recover data-Integrity when a user makes a 
+commit what prect will do if you have three G-Elite nodes 
+prect will write that to two if that's what your 
+replication factor-is and then check the hash to make sure 
+that there's strong consistency across-the two and then 
+Mark that as as you know both nodes were written at the 
+same-time um if one node fails to write so you you have an 
+outdated version of the-repository on one node and the 
+other node for whatever reason is up to date-it'll will'll 
+uh flag that node and put a background job in um to go back 
+and-make sure that gets replicated we have reddis so redus 
+does-all of our caching um it does data caching so it's 
+used to frequently uh to-store frequently accessed data to 
+reduce load in the database um you can think of-things like 
+uh user information project metadata repository data um it 
+does page-caching so uh certain pages are cached up to 
+reduce or increase the rendering-speed if they're 
+frequently accessed it houses our background jobs and then 
+it-manages session management so when a user logs into 
+gitlab rdus is what makes-sure that their session stay is 
+held um as their load balcer might be moving-them to 
+different fun end nodes uh console and just remember 
+when-we showed that diagram before all of those are these 
+components broken up in-different servers so you know we 
+talk about the complexity of gitlab um it's-because there's 
+so many services that have to be installed but console is 
+uh-delivered as both the client and a server service and uh 
+it's used for two-things it's used for monitoring so it'll 
+collect Prometheus data um that can be-grafted with grafana 
+which used to be shipped with-gitlab uh it also will keep 
+an eye on the health of the postgress node and-elect a new 
+leader so uh if we're deploying our own postgress solution 
+in-a high availability scenario then console would go with 
+it Sentinel is-very much like console it monitors redus 
+rtis is H new Reedus-leaders Prometheus is for metrics 
+monit so we have two pieces that-we install there's 
+exporters and there's the promethus server uh and 
+the-exporters will gather metrics on gitlab services and 
+send them in so we can have-our graphs and dashboards to 
+make sure that we're monitoring G-laab uh the database so 
+we we use postgress in a lot of different areas in-get lab 
+there's you know um you can have it for application you 
+have to have one-for your application database uh if you 
+have G cluster you have to have a gy-cluster database and 
+then every Geo site has to have a postgress and you 
+know-just uh funny start when I started we actually 
+supported MySQL and postgress-uh but uh that just slowly 
+was spaced out and then uh the last two servers on-here are 
+in support of postr so PG bouncer helps us with uh 
+database-pooling or uh connection pooling for the database 
+and then along with the load-balance configuration and then 
+Patron supports the failover-activities alongside console 
+and PG bouncer-so we'll go right into talking through a 
+reference-architecture so this is gitlab's 3K 
+reference-architecture uh I think the EMS always ask why 
+doesn't implementation with-gitlab cost so much um or why 
+is there so much time that needs to happen with-it and it's 
+because gitlab ha is complex so uh in this scenario we've 
+got 25-servers two load balancers there's 8 S3 buckets uh 
+in those buckets we you know-artifacts external discs 
+uploads lfs packages dependency proxy terraform and-pages 
+and when we talked about the front end-components we were 
+talking about these components right-here um all of these 
+represent our backend-components and we actually have a 
+cost and uh calculator available now so-that's where I got 
+this from so if a customer says how much is-this going to 
+cost to deploy uh you can go here and share that cost in 
+this-example is $29,000 just to deploy the VMS on AWS-for 
+3K reference architecture this is not data storage this is 
+not Network-traffic um Ingress and egress this is just 
+straight up uh the VM size to spec-so so Kevin this is the 
+cost Amazon this is the cloud cost yes sir yeah so you-got 
+s new subscriptions all on top of this and obviously yeah 
+yeah yeah and it-kind of goes back to that slide earlier 
+you know when you when you start looking-at RTO and RPO and 
+you want better results and customers want ha 
+it's-expensive so this is the first 3K is where full ha 
+starts with-gitlab where you have gly cluster so when 
+customers come to us and they say-okay we have 50 
+developers but we need ha you know sometimes I don't think 
+they-understand that okay but can you manage 25 servers and 
+take on-$330,000 in VM costs um is that worth ha for you or 
+is a single node you know-with a single node Geo which we 
+talk about later the right-solution and just finally it 
+does does the level of subscription have an impact-on this 
+design you know ultimate feature does that add more comp 
+reputation power-maybe no no the biggest um drivers for 
+ultimate have historically been plan and-secure yeah um but 
+no I mean this is this is when a customer says hey I 
+need-ha this is entry-level ha this is what they're 
+asking-for okay cool and you can deploy this on gitlab's 
+free product uh but we don't-support it so uh if we've had 
+customers come and try to engage PS uh when they-were on 
+gitlab free and and you know it's we don't we don't want to 
+help them-build out something that normally would be a paid 
+tier this they have to do on-their own I kind of want to 
+show you what deploying to AWS and cloud services-can bring 
+the table though so uh with AWS customers and the GB 
+environment-tool supports this uh we can use services like 
+elasticache and RDS to-significant reduce the footprint so 
+uh we just took uh 12 servers out of the-Mex just by saying 
+Hey I want to manage Reddit service to last cache uh so 
+give-me an ha redish cluster and then the same goes to RDS 
+I want a multi-az RDS-instance um so pretty significant 
+reduction in-nodes and the next thing I want to point out 
+too is this when a customer comes to-us and says I want to 
+deploy with kubernetes-this section here is what's 
+in-kubernetes all of these still have to be VMS now you can 
+deploy these other-servers in Helm but the documentation 
+says that it's Alpha it might be beta-now but it's not 
+supporting a production environment and they should not 
+be-running these components in Helm um for their git lab 
+production deployment the-only servers that go into 
+production are these front end nodes here so when we-talk 
+to customers again going back to the smaller user counts 
+you know they-might have 50 users 100 users and they say 
+hey I want to run kubernetes what-they're really saying is 
+is I still want to have but is this uh 18-VMS for my 12 
+users but I want to add a kubernetes stack on top of that 
+and-manage that as well um and and we try to discourage 
+that until they get into the-much larger range you know I 
+think uh the QA team recommends folks be at 3K or-higher 
+Professional Services has seen success with Folks at 10,000 
+or higher-with a dedicated kubernetes team um and I I'll 
+kind of show you in a little bit-the advantages that 
+kubernetes brings to the table um but the the 
+biggest-disadvantage is that you also cannot do zero on 
+time upgrades with kubernetes-so any questions okay-so one 
+of the things we're learning with customers um and this is 
+where I got to-not say names but uh you know traditionally 
+we've always scoped-architectures based off user count you 
+have 2,000 developers this is the-reference architecture 
+for 2,000 users and that works that worked very well for-a 
+long time um but we have customers that are kind of using 
+gitlab in out of-thebox ways it's an automation tool with a 
+lot of power-and um you know we had one scenario where they 
+had 3,000 users but uh they-were using 25,000 users worth 
+of load on the system you know and so when we're-scoping 
+these These are the types of ones we want to ask the right 
+questions-you know why do you need to expand your git lab 
+footprint why are you moving to-the cloud um you know what 
+do you running on today how is it performing-today and if 
+we start to run into scenarios where we feel like a 
+customer-might be uh using more than um the standard 
+that's-something where we would want to do some Discovery 
+and get fast STS and actually-start looking at the requests 
+per second from their live production data uh then-just 
+saying hey here's a 3,000 user architecture and uh you'll 
+notice with-kubernetes it actually supports double the 
+request per second for the-infrastructure so one of the 
+advantages to kubernetes is is that it can scale um-those 
+front-end you know API type servers very quickly the ones 
+that-handle to get traffic and things like that um so you 
+lose zero downtime-upgrades the complexity goes up uh but 
+you do uh get better performance as a-whole and I shared 
+the link in the notes for this for fast stats which is a 
+tool-that you can use to collect this data any questions on 
+this one and then-we'll get into Gio-cool all right so Geo 
+so Geo can act and look like the-primary for Geographic 
+distributed users they don't necessarily know that 
+they're-on a Geon node and users can push and pull from Geo 
+node um and what happens-is is that if a user is connected 
+to a Geon node and they do a get push it-actually behind 
+the scenes proxies it to the primary so if they're on this 
+node-over here and they push to it it proxies it to the 
+primary which writes it and-then replicates it back to the 
+Geo node um and and for geographically-distributed users 
+when they pull it pulls from the Geo node so uh if you-have 
+you know your main site is in America's and I actually had 
+a customer-like this they had a data center in Soul uh 
+South Korea and uh when they were-cloning and fetching 
+large repositories it was taking forever and when they 
+set-up a Geo site that it went from you know um minutes to 
+seconds to PO those-repositories you can uh balance the 
+readon traffic 2 between your primary-and secondary sites 
+you know we have another customer we're talking to now-that 
+does significant amount of API calls against skab uh 
+they're looking at-standing up Geo and and that is so that 
+they can do all calls against the-secondary site the other 
+thing to note is that Geo-can share a URL between your 
+primary and your secondary so you can have a-separate URL 
+for geo but you can also uh have a unified URL and then uh 
+use some-uh geodns and load balancing to kind of distribute 
+the users where they-go any questions on the what geod does 
+from a distributor perspective no okay-uh so you can fail 
+over pretty quickly with Gio I did it with one customer 
+uh-they were 15,000 users and I was nervous and it happened 
+almost instantaneously-like it's like one command now um 
+it's gotten significantly easier than it used-to be so um 
+when a customer wants to fail over it's just you know 
+proing the-environment run the command and updating DNS uh 
+unless it's a unified URL which-in case it'll just work 
+Runner ERS automatically connect if they're still-up and 
+running because the URL is the same and the tokens that 
+they use are in-the database that's a read replica so uh 
+you can you know with the proper-planning you can fil over 
+very quickly to-go one of the limitations that you know 
+when folks say well why can't we use Geo-as an ha solution 
+uh and the reason is is just that the primary 
+authenticates-the secondaries authenticate after off the 
+primary so if your primary goes down-your GEOS actually go 
+down um until you fail over and so they are not yeah-that's 
+look um so just something to make sure you're aware of uh 
+once you fail-over then they they totally work but uh when 
+you authenticate against the geoc-secondary it actually 
+sends it back to the primary to authenticate so you 
+lose-that functionality if the primary goes down um the 
+other thing I want to call-it too is is that the geoc 
+secondaries and primary don't care what the other-one is so 
+you you going have a single node primary and a 50k 
+reference-architecture Geo don't do that that's crazy but 
+you can have the other way-around too so uh you can have a 
+3K reference architecture for your primary-site and uh 
+single nodes on the goo and you can have multiple that way 
+and the-only thing that it cares about is uh there needs to 
+be a re replica of the-database which can be within the 
+single node this is an AWS diagram so I have a-RDS re 
+replica here and that the two front ends can talk to each 
+other-because they communicate over apis and you know more 
+often than not you're-going to have a smaller Geo depending 
+on your ability to maintain-servers uh you know so keep in 
+mind that a 3K reference architecture with 25-servers a 3K 
+geo means you're managing 50 servers plus an additional 
+tracking-database is there any kind of use case 
+benefits-for by directional active active-so yes and no 
+right so so active active to me is if one goes down the 
+other one-works and we don't get passive okay yeah you've 
+got two use you-to you can absolutely use both for sure 
+yeah users you know if you've got users-all over the world 
+and you want to distribute it they can use those 
+other-sites now couple things to keep in mind they don't 
+necessarily know this but the-rights that they make are 
+actually going back to the primary so you want to make-sure 
+your primary is big enough and to support your secondary 
+nodes and those-secondaries will stop working if the 
+primary goes down until you actually-perform a failover 
+yeah so you can't you always have a primary you can't have 
+a-two primaries replicating back to two secondaries across 
+correct yeah okay-and I kind of touched this in the 
+beginning but with with gitlab within-region within data 
+center we can support ha um but we really can't support 
+true-ha across different regions the other thing uh and 
+it's-getting better but the recovery process from a g fover 
+uh you have to rebuild-the original site uh and it might 
+have changed I can double check the-documentation but 
+historically let's say that you had a catastrophic outage 
+on-your main site and you did a go over failover and your 
+user is using this um-the process to go back would be to 
+stand up a new primary site set it up as a Geo-secondary to 
+your now promoted geoc secondary let it replicate then 
+promote-your primary site again and then restand up your 
+geoc secondary set it up as a-geoc secondary to your 
+original primary site and then let that replicate as-well I 
+mean you're back up and running your users didn't really 
+miss a meat but-as an Sr or an admin you've got some work 
+ahead of-you I have a question um what is the typical 
+life-time for data replication and how do we ensure that um 
+data Integrity is-ured so the data um Gio has well the lag 
+time I'll tell you-right now is pretty quick it's it's it 
+happens when pushes happen um usually I-find that it's it's 
+within minutes if not faster uh you know there's 
+caveat-right if a customer you know I had a customer that 
+for some reason was-pushing like isos to repositories which 
+is a whole another conversation but-that's not the point 
+right um if they push a 10 gig ISO to-the GEOS secondary 
+you know they just have to be aware that it's not going 
+to-write to the geoc secondary it's going to be sent over 
+the primary to Bright in-the primary um and if they're in 
+America and South Korea that might take-a while and then 
+it's going to replicate to the geosite so things like that 
+would-take a while but if you think of your average get 
+commit and push there's not-a lot it's it's text right it's 
+code it's it's very quick it's not like you-you know in one 
+commit I'll push a gig of code um so it's very very quick 
+and-as far as the consistency goes um gilb there's a-table 
+and I'll see if I can find it I can follow up but um-so can 
+I just add here Kevin Yeah Yeah so basically for Gio uh you 
+know there-is a dashboard that you can see on the UI itself 
+and the replication keeps-going on um and you can make sure 
+that you know that is up to 100% it'll show-you both the 
+primary and the secondary site um and you can just make 
+sure that-you see it's in 100% sync and only once in sync 
+you can just just do the-failover I can probably try uh 
+seeing if I have my setup on and I can share a-screenshot 
+probably yeah that would be awesome and while she's looking 
+at that-let me know I'll switch the presenter to you um 
+I'll find it there's a table for-the different data types 
+and how G checks consistency so um use hash it's-it's 
+validated okay um the other thing to-call out too 
+especially when we talk about Cloud environments is is that 
+Gio-will replicate object storage for you um so if you're 
+going from AWS to gcp or-something like that you know Gio 
+can manage that for you uh but more often-than that when 
+you're working in Cloud environments like AWS they have 
+cross-region replication with buckets and you can also just 
+set that up and let Amazon-handle your replication of 
+buckets any other questions on-Gio just one so that's your 
+use case can you use Goo you can use Geo right to-migrate 
+can't you if if you've already got a Geo-environment 
+running and you want to migrate using Goo is that is 
+that-limited is that a limitation yeah when you you have 
+go-link coming in to do the migration it's like Hub and 
+spoke you know you have-your Central Primary and you can 
+have as many Geo nodes as you want and they can-be as big 
+or small as you want to right you can you can have a 3K 
+reference-architecture and then you can say I want one 
+single node Geo in South Korea soul-and I'm going to take 
+snapshots of that and that's just uh you know just just 
+in-case and then I might put another full 3K on the west 
+coast if I'm in the east-coast so that I can fail over to 
+that okay and they can all go into the-single instance they 
+all go into the single instance the caveat is is that-when 
+you fail over to a secondary all of the other GEOS 
+become-or they don't follow yeah yeah so you you would you 
+would want to hook them up-yeah brilliant thank you and um 
+here's the data types and the verification-replication 
+method so it's a pretty cool table um and and you know 
+especially-recently I don't think there's anything that 
+they don't have some kind of strong-consistency 
+verification for the data type this is also a great chart 
+if-you're sculping with a customer and they say does geom 
+replicate because there in-the past had been items or if 
+new object types come into play like when terraform-State 
+files first came into play for instance I don't think it 
+immediately-was supported by Gio as a replication type so 
+customers ask hey can you-support you replicate this type 
+to the secondary site you know this table right-here and I 
+I'll drop the link in the chat and then uh going on to the 
+last-slide here I just wanted to kind of sh I share this 
+with Partners too I think-this is pretty cool anybody 
+especially within gitlab can uh-go check out our gitlab 
+environment toolkit uh if you need help I can show-you how 
+you can create a cloud account at kit laab and um we have a 
+a a-implementation Services learning path which is free uh 
+for everybody uh gitlab-employees and customers they can go 
+and take this online course that education-provides and 
+then they can run through our Hands-On Workshop which I 
+think is-internal on but we do you know set it up for 
+partners and things like that which-is a g laab issue that 
+walks you through um deploying a 3K reference 
+architecture-in AWS just make sure you delete it when 
+you're done because it's $330,000 a-year so any any 
+questions on that-cool Jenice if you have it I'll let you 
+show it if not we can probably cut it-no so I have a 
+screenshot probably I can show uh does they have any 
+customer-names that's what I was checking no this is on my 
+sample so yeah I can share-this I mean I have anyway 
+destroyed this environment so it's it's okay but it's-just 
+a screenshot uh sharing my screen are we recording because 
+the it's on-yeah it's streaming live to YouTube Glen's got 
+us coverage-okay keep it safe I don't want to share 
+probably on-the live stream it's okay let's not we can stop 
+the recording in the chair-that's fine I'd rather like CL 
+said keep it safe than yeah make a mistake yeah-you can 
+just say it offl yeah excellent thank you Kevin very 
+much-for that any other questions comments it says it's 
+still live on YouTube it is it-is okay yeah before I want 
+to make sure-we've got everything covered that we can talk 
+about and then uh then-we'll go to the private portion so 
+any other questions comments uh I will I'll-will up the do 
+update the documentation Kevin you can send me the link to 
+your-presentation I can drop it in there as well and if 
+anyone has questions that-they want to answer drop them in 
+the doc as a comment and we can get we can get-to those as 
+well otherwise I will stop the live-stream portion of this 
+thanks again Kevin very much appreciate it

@@ -1,67 +1,68 @@
 # SUMMARY
-Mark discusses integrating Jira with GitLab to help a customer transition from older version control systems, focusing on setup and benefits.
+A presentation by Kevin discusses GitLab's reference architectures, focusing on key concepts, components, and deployment strategies for high availability and disaster recovery.
 
 # IDEAS:
-- Integrating Jira with GitLab can facilitate smoother transitions for development teams.
-- The integration allows for issue synchronization between Jira and GitLab.
-- Teams often resist moving from older version control systems to modern solutions.
-- HTTPS is required for the integration to function properly.
-- Jira can automatically transition issues based on commit messages in GitLab.
-- The integration can enhance visibility of commits and merge requests in Jira.
-- Using personal access tokens is essential for the integration process.
-- The setup requires collaboration between Jira and GitLab administrators.
-- Different project keys can be used to map Jira projects to GitLab projects.
-- The integration can help automate workflows, improving efficiency.
-- GitLab's end-to-end functionality offers better management than using Jira alone.
-- There is potential for a migration tool to transfer issues from Jira to GitLab.
-- Understanding customer profiles is crucial for effective integration strategies.
-- The integration may limit visibility into GitLab's full data tracking capabilities.
-- Developers are encouraged to use GitLab's features fully for optimal results.
-- The integration serves as a stepping stone for customers hesitant to fully transition.
+- GitLab offers self-managed, dedicated, and SaaS solutions.
+- Omnibus is GitLab's bundled package for service installation.
+- High availability (HA) ensures infrastructure tolerates outages without performance hits.
+- Reference architectures are designed to support a specific number of users with redundancy.
+- Disaster recovery (DR) strategies are crucial for catastrophic outages.
+- RPO (Recovery Point Objective) and RTO (Recovery Time Objective) are critical metrics in disaster scenarios.
+- Single-node setups can be more manageable for smaller user bases.
+- GitLab's architecture includes multiple services like Puma, Redis, and PostgreSQL.
+- Kubernetes can enhance scalability but adds complexity.
+- Geo allows for geographically distributed users to access GitLab efficiently.
+- Active-active configurations can distribute load but require careful management.
+- Cloud services like AWS can reduce infrastructure footprint significantly.
+- GitLab's architecture can support both high availability and disaster recovery.
+- Monitoring tools like Prometheus and Grafana are essential for maintaining system health.
+- The cost of deploying GitLab can be substantial, especially for high availability setups.
+- Customers often underestimate the infrastructure needed for HA solutions.
 
 # QUOTES:
-- "We're trying to drag them you know kicking and screaming into the 21st-century."
-- "If you try and set up the integration just using like bog standard HTTP, it doesn't seem to work."
-- "You can see all the commits and activity that happened on something as long as you reference the Jira issue."
-- "If you put the magic words, it can automatically move that Jira ticket into the done pile."
-- "This is like the level zero of getting them to understand that GitLab can integrate."
-- "The full value of our platform is always just realized if you use our functionality end to end."
-- "This stuff is better than nothing, and it helps get people onto it."
-- "There are some companies that will not just drop Jira and move over to GitLab."
-- "You have to allow access to your local network wherever Jira is hosted."
-- "You might want to limit the blast radius of one of these tokens getting leaked or exposed."
-- "It's important when we work with teams that they know that GitLab is the controller."
-- "The integration can help automate workflows, improving efficiency."
-- "This creates a new account gives you a password or a credential key."
-- "You have to consider what your group structure looks like on both sides."
-- "The integration allows for issue synchronization between Jira and GitLab."
+- "GitLab is quite a complex stack with a lot of pieces."
+- "High availability is your infrastructure being designed in a way that can tolerate outages."
+- "Our reference architectures are intentionally designed to meet HA qualifications."
+- "The lower those numbers are, the more expensive the infrastructure is."
+- "For most standard customers, our reference architectures are overkill."
+- "If you want HA, you have to manage 25 servers and $330,000 in VM costs."
+- "Kubernetes supports double the request per second for the infrastructure."
+- "Geo can act and look like the primary for geographically distributed users."
+- "You can fail over very quickly with Geo; it's just one command."
+- "The replication keeps going on, and you can make sure that you see it's in 100% sync."
+- "GitLab's architecture is complex because there are so many services that have to be installed."
+- "You can use Geo to migrate if you've already got a Geo environment running."
+- "The cost of deploying GitLab is significant, especially for high availability setups."
+- "You want to make sure your primary is big enough to support your secondary nodes."
+- "With proper planning, you can fail over very quickly."
 
 # FACTS:
-- HTTPS is required for secure communication between Jira and GitLab.
-- Personal access tokens are necessary for the integration setup.
-- The integration allows for automatic issue transitions in Jira based on GitLab activity.
-- Many teams are still using older version control systems.
-- The integration requires collaboration between different administrative teams.
-- A Docker container can be used to run Jira for testing purposes.
-- GitLab can track commits and merge requests linked to Jira issues.
-- The integration setup involves creating application links in both systems.
-- Different project keys can be used to map Jira projects to GitLab projects.
-- The integration may not provide full visibility into GitLab's data tracking capabilities.
+- GitLab has three offerings: self-managed, dedicated, and SaaS.
+- Omnibus is a single file used to install all GitLab services.
+- High availability can be achieved within a region but not across regions without downtime.
+- RPO can be as low as 15 minutes with Geo.
+- A traditional 3K reference architecture may require around $60,000 in VM costs upfront.
+- GitLab uses PostgreSQL extensively across its architecture.
+- The average data replication lag time with Geo is within minutes.
+- GitLab's architecture includes components like Puma, Redis, and Workhorse.
+- The cost of deploying a 3K reference architecture on AWS can reach $29,000 just for VMs.
+- Kubernetes deployments require careful consideration of user counts and infrastructure needs.
 
 # REFERENCES:
-- Docker container for running Jira.
-- Official documentation on running Jira behind an Nginx proxy.
-- GitLab's personal access tokens for API access.
-- Application links in Jira settings for integration setup.
+- GitLab's Omnibus package
+- GitLab's reference architecture documentation
+- Prometheus and Grafana for monitoring
+- AWS services like Elasticache and RDS
+- GitLab's environment toolkit
+- Implementation Services learning path
+- Hands-On Workshop for deploying a 3K reference architecture
 
 # RECOMMENDATIONS:
-- Encourage teams to adopt modern version control systems like GitLab.
-- Use HTTPS for secure communication during integration setup.
-- Automate workflows by enabling issue transitions in Jira based on GitLab activity.
-- Consider using separate personal access tokens for different projects to enhance security.
-- Facilitate collaboration between Jira and GitLab administrators during setup.
-- Utilize Docker containers for testing integrations in a home lab environment.
-- Provide training on the benefits of using GitLab's end-to-end functionality.
-- Develop a migration tool to assist customers transitioning from Jira to GitLab.
-- Map project keys carefully to ensure proper synchronization between systems.
-- Regularly review and update integration settings as project needs evolve.
+- Consider single-node setups for environments with fewer than 2,000 users.
+- Use cloud services to reduce infrastructure costs and complexity.
+- Monitor RPO and RTO closely to ensure disaster recovery effectiveness.
+- Engage in discovery sessions to understand customer needs before scoping architectures.
+- Educate customers on the complexities of high availability and disaster recovery.
+- Utilize monitoring tools to maintain system health and performance.
+- Plan for significant infrastructure management when opting for high availability solutions.
+- Encourage customers to evaluate their actual usage against standard user counts when designing architectures.
