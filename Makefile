@@ -1,3 +1,5 @@
+include .env
+
 .PHONY: ci_build docker_clean docker_interactive docker_verify sub
 SHELL := /bin/bash
 

@@ -246,6 +246,8 @@ The following resources were used as a single-use reference.
 |:-------------------------------------------------------------------------------------:|:-------------:|
 | [Look Mum, No Servers! Create a Telegram Bot to communicate with GitHub Actions][r01] |  Dennis Lee   |
 |          [How to extract closed caption transcript from YouTube video?][r02]          | StackOverflow |
+|                             [Makefiles for Web Work][r03]                             | Ross Zurowski |
 
 [r01]: https://dennislwm.netlify.app/posts/look-mum-no-servers
 [r02]: https://stackoverflow.com/questions/9611397/how-to-extract-closed-caption-transcript-from-youtube-video
+[r03]: https://rosszurowski.com/log/2022/makefiles
