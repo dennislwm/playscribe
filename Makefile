@@ -1,6 +1,6 @@
 include .env
 
-.PHONY: ci_build docker_clean docker_interactive docker_verify sub
+.PHONY: ci_build docker_clean docker_interactive docker_verify output sub
 SHELL := /bin/bash
 
 ci_build:
@@ -17,6 +17,11 @@ docker_interactive: ci_build docker_clean
 
 docker_verify: ci_build docker_clean
 	docker run --rm --env-file .env -i playscribe --listmodels
+
+output:
+	@test $(URL) || ( echo [Usage] make out URL=YOUTUBE_LINK; exit 1 )
+	@source ./yt-dlp.sh && get_output $(URL)
+	@cat output.txt | docker run --rm --env-file .env -i playscribe --pattern extract_article_wisdom && rm output.txt
 
 sub:
 	@test $(URL) || ( echo [Usage] make sub URL=YOUTUBE_LINK; exit 1 )
