@@ -1,27 +1,42 @@
-include .env
+-include .env
 
-.PHONY: ci_build docker_clean docker_interactive docker_verify output sub
+.PHONY: check_env ci_build docker_clean docker_interactive docker_verify output sub
 SHELL := /bin/bash
+DOCKER_PS := $(shell $(DOCKER) ps 2> /dev/null)
 
-ci_build:
-	DOCKER_BUILDKIT=1 docker build -t playscribe .
+check_env:
+ifndef OPENAI_API_KEY
+	$(error Environment variable OPENAI_API_KEY not set)
+endif
+ifndef DOCKER
+	$(error Environment variable DOCKER not set)
+endif
+ifndef DOCKER_IMAGE
+	$(error Environment variable DOCKER_IMAGE not set)
+endif
+ifndef DOCKER_PS
+	$(error $(DOCKER) daemon is not running)
+endif
 
-docker_clean:
-	docker image prune -f
+ci_build: check_env
+	DOCKER_BUILDKIT=1 $(DOCKER) build -t playscribe .
+
+docker_clean: check_env
+	$(DOCKER) image prune -f
 
 docker_genius: ci_build docker_clean
-	cat $(FILE) | docker run --rm --env-file .env -i playscribe --pattern extract_article_wisdom
+	$(DOCKER) run --rm --env-file .env -i playscribe --pattern extract_article_wisdom
 
 docker_interactive: ci_build docker_clean
-	docker run --rm --env-file .env -it --entrypoint bash playscribe
+	$(DOCKER) run --rm --env-file .env -it --entrypoint bash playscribe
 
 docker_verify: ci_build docker_clean
-	docker run --rm --env-file .env -i playscribe --listmodels
+	$(DOCKER) run --rm --env-file .env -i playscribe --listmodels
 
-output:
-	@test $(URL) || ( echo [Usage] make out URL=YOUTUBE_LINK; exit 1 )
+genius: check_env
+	@test $(URL) || ( echo [Usage] make genius URL=YOUTUBE_LINK; exit 1 )
 	@source ./yt-dlp.sh && get_output $(URL)
-	@cat output.txt | docker run --rm --env-file .env -i playscribe --pattern extract_article_wisdom && rm output.txt
+	@cat output.txt | $(DOCKER) run --rm --env-file .env -i playscribe --pattern extract_article_wisdom && rm output.txt
 
 sub:
 	@test $(URL) || ( echo [Usage] make sub URL=YOUTUBE_LINK; exit 1 )
