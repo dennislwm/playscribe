@@ -63,7 +63,8 @@ This project has several limitations:
 * The Telegram Bot has a content limit for messages sent to the User.
 * The pipeline job may exceed the time of the fixed delayed step in the workflow.
 * The message is truncated after `40` lines and will include a link to the file `examples/result.txt`. However, the content of this file may be overridden by another pipeline.
-* The workflow system does not allow conditional branches.
+* The Pipedream workflow allows conditional branches, however this feature is available to premium subscribers only.
+* The Pipedream integration for GitHub allows creating a new branch, and creating or updating a file in any branch, however it does not allow reading the content of a file from any branch (except main).
 
 ## Getting Started 🚀
 
